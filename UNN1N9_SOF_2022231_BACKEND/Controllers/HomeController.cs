@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UNN1N9_SOF_2022231_BACKEND.Data;
 using UNN1N9_SOF_2022231_BACKEND.Models;
@@ -17,10 +18,19 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         }
 
         [HttpGet]
+        //[AllowAnonymous]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<Music>>> GetMusics()
         {
             return await _context.Musics.ToListAsync();
         }
+
+        //[HttpGet("{id}")]
+        //[Authorize]
+        //public async Task<ActionResult<IEnumerable<Music>>> GetMusic(string name)
+        //{
+        //    return await _context.Musics.FindAsync(name);
+        //}
 
 
         //[HttpGet]
