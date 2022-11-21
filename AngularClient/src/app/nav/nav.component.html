@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">DunaGo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item" *ngIf="loggedIn">
+            <a class="nav-link" href="#">For You</a>
+          </li>
+          <li class="nav-item" *ngIf="loggedIn">
+            <a class="nav-link" href="#">Browse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()" href="#">Logout</a>
+          </li>
+        </ul>
+
+        <div class="dropdown" *ngIf="loggedIn" dropdown>
+          <a class="dropdown-toggle text-light" dropdownToggle>Tools</a>
+          <div class="dropdown-menu mt-3" *dropdownMenu="">
+            <a class="dropdown-item">Edit Profile</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
+          </div>
+        </div>
+
+        <form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off" *ngIf="!loggedIn">
+            <input name="username" [(ngModel)]="model.username" class="form-control me-2" type="text" placeholder="Username">
+            <input name="password" [(ngModel)]="model.password"  class="form-control me-2" type="password" placeholder="Password">
+          <button class="btn btn-outline-success" type="submit">Login / Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </nav>

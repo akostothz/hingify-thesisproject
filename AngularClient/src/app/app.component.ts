@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'The Music Recommendation App';
   musics: any;
+  users: any;
 
   constructor(private http: HttpClient) {}
 
@@ -23,4 +24,6 @@ export class AppComponent implements OnInit {
       console.log(error);
     })
   }
+
+  
 }

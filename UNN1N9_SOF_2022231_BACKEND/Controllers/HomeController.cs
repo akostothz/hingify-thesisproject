@@ -17,13 +17,13 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        //[AllowAnonymous]
-        [Authorize]
-        public async Task<ActionResult<IEnumerable<Music>>> GetMusics()
-        {
-            return await _context.Musics.ToListAsync();
-        }
+        //[HttpGet]
+        ////[AllowAnonymous]
+        ////[Authorize]
+        //public async Task<ActionResult<IEnumerable<Music>>> GetMusics()
+        //{
+        //    return await _context.Musics.ToListAsync();
+        //}
 
         //[HttpGet("{id}")]
         //[Authorize]
@@ -33,11 +33,11 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         //}
 
 
-        //[HttpGet]
-        //public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
-        //{
-        //    return await _context.Users.ToListAsync();
-        //}
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
+        {
+            return await _context.Users.ToListAsync();
+        }
 
         //// api/users/3
         //[HttpGet("{id}")]
