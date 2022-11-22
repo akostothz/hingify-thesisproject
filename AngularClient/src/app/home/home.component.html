@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="divS" *ngIf="!registerMode">
+        <h1>Find the music that best fits you.</h1>
+        <p class="lead">Generate curated playlists using AI.</p>
+        <section class="neonpurple">
+            <a class="neon-purple" (click)="registerToggle()" href="#">Sign up to start the experience</a>
+                      
+        </section>
+        <section class="neongreen">
+            <a class="neon-green" href="#">Learn more</a>                 
+        </section>
+    </div>
+    <div *ngIf="registerMode" class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+            </div>
+        </div>
+    </div>
+</div>
+

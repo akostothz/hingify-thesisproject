@@ -1,0 +1,122 @@
+
+h1{
+    color: #000;
+    font-size: 5em;
+    text-align: center;
+}
+
+.lead{
+    color: #000;
+    margin-top: 2em;
+    font-size: 2em;
+    text-align: center;
+}
+
+.neonpurple {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+}
+
+.neon-purple {
+    display: inline-block;
+    background-color: #000;
+    position: relative;
+    cursor: pointer;
+    font-size: 4em;
+    padding: 0.3em 1em;
+    border: 0.15em solid rgb(62, 139, 254);
+    border-radius: 0.6em;
+    color:rgb(62, 139, 254);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    text-shadow: 0 0 0.3em rgb(62, 139, 254);
+    box-shadow: 0 0 0.3em rgb(62, 139, 254);
+    transition: all .3s ease-in-out;
+}
+
+.neon-purple:hover{
+    background-color: rgb(62, 139, 254);
+    color: #fff;
+    text-shadow: 0 0 0.3em #fff;
+    box-shadow: 0 0 2.4em rgb(62, 139, 254);
+}
+
+.neon-purple::before {
+    content: "";
+    position: absolute;
+    top: 140%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(62, 139, 254);
+    transform: 
+        perspective(0.2em)
+        rotateX(10deg)
+        scale(1.3, 0.40);
+        filter: blur(0.5em);
+        opacity: 0.6;
+        transition: all .3s ease-in-out;
+}
+
+.neon-purple:hover::before{
+    opacity: 1;
+}
+
+
+
+
+.neongreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    width: 100%;
+    
+}
+
+.neon-green {
+    display: inline-block;
+    background-color: #000;
+    position: relative;
+    cursor: pointer;
+    font-size: 4em;
+    padding: 0.3em 1em;
+    border: 0.15em solid rgb(37, 237, 174);
+    border-radius: 0.6em;
+    color:rgb(37, 237, 174);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    text-shadow: 0 0 0.3em rgb(37, 237, 174);
+    box-shadow: 0 0 0.3em rgb(37, 237, 174);
+    transition: all .3s ease-in-out;
+}
+
+.neon-green:hover{
+    background-color: rgb(37, 237, 174);
+    color: #fff;
+    text-shadow: 0 0 0.3em #fff;
+    box-shadow: 0 0 2.4em rgb(37, 237, 174);
+}
+
+.neon-green::before {
+    content: "";
+    position: absolute;
+    top: 140%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(37, 237, 174);
+    transform: 
+        perspective(0.2em)
+        rotateX(10deg)
+        scale(1.3, 0.40);
+        filter: blur(0.5em);
+        opacity: 0.6;
+        transition: all .3s ease-in-out;
+}
+
+.neon-green:hover::before{
+    opacity: 1;
+}

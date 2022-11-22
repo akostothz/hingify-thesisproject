@@ -9,21 +9,18 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">Home</a>
           </li>
-          <li class="nav-item" *ngIf="loggedIn">
+          <li class="nav-item" *ngIf="accountService.currentUser$ | async">
             <a class="nav-link" href="#">For You</a>
           </li>
-          <li class="nav-item" *ngIf="loggedIn">
+          <li class="nav-item" *ngIf="accountService.currentUser$ | async">
             <a class="nav-link" href="#">Browse</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="logout()" href="#">Logout</a>
-          </li>
         </ul>
 
-        <div class="dropdown" *ngIf="loggedIn" dropdown>
+        <div class="dropdown" *ngIf="accountService.currentUser$ | async" dropdown>
           <a class="dropdown-toggle text-light" dropdownToggle>Tools</a>
           <div class="dropdown-menu mt-3" *dropdownMenu="">
             <a class="dropdown-item">Edit Profile</a>
@@ -32,7 +29,7 @@
           </div>
         </div>
 
-        <form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off" *ngIf="!loggedIn">
+        <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
             <input name="username" [(ngModel)]="model.username" class="form-control me-2" type="text" placeholder="Username">
             <input name="password" [(ngModel)]="model.password"  class="form-control me-2" type="password" placeholder="Password">
           <button class="btn btn-outline-success" type="submit">Login / Sign Up</button>
