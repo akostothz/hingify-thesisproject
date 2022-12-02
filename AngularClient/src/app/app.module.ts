@@ -16,6 +16,7 @@ import { MusicDetailComponent } from './musics/music-detail/music-detail.compone
 import { ForyouComponent } from './musics/foryou/foryou.component';
 import { AboutComponent } from './about/about.component';
 import { LoggedHomeComponent } from './logged-home/logged-home.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,10 @@ import { LoggedHomeComponent } from './logged-home/logged-home.component';
     BrowserAnimationsModule,
     TooltipModule,
     FormsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
