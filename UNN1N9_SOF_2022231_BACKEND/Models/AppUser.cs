@@ -18,7 +18,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Models
         [StringLength(50)]
         public string UserName { get; set; }
 
-        public byte[] PasswordHash { get; set; }
+        public byte[] PasswordHash { get; set; } //ezt még kicserélni IdentityUser-es verzióra
         public byte[] PasswordSalt { get; set; }
 
         [Required]
@@ -30,7 +30,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Models
         public string LastName { get; set; }
 
         [Required]
-        public int Age { get; set; }
+        public int Age { get; set; } //lehet inkább dátum kéne
 
         [Required]
         [StringLength(100)]
