@@ -17,13 +17,21 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         public MusicController(DataContext context)
         {
             _context = context;
-        }        
+        }
+
+        /// <summary>
+        /// az összes itt lévő metódust még ki kell szervezni Logicba.
+        /// </summary>
+
+        [HttpGet]
+        public IEnumerable<Music> GetPersonalizedMix(int id)
+        {
+            throw new NotImplementedException("Method havent reached its alpha version..");
+        }
 
         [HttpGet]
         public IEnumerable<Music> GetLikedSongs(int id)
         {
-            //ÁTSZERVEZNI LOGICBA
-
             var givenuser = _context.Users.FirstOrDefault(x => x.Id == id);
             var musics = new List<Music>();
             var behaviours = new List<UserBehavior>();
@@ -44,7 +52,6 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             return musics;
         }
         
-
         [HttpGet]
         public IEnumerable<Music> GetMusicsBySex(int id)
         {
@@ -55,7 +62,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
             foreach (var behav in _context.UserBehaviors)
             {
-                if (ContainsSex(behav.UserId, usersFromGivenSex))
+                if (ContainsIt(behav.UserId, usersFromGivenSex))
                 {
                     behaviours.Add(behav);
                 }
@@ -68,15 +75,11 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
                 }
             }
             return musics;
-        }
-
-        
+        }    
 
         [HttpGet]
         public IEnumerable<Music> GetMusicsByCountry(int id)
         {
-            //ÁTSZERVEZNI LOGICBA
-
             var givenuser = _context.Users.FirstOrDefault(x => x.Id == id);
             var usersFromGivenCountry = _context.Users.Where(x => x.Country == givenuser.Country).ToList();
             var behaviours = new List<UserBehavior>();
@@ -84,7 +87,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
             foreach (var behav in _context.UserBehaviors)
             {
-                if (ContainsBehaviour(behav.UserId, usersFromGivenCountry))
+                if (ContainsIt(behav.UserId, usersFromGivenCountry))
                 {
                     behaviours.Add(behav);
                 }
@@ -113,7 +116,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
             foreach (var behav in _context.UserBehaviors)
             {
-                if (ContainsAgeGroup(behav.UserId, usersFromGivenAgeGroup))
+                if (ContainsIt(behav.UserId, usersFromGivenAgeGroup))
                 {
                     behaviours.Add(behav);
                 }
@@ -129,19 +132,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             return musics;
         }
 
-        private bool ContainsAgeGroup(int userId, List<AppUser> users)
-        {
-            foreach (var user in users)
-            {
-                if (user.Id == userId)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        private bool ContainsSex(int userId, List<AppUser> users)
+        private bool ContainsIt(int userId, List<AppUser> users)
         {
             foreach (var user in users)
             {
@@ -158,18 +149,6 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             foreach (var behaviour in behaviours)
             {
                 if (id == behaviour.MusicId)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        private bool ContainsBehaviour(int userId, List<AppUser> users)
-        {
-            foreach (var user in users)
-            {
-                if (user.Id == userId)
                 {
                     return true;
                 }
