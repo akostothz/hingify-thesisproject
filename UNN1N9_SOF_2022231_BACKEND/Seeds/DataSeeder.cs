@@ -59,28 +59,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
         private static void AddTestUsers(DataContext context)
         {
             using var hmac = new HMACSHA512();
-            //4 felhasználó a teszteléshez - ország, korosztály és nem szerinti ajánláshoz
-            /*
-             korosztályok:
-              1-11
-              12-17
-              18-25
-              26-39
-              40-60
-              60+
-
-             nemek:
-              férfi
-              nő
-              egyéb
-             */
-
-
-            /*  a tesztajánlások:
-               pali és panni >>> régió alapján (Hungary)
-               panni és m.ozil >>> Korcsoport alapján (40-60)
-               panni es leda >>> Nem alapján (Female)
-             */
+ 
             context.Users.Add(new Models.AppUser()
             {
                 Email = "pali@pali.com",
@@ -134,24 +113,14 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
         }
         private static void AddTestConnections(DataContext context)
         {
-            //néhány zenét hozzáadni a tesztajánlásokhoz
-            //nap, napszak valamint nap és napszak alapján is lehetne ajánlani más felhasználóktól
+            //EZEKET UNIT TESZTBE KISZERVEZNI!!
 
-            //napok: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+            //pali > 2 R & B zene, azaz a férfiaknak, a magyaroknak,
+            //és a 19 - 25 éves korosztályban ezeket kéne bedobni
+            var pali = context.Users.FirstOrDefault(x => x.Id == 3);
+            var paliMusic1 = context.Musics.FirstOrDefault(y => y.Id == 119);
+            var paliMusic2 = context.Musics.FirstOrDefault(y => y.Id == 125);
 
-            /*
-            napszakok:
-              
-            hajnal (Dawn > 0h - 5h)
-            reggel (Morning > 5h - 9h)
-            délelőtt (Forenoon > 9h - 12h)
-            délután (Afternoon > 12h - 17h)
-            este (Evening > 17h > 21h)
-            éjszaka (Night 21h > 0h)
-            */
-
-            //pali > 2 R&B zene, azaz a férfiaknak, a magyaroknak,
-            //és a 19-25 éves korosztályban ezeket kéne bedobni
             context.UserBehaviors.Add(new Models.UserBehavior()
             {
                 UserId = 3,
@@ -164,18 +133,22 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
             {
                 UserId = 3,
                 MusicId = 125,
-                ListeningCount = 3,
+                ListeningCount = 4,
                 NameOfDay = "Monday",
                 TimeOfDay = "Evening"
             });
 
             //adel > 2 alternatív zene, azaz a nőknek, a franciáknak 
             //és a 26-39 éves korosztályban ezeket kéne bedobni
+            var adel = context.Users.FirstOrDefault(x => x.Id == 6);
+            var adelMusic1 = context.Musics.FirstOrDefault(y => y.Id == 388);
+            var adelMusic2 = context.Musics.FirstOrDefault(y => y.Id == 385);
+
             context.UserBehaviors.Add(new Models.UserBehavior()
             {
                 UserId = 6,
                 MusicId = 388,
-                ListeningCount = 3,
+                ListeningCount = 5,
                 NameOfDay = "Friday",
                 TimeOfDay = "Morning"
             });
@@ -183,7 +156,28 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
             {
                 UserId = 6,
                 MusicId = 385,
-                ListeningCount = 3,
+                ListeningCount = 9,
+                NameOfDay = "Friday",
+                TimeOfDay = "Forenoon"
+            });
+
+            var ozil = context.Users.FirstOrDefault(x => x.Id == 5);
+            var ozilMusic1 = context.Musics.FirstOrDefault(y => y.Id == 1538);
+            var ozilMusic2 = context.Musics.FirstOrDefault(y => y.Id == 1571);
+
+            context.UserBehaviors.Add(new Models.UserBehavior()
+            {
+                UserId = 5,
+                MusicId = 1538,
+                ListeningCount = 5,
+                NameOfDay = "Friday",
+                TimeOfDay = "Morning"
+            });
+            context.UserBehaviors.Add(new Models.UserBehavior()
+            {
+                UserId = 5,
+                MusicId = 1571,
+                ListeningCount = 9,
                 NameOfDay = "Friday",
                 TimeOfDay = "Forenoon"
             });

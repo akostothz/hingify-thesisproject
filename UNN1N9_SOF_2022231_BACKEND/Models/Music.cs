@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace UNN1N9_SOF_2022231_BACKEND.Models
 {
@@ -57,6 +58,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Models
 
         [NotMapped]
         public virtual ICollection<AppUser> Users { get; set; }
+        [JsonIgnore]
         public virtual ICollection<UserBehavior> UserBehaviors { get; set; }
 
     }

@@ -15,7 +15,8 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddDbContext<DataContext>(options =>
 {
-    options.UseNpgsql(connectionString);
+    options
+        .UseNpgsql(connectionString);
 });
 
 builder.Services.AddControllers();
