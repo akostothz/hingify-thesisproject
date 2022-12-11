@@ -26,7 +26,61 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         [HttpGet]
         public IEnumerable<Music> GetPersonalizedMix(int id)
         {
-            throw new NotImplementedException("Method havent reached its alpha version..");
+            var givenuser = _context.Users.FirstOrDefault(x => x.Id == id);
+            string nameOfDay = DateTime.Now.Day.ToString();
+            string timeOfDay = TimeOfDayConverter();
+            var musics = new List<Music>();
+            var behaviours = new List<UserBehavior>();
+            var genres = new List<string>();
+
+            foreach (var behav in _context.UserBehaviors)
+            {
+                if (behav.UserId == givenuser.Id && behav.NameOfDay.Equals(nameOfDay) && behav.TimeOfDay.Equals(timeOfDay))
+                {
+                    behaviours.Add(behav);
+                }
+            }
+            foreach (var music in _context.Musics)
+            {
+                if (ContainsMusic(music.Id, behaviours))
+                {
+                    musics.Add(music);
+                }
+            }
+            //itt megvannak a hallgatott zenék abban az időszakban, ahol épp vagyunk
+            foreach (var music in musics)
+            {
+                if (!genres.Contains(music.Genre))
+                {
+                    genres.Add(music.Genre);
+                }
+            }
+            //itt megvannak a hallgatott stílusok abban az időszakban, ahol épp vagyunk
+
+
+            //itt kéne maga a Cluster kialakítása, és a top x zenét visszaadni visszaadni
+            var selectedMusics = new List<Music>();
+
+
+            return selectedMusics;
+        }
+
+        private string TimeOfDayConverter()
+        {
+            int time = DateTime.Now.Hour;
+
+            if (time < 5)
+                return "Dawn";
+            else if (time >= 5 && time < 9)
+                return "Morning";
+            else if (time >= 9 && time < 12)
+                return "Forenoon";
+            else if(time >= 12 && time < 17)
+                return "Afternoon";
+            else if (time >= 17 && time < 21)
+                return "Evening";
+            else
+                return "Night";
         }
 
         [HttpGet]
