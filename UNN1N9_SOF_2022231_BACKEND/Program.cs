@@ -7,6 +7,7 @@ using UNN1N9_SOF_2022231_BACKEND.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using UNN1N9_SOF_2022231_BACKEND.Logic;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,8 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 builder.Services.AddControllers();
 builder.Services.AddCors();
+builder.Services.AddTransient<IMusicLogic, MusicLogic>();
+builder.Services.AddTransient<DataContext, DataContext>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
