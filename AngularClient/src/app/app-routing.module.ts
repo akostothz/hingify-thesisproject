@@ -10,10 +10,16 @@ import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'musics', component: MusicListComponent, canActivate: [AuthGuard]},
-  {path: 'loggedHome', component: LoggedHomeComponent, canActivate: [AuthGuard]},
-  {path: 'musics/:id', component: MusicDetailComponent, canActivate: [AuthGuard]},
-  {path: 'foryou', component: ForyouComponent, canActivate: [AuthGuard]},
+  {path: '',
+    runGuardsAndResolvers: 'always',
+    canActivate: [AuthGuard],
+    children: [
+      {path: 'musics', component: MusicListComponent},
+      {path: 'loggedHome', component: LoggedHomeComponent},
+      {path: 'musics/:id', component: MusicDetailComponent},
+      {path: 'foryou', component: ForyouComponent}
+    ]
+  }, 
   {path: 'about', component: AboutComponent},
   {path: '**', component: HomeComponent, pathMatch: 'full'} //the invalid route
 ];
