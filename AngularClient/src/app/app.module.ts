@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import {TooltipModule} from 'ngx-bootstrap/tooltip';
-import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { MusicListComponent } from './musics/music-list/music-list.component';
@@ -16,7 +15,7 @@ import { MusicDetailComponent } from './musics/music-detail/music-detail.compone
 import { ForyouComponent } from './musics/foryou/foryou.component';
 import { AboutComponent } from './about/about.component';
 import { LoggedHomeComponent } from './logged-home/logged-home.component';
-import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from './_modules/shared.module';
 
 @NgModule({
   declarations: [
@@ -37,10 +36,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     TooltipModule,
     FormsModule,
-    BsDropdownModule.forRoot(),
-    ToastrModule.forRoot({
-      positionClass: 'toast-bottom-right'
-    })
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
