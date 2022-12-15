@@ -12,6 +12,8 @@ namespace UNN1N9_SOF_2022231_BACKEND.DTOs
         [StringLength(50)]
         public string UserName { get; set; }
 
+        [Required]
+        [StringLength(20, MinimumLength = 8)]
         public string Password { get; set; }
 
         [Required]
