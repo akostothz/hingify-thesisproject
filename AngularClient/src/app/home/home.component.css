@@ -83,21 +83,21 @@ h1{
     cursor: pointer;
     font-size: 4em;
     padding: 0.3em 1em;
-    border: 0.15em solid rgb(37, 237, 174);
+    border: 0.15em solid rgb(22, 179, 129);
     border-radius: 0.6em;
-    color:rgb(37, 237, 174);
+    color:rgb(22, 179, 129);
     text-decoration: none;
     letter-spacing: 0.03em;
-    text-shadow: 0 0 0.3em rgb(37, 237, 174);
-    box-shadow: 0 0 0.3em rgb(37, 237, 174);
+    text-shadow: 0 0 0.3em rgb(22, 179, 129);
+    box-shadow: 0 0 0.3em rgb(22, 179, 129);
     transition: all .3s ease-in-out;
 }
 
 .neon-green:hover{
-    background-color: rgb(37, 237, 174);
+    background-color: rgb(22, 179, 129);
     color: #fff;
     text-shadow: 0 0 0.3em #fff;
-    box-shadow: 0 0 2.4em rgb(37, 237, 174);
+    box-shadow: 0 0 2.4em rgb(22, 179, 129);
 }
 
 .neon-green::before {
@@ -107,7 +107,7 @@ h1{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(37, 237, 174);
+    background-color: rgb(22, 179, 129);
     transform: 
         perspective(0.2em)
         rotateX(10deg)

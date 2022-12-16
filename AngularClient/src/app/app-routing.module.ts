@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { HomeComponent } from './home/home.component';
 import { LoggedHomeComponent } from './logged-home/logged-home.component';
@@ -22,8 +24,10 @@ const routes: Routes = [
     ]
   }, 
   {path: 'errors', component: TestErrorComponent},
+  {path: 'not-found', component: NotFoundComponent},
+  {path: 'server-error', component: ServerErrorComponent},
   {path: 'about', component: AboutComponent},
-  {path: '**', component: HomeComponent, pathMatch: 'full'} //the invalid route
+  {path: '**', component: NotFoundComponent, pathMatch: 'full'} //the invalid route
 ];
 
 @NgModule({

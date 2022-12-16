@@ -18,6 +18,8 @@ import { LoggedHomeComponent } from './logged-home/logged-home.component';
 import { SharedModule } from './_modules/shared.module';
 import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
+import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { ServerErrorComponent } from './errors/server-error/server-error.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ErrorInterceptor } from './_interceptors/error.interceptor';
     ForyouComponent,
     AboutComponent,
     LoggedHomeComponent,
-    TestErrorComponent
+    TestErrorComponent,
+    NotFoundComponent,
+    ServerErrorComponent
   ],
   imports: [
     BrowserModule,
