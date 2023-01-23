@@ -14,9 +14,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             _context = context;
         }
 
-        public IEnumerable<Music> GetPersonalizedMix(int id)
+        public async Task<IEnumerable<Music>> GetPersonalizedMix(int id)
         {
-            var givenuser = _context.Users.FirstOrDefault(x => x.Id == id);
+            var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             string nameOfDay = DateTime.Now.DayOfWeek.ToString();
             string timeOfDay = TimeOfDayConverter();
             var musics = new List<Music>();
@@ -54,9 +54,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return selectedMusics;
         }
 
-        public IEnumerable<Music> GetLikedSongs(int id)
+        public async Task<IEnumerable<Music>> GetLikedSongs(int id)
         {
-            var givenuser = _context.Users.FirstOrDefault(x => x.Id == id);
+            var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             var musics = new List<Music>();
             var behaviours = new List<UserBehavior>();
             foreach (var behav in _context.UserBehaviors)
@@ -76,9 +76,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return musics;
         }
 
-        public IEnumerable<Music> GetMusicsBySex(int id)
+        public async Task<IEnumerable<Music>> GetMusicsBySex(int id)
         {
-            var givenuser = _context.Users.FirstOrDefault(x => x.Id == id);
+            var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             var usersFromGivenSex = _context.Users.Where(x => x.Gender == givenuser.Gender).ToList();
             var behaviours = new List<UserBehavior>();
             var musics = new List<Music>();
@@ -100,9 +100,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return musics;
         }
 
-        public IEnumerable<Music> GetMusicsByCountry(int id)
+        public async Task<IEnumerable<Music>> GetMusicsByCountry(int id)
         {
-            var givenuser = _context.Users.FirstOrDefault(x => x.Id == id);
+            var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             var usersFromGivenCountry = _context.Users.Where(x => x.Country == givenuser.Country).ToList();
             var behaviours = new List<UserBehavior>();
             var musics = new List<Music>();
@@ -124,16 +124,25 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return musics;
         }
 
-        public IEnumerable<Music> GetMusicsByAgeGroup(int id)
+        public async Task<IEnumerable<Music>> GetMusicsByAgeGroup(int id)
         {
             int lowerLimit = 0;
             int upperLimit = 0;
-            var givenuser = _context.Users.FirstOrDefault(x => x.Id == id);
+            var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             var musics = new List<Music>();
             var behaviours = new List<UserBehavior>();
+            var usersFromGivenAgeGroup = new List<AppUser>();
+
             int age = AgeCalculator(givenuser.YearOfBirth);
             AgeGroupSetter(ref lowerLimit, ref upperLimit, age);
-            var usersFromGivenAgeGroup = _context.Users.Where(x => age >= lowerLimit && age <= upperLimit).ToList();
+
+            foreach (var user in _context.Users)
+            {
+                if (AgeCalculator(user.YearOfBirth) >= lowerLimit && AgeCalculator(user.YearOfBirth) <= upperLimit)
+                {
+                    usersFromGivenAgeGroup.Add(user);
+                }
+            }
 
             foreach (var behav in _context.UserBehaviors)
             {
@@ -142,6 +151,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                     behaviours.Add(behav);
                 }
             }
+
             foreach (var music in _context.Musics)
             {
                 if (ContainsMusic(music.Id, behaviours))

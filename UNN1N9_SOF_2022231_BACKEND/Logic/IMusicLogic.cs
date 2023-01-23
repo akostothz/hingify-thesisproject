@@ -5,10 +5,10 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
 {
     public interface IMusicLogic
     {
-        IEnumerable<Music> GetPersonalizedMix(int id);
-        IEnumerable<Music> GetLikedSongs(int id);
-        IEnumerable<Music> GetMusicsBySex(int id);
-        IEnumerable<Music> GetMusicsByCountry(int id);
-        IEnumerable<Music> GetMusicsByAgeGroup(int id);
+        Task<IEnumerable<Music>> GetPersonalizedMix(int id);
+        Task<IEnumerable<Music>> GetLikedSongs(int id);
+        Task<IEnumerable<Music>> GetMusicsBySex(int id);
+        Task<IEnumerable<Music>> GetMusicsByCountry(int id);
+        Task<IEnumerable<Music>> GetMusicsByAgeGroup(int id);
     }
 }

@@ -45,8 +45,8 @@ namespace UNN1N9_SOF_2022231_BACKEND.Models
 
         [NotMapped]
         public virtual ICollection<Music> Musics { get; set; }
-        [JsonIgnore]
 
+        [JsonIgnore]
         public virtual ICollection<UserBehavior> Behaviors { get; set; }
     }
 }
