@@ -9,11 +9,10 @@ import { MusicsService } from 'src/app/_services/musics.service';
 })
 export class MusicListComponent implements OnInit {
   likedsongs: Music[] = [];
-  /*
-  countrymix: Music[] = [];
-  agemix: Music[] = [];
-  gendermix: Music[] = [];
-  */
+  originsongs: Music[] = [];
+  agesongs: Music[] = [];
+  gendersongs: Music[] = [];
+  
   constructor(private musicService: MusicsService) {
 
   }
@@ -25,6 +24,15 @@ export class MusicListComponent implements OnInit {
   loadMusics() {
       this.musicService.getLikedSongs(JSON.parse(localStorage.getItem('user'))?.id).subscribe({
         next: likedsongs => this.likedsongs = likedsongs
+      }),
+      this.musicService.getMusicsByCountry(JSON.parse(localStorage.getItem('user'))?.id).subscribe({
+        next: originsongs => this.originsongs = originsongs
+      }),
+      this.musicService.getMusicsByAgeGroup(JSON.parse(localStorage.getItem('user'))?.id).subscribe({
+        next: agesongs => this.agesongs = agesongs
+      }),
+      this.musicService.getMusicsBySex(JSON.parse(localStorage.getItem('user'))?.id).subscribe({
+        next: gendersongs => this.gendersongs = gendersongs
       })
   }
   
