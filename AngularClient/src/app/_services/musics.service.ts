@@ -9,14 +9,33 @@ import { Music } from '../_models/music';
 export class MusicsService {
   baseUrl = environment.apiUrl;
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user'))?.token
+    })
+  };
+
   constructor(private http: HttpClient) { }
 
-  getPersonalizedMix(id: number) {
-    return this.http.get<Music[]>(this.baseUrl + 'GetPersonalizedMix/' + id, this.getHttpOptions());
-  }
+  
 
   getLikedSongs(id: number) {
-    return this.http.get<Music[]>(this.baseUrl + 'GetLikedSongs/' + id, this.getHttpOptions());
+    return this.http.get<Music[]>(this.baseUrl + 'Music/GetLikedSongs/' + id, this.httpOptions);
+  }
+/*
+  getHttpOptions() {
+    const userString = localStorage.getItem('user');
+    if (!userString) return null;
+    const user = JSON.parse(userString);
+    return {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user'))?.token
+      })
+    }
+  }
+  
+  getPersonalizedMix(id: number) {
+    return this.http.get<Music[]>(this.baseUrl + 'GetPersonalizedMix/' + id, this.getHttpOptions());
   }
 
   getMusicsBySex(id: number) {
@@ -30,15 +49,7 @@ export class MusicsService {
   getMusicsByAgeGroup(id: number) {
     return this.http.get<Music[]>(this.baseUrl + 'GetMusicsByAgeGroup/' + id, this.getHttpOptions());
   }
+  */
 
-  getHttpOptions() {
-    const userString = localStorage.getItem('user');
-    if (!userString) return;
-    const user = JSON.parse(userString);
-    return {
-      headers: new HttpHeaders({
-        Authorization: 'Bearer ' + user.token
-      })
-    }
-  }
+ 
 }

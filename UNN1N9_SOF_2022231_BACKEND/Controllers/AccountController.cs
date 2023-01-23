@@ -78,6 +78,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
             return new UserDto
             {
+                Id = user.Id,
                 Username = user.UserName,
                 Token = _tokenService.CreateToken(user)
             };
