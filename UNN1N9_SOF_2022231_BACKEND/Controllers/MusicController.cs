@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Security.AccessControl;
 using UNN1N9_SOF_2022231_BACKEND.Data;
+using UNN1N9_SOF_2022231_BACKEND.DTOs;
 using UNN1N9_SOF_2022231_BACKEND.Interfaces;
 using UNN1N9_SOF_2022231_BACKEND.Logic;
 using UNN1N9_SOF_2022231_BACKEND.Models;
@@ -14,41 +16,58 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
     [Route("api/[controller]/[action]")]
     public class MusicController : ControllerBase
     {
-        IMusicLogic _logic;
+        private readonly IMusicLogic _logic;
+        private readonly IMapper _mapper;
 
-        public MusicController(IMusicLogic logic)
+        public MusicController(IMusicLogic logic, IMapper mapper)
         {
             _logic = logic;
+            _mapper = mapper;
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Music>>> GetPersonalizedMix(int id)
+        public async Task<ActionResult<IEnumerable<MusicDto>>> GetPersonalizedMix(int id)
         {
-            return Ok(await _logic.GetPersonalizedMix(id));
+            var musics = await _logic.GetPersonalizedMix(id);
+            var musicsToReturn = _mapper.Map<IEnumerable<MusicDto>>(musics);
+
+            return Ok(musicsToReturn);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Music>>> GetLikedSongs(int id)
+        public async Task<ActionResult<IEnumerable<MusicDto>>> GetLikedSongs(int id)
         {
-            return Ok(await _logic.GetLikedSongs(id));
+            var musics = await _logic.GetLikedSongs(id);
+            var musicsToReturn = _mapper.Map<IEnumerable<MusicDto>>(musics);
+
+            return Ok(musicsToReturn);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Music>>> GetMusicsBySex(int id)
+        public async Task<ActionResult<IEnumerable<MusicDto>>> GetMusicsBySex(int id)
         {
-            return Ok(await _logic.GetMusicsBySex(id));
+            var musics = await _logic.GetMusicsBySex(id);
+            var musicsToReturn = _mapper.Map<IEnumerable<MusicDto>>(musics);
+
+            return Ok(musicsToReturn);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Music>>> GetMusicsByCountry(int id)
+        public async Task<ActionResult<IEnumerable<MusicDto>>> GetMusicsByCountry(int id)
         {
-            return Ok(await _logic.GetMusicsByCountry(id));
+            var musics = await _logic.GetMusicsByCountry(id);
+            var musicsToReturn = _mapper.Map<IEnumerable<MusicDto>>(musics);
+
+            return Ok(musicsToReturn);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Music>>> GetMusicsByAgeGroup(int id)
+        public async Task<ActionResult<IEnumerable<MusicDto>>> GetMusicsByAgeGroup(int id)
         {
-            return Ok(await _logic.GetMusicsByAgeGroup(id));
+            var musics = await _logic.GetMusicsByAgeGroup(id);
+            var musicsToReturn = _mapper.Map<IEnumerable<MusicDto>>(musics);
+
+            return Ok(musicsToReturn);
         }
         
     }

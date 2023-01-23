@@ -23,8 +23,10 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 builder.Services.AddControllers();
 builder.Services.AddCors();
-builder.Services.AddTransient<IMusicLogic, MusicLogic>();
-builder.Services.AddTransient<DataContext, DataContext>();
+builder.Services.AddScoped<IMusicLogic, MusicLogic>();
+builder.Services.AddScoped<DataContext, DataContext>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
