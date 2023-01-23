@@ -31,7 +31,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Models
         public string LastName { get; set; }
 
         [Required]
-        public int Age { get; set; } //lehet inkább dátum kéne
+        public int YearOfBirth { get; set; }
 
         [Required]
         [StringLength(100)]

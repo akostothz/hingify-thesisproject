@@ -131,9 +131,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             var givenuser = _context.Users.FirstOrDefault(x => x.Id == id);
             var musics = new List<Music>();
             var behaviours = new List<UserBehavior>();
-            //int age = AgeChechker(DateTime);      ez majd ha átálltam DateTime használatára
-            AgeGroupSetter(ref lowerLimit, ref upperLimit, givenuser.Age);
-            var usersFromGivenAgeGroup = _context.Users.Where(x => x.Age >= lowerLimit && x.Age <= upperLimit).ToList();
+            int age = AgeCalculator(givenuser.YearOfBirth);
+            AgeGroupSetter(ref lowerLimit, ref upperLimit, age);
+            var usersFromGivenAgeGroup = _context.Users.Where(x => age >= lowerLimit && age <= upperLimit).ToList();
 
             foreach (var behav in _context.UserBehaviors)
             {
@@ -228,9 +228,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             }
         }
 
-        private int AgeChechker(DateTime dateTime)
+        private int AgeCalculator(int yofBirth)
         {
-            throw new NotImplementedException();
+            return (int)DateTime.Now.Year - yofBirth;
         }
     }
 }
