@@ -25,7 +25,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.DTOs
         public string LastName { get; set; }
 
         [Required]
-        public int Age { get; set; }
+        public int YearOfBirth { get; set; }
 
         [Required]
         [StringLength(100)]

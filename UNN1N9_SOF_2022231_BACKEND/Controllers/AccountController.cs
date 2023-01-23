@@ -40,7 +40,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
                 Email = registerDto.Email,
                 FirstName = registerDto.FirstName,
                 LastName = registerDto.LastName,
-                Age = registerDto.Age,
+                YearOfBirth = registerDto.YearOfBirth,
                 Country = registerDto.Country,
                 Gender = registerDto.Gender,
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),

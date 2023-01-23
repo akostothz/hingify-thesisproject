@@ -40,6 +40,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Models
         [Required]
         public string Gender { get; set; }
 
+        public string PictureContentType { get; set; }
+        public byte[] PictureData { get; set; }
+
         [NotMapped]
         public virtual ICollection<Music> Musics { get; set; }
         [JsonIgnore]

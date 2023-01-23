@@ -68,7 +68,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
                 PasswordSalt = hmac.Key,
                 FirstName = "Pal",
                 LastName = "Toth",
-                Age = 22,
+                YearOfBirth = 2001,
                 Country = "Hungary",
                 Gender = "Male"
             });
@@ -80,7 +80,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
                 PasswordSalt = hmac.Key,
                 FirstName = "Panna",
                 LastName = "Kis",
-                Age = 49,
+                YearOfBirth = 1974,
                 Country = "Hungary",
                 Gender = "Female"
             });
@@ -92,7 +92,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
                 PasswordSalt = hmac.Key,
                 FirstName = "Mesut",
                 LastName = "Ozil",
-                Age = 41,
+                YearOfBirth = 1982,
                 Country = "Germany",
                 Gender = "Male"
             });
@@ -104,7 +104,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
                 PasswordSalt = hmac.Key,
                 FirstName = "Adel",
                 LastName = "Brull",
-                Age = 29,
+                YearOfBirth = 1994,
                 Country = "France",
                 Gender = "Female"
             });
