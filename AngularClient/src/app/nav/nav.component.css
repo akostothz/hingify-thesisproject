@@ -1,3 +1,18 @@
 .dropdown-toggle, .dropdown-item{
     cursor: pointer;
 }
+
+.dropdown-toggle {
+    color: aliceblue;
+    text-decoration: none;
+    size: 2em;
+}
+
+.dropdown-item {
+    color: #ffff;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(74, 0, 99);
+    color: white;
+}

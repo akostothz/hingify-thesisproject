@@ -43,7 +43,8 @@ h2 {
     padding: 0.4em;
 }
 .card {
-
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 24px;
     border-radius: 15px;
     background: rgb(77, 97, 187);
     width: 30em;
@@ -51,5 +52,14 @@ h2 {
     border-color: rgb(212, 191, 254);
     border-width: 0.5em;
     margin: 5em;
+    margin-right: 5px;
+    scroll-snap-align: start;
+    flex-shrink: 0;  
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+.container {
     scroll-snap-type: x mandatory;
+    display: flex;  
+    overflow: auto;
 }

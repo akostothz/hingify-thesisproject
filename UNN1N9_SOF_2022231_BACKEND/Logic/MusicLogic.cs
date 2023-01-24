@@ -163,7 +163,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return musics;
         }
 
-        private string TimeOfDayConverter()
+        public string TimeOfDayConverter()
         {
             int time = DateTime.Now.Hour;
 

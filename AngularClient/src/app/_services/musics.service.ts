@@ -34,7 +34,9 @@ export class MusicsService {
   getMusicsByAgeGroup(id: number) {
     return this.http.get<Music[]>(this.baseUrl + 'Music/GetMusicsByAgeGroup/' + id, this.httpOptions);
   }
-  
 
+  getPersonalizedMix(id: number) {
+    return this.http.get<Music[]>(this.baseUrl + 'Music/GetPersonalizedMix/' + id, this.httpOptions);
+  }
  
 }

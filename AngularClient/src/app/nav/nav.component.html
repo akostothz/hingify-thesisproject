@@ -22,7 +22,7 @@
                   <a class="nav-link" routerLink="/foryou" routerLinkActive="active">For You</a>
               </li>
               <li class="nav-item">
-                 <a class="nav-link" routerLink="/musics" routerLinkActive="active">Mixes</a>
+                 <a class="nav-link" routerLink="/musics" routerLinkActive="active">My Playlists</a>
               </li>             
           </ng-container> 
 
@@ -35,7 +35,7 @@
         </ul>
 
         <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
-          <a class="dropdown-toggle text-light text-decoration-none" dropdownToggle>Hello, {{user.username}}!</a>
+          <a class="dropdown-toggle" dropdownToggle>Hello, {{user.username}}!</a>
           <div class="dropdown-menu mt-3 bg-dark" *dropdownMenu="">
             <a class="dropdown-item">Edit Profile</a>
             <div class="dropdown-divider"></div>
