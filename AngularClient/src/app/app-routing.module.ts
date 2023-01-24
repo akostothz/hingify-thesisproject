@@ -10,6 +10,7 @@ import { ForyouComponent } from './musics/foryou/foryou.component';
 import { MusicDetailComponent } from './musics/music-detail/music-detail.component';
 import { MusicListComponent } from './musics/music-list/music-list.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
 const routes: Routes = [
   {path: '', component: AboutComponent},
@@ -20,7 +21,7 @@ const routes: Routes = [
     children: [
       {path: 'musics', component: MusicListComponent},
       {path: 'musics/:id', component: MusicDetailComponent},
-      {path: 'edit', component: EditProfileComponent},
+      {path: 'edit', component: EditProfileComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'foryou', component: ForyouComponent}
     ]
   }, 
