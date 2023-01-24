@@ -9,34 +9,28 @@ import { Music } from '../_models/music';
 export class MusicsService {
   baseUrl = environment.apiUrl;
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user'))?.token
-    })
-  };
-
   constructor(private http: HttpClient) { }
 
   
 
   getLikedSongs(id: number) {
-    return this.http.get<Music[]>(this.baseUrl + 'Music/GetLikedSongs/' + id, this.httpOptions);
+    return this.http.get<Music[]>(this.baseUrl + 'Music/GetLikedSongs/' + id);
   }
 
   getMusicsBySex(id: number) {
-    return this.http.get<Music[]>(this.baseUrl + 'Music/GetMusicsBySex/' + id, this.httpOptions);
+    return this.http.get<Music[]>(this.baseUrl + 'Music/GetMusicsBySex/' + id);
   }
 
   getMusicsByCountry(id: number) {
-    return this.http.get<Music[]>(this.baseUrl + 'Music/GetMusicsByCountry/' + id, this.httpOptions);
+    return this.http.get<Music[]>(this.baseUrl + 'Music/GetMusicsByCountry/' + id);
   }
 
   getMusicsByAgeGroup(id: number) {
-    return this.http.get<Music[]>(this.baseUrl + 'Music/GetMusicsByAgeGroup/' + id, this.httpOptions);
+    return this.http.get<Music[]>(this.baseUrl + 'Music/GetMusicsByAgeGroup/' + id);
   }
 
   getPersonalizedMix(id: number) {
-    return this.http.get<Music[]>(this.baseUrl + 'Music/GetPersonalizedMix/' + id, this.httpOptions);
+    return this.http.get<Music[]>(this.baseUrl + 'Music/GetPersonalizedMix/' + id);
   }
  
 }
