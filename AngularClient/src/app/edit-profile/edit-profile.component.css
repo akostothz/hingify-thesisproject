@@ -1,0 +1,55 @@
+h1 {
+    color: white;
+    text-align: left;
+    font-size: 8em;
+    padding-bottom: 1em;
+}
+
+h2 {
+    color: white;
+    text-align: left;
+    font-size: 4.5em;
+    padding-bottom: 1em;
+}
+
+h3 {
+    color: white;
+    text-align: left;
+    font-size: 2.5em;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+}
+
+.datas {
+    color: rgb(196, 26, 88);
+    font-size: 2em;
+    align-self: center;
+    text-align: center;
+}
+
+.p {
+    color: white;
+    text-align: left;
+    font-size: 2.5em;
+}
+
+.card-img {
+    width: 30em;
+    height: 30em;
+    align-self: center;
+}
+
+.card {
+    border-color: white;
+    padding: 5em;
+    border-radius: 5em;
+    border-width: 0.6em;
+    width: 45em;
+    height: 100em;
+}
+
+.btn {
+    margin-top: 2em;
+    width: 20em;
+    align-self: center;
+}
