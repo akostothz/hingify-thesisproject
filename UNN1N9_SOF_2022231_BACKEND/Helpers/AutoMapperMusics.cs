@@ -9,6 +9,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Helpers
         public AutoMapperMusics()
         {
             CreateMap<Music, MusicDto>();
+            CreateMap<UserUpdateDto, AppUser>();
         }
     }
 }
