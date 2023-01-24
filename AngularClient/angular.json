@@ -30,6 +30,7 @@
               "./node_modules/bootswatch/dist/vapor/bootstrap.css",
               "./node_modules/font-awesome/css/font-awesome.min.css",
               "./node_modules/ngx-toastr/toastr.css",
+              "./node_modules/ngx-spinner/animations/ball-8bits.css",
               "src/styles.css"
             ],
             "scripts": []

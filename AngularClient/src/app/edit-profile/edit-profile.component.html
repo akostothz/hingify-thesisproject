@@ -1,4 +1,4 @@
-<h1 *ngIf="user">Hello, {{user.username}}!</h1>
+<h1 *ngIf="user">Hello, {{user.firstName}}!</h1>
 <div class="alert alert-info" *ngIf="editForm.dirty">
     <p><strong>Information: </strong>You have made changes. Any unsaved changes will be lost.</p>
 </div>
@@ -14,7 +14,7 @@
                 <button type="button" class="btn btn-outline-secondary">Browse picture</button>
             </td>
             <td>
-                <p class="name">Panni Kamma</p>
+                <p class="name">{{user.firstName}} {{user.lastName}}</p>
             </td>
         </tr>
         <tr>
@@ -22,21 +22,21 @@
                 <h3>Username</h3>
                 <p class="datas">@{{user.username}}</p>
                 <h3>Birth country</h3>
-                <p class="datas">Hungary</p>
+                <p class="datas">{{user.country}}</p>
                 <h3>Gender</h3>
-                <p class="datas">Woman</p>
+                <p class="datas">{{user.gender}}</p>
                 <h3>Birth year</h3>
-                <p class="datas">2000</p>
+                <p class="datas">{{user.yearOfBirth}}</p>
                 
             </td>
             <td>
                 <form #editForm="ngForm" id="editForm" (ngSubmit)="submitChanges()">
                     <h3>Email</h3>
-                    <input type="text" class="inputs" [(ngModel)]="user.id" name="email" />
+                    <input type="text" class="inputs" [(ngModel)]="user.email" name="email" />
                     <h3>First name</h3>
-                    <input type="text" class="inputs" [(ngModel)]="user.username" name="fname" />
+                    <input type="text" class="inputs" [(ngModel)]="user.firstName" name="firstname" />
                     <h3>Last name</h3>
-                    <input type="text" class="inputs" [(ngModel)]="user.username" name="lname" />
+                    <input type="text" class="inputs" [(ngModel)]="user.lastName" name="lastname" />
                 </form>
                 
                 <!--<h3>Change password</h3>

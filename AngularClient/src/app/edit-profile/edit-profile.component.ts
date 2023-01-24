@@ -30,9 +30,12 @@ export class EditProfileComponent implements OnInit {
   }
 
   submitChanges() {
-    console.log(this.user);
-    this.toastr.success('Profile successfully updated');
-    this.editForm?.reset(this.user);
+    this.accountService.update(this.editForm?.value).subscribe({
+      next: _ => {
+          this.toastr.success('Profile successfully updated');
+          this.editForm?.reset(this.user);
+      }
+    });
   }
 
 }

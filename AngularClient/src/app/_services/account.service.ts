@@ -38,6 +38,9 @@ export class AccountService {
       })
     )
   }
+  update(user: User) {
+    return this.http.put(this.baseUrl + 'account/updateuser', user);
+  }
 
   setCurrentUser(user: User){
     this.currentUserSource.next(user);

@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using UNN1N9_SOF_2022231_BACKEND.Data;
@@ -10,15 +12,19 @@ using UNN1N9_SOF_2022231_BACKEND.Models;
 
 namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 {
-    public class AccountController : UserController
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class AccountController : ControllerBase
     {
         private readonly DataContext _context;
         private readonly ITokenService _tokenService;
+        private readonly IMapper _mapper;
 
-        public AccountController(DataContext context, ITokenService tokenService)
+        public AccountController(DataContext context, ITokenService tokenService, IMapper mapper)
         {
             this._context = context;
             this._tokenService = tokenService;
+            _mapper = mapper;
         }
 
         [HttpPost("register")]
@@ -80,8 +86,30 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             {
                 Id = user.Id,
                 Username = user.UserName,
+                Country = user.Country,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                YearOfBirth = user.YearOfBirth,
+                Gender = user.Gender,
                 Token = _tokenService.CreateToken(user)
             };
+        }
+        [HttpPut("updateuser")]
+        public async Task<ActionResult> UpdateUser(UserUpdateDto userUpdateDto)
+        {
+            var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == username);
+
+            if (user == null)
+                return NotFound();
+
+            _mapper.Map(userUpdateDto, user);
+
+            if (await _context.SaveChangesAsync() > 0)
+                return NoContent();
+
+            return BadRequest("Failed to update user");
         }
 
         private async Task<bool> UsernameExistsChecker(string username)
