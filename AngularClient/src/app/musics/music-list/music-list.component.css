@@ -1,0 +1,55 @@
+h1 {
+    color: white;
+    text-align: left;
+    font-size: 8em;
+    padding-bottom: 1em;
+}
+
+h2 {
+    color: white;
+    text-align: left;
+    font-size: 3em;
+    padding-top: 1em;
+}
+.trackname {
+    color: white;
+    font-size: 2.2em;
+    background-color: rgb(77, 87, 187);
+    height: 4em;
+    padding: 0.6em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+.artistname {
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+    height: 3em;
+    padding: 0.4em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+.genre {
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    height: 2em;
+    padding: 0.4em;
+}
+.card {
+
+    border-radius: 15px;
+    background: rgb(77, 97, 187);
+    width: 30em;
+    height: 20em;
+    border-color: rgb(212, 191, 254);
+    border-width: 0.5em;
+    margin: 5em;
+    scroll-snap-type: x mandatory;
+}

@@ -1,36 +1,31 @@
-<div class="card">
-    <h2>Your liked songs</h2>
-    <br>
-    <div class="row">
-        <div class="col-2">
-            <p *ngFor="let likedsong of likedsongs">{{likedsong.trackName}}</p>
-        </div>
-    </div>
+<h1>To start off, We made some playlist for You based on your listening history. Enjoy!</h1>
+
+<h2>Your liked songs</h2>
+<div class="card" *ngFor="let likedsong of likedsongs">
+    <li class="item">{{likedsong.trackName}}</li>
+    <li class="item">{{likedsong.artistName}}</li>
 </div>
 
 
-<div class="card">
-    <h2>Top hits in your area</h2>
-    <br>
-    <div class="col-2">
-        <p *ngFor="let originsong of originsongs">{{originsong.trackName}}</p>
-    </div>
+<h2>Top hits in your area</h2>
+<div class="card" *ngFor="let originsong of originsongs">
+    <p class="trackname">{{originsong.trackName}}</p>
+    <p class="artistname">{{originsong.artistName}}</p>
+    <p class="genre">{{originsong.genre}}</p>
 </div>
 
 
-<div class="card">
-    <h2>People around your age also liked..</h2>
-    <br>
-    <div class="col-2">
-        <p *ngFor="let agesong of agesongs">{{agesong.trackName}}</p>
-    </div>
+<h2>People around your age also liked..</h2>
+<div class="card" *ngFor="let agesong of agesongs">
+    <p class="trackname">{{agesong.trackName}}</p>
+    <p class="artistname">{{agesong.artistName}}</p>
+    <p class="genre">{{agesong.genre}}</p>
 </div>
 
 
-<div class="card">
-    <h2>Gender rules!</h2>
-    <br>
-    <div class="col-2">
-        <p *ngFor="let gendersong of gendersongs">{{gendersong.trackName}}</p>
-    </div>
+<h2>Gender rules!</h2>
+<div class="card" *ngFor="let gendersong of gendersongs">
+    <p class="trackname">{{gendersong.trackName}}</p>
+    <p class="artistname">{{gendersong.artistName}}</p>
+    <p class="genre">{{gendersong.genre}}</p>
 </div>

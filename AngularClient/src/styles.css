@@ -1,1 +1,5 @@
 @import '~ngx-toastr/toastr';
+
+body {
+    background-repeat: repeat-x;
+}
