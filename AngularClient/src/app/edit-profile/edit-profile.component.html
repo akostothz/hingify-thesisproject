@@ -1,34 +1,50 @@
 <h1 *ngIf="user">Hello, {{user.username}}!</h1>
-<h2>Your profile:</h2>
+<div class="alert alert-info" *ngIf="editForm.dirty">
+    <p><strong>Information: </strong>You have made changes. Any unsaved changes will be lost.</p>
+</div>
+<h2><b>Reminder:</b> You can only edit certain things on your profile.</h2>
 
-<div class="col-8">
-    <div class="alert alert-info">
-        <p><strong>Information: </strong>You have made changes. Any unsaved changes will be lost.</p>
-    </div>
+<div class="card">
+    <table>
+        <tr>
+            <td>
+                <div class="picdiv">
+                <img src='./assets/user2.png' alt="Profile Picture" class="card-img">                 
+                </div> 
+                <button type="button" class="btn btn-outline-secondary">Browse picture</button>
+            </td>
+            <td>
+                <p class="name">Panni Kamma</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>Username</h3>
+                <p class="datas">@{{user.username}}</p>
+                <h3>Birth country</h3>
+                <p class="datas">Hungary</p>
+                <h3>Gender</h3>
+                <p class="datas">Woman</p>
+                <h3>Birth year</h3>
+                <p class="datas">2000</p>
+                
+            </td>
+            <td>
+                <form #editForm="ngForm" id="editForm" (ngSubmit)="submitChanges()">
+                    <h3>Email</h3>
+                    <input type="text" class="inputs" [(ngModel)]="user.id" name="email" />
+                    <h3>First name</h3>
+                    <input type="text" class="inputs" [(ngModel)]="user.username" name="fname" />
+                    <h3>Last name</h3>
+                    <input type="text" class="inputs" [(ngModel)]="user.username" name="lname" />
+                </form>
+                
+                <h3>Change password</h3>
+                <input type="password" class="pw" placeholder="Password"/>
+                <button type="submit" form="editForm" class="btn btn-primary btn-lg" [disabled]="!editForm.dirty">Save changes</button>
+            </td>
+        </tr>
+    </table>
 </div>
 
-<div class="col-4">
-    <div class="card">
-        <h3>Profile picture</h3>
-        <img src='./assets/user2.png' alt="Profile Picture" class="card-img">
-        <button type="button" class="btn btn-outline-secondary">Browse picture</button>
-        <div>
-            <h3>Email</h3>
-            <p class="datas">placeholder@gmail.com</p>
-        </div>
-        <div>
-            <h3>First name</h3>
-            <p class="datas">Place</p>
-        </div>
-        <div>
-            <h3>Last name</h3>
-            <p class="datas">Holder</p>
-        </div>
-        <div>
-            <h3>Change password</h3>
-            <input type="password"Holder/>
-        </div>
-        <button type="button" class="btn btn-primary btn-lg">Save changes</button>
-    </div>
-    
-</div>
+

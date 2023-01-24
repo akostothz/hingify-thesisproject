@@ -2,54 +2,118 @@ h1 {
     color: white;
     text-align: left;
     font-size: 8em;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
 }
 
 h2 {
-    color: white;
-    text-align: left;
-    font-size: 4.5em;
+    color: rgb(251, 111, 111);
+    text-align: center;
+    font-size: 2.5em;
     padding-bottom: 1em;
 }
 
 h3 {
     color: white;
-    text-align: left;
+    text-align: center;
     font-size: 2.5em;
     padding-top: 1em;
     padding-bottom: 0.5em;
 }
-
-.datas {
-    color: rgb(196, 26, 88);
-    font-size: 2em;
-    align-self: center;
-    text-align: center;
-}
-
-.p {
-    color: white;
-    text-align: left;
-    font-size: 2.5em;
-}
-
-.card-img {
-    width: 30em;
-    height: 30em;
-    align-self: center;
+.table {
+    display: flex;
 }
 
 .card {
     border-color: white;
-    padding: 5em;
+    padding: 3em;
     border-radius: 5em;
-    border-width: 0.6em;
-    width: 45em;
-    height: 100em;
+    border-width: 0.6em;  
+    margin-bottom: 5em;
+}
+
+.name {
+    color: white;
+    text-align: center;
+    font-size: 10em;
+    padding-bottom: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .btn {
     margin-top: 2em;
     width: 20em;
-    align-self: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.datas {
+    color: rgb(47, 189, 214);
+    font-size: 2em;
+    align-self: left;
+    text-align: center;
+}
+
+.unch {
+    color: rgb(136, 214, 47);
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 1em;
+    padding-bottom: 0em;
+    font-weight: bold;
+}
+
+.pw {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35em;
+    height: 3em;
+    border-color: rgb(255, 179, 0);
+    background-color: rgb(26, 9, 51);
+    border-radius: 0.8em;
+    border-width: 0.4em;
+    color: rgb(255, 179, 0);
+    border-radius: 5em;
+}
+
+.inputs {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em;
+    height: 2em;
+    color: rgb(47, 189, 214);
+    font-size: 2em;
+    align-self: left;
+    text-align: center;
+    border-radius: 0.8em;
+    border-width: 0.2em;
+    border-color: rgb(60, 255, 0);
+    background-color: rgb(26, 9, 51);
+}
+
+.alert {
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    margin-top: 0em;
+    align-items: center;
+    height: 4em;
+    align-self: center;
+    align-content: center;
+    background-color: rgb(253, 113, 38);
+    border-radius: 3em;
+}
+
+
