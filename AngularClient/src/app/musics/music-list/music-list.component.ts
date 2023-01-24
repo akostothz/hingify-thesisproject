@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Music } from 'src/app/_models/music';
 import { MusicsService } from 'src/app/_services/musics.service';
 
@@ -8,33 +9,20 @@ import { MusicsService } from 'src/app/_services/musics.service';
   styleUrls: ['./music-list.component.css']
 })
 export class MusicListComponent implements OnInit {
-  likedsongs: Music[] = [];
-  originsongs: Music[] = [];
-  agesongs: Music[] = [];
-  gendersongs: Music[] = [];
+  likedsongs$: Observable<Music[]> | undefined;
+  originsongs$: Observable<Music[]> | undefined;
+  agesongs$: Observable<Music[]> | undefined;
+  gendersongs$: Observable<Music[]> | undefined;
   
   constructor(private musicService: MusicsService) {
 
   }
 
   ngOnInit(): void {
-    this.loadMusics();
+    this.likedsongs$ = this.musicService.getLikedSongs(JSON.parse(localStorage.getItem('user'))?.id);
+    this.originsongs$ = this.musicService.getMusicsByCountry(JSON.parse(localStorage.getItem('user'))?.id);
+    this.agesongs$ = this.musicService.getMusicsByAgeGroup(JSON.parse(localStorage.getItem('user'))?.id);
+    this.gendersongs$ = this.musicService.getMusicsBySex(JSON.parse(localStorage.getItem('user'))?.id);
   }
-  
-  loadMusics() {
-      this.musicService.getLikedSongs(JSON.parse(localStorage.getItem('user'))?.id).subscribe({
-        next: likedsongs => this.likedsongs = likedsongs
-      }),
-      this.musicService.getMusicsByCountry(JSON.parse(localStorage.getItem('user'))?.id).subscribe({
-        next: originsongs => this.originsongs = originsongs
-      }),
-      this.musicService.getMusicsByAgeGroup(JSON.parse(localStorage.getItem('user'))?.id).subscribe({
-        next: agesongs => this.agesongs = agesongs
-      }),
-      this.musicService.getMusicsBySex(JSON.parse(localStorage.getItem('user'))?.id).subscribe({
-        next: gendersongs => this.gendersongs = gendersongs
-      })
-  }
-  
  
 }

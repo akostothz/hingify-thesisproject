@@ -2,7 +2,7 @@
 
 <h2>Your liked songs</h2>
 <div class="container">
-    <div class="card" *ngFor="let likedsong of likedsongs">
+    <div class="card" *ngFor="let likedsong of likedsongs$ | async">
         <li class="trackname">{{likedsong.trackName}}</li>
         <li class="artistname">{{likedsong.artistName}}</li>
         <li class="genre">{{likedsong.genre}}</li>
@@ -13,7 +13,7 @@
 
 <h2>Top hits in your area</h2>
 <div class="container">
-    <div class="card" *ngFor="let originsong of originsongs">
+    <div class="card" *ngFor="let originsong of originsongs$ | async">
         <li class="trackname">{{originsong.trackName}}</li>
         <li class="artistname">{{originsong.artistName}}</li>
         <li class="genre">{{originsong.genre}}</li>
@@ -23,7 +23,7 @@
 
 <h2>People around your age also liked..</h2>
 <div class="container">
-    <div class="card" *ngFor="let agesong of agesongs">
+    <div class="card" *ngFor="let agesong of agesongs$ | async">
         <li class="trackname">{{agesong.trackName}}</li>
         <li class="artistname">{{agesong.artistName}}</li>
         <li class="genre">{{agesong.genre}}</li>
@@ -33,7 +33,7 @@
 
 <h2>Gender rules!</h2>
 <div class="container">
-    <div class="card" *ngFor="let gendersong of gendersongs">
+    <div class="card" *ngFor="let gendersong of gendersongs$ | async">
         <li class="trackname">{{gendersong.trackName}}</li>
         <li class="artistname">{{gendersong.artistName}}</li>
         <li class="genre">{{gendersong.genre}}</li>
