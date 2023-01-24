@@ -1,13 +1,21 @@
-<h1>To start off, We've made some playlist for You based on your profile. Enjoy!</h1>
+<h1>We've made a couple of playlist for You based on your profile. Enjoy!</h1>
 
 <h2>Your liked songs</h2>
-<div class="container">
+<div class="container" *ngIf="(likedsongs$)">
     <div class="card" *ngFor="let likedsong of likedsongs$ | async">
         <li class="trackname">{{likedsong.trackName}}</li>
         <li class="artistname">{{likedsong.artistName}}</li>
         <li class="genre">{{likedsong.genre}}</li>
+        <section class="neonpurple">
+            <a class="neon-purple" href="/register">♥</a>
+                      
+        </section>
     </div>
 </div>
+
+<ng-container *ngIf="(likedsongs$ | async) === null">
+    <p class="nolikedsongs">Uh-oh! It seems you have not liked anything yet. Hope the playlists below help!</p>          
+</ng-container> 
 
 
 
@@ -17,6 +25,10 @@
         <li class="trackname">{{originsong.trackName}}</li>
         <li class="artistname">{{originsong.artistName}}</li>
         <li class="genre">{{originsong.genre}}</li>
+        <section class="neonpurple">
+                <a class="neon-purple" href="/register">♥</a>
+                          
+        </section>
     </div>
 </div>
 
@@ -27,6 +39,10 @@
         <li class="trackname">{{agesong.trackName}}</li>
         <li class="artistname">{{agesong.artistName}}</li>
         <li class="genre">{{agesong.genre}}</li>
+        <section class="neonpurple">
+            <a class="neon-purple" href="/register">♥</a>
+                      
+        </section>
     </div>
 </div>
 
@@ -36,6 +52,9 @@
     <div class="card" *ngFor="let gendersong of gendersongs$ | async">
         <li class="trackname">{{gendersong.trackName}}</li>
         <li class="artistname">{{gendersong.artistName}}</li>
-        <li class="genre">{{gendersong.genre}}</li>
+        <li class="genre">{{gendersong.genre}}</li>  
+        <section class="neonpurple">
+            <a class="neon-purple" href="/register">♥</a>                 
+        </section>
     </div>
 </div>

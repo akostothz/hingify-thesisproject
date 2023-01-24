@@ -1,0 +1,124 @@
+h1 {
+    color: white;
+    text-align: left;
+    font-size: 8em;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    text-align: left;
+    font-size: 4em;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+h3 {
+    color: white;
+    text-align: left;
+    font-size: 3em;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+.head {
+    width: 20vw;
+    bottom: 5em;
+    position: relative;
+    height: 20vw;
+    background: white;
+    border-radius: 50%;
+    margin: 10vw auto 0 auto;
+  }
+  
+  .ear {
+    position: absolute;
+    width: 5vw;
+    top: 0;
+    height: 4.5vw;
+    background: rgb(84, 84, 84);
+    border-radius: 50%;
+  }
+  
+  .ear.left {
+    left: 1.5vw;
+  }
+  
+  .ear.right {
+    right: 1.5vw;
+  }
+  
+  .face {
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    bottom: 0;
+    background: white;
+  }
+  
+  .eye {
+    position: absolute;
+    top: 0;
+    width: 7.5vw;
+    height: 4vw;
+    border-radius: 50%;
+    background: rgb(0, 0, 0);
+    margin-top: 6vw;
+  }
+  
+  .eye.left {
+    left: 2vw;
+    transform: rotate(-70deg);
+  }
+  
+  .eye.right {
+    right: 2vw;
+    transform: rotate(70deg);
+  }
+  
+  .inner {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    top: 40%;
+    border-radius: 50%;
+    background: white;
+  }
+  
+  .inner.right {
+    left: 50%;
+  }
+  
+  .inner.left {
+    right: 50%;
+  }
+  
+  .nose {
+    width: 15%;
+    height: 10%;
+    background: black;
+    border-radius: 70%;
+    margin: 11vw auto 0 auto;
+  }
+  
+  .mouth {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    height: 15%;
+    width: 50%;
+    margin: 14vw auto;
+    border-top: 0.5vw solid black;
+    border-radius: 100%;
+  }
+
+  
+  @media screen and (max-width: 500px) {
+    .mouth,
+    h1 {
+      visibility: hidden;
+    }
+  }

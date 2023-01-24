@@ -11,6 +11,12 @@ h2 {
     font-size: 3em;
     padding-top: 1em;
 }
+.nolikedsongs {
+    color: rgb(213, 24, 243);
+    text-align: left;
+    font-size: 2em;
+    padding-top: 1em;
+}
 .trackname {
     color: white;
     font-size: 2.2em;
@@ -21,6 +27,7 @@ h2 {
     align-items: center;
     text-align: center;
     display: flex;
+    vertical-align: middle;
 }
 .artistname {
     color: rgb(255, 255, 255);
@@ -32,6 +39,7 @@ h2 {
     text-align: center;
     display: flex;
 }
+
 .genre {
     color: rgb(255, 255, 255);
     font-size: 1.2em;
@@ -41,6 +49,10 @@ h2 {
     display: flex;
     height: 2em;
     padding: 0.4em;
+    margin-bottom: 2em;
+}
+.tab {
+    display: table;
 }
 .card {
     scroll-snap-type: x mandatory;
@@ -48,18 +60,50 @@ h2 {
     border-radius: 15px;
     background: rgb(77, 97, 187);
     width: 30em;
-    height: 20em;
+    height: 25em;
     border-color: rgb(212, 191, 254);
     border-width: 0.5em;
-    margin: 5em;
+    margin: 2em;
     margin-right: 5px;
     scroll-snap-align: start;
     flex-shrink: 0;  
     margin-bottom: 2em;
     margin-top: 2em;
 }
+
 .container {
     scroll-snap-type: x mandatory;
     display: flex;  
     overflow: auto;
+    height: 30em;
+}
+
+.neonpurple {
+    width: 2em;
+    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    vertical-align: bottom;
+    display: flex;
+    height: 2em;
+}
+
+.neon-purple {
+    display: inline-block;
+    background-color: #000;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 0.3em 1em;
+    border: 0.15em solid rgb(227, 162, 10);
+    border-radius: 0.6em;
+    color:rgb(227, 162, 10);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+}
+
+.neon-purple:hover {
+    background-color: rgb(227, 162, 10);
+    color: #fff;
 }
