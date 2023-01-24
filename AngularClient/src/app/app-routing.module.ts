@@ -5,7 +5,6 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { HomeComponent } from './home/home.component';
-import { LoggedHomeComponent } from './logged-home/logged-home.component';
 import { ForyouComponent } from './musics/foryou/foryou.component';
 import { MusicDetailComponent } from './musics/music-detail/music-detail.component';
 import { MusicListComponent } from './musics/music-list/music-list.component';
