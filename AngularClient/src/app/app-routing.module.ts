@@ -12,13 +12,12 @@ import { MusicListComponent } from './musics/music-list/music-list.component';
 import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: AboutComponent},
   {path: '',
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
       {path: 'musics', component: MusicListComponent},
-      {path: 'loggedHome', component: LoggedHomeComponent},
       {path: 'musics/:id', component: MusicDetailComponent},
       {path: 'foryou', component: ForyouComponent}
     ]

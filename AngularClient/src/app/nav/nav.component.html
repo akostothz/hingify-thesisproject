@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container">
-      <a class="navbar-brand" routerLink="/loggedHome" routerLinkActive="active" *ngIf="accountService.currentUser$ | async">Music App</a>
+      <a class="navbar-brand" routerLink="/foryou" routerLinkActive="active" *ngIf="accountService.currentUser$ | async">Music App</a>
       <a class="navbar-brand" routerLink="/Home" routerLinkActive="active" *ngIf="(accountService.currentUser$ | async) === null">Music App</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -14,10 +14,7 @@
               </li>
           </ng-container>
 
-          <ng-container *ngIf="accountService.currentUser$ | async">            
-              <li class="nav-item">
-                  <a class="nav-link" aria-current="page" routerLink="/loggedHome" routerLinkActive="active">Home</a>
-              </li>
+          <ng-container *ngIf="accountService.currentUser$ | async">
               <li class="nav-item">
                   <a class="nav-link" routerLink="/foryou" routerLinkActive="active">For You</a>
               </li>
