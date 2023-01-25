@@ -8,4 +8,5 @@ export interface User {
     lastName: string,
     yearOfBirth: number,
     gender: string,
+    photoUrl: string
 }

@@ -19,12 +19,14 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         private readonly DataContext _context;
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
+        private readonly IPhotoService _photoService;
 
-        public AccountController(DataContext context, ITokenService tokenService, IMapper mapper)
+        public AccountController(DataContext context, ITokenService tokenService, IMapper mapper, IPhotoService photoService)
         {
             this._context = context;
             this._tokenService = tokenService;
-            _mapper = mapper;
+            this._mapper = mapper;
+            this._photoService = photoService;
         }
 
         [HttpPost("register")]
@@ -92,9 +94,11 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
                 LastName = user.LastName,
                 YearOfBirth = user.YearOfBirth,
                 Gender = user.Gender,
+                PhotoUrl = user.PhotoUrl,
                 Token = _tokenService.CreateToken(user)
             };
         }
+
         [HttpPut("updateuser")]
         public async Task<ActionResult> UpdateUser(UserUpdateDto userUpdateDto)
         {
@@ -111,6 +115,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
             return BadRequest("Failed to update user");
         }
+
 
         private async Task<bool> UsernameExistsChecker(string username)
         {

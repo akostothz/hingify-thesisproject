@@ -9,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using UNN1N9_SOF_2022231_BACKEND.Logic;
 using UNN1N9_SOF_2022231_BACKEND.Middleware;
+using UNN1N9_SOF_2022231_BACKEND.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,8 @@ builder.Services.AddCors();
 builder.Services.AddScoped<IMusicLogic, MusicLogic>();
 builder.Services.AddScoped<DataContext, DataContext>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));
+builder.Services.AddScoped<IPhotoService, PhotoService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
