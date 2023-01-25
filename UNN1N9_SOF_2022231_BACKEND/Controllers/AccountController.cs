@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using UNN1N9_SOF_2022231_BACKEND.Data;
 using UNN1N9_SOF_2022231_BACKEND.DTOs;
+using UNN1N9_SOF_2022231_BACKEND.Extensions;
 using UNN1N9_SOF_2022231_BACKEND.Interfaces;
 using UNN1N9_SOF_2022231_BACKEND.Models;
 
@@ -102,7 +103,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         [HttpPut("updateuser")]
         public async Task<ActionResult> UpdateUser(UserUpdateDto userUpdateDto)
         {
-            var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var username = User.GetUsername();
             var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == username);
 
             if (user == null)
@@ -116,6 +117,28 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             return BadRequest("Failed to update user");
         }
 
+        [HttpPost("addphoto")]
+        public async Task<ActionResult<PhotoDto>> AddPhoto(IFormFile file) 
+        {
+            var username = User.GetUsername();
+            var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == username);
+
+            if (user == null)
+                return NotFound();
+
+            var result = await _photoService.AddPhotoAsync(file);
+
+            if (result.Error != null)
+                return BadRequest(result.Error.Message);
+
+            user.PhotoUrl = result.SecureUrl.AbsoluteUri;
+            user.PublicId = result.PublicId;
+
+            if (await _context.SaveChangesAsync() > 0)
+                return _mapper.Map<PhotoDto>(user);
+
+            return BadRequest("An error occured while uploading your photo. Please try again.");
+        }
 
         private async Task<bool> UsernameExistsChecker(string username)
         {
