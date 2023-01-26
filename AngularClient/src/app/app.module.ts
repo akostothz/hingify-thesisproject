@@ -23,6 +23,7 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { EditPhotoComponent } from './edit-photo/edit-photo.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { EditPhotoComponent } from './edit-photo/edit-photo.component';
     NotFoundComponent,
     ServerErrorComponent,
     EditProfileComponent,
-    EditPhotoComponent
+    EditPhotoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

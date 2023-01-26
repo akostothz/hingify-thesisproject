@@ -7,9 +7,11 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { ForyouComponent } from './musics/foryou/foryou.component';
 import { MusicDetailComponent } from './musics/music-detail/music-detail.component';
 import { MusicListComponent } from './musics/music-list/music-list.component';
+import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
@@ -30,6 +32,8 @@ const routes: Routes = [
   {path: 'errors', component: TestErrorComponent},
   {path: 'not-found', component: NotFoundComponent},
   {path: 'server-error', component: ServerErrorComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'about', component: AboutComponent},
   {path: '**', component: NotFoundComponent, pathMatch: 'full'} //the invalid route
 ];

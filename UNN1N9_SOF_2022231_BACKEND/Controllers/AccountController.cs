@@ -62,7 +62,15 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
             return new UserDto
             {
+                Id = user.Id,
                 Username = user.UserName,
+                Country = user.Country,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                YearOfBirth = user.YearOfBirth,
+                Gender = user.Gender,
+                PhotoUrl = user.PhotoUrl,
                 Token = _tokenService.CreateToken(user)
             };
         }
