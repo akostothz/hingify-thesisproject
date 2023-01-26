@@ -1,0 +1,77 @@
+h1 {
+    color: white;
+    text-align: left;
+    font-size: 8em;
+    padding-bottom: 0.5em;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 1.5em;
+}
+h3 {
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.name {
+    color: white;
+    text-align: center;
+    font-size: 5em;
+    padding-bottom: 0em;
+}
+
+
+.card-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30em;
+    border-radius: 50%;
+}
+
+.btn {
+    margin-top: 2em;
+    width: 30em;
+    height: 5em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1em;
+    border-color: rgb(155, 155, 155);
+    background-color: rgb(57, 149, 235);
+}
+
+.btn:hover {
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(57, 149, 155);
+}
+
+.btn2 {
+    margin-top: 2em;
+    width: 15em;
+    height: 5em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1em;
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(157, 7, 7);
+}
+
+.btn2:hover {
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(195, 6, 6);
+}
+
+.upl {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+

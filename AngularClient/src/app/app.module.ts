@@ -22,6 +22,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
+import { EditPhotoComponent } from './edit-photo/edit-photo.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LoadingInterceptor } from './_interceptors/loading.interceptor';
     TestErrorComponent,
     NotFoundComponent,
     ServerErrorComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    EditPhotoComponent
   ],
   imports: [
     BrowserModule,

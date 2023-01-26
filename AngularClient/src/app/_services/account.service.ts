@@ -46,6 +46,10 @@ export class AccountService {
     this.currentUserSource.next(user);
   }
 
+  uploadPhoto(file: any) {
+    return this.http.post(this.baseUrl + 'account/updateuser', file);
+  }
+
   logout() {
     localStorage.removeItem('user');
     this.currentUserSource.next(null);

@@ -1,0 +1,27 @@
+<div class="row" *ngIf="user">
+    <h1>On this page, you can set your profile picture.</h1>
+    <div class="picdiv">
+        <img src="{{user.photoUrl || './assets/user2.png'}}" alt="Profile Picture" class="card-img">                 
+    </div>   
+    <p class="name">{{user.firstName}} {{user.lastName}}</p>
+    <h3>@{{user.username}}</h3>
+    <h2>Select a file</h2>
+    <table>
+        <tr>
+            <input type="file" ng2FileSelect [uploader]="uploader" class="upl"/>
+            
+            <button type="button" class="btn btn-outline-secondary" (click)="upload()">
+                Upload Photo
+            </button>
+        </tr>
+        <tr>
+            <button type="button" class="btn2 btn-outline-secondary" *ngIf="user.photoUrl">
+                Delete Current
+            </button>
+        </tr>
+    </table>
+    
+    
+    
+</div>
+

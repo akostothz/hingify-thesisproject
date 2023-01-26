@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerComponent, NgxSpinnerModule } from 'ngx-spinner';
+import { FileUploadModule } from 'ng2-file-upload';
 
 
 
@@ -16,12 +17,14 @@ import { NgxSpinnerComponent, NgxSpinnerModule } from 'ngx-spinner';
     }),
     NgxSpinnerModule.forRoot({
       type: 'ball-8bits'
-    })
+    }),
+    FileUploadModule
   ],
   exports: [
     BsDropdownModule,
     ToastrModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    FileUploadModule
   ]
 })
 export class SharedModule { }

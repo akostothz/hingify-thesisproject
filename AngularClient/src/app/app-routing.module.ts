@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { EditPhotoComponent } from './edit-photo/edit-photo.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
       {path: 'musics', component: MusicListComponent},
       {path: 'musics/:id', component: MusicDetailComponent},
       {path: 'edit', component: EditProfileComponent, canDeactivate: [PreventUnsavedChangesGuard]},
+      {path: 'editphoto', component: EditPhotoComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'foryou', component: ForyouComponent}
     ]
   }, 
