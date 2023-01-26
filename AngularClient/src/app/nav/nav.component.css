@@ -13,6 +13,12 @@
 }
 
 .dropdown-item:hover {
-    background-color: rgb(74, 0, 99);
+    background-color: rgb(132, 25, 167);
     color: white;
+    text-shadow: #ffff;
+}
+
+.dropdown-divider{
+    color: #ffff;
+    background-color: #ffff;
 }

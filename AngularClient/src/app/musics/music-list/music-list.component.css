@@ -96,14 +96,16 @@ h2 {
     cursor: pointer;
     font-size: 2em;
     padding: 0.3em 1em;
-    border: 0.15em solid rgb(227, 162, 10);
+    border: 0.15em solid rgb(212, 191, 254);
     border-radius: 0.6em;
-    color:rgb(227, 162, 10);
+    color:rgb(212, 191, 254);
     text-decoration: none;
     letter-spacing: 0.03em;
 }
 
 .neon-purple:hover {
-    background-color: rgb(227, 162, 10);
+    background-color: rgb(38, 60, 182);
+    border: 0.15em solid rgb(253, 253, 253);
     color: #fff;
+    animation-delay: 1s;
 }
