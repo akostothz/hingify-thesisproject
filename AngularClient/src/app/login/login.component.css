@@ -1,6 +1,6 @@
 
 h1 {
-    font-size: 10em;
+    font-size: 8em;
     text-align: center;
     color: #fff;
     margin-bottom: 0.5em;
@@ -61,6 +61,14 @@ h3 {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 1em;
+    border-color: #3c0f95;
+    border-width: 0.2em;
+}
+
+.form-control:hover {
+    border-color: #714cbc;
+    background-color: rgb(227, 204, 253);
 }
 
 ::placeholder {

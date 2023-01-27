@@ -1,0 +1,66 @@
+h1 {
+    font-size: 8em;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 0.8em;
+}
+
+h3 {
+    color: rgb(223, 30, 30);
+    text-align: center;
+    font-size: 1.8em;
+    padding-bottom: 1em;
+}
+
+.card {
+    background-color: #191c29;
+    width: 40em;
+    height: 66em;
+    border-radius: 2em;
+    border-color: #46c9fd;
+    padding: 2em;
+    border-width: 0.6em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.card:hover {
+    border-color: #4c66bc;
+}
+
+.d-flex {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+
+.form-control{
+    background-color: rgb(97, 184, 255);
+    border-radius: 0.5em;  
+    margin-top: 1em;
+    margin-bottom: 1em;
+    height: 2.5em;
+    width: 10em; 
+    color: rgb(0, 0, 0);
+    font-size: 2em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+.btn {
+    height: 3.5em;
+    width: 8em;
+    border-radius: 3em;
+    background-color: #1e0bc9;
+    margin-bottom: 4em;
+}
