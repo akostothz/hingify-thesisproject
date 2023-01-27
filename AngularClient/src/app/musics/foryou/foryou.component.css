@@ -11,3 +11,11 @@ h2 {
     font-size: 4.5em;
     padding-bottom: 1em;
 }
+
+h3 {
+    color: rgb(161, 47, 253);
+    text-align: center;
+    font-size: 3.5em;
+    padding-bottom: 1em;
+    margin-top: 2em;
+}
