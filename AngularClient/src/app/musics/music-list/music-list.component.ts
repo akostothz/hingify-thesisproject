@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
+import { Behavior } from 'src/app/_models/behavior';
 import { Music } from 'src/app/_models/music';
 import { MusicsService } from 'src/app/_services/musics.service';
 
@@ -13,9 +15,9 @@ export class MusicListComponent implements OnInit {
   originsongs$: Observable<Music[]> | undefined;
   agesongs$: Observable<Music[]> | undefined;
   gendersongs$: Observable<Music[]> | undefined;
+  behavior: Behavior;
   
   constructor(private musicService: MusicsService) {
-
   }
 
   ngOnInit(): void {
@@ -25,8 +27,15 @@ export class MusicListComponent implements OnInit {
     this.gendersongs$ = this.musicService.getMusicsBySex(JSON.parse(localStorage.getItem('user'))?.id);
   }
 
-  likeSong() {
-
+  likeSong(id: number) {
+    var behav: Behavior = {
+      userid: JSON.parse(localStorage.getItem('user'))?.id,
+      musicid: id,
+      nameofday: '',
+      timeofday: ''
+    }
+    this.behavior = behav;
+    this.musicService.likeMusic(this.behavior).subscribe();
   }
  
 }

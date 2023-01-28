@@ -70,5 +70,13 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             return Ok(musicsToReturn);
         }
 
+        [HttpPost]
+        public async Task<ActionResult> LikeSong(BehaviorDto behaviorDto)
+        {
+            _logic.AddLikedSong(behaviorDto.UserId, behaviorDto.MusicId);
+    
+            return NoContent();
+        }
+
     }
 }

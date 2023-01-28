@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UNN1N9_SOF_2022231_BACKEND.Data;
+using UNN1N9_SOF_2022231_BACKEND.DTOs;
 using UNN1N9_SOF_2022231_BACKEND.Models;
 
 namespace UNN1N9_SOF_2022231_BACKEND.Logic
@@ -12,6 +13,24 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         public MusicLogic(DataContext context)
         {
             _context = context;
+        }
+
+        public void AddLikedSong(int userid, int musicid)
+        {
+            var givenuser = _context.Users.FirstOrDefault(x => x.Id == userid);
+            string nameOfDay = DateTime.Now.DayOfWeek.ToString();
+            string timeOfDay = TimeOfDayConverter();
+
+            _context.UserBehaviors.Add(new UserBehavior()
+            {
+                UserId = userid,
+                MusicId = musicid,
+                ListeningCount = 1,
+                NameOfDay = nameOfDay,
+                TimeOfDay = timeOfDay
+            });
+
+            _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Music>> GetPersonalizedMix(int id)
@@ -242,5 +261,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         {
             return (int)DateTime.Now.Year - yofBirth;
         }
+
+        
     }
 }

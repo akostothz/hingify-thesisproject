@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Behavior } from '../_models/behavior';
 import { Music } from '../_models/music';
 import { User } from '../_models/user';
 
@@ -18,7 +19,10 @@ export class MusicsService {
 
   constructor(private http: HttpClient) { }
 
-  
+  likeMusic(model: any) {
+    return this.http.post(this.baseUrl + 'Music/LikeSong', model);
+    
+  }
 
   getLikedSongs(id: number) {
     if (this.likedsongs.length > 0) return of(this.likedsongs);

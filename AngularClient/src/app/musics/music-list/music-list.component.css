@@ -75,7 +75,7 @@ h2 {
     scroll-snap-type: x mandatory;
     display: flex;  
     overflow: auto;
-    height: 30em;
+    height: 33em;
 }
 
 .neonpurple {
@@ -114,10 +114,10 @@ h2 {
     scroll-snap-type: x mandatory;
     scroll-padding: 0 24px;
     border-radius: 15px;
-    background: rgb(3, 128, 30);
+    background: rgb(77, 97, 187);
     width: 30em;
     height: 25em;
-    border-color: rgb(100, 255, 162);
+    border-color: rgb(212, 191, 254);
     border-width: 0.5em;
     margin: 2em;
     margin-right: 5px;
