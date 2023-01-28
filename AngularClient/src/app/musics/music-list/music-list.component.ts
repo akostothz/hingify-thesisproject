@@ -24,5 +24,9 @@ export class MusicListComponent implements OnInit {
     this.agesongs$ = this.musicService.getMusicsByAgeGroup(JSON.parse(localStorage.getItem('user'))?.id);
     this.gendersongs$ = this.musicService.getMusicsBySex(JSON.parse(localStorage.getItem('user'))?.id);
   }
+
+  likeSong() {
+
+  }
  
 }

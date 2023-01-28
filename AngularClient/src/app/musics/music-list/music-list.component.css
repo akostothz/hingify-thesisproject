@@ -109,3 +109,65 @@ h2 {
     color: #fff;
     animation-delay: 1s;
 }
+
+.area {
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 24px;
+    border-radius: 15px;
+    background: rgb(3, 128, 30);
+    width: 30em;
+    height: 25em;
+    border-color: rgb(100, 255, 162);
+    border-width: 0.5em;
+    margin: 2em;
+    margin-right: 5px;
+    scroll-snap-align: start;
+    flex-shrink: 0;  
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.areatrackname {
+    color: white;
+    font-size: 2.2em;
+    background-color: rgb(7, 87, 8);
+    height: 4em;
+    padding: 0.6em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    vertical-align: middle;
+}
+
+.neongreen {
+    width: 2em;
+    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    vertical-align: bottom;
+    display: flex;
+    height: 2em;
+}
+
+.neon-green {
+    display: inline-block;
+    background-color: #000;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 0.3em 1em;
+    border: 0.15em solid rgb(100, 255, 162);
+    border-radius: 0.6em;
+    color:rgb(100, 255, 162);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+}
+
+.neon-green:hover {
+    background-color: rgb(9, 122, 60);
+    border: 0.15em solid rgb(253, 253, 253);
+    color: #fff;
+    animation-delay: 1s;
+}

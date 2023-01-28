@@ -1,24 +1,59 @@
 <h1>Sign up for free!</h1>
 <h3><b>Choose your credentials carefully! </b>You can not change your username, nor any information that might affect your playlists.</h3>
 
-<div class="card">
+
 
     <form *ngIf="(accountService.currentUser$ | async) === null" #registerForm="ngForm" (ngSubmit)="register()" autocomplete="off" class="d-flex">
-        <table>
-            <tr>
-                <input name="username" [(ngModel)]="model.username" class="form-control me-2" type="text" placeholder="Username">
-                <input name="password" [(ngModel)]="model.password"  class="form-control me-2" type="password" placeholder="Password">
-                <input name="email" [(ngModel)]="model.email" class="form-control me-2" type="text" placeholder="Email">
-                <input name="firstname" [(ngModel)]="model.firstname" class="form-control me-2" type="text" placeholder="First Name">
-                <input name="lastname" [(ngModel)]="model.lastname" class="form-control me-2" type="text" placeholder="Last Name">
-                <input name="birthyear" [(ngModel)]="model.yearOfBirth" class="form-control me-2" type="number" placeholder="Year of Birth">
-                <input name="gender" [(ngModel)]="model.gender" class="form-control me-2" type="text" placeholder="Gender">
-                <input name="country" [(ngModel)]="model.country" class="form-control me-2" type="text" placeholder="Country">
-                <button class="btn btn-success mr-2" type="submit" (click)="register()">Sign Up</button>
-            </tr>
-        </table> 
-    
-       
+        <div class="card">
+            <label for="username">Username</label>
+            <input name="username" [(ngModel)]="model.username" class="form-control me-2" type="text" placeholder="Username">
+
+            <label for="password">Password</label>
+            <input name="password" [(ngModel)]="model.password"  class="form-control me-2" type="password" placeholder="Password">
+        
+            <label for="passwordagain">Password, again</label>
+            <input name="passwordagain" class="form-control me-2" type="password" placeholder="Password">
+
+            <label for="email">Email</label>
+            <input name="email" [(ngModel)]="model.email" class="form-control me-2" type="text" placeholder="example@example.com">
+
+            <label for="email">First Name</label>
+            <input name="firstname" [(ngModel)]="model.firstname" class="form-control me-2" type="text" placeholder="First Name">
+
+            <label for="lastname">Last Name</label>
+            <input name="lastname" [(ngModel)]="model.lastname" class="form-control me-2" type="text" placeholder="Last Name">
+
+            <label for="birthyear">Year of Birth</label>
+            <input name="birthyear" [(ngModel)]="model.yearOfBirth" class="form-control me-2" type="number" placeholder="Year of Birth">
+
+            <label for="gend">Gender</label>
+            <br/>
+            <select #gend name="genders" id="gend" (change)="genderChanged(gend.value)">
+                <option *ngFor="let gender of genders" value="gender">{{gender}}</option>
+            </select>
+
+            <br/>
+            <label for="country">Country</label>
+            <br/>
+            <select #count name="countries" id="country" (change)="countryChanged(count.value)">
+                <option *ngFor="let country of countries" value="country">{{country}}</option>
+            </select>
+            <br/>
+            <button class="btn btn-success mr-2" type="submit" (click)="register()">Sign Up</button>
+        </div>
+        
     </form>
-</div>
+    
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+   
+
 

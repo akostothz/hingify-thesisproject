@@ -33,8 +33,10 @@
         </ul>
 
        
+        
         <div class="dropdown" *ngIf="(accountService.currentUser$ | async) === null" dropdown>
           <a class="dropdown-toggle" dropdownToggle>Log In / Sign Up</a>
+          
           <div class="dropdown-menu mt-3 bg-dark" *dropdownMenu="">
             <a class="dropdown-item"  routerLink="/login">Log In</a>
             <div class="dropdown-divider"></div>

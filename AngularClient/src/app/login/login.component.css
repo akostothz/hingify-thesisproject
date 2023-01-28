@@ -20,6 +20,9 @@ h3 {
     font-size: 2em;
     margin-bottom: 0;
     padding-top: 0;
+    border-bottom: 0.5em;
+    border-color: #3c0f95;
+    border-width: 1em;
 }
 
 .card {
