@@ -28,14 +28,14 @@
 
             <label for="gend">Gender</label>
             <br/>
-            <select #gend name="genders" id="gend" (change)="genderChanged(gend.value)">
+            <select #gend name="genders" id="gend" (change)="genderChanged(gend.value);">
                 <option *ngFor="let gender of genders" value="gender">{{gender}}</option>
             </select>
 
             <br/>
             <label for="country">Country</label>
             <br/>
-            <select #count name="countries" id="country" (change)="countryChanged(count.value)">
+            <select #count name="countries" id="country" (change)="countryChanged(count.value);">
                 <option *ngFor="let country of countries" value="country">{{country}}</option>
             </select>
             <br/>
