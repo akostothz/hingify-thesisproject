@@ -1,6 +1,6 @@
 import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AccountService } from '../_services/account.service';
@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit{
   selectedGender = '';
   selectedCountry = '';
 
-  constructor(public accountService: AccountService, private router: Router, private toastr: ToastrService) {}
+  constructor(public accountService: AccountService, private router: Router, private toastr: ToastrService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.initializeForm();
@@ -30,17 +30,17 @@ export class RegisterComponent implements OnInit{
 
 
   initializeForm() {
-    this.registerForm = new FormGroup({
-      username: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]),
-      confirmPassword: new FormControl('', [Validators.required, this.matchValues('password')]),
+    this.registerForm = this.fb.group({
+      username: ['', [Validators.required, Validators.maxLength(50)]],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]],
+      confirmPassword: ['', [Validators.required, this.matchValues('password')]],
 
-      email: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(100)]),
-      firstName: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      lastName: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      birthyear: new FormControl('', Validators.required),
-
+      email: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(100)]],
+      firstName: ['', [Validators.required, Validators.maxLength(50)]],
+      lastName: ['', [Validators.required, Validators.maxLength(50)]],
+      birthyear: ['', Validators.required],
     });
+    
     this.registerForm.controls['password'].valueChanges.subscribe( {
       next: () => this.registerForm.controls['confirmPassword'].updateValueAndValidity()
     })

@@ -18,19 +18,19 @@
             
             <div>
                 <label for="password">Password</label>
-            <input type="password" 
-                formControlName="password"  
-                class="form-control me-2"  
-                placeholder="Password"
-                [class.is-invalid]="registerForm.get('password')?.errors && registerForm.get('password')?.touched">
+                <input type="password" 
+                    formControlName="password"  
+                    class="form-control me-2"  
+                    placeholder="Password"
+                    [class.is-invalid]="registerForm.get('password')?.errors && registerForm.get('password')?.touched">
                 <div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('required')">
-                Please enter a password.
+                    Please enter a password.
                 </div>
                 <div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('minlength')">
-                Passwords must be at least 8 characters long.
+                    Passwords must be at least 8 characters long.
                 </div>
                 <div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('maxlength')">
-                Passwords must be at most 20 characters long.
+                    Passwords must be at most 20 characters long.
                 </div>
             </div>
             
