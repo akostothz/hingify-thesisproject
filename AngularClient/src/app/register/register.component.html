@@ -3,28 +3,93 @@
 
 
 
-    <form *ngIf="(accountService.currentUser$ | async) === null" #registerForm="ngForm" (ngSubmit)="register()" autocomplete="off" class="d-flex">
+    <form *ngIf="(accountService.currentUser$ | async) === null" [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off" class="d-flex">
         <div class="card">
-            <label for="username">Username</label>
-            <input name="username" [(ngModel)]="model.username" class="form-control me-2" type="text" placeholder="Username">
 
-            <label for="password">Password</label>
-            <input name="password" [(ngModel)]="model.password"  class="form-control me-2" type="password" placeholder="Password">
-        
-            <label for="passwordagain">Password, again</label>
-            <input name="passwordagain" class="form-control me-2" type="password" placeholder="Password">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" 
+                    formControlName="username" 
+                    class="form-control me-2"  
+                    placeholder="Username" 
+                    [class.is-invalid]="registerForm.get('username')?.errors && registerForm.get('username')?.touched">
+                <div class="invalid-feedback">Usernames must be 1-50 characters long.</div>
+            </div>
+            
+            <div>
+                <label for="password">Password</label>
+            <input type="password" 
+                formControlName="password"  
+                class="form-control me-2"  
+                placeholder="Password"
+                [class.is-invalid]="registerForm.get('password')?.errors && registerForm.get('password')?.touched">
+                <div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('required')">
+                Please enter a password.
+                </div>
+                <div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('minlength')">
+                Passwords must be at least 8 characters long.
+                </div>
+                <div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('maxlength')">
+                Passwords must be at most 20 characters long.
+                </div>
+            </div>
+            
+            <div>
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" 
+                    formControlName="confirmPassword" 
+                    class="form-control me-2"  
+                    placeholder="Confirm Password"
+                    [class.is-invalid]="registerForm.get('confirmPassword')?.errors && registerForm.get('confirmPassword')?.touched">
+                    <div class="invalid-feedback" *ngIf="registerForm.get('confirmPassword')?.hasError('required')">
+                        Please confirm your password.
+                    </div>
+                    <div class="invalid-feedback" *ngIf="registerForm.get('confirmPassword')?.hasError('notMatching')">
+                        Passwords do not match.
+                    </div>
+            </div>
+            
+            <div>
+                <label for="email">Email</label>
+                <input type="text" 
+                    formControlName="email" 
+                    class="form-control me-2" 
+                    placeholder="example@example.com"
+                    [class.is-invalid]="registerForm.get('email')?.errors && registerForm.get('email')?.touched">
+                <div class="invalid-feedback">Email must and be 6-100 characters long.</div>
+            </div>
+            
+            <div>
+                <label for="firstname">First Name</label>
+                <input type="text" 
+                    formControlName="firstName" 
+                    class="form-control me-2"  
+                    placeholder="First Name"
+                    [class.is-invalid]="registerForm.get('firstName')?.errors && registerForm.get('firstName')?.touched">
+                <div class="invalid-feedback">Your first name must and be 1-50 characters long.</div>
+            </div>
+            
+            <div>
+                <label for="lastname">Last Name</label>
+                <input type="text" 
+                    formControlName="lastName" 
+                    class="form-control me-2"  
+                    placeholder="Last Name"
+                    [class.is-invalid]="registerForm.get('lastName')?.errors && registerForm.get('lastName')?.touched">
+                <div class="invalid-feedback">Your last name must and be 1-50 characters long.</div>
+            </div>
+            
+            <div>
+                <label for="birthyear">Year of Birth</label>
+                <input type="number" 
+                    formControlName="birthyear" 
+                    class="form-control me-2" 
+                    placeholder="Year of Birth"
+                    [class.is-invalid]="registerForm.get('birthyear')?.errors && registerForm.get('birthyear')?.touched">
+                <div class="invalid-feedback">Please enter a valid year.</div>
+            </div>
+            
 
-            <label for="email">Email</label>
-            <input name="email" [(ngModel)]="model.email" class="form-control me-2" type="text" placeholder="example@example.com">
-
-            <label for="email">First Name</label>
-            <input name="firstname" [(ngModel)]="model.firstname" class="form-control me-2" type="text" placeholder="First Name">
-
-            <label for="lastname">Last Name</label>
-            <input name="lastname" [(ngModel)]="model.lastname" class="form-control me-2" type="text" placeholder="Last Name">
-
-            <label for="birthyear">Year of Birth</label>
-            <input name="birthyear" [(ngModel)]="model.yearOfBirth" class="form-control me-2" type="number" placeholder="Year of Birth">
 
             <label for="gend">Gender</label>
             <br/>

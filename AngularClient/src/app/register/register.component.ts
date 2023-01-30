@@ -1,5 +1,6 @@
 import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AccountService } from '../_services/account.service';
@@ -12,6 +13,8 @@ import { AccountService } from '../_services/account.service';
 export class RegisterComponent implements OnInit{
   @Output() cancelRegister = new EventEmitter();
   model: any = {};
+  registerForm: FormGroup = new FormGroup({});
+
   countries: string[] = [];
   genders: string[] = [];
   selectedGender = '';
@@ -20,8 +23,33 @@ export class RegisterComponent implements OnInit{
   constructor(public accountService: AccountService, private router: Router, private toastr: ToastrService) {}
 
   ngOnInit(): void {
+    this.initializeForm();
     this.fillCountries();
     this.fillGenders();
+  }
+
+
+  initializeForm() {
+    this.registerForm = new FormGroup({
+      username: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]),
+      confirmPassword: new FormControl('', [Validators.required, this.matchValues('password')]),
+
+      email: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(100)]),
+      firstName: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      lastName: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      birthyear: new FormControl('', Validators.required),
+
+    });
+    this.registerForm.controls['password'].valueChanges.subscribe( {
+      next: () => this.registerForm.controls['confirmPassword'].updateValueAndValidity()
+    })
+  }
+
+  matchValues(matchTo: string): ValidatorFn {
+    return (control: AbstractControl) => {
+      return control.value === control.parent?.get(matchTo)?.value ? null : {notMatching: true}
+    }
   }
 
   genderChanged(value: string) {
@@ -33,6 +61,7 @@ export class RegisterComponent implements OnInit{
   }
 
   register() {
+    /*
     this.model.gender = this.selectedGender;
     this.model.country = this.selectedCountry;
 
@@ -43,7 +72,12 @@ export class RegisterComponent implements OnInit{
     error: error => { 
       this.toastr.error(error.error)
     }
-    })
+    }) */
+    console.log(this.registerForm.value);
+  }
+  
+  cancel() {
+    this.cancelRegister.emit(false);
   }
 
   fillGenders() {
@@ -251,7 +285,4 @@ export class RegisterComponent implements OnInit{
     this.countries.push("Zimbabwe");
   }
 
-  cancel() {
-    this.cancelRegister.emit(false);
-  }
 }
