@@ -24,6 +24,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { EditPhotoComponent } from './edit-photo/edit-photo.component';
 import { LoginComponent } from './login/login.component';
+import { TextInputComponent } from './_forms/text-input/text-input.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { LoginComponent } from './login/login.component';
     ServerErrorComponent,
     EditProfileComponent,
     EditPhotoComponent,
-    LoginComponent
+    LoginComponent,
+    TextInputComponent
   ],
   imports: [
     BrowserModule,
