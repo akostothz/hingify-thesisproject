@@ -46,7 +46,8 @@
         
 
         <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
-          <a class="dropdown-toggle" dropdownToggle>{{user.firstName}} [IMAGE]</a>
+          <img src="{{user.photoUrl  || './assets/user2.png'}}" all="user photo">
+          <a class="dropdown-toggle" dropdownToggle>{{user.firstName}} {{user.lastName}}</a>
           <div class="dropdown-menu mt-3 bg-dark" *dropdownMenu="">
             <a class="dropdown-item"  routerLink="/edit">Logged in as: @{{user.username}}</a>
             <div class="dropdown-divider"></div>
