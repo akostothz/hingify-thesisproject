@@ -17,7 +17,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-        private readonly DataContext _context;
+        DataContext _context;
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
         private readonly IPhotoService _photoService;
@@ -40,22 +40,15 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
                 return BadRequest("Email is already in use.");
 
 
+            var user = _mapper.Map<AppUser>(registerDto);
+
             using var hmac = new HMACSHA512();
 
-            //PasswordHasher<AppUser> hasher = new PasswordHasher<AppUser>();
-            var user = new AppUser()
-            {
-                UserName = registerDto.UserName.ToLower(),
-                Email = registerDto.Email,
-                FirstName = registerDto.FirstName,
-                LastName = registerDto.LastName,
-                YearOfBirth = registerDto.YearOfBirth,
-                Country = registerDto.Country,
-                Gender = registerDto.Gender,
-                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
-                PasswordSalt = hmac.Key
-            };
-            //user.PasswordHash = hasher.HashPassword(user, registerDto.Password);
+            user.UserName = registerDto.UserName.ToLower();
+            user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password));
+            user.PasswordSalt = hmac.Key;
+            user.PhotoUrl = "";
+            user.PublicId = "";
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
@@ -73,6 +66,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
                 PhotoUrl = user.PhotoUrl,
                 Token = _tokenService.CreateToken(user)
             };
+
         }
 
         [HttpPost("login")]

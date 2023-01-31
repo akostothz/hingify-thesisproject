@@ -12,10 +12,13 @@
     min-width: 30vw;
     border-width: 0.6vw;
     border-color: rgb(39, 101, 177);
+    box-shadow: 1vw 0.5vw 0.5vw rgb(27, 19, 135);
+    
 }
 
 .card:hover {
     border-color: #4c66bc;
+    box-shadow: 1vw 0.5vw 0.5vw rgb(37, 26, 190);
 }
 
 h1 {

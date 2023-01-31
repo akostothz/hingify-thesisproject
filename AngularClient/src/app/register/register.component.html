@@ -3,7 +3,7 @@
 
 
 
-    <form *ngIf="(accountService.currentUser$ | async) === null" [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off" class="d-flex">
+    <form *ngIf="(accountService.currentUser$ | async) === null" [formGroup]="registerForm" autocomplete="off" class="d-flex">
         <div class="card">
 
             <div>
@@ -80,12 +80,12 @@
             </div>
             
             <div>
-                <label for="birthyear">Year of Birth</label>
+                <label for="yearOfBirth">Year of Birth</label>
                 <input type="number" 
-                    formControlName="birthyear" 
+                    formControlName="yearOfBirth" 
                     class="form-control me-2" 
                     placeholder="Year of Birth"
-                    [class.is-invalid]="registerForm.get('birthyear')?.errors && registerForm.get('birthyear')?.touched">
+                    [class.is-invalid]="registerForm.get('yearOfBirth')?.errors && registerForm.get('yearOfBirth')?.touched">
                 <div class="invalid-feedback">Please enter a valid year.</div>
             </div>
             
@@ -93,18 +93,31 @@
 
             <label for="gend">Gender</label>
             <br/>
-            <select #gend name="genders" id="gend" (change)="genderChanged(gend.value);">
-                <option *ngFor="let gender of genders" value="gender">{{gender}}</option>
+            <select #gend name="genders" id="gender" (change)="genderChanged(gend.value)">
+                <option *ngFor="let gender of genders" value="{{gender}}">{{gender}}</option>
             </select>
 
             <br/>
             <label for="country">Country</label>
             <br/>
-            <select #count name="countries" id="country" (change)="countryChanged(count.value);">
-                <option *ngFor="let country of countries" value="country">{{country}}</option>
+            <select #count name="countries" id="country" (change)="countryChanged(count.value)">
+                <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
             </select>
             <br/>
-            <button class="btn btn-success mr-2" type="submit" (click)="register()">Sign Up</button>
+
+
+            <div class="row" *ngIf="validationErrors">
+                <ul class="text-danger">
+                    <li *ngFor="let error of validationErrors">
+                        {{error}}
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <button [disabled]="!registerForm.valid" class="btn btn-success mr-2" type="submit" (click)="register()">Sign Up</button>
+            </div>
+            
         </div>
         
     </form>

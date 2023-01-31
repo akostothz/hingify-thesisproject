@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { single } from 'rxjs';
 import { AccountService } from '../_services/account.service';
 
 @Component({
@@ -10,15 +11,14 @@ import { AccountService } from '../_services/account.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit{
-  @Output() cancelRegister = new EventEmitter();
-  model: any = {};
+export class RegisterComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({});
 
   countries: string[] = [];
   genders: string[] = [];
-  selectedGender = '';
-  selectedCountry = '';
+  selectedGender = 'Male';
+  selectedCountry = 'Afghanistan';
+  validationErrors: string[] | undefined;
 
   constructor(public accountService: AccountService, private router: Router, private toastr: ToastrService, private fb: FormBuilder) {}
 
@@ -38,12 +38,16 @@ export class RegisterComponent implements OnInit{
       email: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(100)]],
       firstName: ['', [Validators.required, Validators.maxLength(50)]],
       lastName: ['', [Validators.required, Validators.maxLength(50)]],
-      birthyear: ['', Validators.required],
+      yearOfBirth: ['', Validators.required],
+      gender: [],
+      country: []
     });
-    
+
     this.registerForm.controls['password'].valueChanges.subscribe( {
       next: () => this.registerForm.controls['confirmPassword'].updateValueAndValidity()
-    })
+    });
+    this.registerForm.controls['gender'].setValue('Male');
+    this.registerForm.controls['country'].setValue('Afghanistan');
   }
 
   matchValues(matchTo: string): ValidatorFn {
@@ -53,31 +57,22 @@ export class RegisterComponent implements OnInit{
   }
 
   genderChanged(value: string) {
-    this.selectedGender = value;
+    this.registerForm.controls['gender'].setValue(value);
   }
 
   countryChanged(value: string) {
-    this.selectedCountry = value;
+    this.registerForm.controls['country'].setValue(value);
   }
 
   register() {
-    /*
-    this.model.gender = this.selectedGender;
-    this.model.country = this.selectedCountry;
-
-    this.accountService.register(this.model).subscribe({
+    this.accountService.register(this.registerForm.value).subscribe({
       next: () => {
-        this.router.navigateByUrl('/login');
+        this.router.navigateByUrl('/foryou');
     }, 
     error: error => { 
-      this.toastr.error(error.error)
+      this.validationErrors = error
     }
-    }) */
-    console.log(this.registerForm.value);
-  }
-  
-  cancel() {
-    this.cancelRegister.emit(false);
+    })
   }
 
   fillGenders() {

@@ -9,6 +9,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Models
     public class AppUser/* : IdentityUser*/
     {
         [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
