@@ -18,6 +18,11 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
             //AddTestConnections(context);
         }
 
+        private static string ReformatCsv(string csvfile)
+        {
+
+        }
+
         private static void AddMusics(DataContext context)
         {
             var music = context.Musics.FirstOrDefault();
