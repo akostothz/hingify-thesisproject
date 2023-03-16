@@ -13,14 +13,56 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
             using var scope = host.Services.CreateScope();
             using var context = scope.ServiceProvider.GetRequiredService<DataContext>();
             context.Database.EnsureCreated();
-            AddMusics(context);
+            //AddMusics(context);
             //AddTestUsers(context);
             //AddTestConnections(context);
         }
 
-        private static string ReformatCsv(string csvfile)
+        private static void AddFullDb(DataContext context)
         {
+            using (var reader = new StreamReader(@"./bin/Debug/net6.0/SpotifyDatabase.csv"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(';');
+                    if (values.Length == 17) //16, mindenből csökkenteni
+                    {
+                        string actualTrackId = values[4];
+                        var duplicated = context.Musics.FirstOrDefault(x => x.TrackId == actualTrackId);
+                        if (duplicated == null)
+                        {
+                            context.Musics.Add(new Models.Music()
+                            {
+                                Genre = values[1],
+                                ArtistName = values[2],
+                                TrackName = values[3],
+                                TrackId = values[4],
+                                Popularity = int.Parse(values[5]),
+                                Acousticness = ReformatValue(values[6]),
+                                Danceability = ReformatValue(values[7]),
+                                DurationMs = int.Parse(values[8]),
+                                Energy = ReformatValue(values[9]),
+                                Key = values[10],
+                                Liveness = ReformatValue(values[11]),
+                                Loudness = ReformatValue(values[12]),
+                                Mode = values[13],
+                                Speechiness = ReformatValue(values[14]),
+                                Tempo = ReformatValue(values[15]),
+                                Valence = ReformatValue(values[16])
+                            });
+                        }
+                    }
+                }
+            }
+        }
 
+        private static double ReformatValue(string stringValue)
+        {
+            stringValue.Replace('.', ',');
+            double value = double.Parse(stringValue);
+
+            return value;
         }
 
         private static void AddMusics(DataContext context)
