@@ -16,6 +16,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
             //AddMusics(context);
             //AddTestUsers(context);
             //AddTestConnections(context);
+            //AddFullDb(context);
         }
 
         private static void AddFullDb(DataContext context)
