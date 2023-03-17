@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using Microsoft.EntityFrameworkCore.Internal;
+using System.Security.Cryptography;
 using System.Text;
 using UNN1N9_SOF_2022231_BACKEND.Data;
 using UNN1N9_SOF_2022231_BACKEND.DTOs;
@@ -16,7 +17,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
             //AddMusics(context);
             //AddTestUsers(context);
             //AddTestConnections(context);
-            //AddFullDb(context);
+            AddFullDb(context);
         }
 
         private static void AddFullDb(DataContext context)
@@ -27,41 +28,60 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
                 {
                     var line = reader.ReadLine();
                     var values = line.Split(';');
-                    if (values.Length == 17) //16, mindenből csökkenteni
+                    if (values.Length == 18)
                     {
-                        string actualTrackId = values[4];
+                        string actualTrackId = values[3];
                         var duplicated = context.Musics.FirstOrDefault(x => x.TrackId == actualTrackId);
                         if (duplicated == null)
                         {
-                            context.Musics.Add(new Models.Music()
+                            if (!NoMissingValues(values))
                             {
-                                Genre = values[1],
-                                ArtistName = values[2],
-                                TrackName = values[3],
-                                TrackId = values[4],
-                                Popularity = int.Parse(values[5]),
-                                Acousticness = ReformatValue(values[6]),
-                                Danceability = ReformatValue(values[7]),
-                                DurationMs = int.Parse(values[8]),
-                                Energy = ReformatValue(values[9]),
-                                Key = values[10],
-                                Liveness = ReformatValue(values[11]),
-                                Loudness = ReformatValue(values[12]),
-                                Mode = values[13],
-                                Speechiness = ReformatValue(values[14]),
-                                Tempo = ReformatValue(values[15]),
-                                Valence = ReformatValue(values[16])
-                            });
+                                context.Musics.Add(new Models.Music()
+                                {
+                                    Genre = values[0],
+                                    ArtistName = values[1],
+                                    TrackName = values[2],
+                                    TrackId = values[3],
+                                    Popularity = int.Parse(values[4]),
+                                    Acousticness = ReformatValue(values[5]),
+                                    Danceability = ReformatValue(values[6]),
+                                    DurationMs = int.Parse(values[7]),
+                                    Energy = ReformatValue(values[8]),
+                                    Key = values[10],
+                                    Liveness = ReformatValue(values[11]),
+                                    Loudness = ReformatValue(values[12]),
+                                    Mode = values[13],
+                                    Speechiness = ReformatValue(values[14]),
+                                    Tempo = ReformatValue(values[15]),
+                                    Valence = ReformatValue(values[17])
+                                });
+                            }
                         }
                     }
                 }
             }
+            context.SaveChanges();
+        }
+
+        private static bool NoMissingValues(string[] values)
+        {
+            bool IsThereMissinValue = false;
+
+            for (int i = 0; i < values.Length; i++)
+            {
+                if (values[i] == "" || values[i] == null || values[i] == String.Empty)
+                {
+                    IsThereMissinValue = true;
+                }
+            }
+
+            return IsThereMissinValue;
         }
 
         private static double ReformatValue(string stringValue)
         {
-            stringValue.Replace('.', ',');
-            double value = double.Parse(stringValue);
+            string c = stringValue.Replace('.', ',');
+            double value = double.Parse(c);
 
             return value;
         }
