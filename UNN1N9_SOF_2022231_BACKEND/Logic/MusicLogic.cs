@@ -33,7 +33,153 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             _context.SaveChangesAsync();
         }
 
+        public async Task<IEnumerable<string>> GetStyles(int id)
+        {
+            var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            string nameOfDay = DateTime.Now.DayOfWeek.ToString();
+            string timeOfDay = TimeOfDayConverter();
+            var musics = new List<Music>();
+            var behaviours = new List<UserBehavior>();
+            var genres = new List<string>();
+
+            foreach (var behav in _context.UserBehaviors)
+            {
+                if (behav.UserId == givenuser.Id && behav.NameOfDay.Equals(nameOfDay) && behav.TimeOfDay.Equals(timeOfDay))
+                {
+                    behaviours.Add(behav);
+                }
+            }
+            foreach (var music in _context.Musics)
+            {
+                if (ContainsMusic(music.Id, behaviours))
+                {
+                    musics.Add(music);
+                }
+            }
+
+            foreach (var music in musics)
+            {
+                if (!genres.Contains(music.Genre))
+                {
+                    genres.Add(music.Genre);
+                }
+            }
+
+            genres.Add("Mixed");
+
+            return genres;
+        }
+
         public async Task<IEnumerable<Music>> GetPersonalizedMix(int id)
+        {
+            var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            string nameOfDay = DateTime.Now.DayOfWeek.ToString();
+            string timeOfDay = TimeOfDayConverter();
+            var musics = new List<Music>();
+            var behaviours = new List<UserBehavior>();
+            var genres = new List<string>();
+            var style = "";
+
+            foreach (var behav in _context.UserBehaviors)
+            {
+                if (behav.UserId == givenuser.Id && behav.NameOfDay.Equals(nameOfDay) && behav.TimeOfDay.Equals(timeOfDay))
+                {
+                    behaviours.Add(behav);
+                }
+            }
+            foreach (var music in _context.Musics)
+            {
+                if (ContainsMusic(music.Id, behaviours))
+                {
+                    musics.Add(music);
+                }
+            }
+            //itt megvannak a hallgatott zenék abban az időszakban, ahol épp vagyunk
+
+            // stílusok számának lekérdezése; ha több, mint 5, akkor vegyes mixet kap, ha nem, akkor azt amiből a legtöbb van
+
+            var dict = new Dictionary<string, int>();
+
+            foreach (var music in musics)
+            {
+                if (!genres.Contains(music.Genre))
+                {
+                    genres.Add(music.Genre);
+                    dict[music.Genre] = 1;
+                }
+                else
+                {
+                    dict[music.Genre] += 1;
+                }
+            }
+
+            if (genres.Count >= 5) //vegyes mix
+            {
+
+            }
+            else //mix a legtöbbet előfordultból
+            {
+                style = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key; //a stílus neve
+            }
+
+            //a napszakból való hátramaradó idő kiszámítása
+            int endHour = EndHour(timeOfDay);
+            int currHour = DateTime.UtcNow.Hour;
+            int currMins = DateTime.UtcNow.Minute;
+
+            int hoursLeft = 0;
+            int minsLeft = 0;
+
+            if (currHour != endHour)
+                hoursLeft = endHour - currHour;
+
+            minsLeft = 60 - currMins;
+
+            if (hoursLeft != 0)
+                minsLeft = minsLeft + hoursLeft * 60;
+
+            //itt ki van számítva, minsLeft hosszúságú lista kell vissza
+
+            var selectedMusics = new List<Music>();
+
+            var songsToChooseFrom = new List<Music>();
+
+            //kevert megoldás
+
+
+            //nem kevert megoldás
+
+            foreach (var music in musics)
+            {
+                foreach (var allM in _context.Musics.Where(x => x.Genre == style && x.Mode == music.Mode))
+                {
+                    if (EnergyInBourdaries(music.Energy, allM.Energy)
+                        && ValenceInBourdaries(music.Valence, allM.Valence) &&
+                        AcousticnessInBourdaries(music.Acousticness, allM.Acousticness))
+                    {
+                        songsToChooseFrom.Add(allM);
+                    }
+                }
+            }
+
+            //le van szűrve az összes választható szám - márcsak végig kell menni,
+            //euklidészi távolságot számolni, prioritásos sorba rakni és a kimeneti zenékbe rakni amíg belefér
+
+            foreach (var music in musics)
+            {
+
+            }
+        }
+
+        private double EuclideanDistance(Music currMusic, Music dbMusic)
+        {
+            double dist = Math.Sqrt(Math.Pow(currMusic.Energy - dbMusic.Energy, 2) +
+                                Math.Pow(currMusic.Valence - dbMusic.Valence, 2) +
+                                Math.Pow(currMusic.Acousticness - dbMusic.Acousticness, 2));
+            return dist;
+        }
+
+        public async Task<IEnumerable<Music>> GetPersonalizedMix2(int id, string style)
         {
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             string nameOfDay = DateTime.Now.DayOfWeek.ToString();
@@ -57,20 +203,130 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 }
             }
             //itt megvannak a hallgatott zenék abban az időszakban, ahol épp vagyunk
-            foreach (var music in musics)
+            if (style.ToLower() == "mixed")
             {
-                if (!genres.Contains(music.Genre))
+                foreach (var music in musics)
                 {
-                    genres.Add(music.Genre);
+                    if (!genres.Contains(music.Genre))
+                    {
+                        genres.Add(music.Genre);
+                    }
                 }
             }
+            else
+            {
+                foreach (var music in musics)
+                {
+                    if (music.Genre == style)
+                    {
+                        genres.Add(music.Genre);
+                    }
+                }
+            }
+
             //itt megvannak a hallgatott stílusok abban az időszakban, ahol épp vagyunk
 
-            //itt kéne maga a Cluster kialakítása, és a top x zenét visszaadni visszaadni
+            //a napszakból való hátramaradó idő kiszámítása
+            int endHour = EndHour(timeOfDay);
+            int currHour = DateTime.UtcNow.Hour;
+            int currMins = DateTime.UtcNow.Minute;
+
+            int hoursLeft = 0;
+            int minsLeft = 0;
+
+            if (currHour != endHour)
+                hoursLeft = endHour - currHour;
+
+            minsLeft = 60 - currMins;
+
+            if (hoursLeft != 0)
+                minsLeft = minsLeft + hoursLeft * 60;
+
+            //itt ki van számítva, minsLeft hosszúságú lista kell vissza
+
             var selectedMusics = new List<Music>();
+
+            //először egy szűrés 0.05 távolságon belül
+
+            var songsToChooseFrom = new List<Music>();
+            var currQuery = new List<Music>();
+
+            //ha kevertet kér
+
+
+            //ha nemn
+
+            foreach (var music in musics)
+            {
+                foreach (var allM in _context.Musics.Where(x => x.Genre == style && x.Mode == music.Mode))
+                {
+                    if (EnergyInBourdaries(music.Energy, allM.Energy) 
+                        && ValenceInBourdaries(music.Valence, allM.Valence) && 
+                        AcousticnessInBourdaries(music.Acousticness, allM.Acousticness))
+                    {
+                        songsToChooseFrom.Add(allM);
+                    }
+                }
+
+                /*
+                 currQuery = from x in _context.Musics
+                            where x.Genre == music.Genre
+                            && x.Mode == music.Mode
+                            && x.Energy <= music.Energy + 0.05
+                            && x.Energy >= music.Energy - 0.05
+                            && x.Valence <= music.Valence + 0.05
+                            && x.Valence >= music.Valence - 0.05
+                            && x.Acousticness <= music.Acousticness + 0.05
+                            && x.Acousticness >= music.Acousticness - 0.05
+                            select x;
+                 */
+            }
+
+            //minden zenéhez az euklidészi távolság
+
 
 
             return selectedMusics;
+        }
+
+        private bool EnergyInBourdaries(double currEnergy, double dbEnergy)
+        {
+            if (dbEnergy <= currEnergy + 0.05 && dbEnergy >= currEnergy - 0.05)
+                return true;
+
+            return false;
+        }
+
+        private bool ValenceInBourdaries(double currValence, double dbValence)
+        {
+            if (dbValence <= currValence + 0.05 && dbValence >= currValence - 0.05)
+                return true;
+
+            return false;
+        }
+
+        private bool AcousticnessInBourdaries(double currAcousticness, double dbAcousticness)
+        {
+            if (dbAcousticness <= currAcousticness + 0.05 && dbAcousticness >= currAcousticness - 0.05)
+                return true;
+
+            return false;
+        }
+
+        private int EndHour(string timeOfDay)
+        {
+            if (timeOfDay.ToLower() == "dawn")
+                return 5;
+            else if (timeOfDay.ToLower() == "morning")
+                return 9;
+            else if (timeOfDay.ToLower() == "forenoon")
+                return 12;
+            else if (timeOfDay.ToLower() == "afternoon")
+                return 17;
+            else if (timeOfDay.ToLower() == "evening")
+                return 21;
+            else
+                return 24;
         }
 
         public async Task<IEnumerable<Music>> GetLikedSongs(int id)
