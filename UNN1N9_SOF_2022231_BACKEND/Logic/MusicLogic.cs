@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using UNN1N9_SOF_2022231_BACKEND.Data;
 using UNN1N9_SOF_2022231_BACKEND.DTOs;
 using UNN1N9_SOF_2022231_BACKEND.Models;
@@ -163,15 +164,61 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             }
 
             //le van szűrve az összes választható szám - márcsak végig kell menni,
-            //euklidészi távolságot számolni, prioritásos sorba rakni és a kimeneti zenékbe rakni amíg belefér
+            //euklidészi távolságot számolni, prioritásos sorba rakni és a kimeneti zenékbe rakni amíg belefér -> lehetne láncolt lista is, ahol távolság alapján szúrjuk be
 
-            foreach (var music in musics)
+            //PriorityQueue<(double, Music)> closestObjects = new PriorityQueue<(double, Music)>();
+            LinkedList closestMusics = new LinkedList();
+            int idx = 0;
+
+            foreach (var music in musics) //végigmegyünk a zenéken
             {
-
+                foreach (var item in songsToChooseFrom) //és a választható zenéken
+                {
+                    while (EnergyInBourdaries(music.Energy, item.Energy)
+                        && ValenceInBourdaries(music.Valence, item.Valence) &&
+                        AcousticnessInBourdaries(music.Acousticness, item.Acousticness)) //addig, amíg a hozzátartózó zenék vannak és számolunk egy távolságot, prioritásos sorba rakjuk ez alapján
+                    {
+                        double dist = EuclideanDistance(music, item);
+                        closestMusics.Add(dist, item);
+                        
+                    }
+                }
             }
-
-
+            LinkedListNode current = closestMusics.Head;
+            while (current != null)
+            {
+                if (LLMinsSum(selectedMusics) < minsLeft && (LLMinsSum(selectedMusics) + MsToMins(current.Object.DurationMs)) <= minsLeft)
+                {
+                    selectedMusics.Add(current.Object);
+                }
+                current = current.Next;
+            }
             return selectedMusics;
+        }
+
+        private int LLMinsSum(List<Music> ml)
+        {
+            int mins = 0;
+            foreach (var item in ml)
+            {
+                mins += MsToMins(item.DurationMs);
+            }
+            return mins;
+        }
+
+        private int MinsSum(LinkedList c)
+        {
+            int mins = 0;
+            foreach (var item in c)
+            {
+                mins += MsToMins(c.Head.Object.DurationMs);
+            }
+            return mins;
+        }
+        private int MsToMins(int ms)
+        {
+            double conv = 1.6667E-5;
+            return (int)conv * ms;
         }
 
         private double EuclideanDistance(Music currMusic, Music dbMusic)

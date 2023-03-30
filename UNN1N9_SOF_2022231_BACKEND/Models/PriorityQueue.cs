@@ -2,16 +2,16 @@
 {
     public class PriorityQueue<T>
     {
-        private List<T> data;
-        private Comparison<T> comparison;
+        private List<Music> data;
+        private Comparison<Music> comparison;
 
-        public PriorityQueue(Comparison<T> comparison)
+        public PriorityQueue(Comparison<Music> comparison)
         {
-            this.data = new List<T>();
+            this.data = new List<Music>();
             this.comparison = comparison;
         }
 
-        public void Enqueue(T item)
+        public void Enqueue(Music item)
         {
             data.Add(item);
             int i = data.Count - 1;
@@ -20,18 +20,18 @@
                 int j = (i - 1) / 2;
                 if (comparison(data[i], data[j]) >= 0)
                     break;
-                T tmp = data[i];
+                Music tmp = data[i];
                 data[i] = data[j];
                 data[j] = tmp;
                 i = j;
             }
         }
 
-        public T Dequeue()
+        public Music Dequeue()
         {
             if (data.Count == 0)
                 throw new InvalidOperationException("Priority queue is empty.");
-            T ret = data[0];
+            Music ret = data[0];
             int lastIndex = data.Count - 1;
             data[0] = data[lastIndex];
             data.RemoveAt(lastIndex);
@@ -47,7 +47,7 @@
                     left = right;
                 if (comparison(data[left], data[i]) >= 0)
                     break;
-                T tmp = data[left];
+                Music tmp = data[left];
                 data[left] = data[i];
                 data[i] = tmp;
                 i = left;
@@ -60,11 +60,27 @@
             get { return data.Count; }
         }
 
-        public T Peek()
+        public Music Peek()
         {
             if (data.Count == 0)
                 throw new InvalidOperationException("Priority queue is empty.");
             return data[0];
+        }
+
+        public int ListLength()
+        {
+            int mins = 0;
+            foreach (var item in data)
+            {
+                mins += MsToMins(item.DurationMs);
+            }
+            return mins;
+        }
+
+        private int MsToMins(int ms)
+        {
+            double conv = 1.6667E-5;
+            return (int)conv * ms;
         }
     }
 
