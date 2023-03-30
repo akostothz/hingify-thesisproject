@@ -168,7 +168,6 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
 
             //PriorityQueue<(double, Music)> closestObjects = new PriorityQueue<(double, Music)>();
             LinkedList closestMusics = new LinkedList();
-            int idx = 0;
 
             foreach (var music in musics) //végigmegyünk a zenéken
             {
@@ -377,6 +376,31 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 return 21;
             else
                 return 24;
+        }
+
+        public async Task<IEnumerable<Music>> GetLikedSongsInToD(int id)
+        {
+            var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            var musics = new List<Music>();
+            var behaviours = new List<UserBehavior>();
+            string nameOfDay = DateTime.Now.DayOfWeek.ToString();
+            string timeOfDay = TimeOfDayConverter();
+
+            foreach (var behav in _context.UserBehaviors)
+            {
+                if (id == behav.UserId && behav.TimeOfDay == timeOfDay && behav.NameOfDay == nameOfDay)
+                {
+                    behaviours.Add(behav);
+                }
+            }
+            foreach (var music in _context.Musics)
+            {
+                if (ContainsMusic(music.Id, behaviours))
+                {
+                    musics.Add(music);
+                }
+            }
+            return musics;
         }
 
         public async Task<IEnumerable<Music>> GetLikedSongs(int id)
