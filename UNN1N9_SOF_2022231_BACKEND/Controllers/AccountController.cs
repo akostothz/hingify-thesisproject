@@ -2,6 +2,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using SpotifyAPI.Web;
+using System.Collections.Specialized;
+using System.Net;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
@@ -29,6 +33,15 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             this._mapper = mapper;
             this._photoService = photoService;
         }
+
+        [HttpGet("spotify-auth")]
+        public async Task<ActionResult> SpotifyAuth()
+        {
+
+
+            return Ok();
+        }
+
 
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
