@@ -1,0 +1,29 @@
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 4.5em;
+    padding-bottom: 2em;
+}
+
+a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+    border-radius: 20px;
+    border-width: 3px;
+    border-color: #fff;
+    border-style: solid;
+    background-color: rgb(30, 215, 96);
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-self: center;
+    text-align: center;
+    width: fit-content;
+    padding: 1rem;
+}
+
+i {
+    font-size: 3rem;
+    margin-right: 1rem;
+}

@@ -25,6 +25,7 @@ import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { EditPhotoComponent } from './edit-photo/edit-photo.component';
 import { LoginComponent } from './login/login.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
+import { SpotifyAuthComponent } from './spotify-auth/spotify-auth.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TextInputComponent } from './_forms/text-input/text-input.component';
     EditProfileComponent,
     EditPhotoComponent,
     LoginComponent,
-    TextInputComponent
+    TextInputComponent,
+    SpotifyAuthComponent
   ],
   imports: [
     BrowserModule,

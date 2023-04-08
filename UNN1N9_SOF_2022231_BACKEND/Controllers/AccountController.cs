@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using RestSharp;
 using SpotifyAPI.Web;
 using System.Collections.Specialized;
 using System.Net;
@@ -37,6 +38,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         [HttpGet("spotify-auth")]
         public async Task<ActionResult> SpotifyAuth()
         {
+            
 
 
             return Ok();
