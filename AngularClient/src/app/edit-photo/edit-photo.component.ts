@@ -54,8 +54,12 @@ export class EditPhotoComponent implements OnInit {
     
     }
 
-    retrieveSpotifyPic(token: string) {
-      this.accountService.retrieveFromSpotify(token);
+    retrieveSpotifyPic() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      const authorizationCode = urlParams.get('code');
+      this.accountService.retrieveFromSpotify(authorizationCode);
     }
 
     upload() {

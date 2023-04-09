@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Azure.Core;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -55,6 +56,8 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
             ;
 
+            
+
 
             RestClient client = new RestClient("https://accounts.spotify.com");
             RestRequest request = new RestRequest("api/token", Method.Post);
@@ -69,7 +72,55 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
             ;
 
-            return Ok();
+            if (responseBody.ToLower().Contains("error"))
+            {
+                return BadRequest();
+            }
+            else
+            {
+                var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == accessToken.UserId);
+                var cut = JsonConvert.DeserializeObject<ResponseDTO>(responseBody);
+                ;
+                user.SpotifyAccessToken = cut.access_token;
+                ;
+                _context.SaveChanges();
+                return Ok();
+            }
+
+        }
+
+        [HttpPut("retrievespotifypic")]
+        public async Task<ActionResult> RetrieveSpotifyPic(AccessTokenDTO accessToken)
+        {
+            var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == accessToken.UserId);
+
+            if (user.SpotifyAccessToken != null)
+            {
+                var client = new RestClient("https://api.spotify.com");
+                var request = new RestRequest("/v1/me", Method.Get);
+                request.AddHeader("Authorization", $"Bearer {user.SpotifyAccessToken}");
+
+                var response = client.Execute(request);
+                  ;
+                if (response.IsSuccessful)
+                {
+                    ;
+                    var spotyuser = JsonConvert.DeserializeObject<SpotifyAccountDTO>(response.Content);
+                    ;
+                    user.PhotoUrl = spotyuser.images[0].url;
+                    ;
+                    _context.SaveChanges();
+                    return Ok();
+                }
+                else
+                {
+                    return BadRequest("Something went wrong!");
+                }
+            }
+            else
+            {
+                return BadRequest("You need to authorize yourself first!");
+            }
         }
 
         [HttpPost("register")]

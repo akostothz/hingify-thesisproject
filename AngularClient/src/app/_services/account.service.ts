@@ -50,8 +50,12 @@ export class AccountService {
     return this.http.post(this.baseUrl + 'account/updateuser', file);
   }
 
-  retrieveFromSpotify(token: string) {
-    return this.http.post(this.baseUrl + 'account/retrievespotifypic', token);
+  retrieveFromSpotify(bearer: string) {
+    const accesstoken = <AccessToken>({
+      userid: JSON.parse(localStorage.getItem('user'))?.id,
+      token: bearer
+    });
+    return this.http.put(this.baseUrl + 'account/retrievespotifypic', accesstoken);
   }
 
   getAccessToken(token: string) {
