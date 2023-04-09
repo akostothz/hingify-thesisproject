@@ -44,9 +44,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             return Ok();
         }
         [HttpPost("getaccesstoken")]
-        public async Task<ActionResult> GetAccessToken(string authorizationcode)
+        public async Task<ActionResult> GetAccessToken(AccessTokenDTO accessToken)
         {
-            string authorizationCode = authorizationcode;
+            string authorizationCode = accessToken.Authorizationcode;
             string redirectUri = "http://localhost:4200/spotify-success";
             string clientId = "1ec4eab22f26449491c0d514d9b464ef";
             string clientSecret = "ede6e9fc0b024434a1e9f6302f7873a4";

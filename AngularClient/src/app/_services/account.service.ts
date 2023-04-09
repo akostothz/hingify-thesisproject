@@ -5,6 +5,7 @@ import { ReplaySubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { User } from '../_models/user';
+import { AccessToken } from '../_models/accesstoken';
 
 @Injectable({
   providedIn: 'root'
@@ -53,9 +54,13 @@ export class AccountService {
     return this.http.post(this.baseUrl + 'account/retrievespotifypic', token);
   }
 
-  getAccessToken(authorizationCode: string) {
-    console.log(authorizationCode);
-    return this.http.post(this.baseUrl + 'account/getaccesstoken', authorizationCode);
+  getAccessToken(token: string) {
+    const accesstoken = <AccessToken>({
+      userid: JSON.parse(localStorage.getItem('user'))?.id,
+      token: token
+    });
+    console.log(accesstoken);
+    return this.http.post(this.baseUrl + 'account/getaccesstoken', accesstoken);
   }
 
   logout() {
