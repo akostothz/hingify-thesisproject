@@ -43,7 +43,34 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
             return Ok();
         }
+        [HttpPost("getaccesstoken")]
+        public async Task<ActionResult> GetAccessToken(string authorizationcode)
+        {
+            string authorizationCode = authorizationcode;
+            string redirectUri = "http://localhost:4200/spotify-success";
+            string clientId = "1ec4eab22f26449491c0d514d9b464ef";
+            string clientSecret = "ede6e9fc0b024434a1e9f6302f7873a4";
 
+            Console.WriteLine(authorizationCode);
+
+            ;
+
+
+            RestClient client = new RestClient("https://accounts.spotify.com");
+            RestRequest request = new RestRequest("api/token", Method.Post);
+            request.AddParameter("grant_type", "authorization_code");
+            request.AddParameter("code", authorizationCode);
+            request.AddParameter("redirect_uri", redirectUri);
+            request.AddParameter("client_id", clientId);
+            request.AddParameter("client_secret", clientSecret);
+
+            RestResponse response = client.Execute(request);
+            string responseBody = response.Content;
+
+            ;
+
+            return Ok();
+        }
 
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)

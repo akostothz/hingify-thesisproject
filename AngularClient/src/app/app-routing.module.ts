@@ -15,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 import { SpotifyAuthComponent } from './spotify-auth/spotify-auth.component';
+import { SpotifyAccessSuccessComponent } from './spotify-access-success/spotify-access-success.component';
 
 const routes: Routes = [
   {path: '', component: AboutComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
       {path: 'edit', component: EditProfileComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'editphoto', component: EditPhotoComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'foryou', component: ForyouComponent},
-      {path: 'spotify-auth', component: SpotifyAuthComponent}
+      {path: 'spotify-auth', component: SpotifyAuthComponent},
+      {path: 'spotify-success', component: SpotifyAccessSuccessComponent}
     ]
   }, 
   {path: 'errors', component: TestErrorComponent},

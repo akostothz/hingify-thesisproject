@@ -5,9 +5,13 @@
     </div>   
     <p class="name">{{user.firstName}} {{user.lastName}}</p>
     <h3>@{{user.username}}</h3>
-    <h2>Select a file</h2>
+    <h2>Retrieve picture from Spotify</h2>
     <table>
         <tr>
+            <button type="button" class="btn btn-outline-secondary" id="retrieve" (click)="retrieveSpotifyPic('token_placeholder')">
+                Retrieve from Spotify
+            </button>
+            <h3 class="retr">or select a file</h3>
             <input type="file" ng2FileSelect [uploader]="uploader" class="upl"/>
             
             <button type="button" class="btn btn-outline-secondary" (click)="upload()">

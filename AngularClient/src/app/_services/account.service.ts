@@ -49,6 +49,15 @@ export class AccountService {
     return this.http.post(this.baseUrl + 'account/updateuser', file);
   }
 
+  retrieveFromSpotify(token: string) {
+    return this.http.post(this.baseUrl + 'account/retrievespotifypic', token);
+  }
+
+  getAccessToken(authorizationCode: string) {
+    console.log(authorizationCode);
+    return this.http.post(this.baseUrl + 'account/getaccesstoken', authorizationCode);
+  }
+
   logout() {
     localStorage.removeItem('user');
     this.currentUserSource.next(null);

@@ -26,6 +26,7 @@ import { EditPhotoComponent } from './edit-photo/edit-photo.component';
 import { LoginComponent } from './login/login.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { SpotifyAuthComponent } from './spotify-auth/spotify-auth.component';
+import { SpotifyAccessSuccessComponent } from './spotify-access-success/spotify-access-success.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { SpotifyAuthComponent } from './spotify-auth/spotify-auth.component';
     EditPhotoComponent,
     LoginComponent,
     TextInputComponent,
-    SpotifyAuthComponent
+    SpotifyAuthComponent,
+    SpotifyAccessSuccessComponent
   ],
   imports: [
     BrowserModule,

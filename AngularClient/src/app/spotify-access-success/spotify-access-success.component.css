@@ -1,0 +1,17 @@
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 4.5em;
+    padding-bottom: 2em;
+}
+
+.btn {
+    background-color: rgb(30, 215, 96);
+    width: 30em;
+    height: 5em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1em;
+    border-color: rgb(155, 155, 155);
+}

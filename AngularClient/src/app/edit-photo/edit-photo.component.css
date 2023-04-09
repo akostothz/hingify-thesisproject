@@ -17,6 +17,10 @@ h3 {
     font-size: 2.5em;
 }
 
+.retr {
+    padding-bottom: 1.5rem;
+}
+
 .name {
     color: white;
     text-align: center;
@@ -74,4 +78,8 @@ h3 {
     color: white;
 }
 
+#retrieve {
+    background-color: rgb(30, 215, 96);
+    margin-bottom: 2rem;
+}
 
