@@ -89,10 +89,41 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
         }
 
+        private void RetrieveAccessToken(AccessTokenDTO accessToken)
+        {
+            var user = _context.Users.SingleOrDefault(x => x.Id == accessToken.UserId);
+
+            string authorizationCode = accessToken.Authorizationcode;
+            string redirectUri = "http://localhost:4200/spotify-success";
+            string clientId = "1ec4eab22f26449491c0d514d9b464ef";
+            string clientSecret = "ede6e9fc0b024434a1e9f6302f7873a4";
+
+            RestClient client = new RestClient("https://accounts.spotify.com");
+            RestRequest request = new RestRequest("api/token", Method.Post);
+            request.AddParameter("grant_type", "authorization_code");
+            request.AddParameter("code", authorizationCode);
+            request.AddParameter("redirect_uri", redirectUri);
+            request.AddParameter("client_id", clientId);
+            request.AddParameter("client_secret", clientSecret);
+
+            RestResponse response = client.Execute(request);
+            string responseBody = response.Content;
+
+            if (!responseBody.ToLower().Contains("error"))
+            {
+                var cut = JsonConvert.DeserializeObject<ResponseDTO>(responseBody);
+                user.SpotifyAccessToken = cut.access_token;
+                _context.SaveChanges();
+            }
+        }
+
         [HttpPut("retrievespotifypic")]
         public async Task<ActionResult> RetrieveSpotifyPic(AccessTokenDTO accessToken)
         {
             var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == accessToken.UserId);
+            ;
+            RetrieveAccessToken(accessToken);
+            ;
 
             if (user.SpotifyAccessToken != null)
             {
@@ -107,7 +138,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
                     ;
                     var spotyuser = JsonConvert.DeserializeObject<SpotifyAccountDTO>(response.Content);
                     ;
-                    user.PhotoUrl = spotyuser.images[0].url;
+                    user.PhotoUrl = _photoService.TransformImage(spotyuser.images[0].url);
                     ;
                     _context.SaveChanges();
                     return Ok();
