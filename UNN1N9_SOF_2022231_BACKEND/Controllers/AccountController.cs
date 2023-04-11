@@ -47,7 +47,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         [HttpPost("getaccesstoken")]
         public async Task<ActionResult> GetAccessToken(AccessTokenDTO accessToken)
         {
-            string authorizationCode = accessToken.Authorizationcode;
+            string authorizationCode = accessToken.Token;
             string redirectUri = "http://localhost:4200/spotify-success";
             string clientId = "1ec4eab22f26449491c0d514d9b464ef";
             string clientSecret = "ede6e9fc0b024434a1e9f6302f7873a4";
@@ -78,7 +78,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             }
             else
             {
-                var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == accessToken.UserId);
+                var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == accessToken.Userid);
                 var cut = JsonConvert.DeserializeObject<ResponseDTO>(responseBody);
                 ;
                 user.SpotifyAccessToken = cut.access_token;
@@ -91,9 +91,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
         private void RetrieveAccessToken(AccessTokenDTO accessToken)
         {
-            var user = _context.Users.SingleOrDefault(x => x.Id == accessToken.UserId);
+            var user = _context.Users.SingleOrDefault(x => x.Id == accessToken.Userid);
 
-            string authorizationCode = accessToken.Authorizationcode;
+            string authorizationCode = accessToken.Token;
             string redirectUri = "http://localhost:4200/spotify-success";
             string clientId = "1ec4eab22f26449491c0d514d9b464ef";
             string clientSecret = "ede6e9fc0b024434a1e9f6302f7873a4";
@@ -117,10 +117,10 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             }
         }
 
-        [HttpPut("retrievespotifypic")]
-        public async Task<ActionResult> RetrieveSpotifyPic(AccessTokenDTO accessToken)
+        [HttpPut("spotifypic")]
+        public async Task<ActionResult> SpotifyPic(AccessTokenDTO accessToken)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == accessToken.UserId);
+            var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == accessToken.Userid);
             ;
             RetrieveAccessToken(accessToken);
             ;
@@ -197,7 +197,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
-
+            ;
             if (user == null)
                 return Unauthorized("Invalid username!");
 

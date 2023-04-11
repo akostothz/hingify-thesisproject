@@ -59,6 +59,7 @@ export class EditPhotoComponent implements OnInit {
       const urlParams = new URLSearchParams(queryString);
 
       const authorizationCode = urlParams.get('code');
+      console.log(authorizationCode);
       this.accountService.retrieveFromSpotify(authorizationCode);
     }
 

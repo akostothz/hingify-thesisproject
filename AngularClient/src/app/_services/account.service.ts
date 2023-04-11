@@ -51,15 +51,15 @@ export class AccountService {
   }
 
   retrieveFromSpotify(bearer: string) {
-    const accesstoken = <AccessToken>({
+    let accesstoken = <AccessToken>({
       userid: JSON.parse(localStorage.getItem('user'))?.id,
       token: bearer
     });
-    return this.http.put(this.baseUrl + 'account/retrievespotifypic', accesstoken);
+    return this.http.put(this.baseUrl + 'account/spotifypic', accesstoken);
   }
 
   getAccessToken(token: string) {
-    const accesstoken = <AccessToken>({
+    let accesstoken = <AccessToken>({
       userid: JSON.parse(localStorage.getItem('user'))?.id,
       token: token
     });

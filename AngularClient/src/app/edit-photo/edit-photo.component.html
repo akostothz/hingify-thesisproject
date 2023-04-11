@@ -1,14 +1,16 @@
 <div class="row" *ngIf="user">
-    <h1>On this page, you can set your profile picture.</h1>
+    <h1>Set your profile picture.</h1>
     <div class="picdiv">
         <img src="{{user.photoUrl || './assets/user2.png'}}" alt="Profile Picture" class="card-img">                 
     </div>   
     <p class="name">{{user.firstName}} {{user.lastName}}</p>
     <h3>@{{user.username}}</h3>
+    <hr>
     <h2>Retrieve picture from Spotify</h2>
     <table>
         <tr>
-            <a href="https://accounts.spotify.com/authorize?client_id=1ec4eab22f26449491c0d514d9b464ef&response_type=code&redirect_uri=http://localhost:4200/spotify-success&scope=user-read-private%20user-read-email" class="btn btn-outline-secondary" id="retrieve" (click)="retrieveSpotifyPic()">
+            <a href="https://accounts.spotify.com/authorize?client_id=1ec4eab22f26449491c0d514d9b464ef&response_type=code&redirect_uri=http://localhost:4200/spotify-success&scope=user-read-private%20user-read-email" 
+            class="btn btn-outline-secondary" id="retrieve" (click)="retrieveSpotifyPic()">
                 Retrieve from Spotify
             </a>
             <h3 class="retr">or select a file</h3>

@@ -45,7 +45,6 @@ namespace UNN1N9_SOF_2022231_BACKEND.Services
                 Folder = "user-pics"
             });
             ;
-            //string transformedImageUrl = _cloudinary.Api.UrlImgUp.Transform(transformation).BuildUrl(imageUrl);
             string transformedImageUrl = _cloudinary.Api.UrlImgUp.Transform(transformation).BuildUrl(uploadResult.PublicId + "." + uploadResult.Format);
 
             ;
