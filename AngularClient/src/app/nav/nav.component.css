@@ -32,7 +32,7 @@ img {
     max-width: 2vw;
     border-radius: 50%;
     border-inline: 0;
-    border: 0.15vw solid rgb(148, 15, 192);
+    border: 0.18vw solid #77067a;
     display: inline;
     margin: 0.4vw;
 }
@@ -76,5 +76,11 @@ nav {
     border-color: rgb(148, 15, 192);
     border-style: solid;
     padding: 0.5em;
+}
+
+#dmenu {
+    border-width: 2px;
+    border-color: rgb(148, 15, 192);
+    border-style: solid;
 }
 
