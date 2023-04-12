@@ -8,8 +8,9 @@ h1 {
 h2 {
     color: white;
     text-align: left;
-    font-size: 3em;
+    font-size: 3.5em;
     padding-top: 1em;
+    margin-bottom: 1em;
 }
 .nolikedsongs {
     color: rgb(213, 24, 243);
@@ -54,6 +55,7 @@ h2 {
 .tab {
     display: table;
 }
+/*
 .card {
     scroll-snap-type: x mandatory;
     scroll-padding: 0 24px;
@@ -70,6 +72,7 @@ h2 {
     margin-bottom: 2em;
     margin-top: 2em;
 }
+*/
 
 .container {
     scroll-snap-type: x mandatory;
@@ -171,3 +174,56 @@ h2 {
     color: #fff;
     animation-delay: 1s;
 }
+
+#head {
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+  
+  #title {
+    font-size: 2em;
+  }
+  
+  #genre {
+    font-size: 1.3em;
+    color: rgb(236, 195, 13);
+  }
+  
+  #btn2 {
+    margin-left: 1em;
+  }
+  
+  #btn3 {
+    margin-left: 1em;
+    background-color: rgb(30, 215, 96);
+    border-color: #ffffff;
+  }
+  
+  #btn3:hover {
+    background-color: rgb(22, 170, 74);
+    border-color: #ffffff;
+  }
+
+  hr {
+    border: 0.5px solid #fcf3f3;
+  }
+  
+  .more {
+    display: flex;
+    text-align: center;
+    height: 3em;
+  }
+  
+  .morebutton {
+    display: flex;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    font-size: 2em;
+    color: #929790;
+  }
+  
+  .morebutton:hover {
+    text-decoration: underline;
+  }

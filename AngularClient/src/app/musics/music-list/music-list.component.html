@@ -1,6 +1,25 @@
-<h1>We've made a couple of playlist for You based on your profile. Enjoy!</h1>
+<h1>We've made a couple of playlist for You based on your profile infos.</h1>
 
 <h2>Your liked songs</h2>
+<div class="card" *ngFor="let likedsong of likedsongs$ | async">
+    <div class="card-header" id="head">
+        <i class="fa-solid fa-users"></i>
+        {{likedsong.artistName}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title" id="title">{{likedsong.trackName}}</h5>
+      <p class="card-text" id="genre">{{likedsong.genre}}</p>
+      <a href="#" class="btn btn-primary" id="btn">Find more like this</a>
+      <a href="#" class="btn btn-info" id="btn2"><i class="fa-solid fa-play"></i></a>
+      <a href="#" class="btn btn-secondary" id="btn3"><i class="fa-brands fa-spotify"></i></a>
+    </div>
+    <hr>
+</div>
+<div class="more">
+    <a href="#" class="morebutton">More ></a>
+</div>
+
+<!--
 <div class="container" *ngIf="(likedsongs$)">
     <div class="card" *ngFor="let likedsong of likedsongs$ | async">
         <li class="trackname">{{likedsong.trackName}}</li>
@@ -12,7 +31,7 @@
         </section>
     </div>
 </div>
-
+-->
 <ng-container *ngIf="(likedsongs$ | async) === null">
     <p class="nolikedsongs">Uh-oh! It seems you have not liked anything yet. Hope the playlists below help!</p>          
 </ng-container> 
