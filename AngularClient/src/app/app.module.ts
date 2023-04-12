@@ -27,6 +27,8 @@ import { LoginComponent } from './login/login.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { SpotifyAuthComponent } from './spotify-auth/spotify-auth.component';
 import { SpotifyAccessSuccessComponent } from './spotify-access-success/spotify-access-success.component';
+import { SearchComponent } from './search/search.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { SpotifyAccessSuccessComponent } from './spotify-access-success/spotify-
     LoginComponent,
     TextInputComponent,
     SpotifyAuthComponent,
-    SpotifyAccessSuccessComponent
+    SpotifyAccessSuccessComponent,
+    SearchComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,

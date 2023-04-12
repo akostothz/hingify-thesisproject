@@ -38,6 +38,42 @@ img {
 }
 
 nav {  
-    max-height: 2.8vw;
+    height: 7em;
+}
+
+#hingify {
+    font-size: 2.5em;
+}
+
+#navitem {
+    font-size: 1.5em;
+}
+
+.navbar-nav {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-item {
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+}
+
+#icon {
+    padding-right: 0.4em;
+}
+
+#dtoggle {
+    font-size: 1.3em;
+}
+
+#ddown {
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: rgb(148, 15, 192);
+    border-style: solid;
 }
 
