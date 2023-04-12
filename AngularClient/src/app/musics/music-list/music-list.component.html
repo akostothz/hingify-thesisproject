@@ -1,6 +1,9 @@
 <h1>We've made a couple of playlist for You based on your profile infos.</h1>
 
-<h2>Your liked songs</h2>
+<h2>
+    <i class="fa-solid fa-align-left" id="ik"></i>
+    Your liked songs
+</h2>
 <div class="card" *ngFor="let likedsong of likedsongs$ | async">
     <div class="card-header" id="head">
         <i class="fa-solid fa-users"></i>
@@ -38,42 +41,70 @@
 
 
 
-<h2>Top hits in your area</h2>
-<div class="container">
-    <div class="card" *ngFor="let originsong of originsongs$ | async">
-        <li class="trackname">{{originsong.trackName}}</li>
-        <li class="artistname">{{originsong.artistName}}</li>
-        <li class="genre">{{originsong.genre}}</li>
-        <section class="neonpurple">
-            <a class="neon-purple" (click)="likeSong(originsong.id)">♥</a>
-                         
-        </section>
+<h2>
+    <i class="fa-solid fa-align-left" id="ik"></i>
+    Top hits in your area
+</h2>
+<div class="card" *ngFor="let originsong of originsongs$ | async">
+    <div class="card-header" id="head">
+        <i class="fa-solid fa-users"></i>
+        {{originsong.artistName}}
     </div>
+    <div class="card-body">
+      <h5 class="card-title" id="title">{{originsong.trackName}}</h5>
+      <p class="card-text" id="genre">{{originsong.genre}}</p>
+      <a href="#" class="btn btn-primary" id="btn">Find more like this</a>
+      <a href="#" class="btn btn-info" id="btn2"><i class="fa-solid fa-play"></i></a>
+      <a href="#" class="btn btn-secondary" id="btn2"><i class="fa-solid fa-heart"></i></a>
+      <a href="#" class="btn btn-secondary" id="btn3"><i class="fa-brands fa-spotify"></i></a>
+    </div>
+    <hr>
+</div>
+<div class="more">
+    <a href="#" class="morebutton">More ></a>
 </div>
 
 
-<h2>People around your age also liked..</h2>
-<div class="container">
-    <div class="card" *ngFor="let agesong of agesongs$ | async">
-        <li class="trackname">{{agesong.trackName}}</li>
-        <li class="artistname">{{agesong.artistName}}</li>
-        <li class="genre">{{agesong.genre}}</li>
-        <section class="neonpurple">
-            <a class="neon-purple" (click)="likeSong(agesong.id)">♥</a>
-                      
-        </section>
+<h2>
+    <i class="fa-solid fa-align-left" id="ik"></i>
+    People around your age also liked..
+</h2>
+<div class="card" *ngFor="let agesong of agesongs$ | async">
+    <div class="card-header" id="head">
+        <i class="fa-solid fa-users"></i>
+        {{agesong.artistName}}
     </div>
+    <div class="card-body">
+      <h5 class="card-title" id="title">{{agesong.trackName}}</h5>
+      <p class="card-text" id="genre">{{agesong.genre}}</p>
+      <a href="#" class="btn btn-primary" id="btn">Find more like this</a>
+      <a href="#" class="btn btn-info" id="btn2"><i class="fa-solid fa-play"></i></a>
+      <a href="#" class="btn btn-secondary" id="btn2"><i class="fa-solid fa-heart"></i></a>
+      <a href="#" class="btn btn-secondary" id="btn3"><i class="fa-brands fa-spotify"></i></a>
+    </div>
+    <hr>
+</div>
+<div class="more">
+    <a href="#" class="morebutton">More ></a>
 </div>
 
 
-<h2>Gender rules!</h2>
-<div class="container">
-    <div class="card" *ngFor="let gendersong of gendersongs$ | async">
-        <li class="trackname">{{gendersong.trackName}}</li>
-        <li class="artistname">{{gendersong.artistName}}</li>
-        <li class="genre">{{gendersong.genre}}</li>  
-        <section class="neonpurple">
-            <a class="neon-purple" (click)="likeSong(gendersong.id)">♥</a>                 
-        </section>
+<h2>
+    <i class="fa-solid fa-align-left" id="ik"></i>
+    Gender rules!
+</h2>
+<div class="card" *ngFor="let gendersong of gendersongs$ | async">
+    <div class="card-header" id="head">
+        <i class="fa-solid fa-users"></i>
+        {{gendersong.artistName}}
     </div>
+    <div class="card-body">
+      <h5 class="card-title" id="title">{{gendersong.trackName}}</h5>
+      <p class="card-text" id="genre">{{gendersong.genre}}</p>
+      <a href="#" class="btn btn-primary" id="btn">Find more like this</a>
+      <a href="#" class="btn btn-info" id="btn2"><i class="fa-solid fa-play"></i></a>
+      <a href="#" class="btn btn-secondary" id="btn2"><i class="fa-solid fa-heart"></i></a>
+      <a href="#" class="btn btn-secondary" id="btn3"><i class="fa-brands fa-spotify"></i></a>
+    </div>
+    <hr>
 </div>

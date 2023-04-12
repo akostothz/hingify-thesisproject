@@ -8,7 +8,7 @@ h1 {
 h2 {
     color: white;
     text-align: left;
-    font-size: 3.5em;
+    font-size: 4.2em;
     padding-top: 1em;
     margin-bottom: 1em;
 }
@@ -226,4 +226,9 @@ h2 {
   
   .morebutton:hover {
     text-decoration: underline;
+    color: #fcf3f3;
+  }
+
+  #ik {
+    padding-right: 0.2em;
   }
