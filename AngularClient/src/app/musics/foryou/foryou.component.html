@@ -1,4 +1,17 @@
 <h1>This playlist is based on your listening history divided into days and various times of the day.</h1>
 <h2>Right now it's {{day}}, {{timeofday}}.</h2>
 
-<h3>This feature has not been added yet. Come back later!</h3>
+<div class="card" *ngFor="let lhsong of lhsongs$ | async">
+    <div class="card-header" id="head">
+        <i class="fa-solid fa-users"></i>
+        {{lhsong.artistName}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title" id="title">{{lhsong.trackName}}</h5>
+      <p class="card-text" id="genre">{{lhsong.genre}}</p>
+      <a href="#" class="btn btn-info" ><i class="fa-solid fa-play"></i></a>
+      <a href="#" class="btn btn-warning" id="btn2"><i class="fa-solid fa-heart"></i></a>
+      <a href="#" class="btn btn-secondary" id="btn3"><i class="fa-brands fa-spotify"></i></a>
+    </div>
+    <hr>
+</div>

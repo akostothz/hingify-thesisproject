@@ -99,9 +99,10 @@ h3 {
     font-size: 2em;
     align-self: left;
     text-align: center;
-    border-radius: 0.8em;
-    border-width: 0.2em;
-    border-color: rgb(47, 189, 214);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(214, 218, 219);
     background-color: rgb(26, 9, 51);
 }
 

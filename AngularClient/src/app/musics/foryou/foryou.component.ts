@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Music } from 'src/app/_models/music';
 import { MusicsService } from 'src/app/_services/musics.service';
 
@@ -8,7 +9,7 @@ import { MusicsService } from 'src/app/_services/musics.service';
   styleUrls: ['./foryou.component.css']
 })
 export class ForyouComponent implements OnInit {
-  lhsongs: Music[] = [];
+  lhsongs$: Observable<Music[]> | undefined;
   day: string;
   timeofday: string;
 
@@ -22,9 +23,7 @@ export class ForyouComponent implements OnInit {
   }
 
   loadMusics() { 
-    this.musicService.getLikedSongs(JSON.parse(localStorage.getItem('user'))?.id).subscribe({
-      next: lhsongs => this.lhsongs = lhsongs
-    })
+    this.lhsongs$ = this.musicService.getLikedSongs(JSON.parse(localStorage.getItem('user'))?.id);
   }
   
   TimeSetter() {
