@@ -12,7 +12,7 @@ export class SearchComponent implements OnInit {
     
   }
 
-  constructor(private musicService: MusicsService) { }
+  constructor() { }
 
   /*
   const searchButton = document.getElementById('search-button');
