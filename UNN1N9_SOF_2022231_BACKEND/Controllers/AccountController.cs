@@ -117,6 +117,15 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             }
         }
 
+        [HttpGet("userpic/{id}")]
+        public async Task<ActionResult<string>> GetUserPic(int id)
+        {
+            var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == id);
+            ;
+            return user.PhotoUrl;
+        }
+
+
         [HttpPut("spotifypic")]
         public async Task<ActionResult<UserDto>> SpotifyPic(AccessTokenDTO accessToken)
         {

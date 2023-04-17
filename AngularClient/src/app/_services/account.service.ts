@@ -15,6 +15,7 @@ export class AccountService {
   baseUrl = environment.apiUrl;
   private currentUserSource = new ReplaySubject<User>(1);
   currentUser$ = this.currentUserSource.asObservable();
+  picurl: string = '';
 
   constructor(private http: HttpClient, private toastr: ToastrService) { }
 
@@ -66,6 +67,17 @@ export class AccountService {
         this.toastr.success('Profile successfully updated. Might need to hard refresh or log in again to see the changes.');
       },
     );
+  }
+
+  getPicture(id: number) {
+    return this.http.get<string>(this.baseUrl + 'account/userpic/' + id).subscribe(
+      response => {
+      map(picurl => {
+        this.picurl = this.picurl;
+        console.log(this.picurl);
+        return picurl;
+      })
+    });
   }
 
   getAccessToken(token: string) {
