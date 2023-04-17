@@ -55,12 +55,13 @@ export class EditPhotoComponent implements OnInit {
     }
 
     retrieveSpotifyPic() {
+      /*
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
 
       const authorizationCode = urlParams.get('code');
       console.log(authorizationCode);
-      this.accountService.retrieveFromSpotify(authorizationCode);
+      this.accountService.retrieveFromSpotify(authorizationCode);*/
     }
 
     upload() {

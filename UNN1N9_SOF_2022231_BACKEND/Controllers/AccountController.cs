@@ -47,7 +47,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         [HttpPost("getaccesstoken")]
         public async Task<ActionResult> GetAccessToken(AccessTokenDTO accessToken)
         {
-            string authorizationCode = accessToken.Token;
+            string authorizationCode = accessToken.token;
             string redirectUri = "http://localhost:4200/spotify-success";
             string clientId = "1ec4eab22f26449491c0d514d9b464ef";
             string clientSecret = "ede6e9fc0b024434a1e9f6302f7873a4";
@@ -78,7 +78,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             }
             else
             {
-                var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == accessToken.Userid);
+                var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == accessToken.userid);
                 var cut = JsonConvert.DeserializeObject<ResponseDTO>(responseBody);
                 ;
                 user.SpotifyAccessToken = cut.access_token;
@@ -91,9 +91,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
         private void RetrieveAccessToken(AccessTokenDTO accessToken)
         {
-            var user = _context.Users.SingleOrDefault(x => x.Id == accessToken.Userid);
+            var user = _context.Users.SingleOrDefault(x => x.Id == accessToken.userid);
 
-            string authorizationCode = accessToken.Token;
+            string authorizationCode = accessToken.token;
             string redirectUri = "http://localhost:4200/spotify-success";
             string clientId = "1ec4eab22f26449491c0d514d9b464ef";
             string clientSecret = "ede6e9fc0b024434a1e9f6302f7873a4";
@@ -118,9 +118,10 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         }
 
         [HttpPut("spotifypic")]
-        public async Task<ActionResult> SpotifyPic(AccessTokenDTO accessToken)
+        public async Task<ActionResult<UserDto>> SpotifyPic(AccessTokenDTO accessToken)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == accessToken.Userid);
+            //terjunk vissza userdto-val es akkor lehet frissul
+            var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == accessToken.userid);
             ;
             RetrieveAccessToken(accessToken);
             ;
@@ -141,7 +142,19 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
                     user.PhotoUrl = _photoService.TransformImage(spotyuser.images[0].url);
                     ;
                     _context.SaveChanges();
-                    return Ok();
+                    return new UserDto
+                    {
+                        Id = user.Id,
+                        Username = user.UserName,
+                        Country = user.Country,
+                        Email = user.Email,
+                        FirstName = user.FirstName,
+                        LastName = user.LastName,
+                        YearOfBirth = user.YearOfBirth,
+                        Gender = user.Gender,
+                        PhotoUrl = user.PhotoUrl,
+                        Token = _tokenService.CreateToken(user)
+                    };
                 }
                 else
                 {
