@@ -78,6 +78,15 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             return Ok(musicsToReturn);
         }
 
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<MusicDto>>> Search(string expr)
+        {
+            var musics = await _logic.Search(expr);
+            var musicsToReturn = _mapper.Map<IEnumerable<MusicDto>>(musics);
+
+            return Ok(musicsToReturn);
+        }
+
         [HttpPost]
         public async Task<ActionResult> LikeSong(BehaviorDto behaviorDto)
         {

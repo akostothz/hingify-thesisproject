@@ -230,6 +230,8 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return dist;
         }
 
+        
+
         public async Task<IEnumerable<Music>> GetPersonalizedMix2(int id, string style)
         {
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
