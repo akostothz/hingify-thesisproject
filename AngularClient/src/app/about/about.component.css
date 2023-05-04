@@ -21,3 +21,20 @@ h3 {
     padding-bottom: 1em;
     text-align: center;
 }
+
+.help {
+    margin-top: 8em;
+    display: flex;
+    justify-content: center;
+}
+
+#btn3 {
+    background-color: rgb(30, 215, 96);
+    border-color: #ffffff;
+    min-width: fit-content;
+    width: 10vw;
+    height: fit-content;
+    font-size: 2em;
+    border-radius: 12px;
+}
+  
