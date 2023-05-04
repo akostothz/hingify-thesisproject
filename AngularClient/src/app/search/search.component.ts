@@ -3,6 +3,7 @@ import { MusicsService } from '../_services/musics.service';
 import { Observable } from 'rxjs';
 import { Music } from '../_models/music';
 
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -18,12 +19,14 @@ export class SearchComponent implements OnInit {
 
   constructor(private musicService: MusicsService) { }
 
+  play(trackId: string) {
+    
+  }
   search() {
     let inputElement = document.getElementById('search-input') as HTMLInputElement;
     this.searchInput = inputElement.value;
     
     this.foundsongs$ = this.musicService.search(this.searchInput);
-    console.log(this.foundsongs$);
   }
 
 }

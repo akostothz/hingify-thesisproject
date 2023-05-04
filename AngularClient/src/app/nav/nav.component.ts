@@ -19,7 +19,7 @@ export class NavComponent implements OnInit {
 
     ngOnInit(): void {
       this.picUrl$ = this.accountService.getPicture(JSON.parse(localStorage.getItem('user'))?.id);
-      console.log(this.picUrl$);
+      
     }
 
 
