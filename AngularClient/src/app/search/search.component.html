@@ -7,41 +7,25 @@
 
     <div class="search"> 
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search...">
-            <button class="search-button">
+            <input type="text" id="search-input" class="search-input" placeholder="Search...">
+            <button class="search-button" (click)="search()">
               <i class="fas fa-search"></i>
             </button>
         </div>
     </div>
 
-    <div class="result"> 
-        <h3 class="results">Results for "Dzsúdló"</h3>
+    <h3 class="results" *ngIf="searchInput !== ''">Results for "{{searchInput}}"</h3>
+
+    <div class="result" *ngFor="let foundsong of foundsongs$ | async">     
 
         <div class="card">
             <div class="card-header" id="head">
                 <i class="fa-solid fa-users"></i>
-                Dzsúdló
+                {{foundsong.artistName}}
             </div>
             <div class="card-body">
-              <h5 class="card-title" id="title">Ennyi</h5>
-              <p class="card-text" id="genre">Rap</p>
-              <a href="#" class="btn btn-primary" id="btn">Find more like this</a>
-              <a href="#" class="btn btn-info" id="btn2"><i class="fa-solid fa-play"></i></a>
-              <a href="#" class="btn btn-secondary" id="btn2"><i class="fa-solid fa-heart"></i></a>
-              <a href="#" class="btn btn-secondary" id="btn3"><i class="fa-brands fa-spotify"></i></a>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="card">
-            <div class="card-header" id="head">
-                <i class="fa-solid fa-users"></i>
-                Dzsúdló
-            </div>
-            <div class="card-body">
-              <h5 class="card-title" id="title">Ha meghalok</h5>
-              <p class="card-text" id="genre">Alternative</p>
+              <h5 class="card-title" id="title">{{foundsong.trackName}}</h5>
+              <p class="card-text" id="genre">{{foundsong.genre}}</p>
               <a href="#" class="btn btn-primary" id="btn">Find more like this</a>
               <a href="#" class="btn btn-info" id="btn2"><i class="fa-solid fa-play"></i></a>
               <a href="#" class="btn btn-secondary" id="btn2"><i class="fa-solid fa-heart"></i></a>

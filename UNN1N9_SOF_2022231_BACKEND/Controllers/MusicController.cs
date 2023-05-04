@@ -78,7 +78,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             return Ok(musicsToReturn);
         }
 
-        [HttpGet]
+        [HttpGet("{expr}")]
         public async Task<ActionResult<IEnumerable<MusicDto>>> Search(string expr)
         {
             var musics = await _logic.Search(expr);

@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -16,12 +16,30 @@ export class MusicsService {
   bycountrysongs: Music[] = [];
   agesongs: Music[] = [];
   personalizedsongs: Music[] = [];
+  foundsongs: Music[] = [];
 
   constructor(private http: HttpClient) { }
 
   likeMusic(model: any) {
     return this.http.post(this.baseUrl + 'Music/LikeSong', model);
     
+  }
+  public ToHttpParams(request: any): HttpParams {
+    let httpParams = new HttpParams();
+    Object.keys(request).forEach(function (key) {
+      httpParams = httpParams.append(key, request[key]);
+    });
+    return httpParams;
+  }
+
+  search(expr: string) {
+    if (this.foundsongs.length > 0) return of(this.foundsongs);
+    return this.http.get<Music[]>(this.baseUrl + 'Music/Search/' + expr).pipe(
+      map(foundsongs => {
+        this.foundsongs = this.foundsongs;
+        return foundsongs;
+      })
+    );
   }
 
   getLikedSongs(id: number) {

@@ -230,7 +230,43 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return dist;
         }
 
-        
+        public async Task<IEnumerable<Music>> Search(string expr)
+        {
+            string[] words = expr.Split(' ');
+            Dictionary<Music, int> matchedWords = new Dictionary<Music, int>();
+            ;
+            foreach (var music in _context.Musics)
+            {
+                int counter = 0;
+                for (int i = 0; i < words.Length; i++)
+                {
+                    if (music.ArtistName.ToLower().Contains(words[i].ToLower()))
+                    {
+                        counter++;
+                    }
+                    if (music.TrackName.ToLower().Contains(words[i].ToLower()))
+                    {
+                        counter++;
+                    }
+                }
+
+                if (counter > 0)
+                {
+                    matchedWords.Add(music, counter);
+                }
+            }
+
+            var sortedDict = from entry in matchedWords orderby entry.Value descending select entry;
+            List<Music> musicsToReturn = new List<Music>();
+
+            foreach (var item in sortedDict)
+            {
+                musicsToReturn.Add(item.Key);
+            }
+
+            return musicsToReturn;
+            
+        }
 
         public async Task<IEnumerable<Music>> GetPersonalizedMix2(int id, string style)
         {

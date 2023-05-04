@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MusicsService } from '../_services/musics.service';
+import { Observable } from 'rxjs';
+import { Music } from '../_models/music';
 
 @Component({
   selector: 'app-search',
@@ -7,19 +9,21 @@ import { MusicsService } from '../_services/musics.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  foundsongs$: Observable<Music[]> | undefined;
+  searchInput: string  = '';
 
   ngOnInit(): void {
     
   }
 
-  constructor() { }
+  constructor(private musicService: MusicsService) { }
 
-  /*
-  const searchButton = document.getElementById('search-button');
-const searchInput = document.getElementById('search-input');
-searchButton.addEventListener('click', () => {
-  const inputValue = searchInput.value;
-  alert(inputValue);
-});
-  */
+  search() {
+    let inputElement = document.getElementById('search-input') as HTMLInputElement;
+    this.searchInput = inputElement.value;
+    
+    this.foundsongs$ = this.musicService.search(this.searchInput);
+    console.log(this.foundsongs$);
+  }
+
 }
