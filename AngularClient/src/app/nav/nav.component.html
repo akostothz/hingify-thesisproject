@@ -77,7 +77,7 @@
         </div>
         
 
-        <div class="dropdown" id="ddown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
+        <div class="dropdown" id="ddown2" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
           <img src="{{ user.photoUrl || './assets/user2.png'}}" all="user photo">
           <a class="dropdown-toggle" id="dtoggle" dropdownToggle>{{user.firstName}} {{user.lastName}}</a>
           <div class="dropdown-menu mt-3 bg-dark" id="dmenu" *dropdownMenu="">

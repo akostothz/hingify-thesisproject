@@ -70,14 +70,12 @@ export class AccountService {
   }
 
   getPicture(id: number) {
-    return this.http.get<string>(this.baseUrl + 'account/userpic/' + id).subscribe(
-      response => {
+    return this.http.get<string>(this.baseUrl + 'account/userpic/' + id).pipe(   
       map(picurl => {
         this.picurl = this.picurl;
-        console.log(this.picurl);
         return picurl;
       })
-    });
+    );
   }
 
   getAccessToken(token: string) {

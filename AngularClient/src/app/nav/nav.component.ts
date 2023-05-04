@@ -12,14 +12,14 @@ import { AccountService } from '../_services/account.service';
 })
 export class NavComponent implements OnInit {
   model: any = {};
-  //picUrl$;
+  picUrl$: Observable<string>;
 
     constructor(public accountService: AccountService, private router: Router, 
       private toastr: ToastrService) {}
 
     ngOnInit(): void {
-      //this.picUrl$ = this.accountService.getPicture(JSON.parse(localStorage.getItem('user'))?.id);
-      
+      this.picUrl$ = this.accountService.getPicture(JSON.parse(localStorage.getItem('user'))?.id);
+      console.log(this.picUrl$);
     }
 
 
