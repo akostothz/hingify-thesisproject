@@ -78,6 +78,15 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             return Ok(musicsToReturn);
         }
 
+        [HttpGet("{trackId}")]
+        public async Task<ActionResult<IEnumerable<MusicDto>>> FindMore(string trackId)
+        {
+            var musics = await _logic.FindMore(trackId);
+            var musicsToReturn = _mapper.Map<IEnumerable<MusicDto>>(musics);
+
+            return Ok(musicsToReturn);
+        }
+
         [HttpGet("{expr}")]
         public async Task<ActionResult<IEnumerable<MusicDto>>> Search(string expr)
         {

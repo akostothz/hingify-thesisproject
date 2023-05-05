@@ -7,6 +7,7 @@ using UNN1N9_SOF_2022231_BACKEND.Data;
 using UNN1N9_SOF_2022231_BACKEND.DTOs;
 using UNN1N9_SOF_2022231_BACKEND.Helpers;
 using UNN1N9_SOF_2022231_BACKEND.Models;
+using static SpotifyAPI.Web.PlaylistRemoveItemsRequest;
 
 namespace UNN1N9_SOF_2022231_BACKEND.Logic
 {
@@ -231,6 +232,67 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return dist;
         }
 
+        private double FMEuclideanDistance(Music currMusic, Music dbMusic)
+        {
+            double dist = Math.Sqrt(Math.Pow(currMusic.Energy - dbMusic.Energy, 2) +
+                                Math.Pow(currMusic.Valence - dbMusic.Valence, 2) +
+                                Math.Pow(currMusic.Acousticness - dbMusic.Acousticness, 2) +
+                                 Math.Pow(currMusic.Danceability - dbMusic.Danceability, 2) +
+                                  Math.Pow(currMusic.Tempo - dbMusic.Tempo, 2) +
+                                   Math.Pow(currMusic.Speechiness - dbMusic.Speechiness, 2)
+                                );
+            return dist;
+        }
+
+        public async Task<IEnumerable<Music>> FindMore(string trackId)
+        { 
+            var choosenMusic = await _context.Musics.FirstOrDefaultAsync(x => x.TrackId == trackId);
+            var songsToChooseFrom = new List<Music>();
+            
+            foreach (var music in _context.Musics.Where(x => x.Genre == choosenMusic.Genre && x.Mode == choosenMusic.Mode))
+            {
+                if (EverythingInBoundaries(music, choosenMusic))
+                {
+                    songsToChooseFrom.Add(music);
+                }
+            }
+
+            LinkedList closestMusics = new LinkedList();
+
+            foreach (var song in songsToChooseFrom)
+            {
+                double dist = EuclideanDistance(choosenMusic, song);
+                closestMusics.Add(dist, song);
+            }
+            
+            List<Music> selectedMusics = new List<Music>();
+
+            LinkedListNode current = closestMusics.Head;
+            while (current != null)
+            {
+                selectedMusics.Add(current.Object);
+                current = current.Next;
+            }
+            
+            return selectedMusics;
+        }
+
+        private bool EverythingInBoundaries(Music music, Music? choosenMusic)
+        {
+            if (FMEnergyInBourdaries(music.Energy, choosenMusic.Energy) &&
+                FMValenceInBourdaries(music.Valence, choosenMusic.Valence) &&
+                FMAcousticnessInBourdaries(music.Acousticness, choosenMusic.Acousticness) &&
+                FMDanceabilityInBourdaries(music.Danceability, choosenMusic.Danceability) &&
+                FMSpeechinessInBoundaries(music.Speechiness, choosenMusic.Speechiness) &&
+                FMTempoInBoundaries(music.Tempo, choosenMusic.Tempo))
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+
         public async Task<IEnumerable<Music>> Search(string expr)
         {
             string[] words = expr.Split(' ');
@@ -386,6 +448,54 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
 
 
             return selectedMusics;
+        }
+
+        private bool FMEnergyInBourdaries(double currEnergy, double dbEnergy)
+        {
+            if (dbEnergy <= currEnergy + 0.15 && dbEnergy >= currEnergy - 0.15)
+                return true;
+
+            return false;
+        }
+
+        private bool FMValenceInBourdaries(double currValence, double dbValence)
+        {
+            if (dbValence <= currValence + 0.15 && dbValence >= currValence - 0.15)
+                return true;
+
+            return false;
+        }
+
+        private bool FMAcousticnessInBourdaries(double currAcousticness, double dbAcousticness)
+        {
+            if (dbAcousticness <= currAcousticness + 0.15 && dbAcousticness >= currAcousticness - 0.15)
+                return true;
+
+            return false;
+        }
+
+        private bool FMTempoInBoundaries(double currTempo, double dbTempo)
+        {
+            if (dbTempo <= currTempo + 8 && dbTempo >= currTempo - 8)
+                return true;
+
+            return false;
+        }
+
+        private bool FMSpeechinessInBoundaries(double currSpeechiness, double dbSpeechiness)
+        {
+            if (dbSpeechiness <= currSpeechiness + 0.15 && dbSpeechiness >= currSpeechiness - 0.15)
+                return true;
+
+            return false;
+        }
+
+        private bool FMDanceabilityInBourdaries(double currDanceability, double dbDanceability)
+        {
+            if (dbDanceability <= currDanceability + 0.15 && dbDanceability >= currDanceability - 0.15)
+                return true;
+
+            return false;
         }
 
         private bool EnergyInBourdaries(double currEnergy, double dbEnergy)

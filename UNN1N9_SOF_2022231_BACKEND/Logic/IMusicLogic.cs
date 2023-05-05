@@ -11,6 +11,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         Task<IEnumerable<Music>> GetMusicsBySex(int id);
         Task<IEnumerable<Music>> GetMusicsByCountry(int id);
         Task<IEnumerable<Music>> GetMusicsByAgeGroup(int id);
+        Task<IEnumerable<Music>> FindMore(string trackId);
         Task<IEnumerable<Music>> Search(string expr);
         void AddLikedSong(int userid, int musicid);
         public string TimeOfDayConverter();
