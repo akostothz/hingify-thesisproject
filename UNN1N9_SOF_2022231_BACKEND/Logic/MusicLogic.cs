@@ -293,11 +293,14 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             else
                 return false;
         }
-        public async Task<Music> FindMusic(string trackId)
+        public async Task<IEnumerable<Music>> FindMusic(string trackId)
         {
             var music = await _context.Musics.FirstOrDefaultAsync(x => x.TrackId == trackId);
-
-            return music;
+            
+            var musics = new List<Music>();
+            musics.Add(music);
+            
+            return musics;
         }
 
         public async Task<IEnumerable<Music>> Search(string expr)

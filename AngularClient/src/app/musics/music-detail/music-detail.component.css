@@ -1,0 +1,11 @@
+h1 {
+    color: white;
+    text-align: left;
+    font-size: 6em;
+    margin-bottom: 1.2em;
+}
+
+#genre {
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+}

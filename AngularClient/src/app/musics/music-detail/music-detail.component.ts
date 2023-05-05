@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { DetailedMusic } from 'src/app/_models/detailedmusic';
 import { Music } from 'src/app/_models/music';
 import { MusicsService } from 'src/app/_services/musics.service';
 
@@ -12,7 +13,7 @@ import { MusicsService } from 'src/app/_services/musics.service';
 })
 export class MusicDetailComponent implements OnInit {
   route: ActivatedRoute;
-  song$: Observable<Music> | undefined;
+  song$: Observable<DetailedMusic[]> | undefined;
 
   constructor(private musicService: MusicsService, private sanitizer: DomSanitizer, route: ActivatedRoute) {
     this.route = route;
@@ -30,5 +31,10 @@ export class MusicDetailComponent implements OnInit {
     let x = 'https://open.spotify.com/embed/track/' + trrackId + '?utm_source=generator';
     console.log(x);
     return this.sanitizer.bypassSecurityTrustResourceUrl(x);
+  }
+
+  msToMins(ms: number) {
+    let conv: number = 1.6667E-5;
+    return <number>conv * ms;
   }
 }

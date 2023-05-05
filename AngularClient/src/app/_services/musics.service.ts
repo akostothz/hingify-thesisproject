@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Behavior } from '../_models/behavior';
 import { Music } from '../_models/music';
 import { User } from '../_models/user';
+import { DetailedMusic } from '../_models/detailedmusic';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class MusicsService {
   personalizedsongs: Music[] = [];
   foundsongs: Music[] = [];
   discoveredsongs: Music[] = [];
-  song: Music;
+  song: DetailedMusic[] = [];
   
 
   constructor(private http: HttpClient) { }
@@ -56,7 +57,8 @@ export class MusicsService {
   }
 
   findMusic(trackId: string) {
-    return this.http.get<Music>(this.baseUrl + 'Music/FindMusic/' + trackId).pipe(
+    console.log('here')
+    return this.http.get<DetailedMusic[]>(this.baseUrl + 'Music/FindMusic/' + trackId).pipe(
       map(song => {
         this.song = this.song;
         return song;
