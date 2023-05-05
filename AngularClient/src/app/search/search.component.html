@@ -15,7 +15,7 @@
     </div>
 
     <div class="res">
-        <h3 class="results" *ngIf="searchInput !== ''">Results for "<i>{{searchInput}}</i>"
+        <h3 class="results" *ngIf="searchInput !== ''">Results for <i class="lblue">{{searchInput}}</i>
 
             <span class="badge rounded-pill bg-info" *ngIf="searchInput !== ''">{{(foundsongs$ |async)?.length}}</span>
 
@@ -41,6 +41,35 @@
 
         <hr>
 
+    </div>
+
+    
+
+    <div class="accordion accordion-flush" id="accordionFlushExample" *ngIf="searchInput !== ''">
+        
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" id="btn">
+                <i class="fa-solid fa-clipboard-question"></i>I did not find the song I was looking for.
+            </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <h3 class="h3">If you can't find a song, it can mean <span class="badge rounded-pill bg-secondary">2</span> things.</h3>
+                <ul>
+                <li>
+                    <h4 class="h4"><span class="badge rounded-pill bg-warning">1.</span> Try searching with more exact parameters. (type in the artist too, the full track name etc.)</h4>
+                </li>
+                <li>
+                    <h4 class="h4"><span class="badge rounded-pill bg-warning">2.</span> It is not in our database. You can help us adding it on our Help page.</h4>
+                </li>
+                <li>
+                    <button type="button" routerLink="/help" class="btn btn-light" id="go">Go to help ></button>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </div>
     </div>
 
 
