@@ -14,6 +14,7 @@
                 <iframe style="border-radius:12px" [src]='srcgenerator(likedsong.trackId)' width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <div class="buttons">
                   <a href="#" class="btn btn-primary" id="btn" routerLink="/discover/{{likedsong.trackId}}">Find more like this</a>
+                  <a href="#" class="btn btn-secondary" id="btn3" routerLink="/musics/{{likedsong.trackId}}"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
             </div>
             <hr>
@@ -39,6 +40,7 @@
                 <div class="buttons">
                   <a href="#" class="btn btn-primary" id="btn" routerLink="/discover/{{originsong.trackId}}">Find more like this</a>
                   <a href="#" class="btn btn-secondary" id="btn2"><i class="fa-solid fa-heart"></i></a>
+                  <a href="#" class="btn btn-secondary" id="btn3" routerLink="/musics/{{originsong.trackId}}"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
             </div>
             <hr>
@@ -66,6 +68,7 @@
                 <div class="buttons">
                   <a href="#" class="btn btn-primary" id="btn" routerLink="/discover/{{agesong.trackId}}">Find more like this</a>
                   <a href="#" class="btn btn-secondary" id="btn2"><i class="fa-solid fa-heart"></i></a>
+                  <a href="#" class="btn btn-secondary" id="btn3" routerLink="/musics/{{agesong.trackId}}"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
             </div>
             <hr>
@@ -93,6 +96,7 @@
                 <div class="buttons">
                   <a href="#" class="btn btn-primary" id="btn" routerLink="/discover/{{gendersong.trackId}}">Find more like this</a>
                   <a href="#" class="btn btn-secondary" id="btn2"><i class="fa-solid fa-heart"></i></a>
+                  <a href="#" class="btn btn-secondary" id="btn3" routerLink="/musics/{{gendersong.trackId}}"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
             </div>
             <hr>

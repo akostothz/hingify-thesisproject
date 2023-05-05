@@ -18,6 +18,7 @@ export class MusicsService {
   personalizedsongs: Music[] = [];
   foundsongs: Music[] = [];
   discoveredsongs: Music[] = [];
+  song: Music;
   
 
   constructor(private http: HttpClient) { }
@@ -50,6 +51,15 @@ export class MusicsService {
       map(discoveredsongs => {
         this.discoveredsongs = this.discoveredsongs;
         return discoveredsongs;
+      })
+    );
+  }
+
+  findMusic(trackId: string) {
+    return this.http.get<Music>(this.baseUrl + 'Music/FindMusic/' + trackId).pipe(
+      map(song => {
+        this.song = this.song;
+        return song;
       })
     );
   }

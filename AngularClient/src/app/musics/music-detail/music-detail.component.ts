@@ -1,10 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Music } from 'src/app/_models/music';
+import { MusicsService } from 'src/app/_services/musics.service';
 
 @Component({
   selector: 'app-music-detail',
   templateUrl: './music-detail.component.html',
   styleUrls: ['./music-detail.component.css']
 })
-export class MusicDetailComponent {
+export class MusicDetailComponent implements OnInit {
+  route: ActivatedRoute;
+  song$: Observable<Music> | undefined;
 
+  constructor(private musicService: MusicsService, private sanitizer: DomSanitizer, route: ActivatedRoute) {
+    this.route = route;
+  }
+  
+  ngOnInit(): void {
+      this.route.params.subscribe(param => {
+      let searchedTrackId = param['trackId'];
+
+      this.song$ = this.musicService.findMusic(searchedTrackId);
+    })  
+  }
+
+  srcgenerator(trrackId: string) {
+    let x = 'https://open.spotify.com/embed/track/' + trrackId + '?utm_source=generator';
+    console.log(x);
+    return this.sanitizer.bypassSecurityTrustResourceUrl(x);
+  }
 }
