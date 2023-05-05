@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { Music } from 'src/app/_models/music';
 import { MusicsService } from 'src/app/_services/musics.service';
@@ -13,7 +14,7 @@ export class ForyouComponent implements OnInit {
   day: string;
   timeofday: string;
 
-  constructor(private musicService: MusicsService) {
+  constructor(private musicService: MusicsService, private sanitizer: DomSanitizer) {
 
   }
 
@@ -45,5 +46,11 @@ export class ForyouComponent implements OnInit {
         this.timeofday = 'Evening';
     else
         this.timeofday = 'Night';
+  }
+
+  srcgenerator(trrackId: string) {
+    let x = 'https://open.spotify.com/embed/track/' + trrackId + '?utm_source=generator';
+    console.log(x);
+    return this.sanitizer.bypassSecurityTrustResourceUrl(x);
   }
 }

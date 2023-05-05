@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
 import { Behavior } from 'src/app/_models/behavior';
@@ -17,7 +18,7 @@ export class MusicListComponent implements OnInit {
   gendersongs$: Observable<Music[]> | undefined;
   behavior: Behavior;
   
-  constructor(private musicService: MusicsService) {
+  constructor(private musicService: MusicsService, private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
@@ -36,6 +37,12 @@ export class MusicListComponent implements OnInit {
     }
     this.behavior = behav;
     this.musicService.likeMusic(this.behavior).subscribe();
+  }
+
+  srcgenerator(trrackId: string) {
+    let x = 'https://open.spotify.com/embed/track/' + trrackId + '?utm_source=generator';
+    console.log(x);
+    return this.sanitizer.bypassSecurityTrustResourceUrl(x);
   }
  
 }

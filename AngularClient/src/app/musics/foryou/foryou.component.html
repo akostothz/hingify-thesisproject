@@ -1,6 +1,7 @@
 <h1>This playlist is based on your listening history divided into days and various times of the day.</h1>
 <h2>Right now it's {{day}}, {{timeofday}}.</h2>
 
+<!--
 <div class="card" *ngFor="let lhsong of lhsongs$ | async">
     <div class="card-header" id="head">
         <i class="fa-solid fa-users"></i>
@@ -14,4 +15,24 @@
       <a href="#" class="btn btn-secondary" id="btn3"><i class="fa-brands fa-spotify"></i></a>
     </div>
     <hr>
+</div>
+
+-->
+<div class="results" *ngFor="let lhsong of lhsongs$ | async">
+
+<div class="card" >
+  <div class="card-header" id="head">
+      <p class="card-text" id="genre">Genre: <span class="badge rounded-pill bg-info">{{lhsong.genre}}</span></p>
+  </div>
+  <div class="card-body">             
+    <iframe style="border-radius:12px" [src]='srcgenerator(lhsong.trackId)' width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="buttons">
+      <a href="#" class="btn btn-primary" id="btn" >Find more like this</a>
+      <a href="#" class="btn btn-secondary" id="btn2"><i class="fa-solid fa-heart"></i></a>
+    </div>
+  </div>
+  
+</div>
+
+<hr>
 </div>

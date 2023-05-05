@@ -5,6 +5,7 @@ using SpotifyWebApi;
 using System.Collections.Generic;
 using UNN1N9_SOF_2022231_BACKEND.Data;
 using UNN1N9_SOF_2022231_BACKEND.DTOs;
+using UNN1N9_SOF_2022231_BACKEND.Helpers;
 using UNN1N9_SOF_2022231_BACKEND.Models;
 
 namespace UNN1N9_SOF_2022231_BACKEND.Logic
@@ -234,7 +235,8 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         {
             string[] words = expr.Split(' ');
             Dictionary<Music, int> matchedWords = new Dictionary<Music, int>();
-            ;
+            int dictLength = 0;
+           
             foreach (var music in _context.Musics)
             {
                 int counter = 0;
@@ -253,15 +255,23 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 if (counter > 0)
                 {
                     matchedWords.Add(music, counter);
+                    dictLength++;
                 }
             }
+            
+            
 
             var sortedDict = from entry in matchedWords orderby entry.Value descending select entry;
             List<Music> musicsToReturn = new List<Music>();
+            int max = RandomGenerator.rnd.Next(14, 21);
 
             foreach (var item in sortedDict)
             {
-                musicsToReturn.Add(item.Key);
+                if (musicsToReturn.Count() < max)
+                {
+                    musicsToReturn.Add(item.Key);
+                }
+                
             }
 
             return musicsToReturn;

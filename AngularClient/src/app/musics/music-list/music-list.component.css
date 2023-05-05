@@ -41,169 +41,6 @@ h2 {
     display: flex;
 }
 
-.genre {
-    color: rgb(255, 255, 255);
-    font-size: 1.2em;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    height: 2em;
-    padding: 0.4em;
-    margin-bottom: 2em;
-}
-.tab {
-    display: table;
-}
-/*
-.card {
-    scroll-snap-type: x mandatory;
-    scroll-padding: 0 24px;
-    border-radius: 15px;
-    background: rgb(77, 97, 187);
-    width: 30em;
-    height: 25em;
-    border-color: rgb(212, 191, 254);
-    border-width: 0.5em;
-    margin: 2em;
-    margin-right: 5px;
-    scroll-snap-align: start;
-    flex-shrink: 0;  
-    margin-bottom: 2em;
-    margin-top: 2em;
-}
-*/
-
-.container {
-    scroll-snap-type: x mandatory;
-    display: flex;  
-    overflow: auto;
-    height: 33em;
-}
-
-.neonpurple {
-    width: 2em;
-    
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    align-self: center;
-    vertical-align: bottom;
-    display: flex;
-    height: 2em;
-}
-
-.neon-purple {
-    display: inline-block;
-    background-color: #000;
-    cursor: pointer;
-    font-size: 2em;
-    padding: 0.3em 1em;
-    border: 0.15em solid rgb(212, 191, 254);
-    border-radius: 0.6em;
-    color:rgb(212, 191, 254);
-    text-decoration: none;
-    letter-spacing: 0.03em;
-}
-
-.neon-purple:hover {
-    background-color: rgb(38, 60, 182);
-    border: 0.15em solid rgb(253, 253, 253);
-    color: #fff;
-    animation-delay: 1s;
-}
-
-.area {
-    scroll-snap-type: x mandatory;
-    scroll-padding: 0 24px;
-    border-radius: 15px;
-    background: rgb(77, 97, 187);
-    width: 30em;
-    height: 25em;
-    border-color: rgb(212, 191, 254);
-    border-width: 0.5em;
-    margin: 2em;
-    margin-right: 5px;
-    scroll-snap-align: start;
-    flex-shrink: 0;  
-    margin-bottom: 2em;
-    margin-top: 2em;
-}
-
-.areatrackname {
-    color: white;
-    font-size: 2.2em;
-    background-color: rgb(7, 87, 8);
-    height: 4em;
-    padding: 0.6em;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    vertical-align: middle;
-}
-
-.neongreen {
-    width: 2em;
-    
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    align-self: center;
-    vertical-align: bottom;
-    display: flex;
-    height: 2em;
-}
-
-.neon-green {
-    display: inline-block;
-    background-color: #000;
-    cursor: pointer;
-    font-size: 2em;
-    padding: 0.3em 1em;
-    border: 0.15em solid rgb(100, 255, 162);
-    border-radius: 0.6em;
-    color:rgb(100, 255, 162);
-    text-decoration: none;
-    letter-spacing: 0.03em;
-}
-
-.neon-green:hover {
-    background-color: rgb(9, 122, 60);
-    border: 0.15em solid rgb(253, 253, 253);
-    color: #fff;
-    animation-delay: 1s;
-}
-
-#head {
-    font-size: 2.5em;
-    font-weight: bold;
-  }
-  
-  #title {
-    font-size: 2em;
-  }
-  
-  #genre {
-    font-size: 1.3em;
-    color: rgb(236, 195, 13);
-  }
-  
-  #btn2 {
-    margin-left: 1em;
-  }
-  
-  #btn3 {
-    margin-left: 1em;
-    background-color: rgb(30, 215, 96);
-    border-color: #ffffff;
-  }
-  
-  #btn3:hover {
-    background-color: rgb(22, 170, 74);
-    border-color: #ffffff;
-  }
-
   hr {
     border: 0.5px solid #fcf3f3;
   }
@@ -231,4 +68,62 @@ h2 {
 
   #ik {
     padding-right: 0.2em;
+  }
+
+  h3 {
+    color: white;
+    text-align: center;
+    font-size: 3.5em;
+    padding-bottom: 2em;
+    margin-top: 1em;
+  }
+  
+  .card {
+    margin-bottom: 1em;
+  }
+  
+  .result {
+    color: white;
+    text-align: left;
+    font-size: 3em;
+    margin-top: 3em;
+    margin-bottom: 0;
+    padding-bottom: 1em;
+  }
+  
+  #head {
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+  
+  #title {
+    font-size: 2em;
+  }
+  
+  #genre {
+    font-size: 1.4em;
+    color: rgb(255, 255, 255);
+  }
+  
+  #btn2 {
+    margin-left: 1em;
+  }
+  
+  #btn3 {
+    margin-left: 1em;
+    background-color: rgb(30, 215, 96);
+    border-color: #ffffff;
+    height: 3em;
+  }
+  
+  #btn3:hover {
+    background-color: rgb(22, 170, 74);
+    border-color: #ffffff;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+  
   }
