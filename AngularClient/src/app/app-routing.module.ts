@@ -19,6 +19,7 @@ import { SpotifyAccessSuccessComponent } from './spotify-access-success/spotify-
 import { SearchComponent } from './search/search.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { HelperComponent } from './helper/helper.component';
+import { DiscovermoreComponent } from './discovermore/discovermore.component';
 
 const routes: Routes = [
   {path: '', component: AboutComponent},
@@ -36,7 +37,8 @@ const routes: Routes = [
       {path: 'spotify-success', component: SpotifyAccessSuccessComponent},
       {path: 'search', component: SearchComponent},
       {path: 'statistics', component: StatisticsComponent},
-      {path: 'help', component: HelperComponent}
+      {path: 'help', component: HelperComponent},
+      {path: 'discover/:trackId', component: DiscovermoreComponent}
     ]
   }, 
   {path: 'errors', component: TestErrorComponent},
