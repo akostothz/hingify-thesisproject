@@ -29,6 +29,7 @@ import { SpotifyAuthComponent } from './spotify-auth/spotify-auth.component';
 import { SpotifyAccessSuccessComponent } from './spotify-access-success/spotify-access-success.component';
 import { SearchComponent } from './search/search.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { HelperComponent } from './helper/helper.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { StatisticsComponent } from './statistics/statistics.component';
     SpotifyAuthComponent,
     SpotifyAccessSuccessComponent,
     SearchComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    HelperComponent
   ],
   imports: [
     BrowserModule,

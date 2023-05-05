@@ -85,8 +85,8 @@ h3 {
 }
 
 #genre {
-  font-size: 1.3em;
-  color: rgb(236, 195, 13);
+  font-size: 1.4em;
+  color: rgb(255, 255, 255);
 }
 
 #btn2 {
@@ -97,10 +97,18 @@ h3 {
   margin-left: 1em;
   background-color: rgb(30, 215, 96);
   border-color: #ffffff;
+  height: 3em;
 }
 
 #btn3:hover {
   background-color: rgb(22, 170, 74);
   border-color: #ffffff;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+
 }
 
