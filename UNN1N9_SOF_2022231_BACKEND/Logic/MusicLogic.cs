@@ -268,10 +268,12 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             List<Music> selectedMusics = new List<Music>();
 
             LinkedListNode current = closestMusics.Head;
-            while (current != null)
+            int helper = 0;
+            while (current != null && helper < 20)
             {
                 selectedMusics.Add(current.Object);
                 current = current.Next;
+                helper++;
             }
             
             return selectedMusics;

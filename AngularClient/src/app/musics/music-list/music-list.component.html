@@ -13,7 +13,7 @@
             <div class="card-body">
                 <iframe style="border-radius:12px" [src]='srcgenerator(likedsong.trackId)' width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <div class="buttons">
-                  <a href="#" class="btn btn-primary" id="btn" >Find more like this</a>
+                  <a href="#" class="btn btn-primary" id="btn" routerLink="/discover/{{likedsong.trackId}}">Find more like this</a>
                 </div>
             </div>
             <hr>
@@ -37,7 +37,7 @@
             <div class="card-body">
                 <iframe style="border-radius:12px" [src]='srcgenerator(originsong.trackId)' width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <div class="buttons">
-                  <a href="#" class="btn btn-primary" id="btn" >Find more like this</a>
+                  <a href="#" class="btn btn-primary" id="btn" routerLink="/discover/{{originsong.trackId}}">Find more like this</a>
                   <a href="#" class="btn btn-secondary" id="btn2"><i class="fa-solid fa-heart"></i></a>
                 </div>
             </div>
@@ -64,7 +64,7 @@
             <div class="card-body">
                 <iframe style="border-radius:12px" [src]='srcgenerator(agesong.trackId)' width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <div class="buttons">
-                  <a href="#" class="btn btn-primary" id="btn" >Find more like this</a>
+                  <a href="#" class="btn btn-primary" id="btn" routerLink="/discover/{{agesong.trackId}}">Find more like this</a>
                   <a href="#" class="btn btn-secondary" id="btn2"><i class="fa-solid fa-heart"></i></a>
                 </div>
             </div>
@@ -91,7 +91,7 @@
             <div class="card-body">
                 <iframe style="border-radius:12px" [src]='srcgenerator(gendersong.trackId)' width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <div class="buttons">
-                  <a href="#" class="btn btn-primary" id="btn" >Find more like this</a>
+                  <a href="#" class="btn btn-primary" id="btn" routerLink="/discover/{{gendersong.trackId}}">Find more like this</a>
                   <a href="#" class="btn btn-secondary" id="btn2"><i class="fa-solid fa-heart"></i></a>
                 </div>
             </div>
