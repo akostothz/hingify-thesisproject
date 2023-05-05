@@ -1,34 +1,69 @@
 <h1>Hingify help station</h1>
 
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5Bge1Dsqjc14hhGguYML5w?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<div class="accordion accordion-flush" id="accordionFlushExample">
 
-<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" id="btn">
+        <i class="fa-solid fa-clipboard-question"></i>I can't find a song.
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        <h3>If you can't find a song, it is possible that the database is outdated in terms with Spotify.</h3>
+        <h4>There is <span class="badge rounded-pill bg-secondary">2</span> options that you can do to help:</h4>
+        <ul>
+          <li>
+              <h4><span class="badge rounded-pill bg-primary">1.</span> Adding it by listening to it on Spotify and pressing the button in the "How can I add a song with listening?" section.</h4>
+          </li>
+          <li>
+            <h4><span class="badge rounded-pill bg-primary">2.</span> Adding it manually by copying an embed code in the "How can I find the Spotify Track ID?" section.</h4>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="btn">
-          I can't find a song.
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <h3>If you can't find a song, it is possible that the database is outdated in terms with Spotify.</h3>
-          <h4>There is <span class="badge rounded-pill bg-secondary">2</span> options that you can do to help:</h4>
-          <ul>
-            <li>
-                <h4><span class="badge rounded-pill bg-primary">1.</span> Adding it by listening to it on Spotify and pressing the button below.</h4>
-                <button type="button" class="btn btn-light" id="spotifybtn">I'm listening!</button>
-            </li>
-            <li>
-                <h4><span class="badge rounded-pill bg-primary">2.</span> Adding it if you have the Spotify track ID.</h4>
-                <input type="text" placeholder="Spotify track ID" />
-                <button type="button" class="btn btn-light">Go!</button>
-            </li>
-          </ul>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" id="btn">
+        <i class="fa-solid fa-clipboard-question"></i>How can I add a song with listening?
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        <h3>Make sure you have authorized Hingify to collect data from your Spotify Account.</h3>
+        <h3>If not, pressing the button may take you to a page where you have to authorize it first.</h3>
+        <div class="button">
+          <button type="button" class="btn btn-light" id="spotifybtn">I'm listening!</button>
         </div>
       </div>
     </div>
-    
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" id="btn">
+        <i class="fa-solid fa-clipboard-question"></i>How can I find the Spotify Track ID?
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        <h3>If you are on your Spotify launcher, it is just 4 simple steps: </h3>
+        <ol>
+          <li class="steps">Right-click on your song </li>
+          <li class="steps">Click "Share" </li>
+          <li class="steps">Select "Embed Track"</li>
+          <li class="steps">Click on "COPY" and just paste it here, we'll handle from there.</li>
+        </ol>
+        <div class="input">
+          <input type="text" placeholder="Paste the embed code here.." />
+          <button type="button" class="btn btn-light" id="go">I've got the code!</button>
+        </div>
+        
+      </div>
+    </div>
   </div>
 
   
+</div>

@@ -14,7 +14,7 @@ h2 {
 h3 {
     color: white;
     text-align: left;
-    font-size: 2.1em;
+    font-size: 2.3em;
 }
 
 h4 {
@@ -25,10 +25,8 @@ h4 {
 }
 
 #btn {
-    height: 4em;
+    height: 3em;
     font-size: 1.1em;
-    color: rgb(100, 100, 240);
-    border-color: aliceblue;
 }
 
 ul {
@@ -36,10 +34,73 @@ ul {
 }
 
 #spotifybtn {
-    margin-left: 1em;
     background-color: rgb(30, 215, 96);
-    border-radius: 15px;
+    border-radius: 12px;
     font-size: 2em;
     margin-top: 1em;
+    margin-bottom: 0.6em;
     border-color: #ffffff;
+}
+
+i {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.steps {
+    color: #fff;
+    font-size: 2em;
+    margin-left: 1em;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #ffffff;
+    background-color: #7ec2e2;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.accordion-button {
+    color: #d7dadf;
+    background-color: #5542b2;
+}
+
+.accordion-button:after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+.input {
+    display: wrap;
+}
+
+#go {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2em;
+    border-radius: 12px;
+    margin-bottom: 2em; 
+    background-color: #5542b2;
+}
+
+input[type=text] {
+    margin-bottom: 2em; 
+    margin-top: 3em; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 4em;
+    width: 38em;
+    background-color: rgb(32, 81, 145);
+    border: 0px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+input[type=text]::placeholder {
+    color: #fff;
 }
