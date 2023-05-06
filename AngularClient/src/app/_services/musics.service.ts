@@ -25,6 +25,7 @@ export class MusicsService {
   weeklyStats: Stat[] = [];
   monthlyStats: Stat[] = [];
   yearlyStats: Stat[] = [];
+  artistSongs: Music[] = [];
   
 
   constructor(private http: HttpClient) { }
@@ -39,6 +40,16 @@ export class MusicsService {
       httpParams = httpParams.append(key, request[key]);
     });
     return httpParams;
+  }
+
+  findArtistMusics(expr: string) {
+    if (this.artistSongs.length > 0) return of(this.artistSongs);
+    return this.http.get<Music[]>(this.baseUrl + 'Music/FindMoreByArtist/' + expr).pipe(
+      map(artistSongs => {
+        this.artistSongs = this.artistSongs;
+        return artistSongs;
+      })
+    );
   }
 
   search(expr: string) {

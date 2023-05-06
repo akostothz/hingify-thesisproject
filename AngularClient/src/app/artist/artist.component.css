@@ -1,0 +1,50 @@
+h1 {
+    color: white;
+    text-align: left;
+    font-size: 6em;
+    margin-bottom: 1.2em;
+}
+
+.card {
+    margin-bottom: 1em;
+}
+
+#head {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+#genre {
+    font-size: 1.4em;
+    color: rgb(255, 255, 255);
+}
+
+#btn {
+    font-size: 1.1em;
+}
+
+#btn2 {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+  
+#btn3 {
+    background-color: rgb(36, 187, 207);
+    border-color: #ffffff;
+}
+  
+#btn3:hover {
+    background-color: rgb(22, 103, 170);
+    border-color: #ffffff;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+  
+}
+
+hr {
+    border: 1px solid #fff;
+}

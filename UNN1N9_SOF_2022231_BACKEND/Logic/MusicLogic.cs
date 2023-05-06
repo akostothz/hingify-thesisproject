@@ -852,5 +852,19 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         {
             throw new NotImplementedException();
         }
+
+        public async Task<IEnumerable<Music>> FindMoreByArtist(string expr)
+        {
+            var musicsToReturn = new List<Music>();
+            foreach (var item in _context.Musics)
+            {
+                if (item.ArtistName == expr || item.TrackName.Contains(expr))
+                {
+                    musicsToReturn.Add(item);
+                }
+            }
+
+            return musicsToReturn;
+        }
     }
 }

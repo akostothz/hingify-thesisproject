@@ -15,7 +15,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         Task<IEnumerable<Music>> FindMusic(string trackId);
         Task<IEnumerable<Music>> FindMore(string trackId);
         Task<IEnumerable<Music>> Search(string expr);
-
+        Task<IEnumerable<Music>> FindMoreByArtist(string expr);
         Task<IEnumerable<StatDto>> GetDailyStatistics(int id);
         Task<IEnumerable<StatDto>> GetWeeklyStatistics(int id);
         Task<IEnumerable<StatDto>> GetMonthlyStatistics(int id);

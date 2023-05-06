@@ -29,7 +29,7 @@ export class MusicDetailComponent implements OnInit {
 
   srcgenerator(trrackId: string) {
     let x = 'https://open.spotify.com/embed/track/' + trrackId + '?utm_source=generator';
-    console.log(x);
+    
     return this.sanitizer.bypassSecurityTrustResourceUrl(x);
   }
 

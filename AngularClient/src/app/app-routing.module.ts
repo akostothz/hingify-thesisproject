@@ -20,6 +20,8 @@ import { SearchComponent } from './search/search.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { HelperComponent } from './helper/helper.component';
 import { DiscovermoreComponent } from './discovermore/discovermore.component';
+import { ArtistComponent } from './artist/artist.component';
+import { MoreComponent } from './musics/more/more.component';
 
 const routes: Routes = [
   {path: '', component: AboutComponent},
@@ -38,7 +40,9 @@ const routes: Routes = [
       {path: 'search', component: SearchComponent},
       {path: 'statistics', component: StatisticsComponent},
       {path: 'help', component: HelperComponent},
-      {path: 'discover/:trackId', component: DiscovermoreComponent}
+      {path: 'discover/:trackId', component: DiscovermoreComponent},
+      {path: 'artist/:artistName', component: ArtistComponent},
+      {path: 'musics/more/:type', component: MoreComponent}
     ]
   }, 
   {path: 'errors', component: TestErrorComponent},
