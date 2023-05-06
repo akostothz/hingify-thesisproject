@@ -762,6 +762,24 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return (int)DateTime.Now.Year - yofBirth;
         }
 
-        
+        public Task<IEnumerable<StatDto>> GetDailyStatistics(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<StatDto>> GetWeeklyStatistics(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<StatDto>> GetMonthlyStatistics(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<StatDto>> GetYearlyStatistics(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MusicsService } from '../_services/musics.service';
+import { Observable } from 'rxjs';
+import { Stat } from '../_models/stat';
 
 @Component({
   selector: 'app-statistics',
@@ -9,6 +11,10 @@ import { MusicsService } from '../_services/musics.service';
 export class StatisticsComponent implements OnInit {
   day: string;
   timeofday: string;
+  dailyStats$: Observable<Stat[]> | undefined;
+  weeklyStats$: Observable<Stat[]> | undefined;
+  monthlyStats$: Observable<Stat[]> | undefined;
+  yearlyStats$: Observable<Stat[]> | undefined;
 
   constructor(private musicService: MusicsService) {
 
@@ -16,6 +22,14 @@ export class StatisticsComponent implements OnInit {
 
   ngOnInit(): void {   
     this.TimeSetter();
+    this.getStatistics();
+  }
+
+  getStatistics() {
+      this.dailyStats$ = this.musicService.getDailyStat(JSON.parse(localStorage.getItem('user'))?.id);
+      this.weeklyStats$ = this.musicService.getWeeklyStat(JSON.parse(localStorage.getItem('user'))?.id);
+      this.monthlyStats$ = this.musicService.getMonthlyStat(JSON.parse(localStorage.getItem('user'))?.id);
+      this.yearlyStats$ = this.musicService.getYearlyStat(JSON.parse(localStorage.getItem('user'))?.id);
   }
 
   TimeSetter() {

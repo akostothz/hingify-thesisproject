@@ -1,4 +1,5 @@
 ﻿using UNN1N9_SOF_2022231_BACKEND.Data;
+using UNN1N9_SOF_2022231_BACKEND.DTOs;
 using UNN1N9_SOF_2022231_BACKEND.Models;
 
 namespace UNN1N9_SOF_2022231_BACKEND.Logic
@@ -14,6 +15,11 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         Task<IEnumerable<Music>> FindMusic(string trackId);
         Task<IEnumerable<Music>> FindMore(string trackId);
         Task<IEnumerable<Music>> Search(string expr);
+
+        Task<IEnumerable<StatDto>> GetDailyStatistics(int id);
+        Task<IEnumerable<StatDto>> GetWeeklyStatistics(int id);
+        Task<IEnumerable<StatDto>> GetMonthlyStatistics(int id);
+        Task<IEnumerable<StatDto>> GetYearlyStatistics(int id);
         void AddLikedSong(int userid, int musicid);
         public string TimeOfDayConverter();
     }

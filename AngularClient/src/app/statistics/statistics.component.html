@@ -4,7 +4,7 @@
         <h1>Statistics</h1>
     </div>
 
-    <div class="dailystat"> 
+    <div class="dailystat" *ngFor="let stat of dailyStats$ | async"> 
         <h3>
             Daily 
             <sup class="supp" title="This field shows statistics you did on this specific day. 
@@ -19,7 +19,7 @@
                 Most listened genre
             </div>
             <div class="card-body">
-              <h5 class="card-title" id="genre">Alternative</h5>
+              <h5 class="card-title" id="genre">{{stat.mostListenedGenre}}</h5>
             </div>
           </div>
 
@@ -28,7 +28,7 @@
                 Minutes spent with listening to music
             </div>
             <div class="card-body">
-              <h5 class="card-title" id="minslistening">1654</h5>
+              <h5 class="card-title" id="minslistening">{{stat.minsSpent}}</h5>
             </div>
           </div>
 
@@ -37,7 +37,7 @@
                 Most listened artist
             </div>
             <div class="card-body">
-              <h5 class="card-title" id="artist">Dzsúdló</h5>
+              <h5 class="card-title" id="artist">{{stat.mostListenedArtist}}</h5>
             </div>
           </div>
 
@@ -46,7 +46,7 @@
                 Most listened song
             </div>
             <div class="card-body">
-              <h5 class="card-title" id="song">Gyere be</h5>
+              <h5 class="card-title" id="song">{{stat.mostListenedSong}}</h5>
             </div>
           </div>
 
@@ -55,13 +55,13 @@
                 Number of listened genres:
             </div>
             <div class="card-body">
-              <h5 class="card-title" id="genreno">3</h5>
+              <h5 class="card-title" id="genreno">{{stat.numOfListenedGenre}}</h5>
             </div>
           </div>
         
     </div>
 
-    <div class="weeklystat"> 
+    <div class="weeklystat" *ngFor="let stat of weeklyStats$ | async"> 
         <h3>
             Weekly
             <sup class="supp" title="This field shows statistics about this current week.">
@@ -70,52 +70,53 @@
         </h3>
 
         <div class="card">
-            <div class="card-header" id="head">
-                Most listened genre
-            </div>
-            <div class="card-body">
-              <h5 class="card-title" id="genre">Rock</h5>
-            </div>
+          <div class="card-header" id="head">
+              Most listened genre
           </div>
+          <div class="card-body">
+            <h5 class="card-title" id="genre">{{stat.mostListenedGenre}}</h5>
+          </div>
+        </div>
 
-          <div class="card">
-            <div class="card-header" id="head">
-                Minutes spent with listening to music
-            </div>
-            <div class="card-body">
-              <h5 class="card-title" id="minslistening">10648</h5>
-            </div>
+        <div class="card">
+          <div class="card-header" id="head">
+              Minutes spent with listening to music
           </div>
+          <div class="card-body">
+            <h5 class="card-title" id="minslistening">{{stat.minsSpent}}</h5>
+          </div>
+        </div>
 
-          <div class="card">
-            <div class="card-header" id="head">
-                Most listened artist
-            </div>
-            <div class="card-body">
-              <h5 class="card-title" id="artist">Bon Jovi</h5>
-            </div>
+        <div class="card">
+          <div class="card-header" id="head">
+              Most listened artist
           </div>
+          <div class="card-body">
+            <h5 class="card-title" id="artist">{{stat.mostListenedArtist}}</h5>
+          </div>
+        </div>
 
-          <div class="card">
-            <div class="card-header" id="head">
-                Most listened song
-            </div>
-            <div class="card-body">
-              <h5 class="card-title" id="song">scp interlude</h5>
-            </div>
+        <div class="card">
+          <div class="card-header" id="head">
+              Most listened song
           </div>
+          <div class="card-body">
+            <h5 class="card-title" id="song">{{stat.mostListenedSong}}</h5>
+          </div>
+        </div>
 
-          <div class="card">
-            <div class="card-header" id="head">
-                Number of listened genres:
-            </div>
-            <div class="card-body">
-              <h5 class="card-title" id="genreno">8</h5>
-            </div>
+        <div class="card">
+          <div class="card-header" id="head">
+              Number of listened genres:
           </div>
+          <div class="card-body">
+            <h5 class="card-title" id="genreno">{{stat.numOfListenedGenre}}</h5>
+          </div>
+        </div>
+
     </div>
 
-    <div class="monthlystat"> 
+    <div class="monthlystat" *ngFor="let stat of monthlyStats$ | async"> 
         <h3>
             Monthly
             <sup class="supp" title="This field shows statistics about this current month.">
@@ -128,7 +129,7 @@
                 Most listened genre
             </div>
             <div class="card-body">
-              <h5 class="card-title" id="genre">Rock</h5>
+              <h5 class="card-title" id="genre">{{stat.mostListenedGenre}}</h5>
             </div>
           </div>
 
@@ -137,7 +138,7 @@
                 Minutes spent with listening to music
             </div>
             <div class="card-body">
-              <h5 class="card-title" id="minslistening">46592</h5>
+              <h5 class="card-title" id="minslistening">{{stat.minsSpent}}</h5>
             </div>
           </div>
 
@@ -146,7 +147,7 @@
                 Most listened artist
             </div>
             <div class="card-body">
-              <h5 class="card-title" id="artist">Bon Jovi</h5>
+              <h5 class="card-title" id="artist">{{stat.mostListenedArtist}}</h5>
             </div>
           </div>
 
@@ -155,7 +156,7 @@
                 Most listened song
             </div>
             <div class="card-body">
-              <h5 class="card-title" id="song">You Give Love a Bad Name</h5>
+              <h5 class="card-title" id="song">{{stat.mostListenedSong}}</h5>
             </div>
           </div>
 
@@ -164,12 +165,12 @@
                 Number of listened genres:
             </div>
             <div class="card-body">
-              <h5 class="card-title" id="genreno">14</h5>
+              <h5 class="card-title" id="genreno">{{stat.numOfListenedGenre}}</h5>
             </div>
           </div>
     </div>
 
-    <div class="yearlystat"> 
+    <div class="yearlystat" *ngFor="let stat of yearlyStats$ | async"> 
         <h3>
             Yearly
             <sup class="supp" title="This field shows statistics about this current year.">
@@ -178,49 +179,49 @@
         </h3>
 
         <div class="card">
-            <div class="card-header" id="head">
-                Most listened genre
-            </div>
-            <div class="card-body">
-              <h5 class="card-title" id="genre">Alternative</h5>
-            </div>
+          <div class="card-header" id="head">
+              Most listened genre
           </div>
+          <div class="card-body">
+            <h5 class="card-title" id="genre">{{stat.mostListenedGenre}}</h5>
+          </div>
+        </div>
 
-          <div class="card">
-            <div class="card-header" id="head">
-                Minutes spent with listening to music
-            </div>
-            <div class="card-body">
-              <h5 class="card-title" id="minslistening">169874</h5>
-            </div>
+        <div class="card">
+          <div class="card-header" id="head">
+              Minutes spent with listening to music
           </div>
+          <div class="card-body">
+            <h5 class="card-title" id="minslistening">{{stat.minsSpent}}</h5>
+          </div>
+        </div>
 
-          <div class="card">
-            <div class="card-header" id="head">
-                Most listened artist
-            </div>
-            <div class="card-body">
-              <h5 class="card-title" id="artist">Declan McKenna</h5>
-            </div>
+        <div class="card">
+          <div class="card-header" id="head">
+              Most listened artist
           </div>
+          <div class="card-body">
+            <h5 class="card-title" id="artist">{{stat.mostListenedArtist}}</h5>
+          </div>
+        </div>
 
-          <div class="card">
-            <div class="card-header" id="head">
-                Most listened song
-            </div>
-            <div class="card-body">
-              <h5 class="card-title" id="song">Brazil</h5>
-            </div>
+        <div class="card">
+          <div class="card-header" id="head">
+              Most listened song
           </div>
+          <div class="card-body">
+            <h5 class="card-title" id="song">{{stat.mostListenedSong}}</h5>
+          </div>
+        </div>
 
-          <div class="card">
-            <div class="card-header" id="head">
-                Number of listened genres:
-            </div>
-            <div class="card-body">
-              <h5 class="card-title" id="genreno">26</h5>
-            </div>
+        <div class="card">
+          <div class="card-header" id="head">
+              Number of listened genres:
           </div>
+          <div class="card-body">
+            <h5 class="card-title" id="genreno">{{stat.numOfListenedGenre}}</h5>
+          </div>
+        </div>
     </div>
 
 </div>

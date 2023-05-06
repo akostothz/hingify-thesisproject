@@ -6,6 +6,7 @@ import { Behavior } from '../_models/behavior';
 import { Music } from '../_models/music';
 import { User } from '../_models/user';
 import { DetailedMusic } from '../_models/detailedmusic';
+import { Stat } from '../_models/stat';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,10 @@ export class MusicsService {
   foundsongs: Music[] = [];
   discoveredsongs: Music[] = [];
   song: DetailedMusic[] = [];
+  dailyStats: Stat[] = [];
+  weeklyStats: Stat[] = [];
+  monthlyStats: Stat[] = [];
+  yearlyStats: Stat[] = [];
   
 
   constructor(private http: HttpClient) { }
@@ -46,6 +51,42 @@ export class MusicsService {
     );
   }
 
+  getDailyStat(id: number) {
+    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetDailyStatistics/' + id).pipe(
+      map(dailyStats => {
+        this.dailyStats = this.dailyStats;
+        return dailyStats;
+      })
+    );
+  }
+
+  getWeeklyStat(id: number) {
+    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetWeeklyStatistics/' + id).pipe(
+      map(weeklyStats => {
+        this.weeklyStats = this.weeklyStats;
+        return weeklyStats;
+      })
+    );
+  }
+
+  getMonthlyStat(id: number) {
+    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetMonthlyStatistics/' + id).pipe(
+      map(monthlyStats => {
+        this.monthlyStats = this.monthlyStats;
+        return monthlyStats;
+      })
+    );
+  }
+
+  getYearlyStat(id: number) {
+    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetYearlyStatistics/' + id).pipe(
+      map(yearlyStats => {
+        this.yearlyStats = this.yearlyStats;
+        return yearlyStats;
+      })
+    );
+  }
+
   discover(trackId: string) {
     if (this.discoveredsongs.length > 0) return of(this.discoveredsongs);
     return this.http.get<Music[]>(this.baseUrl + 'Music/FindMore/' + trackId).pipe(
@@ -57,7 +98,6 @@ export class MusicsService {
   }
 
   findMusic(trackId: string) {
-    console.log('here')
     return this.http.get<DetailedMusic[]>(this.baseUrl + 'Music/FindMusic/' + trackId).pipe(
       map(song => {
         this.song = this.song;

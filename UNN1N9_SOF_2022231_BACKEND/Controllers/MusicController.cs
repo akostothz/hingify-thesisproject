@@ -106,6 +106,38 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             return Ok(musicsToReturn);
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<MusicDto>>> GetDailyStatistics(int id)
+        {
+            var stats = await _logic.GetDailyStatistics(id);
+
+            return Ok(stats);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<MusicDto>>> GetWeeklyStatistics(int id)
+        {
+            var stats = await _logic.GetWeeklyStatistics(id);
+
+            return Ok(stats);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<MusicDto>>> GetMonthlyStatistics(int id)
+        {
+            var stats = await _logic.GetMonthlyStatistics(id);
+
+            return Ok(stats);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<MusicDto>>> GetYearlyStatistics(int id)
+        {
+            var stats = await _logic.GetYearlyStatistics(id);
+
+            return Ok(stats);
+        }
+
         [HttpPost]
         public async Task<ActionResult> LikeSong(BehaviorDto behaviorDto)
         {
