@@ -35,11 +35,16 @@ hét, hónap és évre lebontva.
      - ```api/music/getmusicbysex/{id}```: a felhasználók a megadott nem alapján kaphatják meg a leghallgatottabb dalokat.
      - ```api/music/getmusicbycountry/{id}```: a felhasználók a megadott ország alapján kaphatják meg a leghallgatottabb dalokat.
      - ```api/music/getmusicbyagegroup/{id}```: a felhasználók a megadott kor alapján kaphatják meg a leghallgatottabb dalokat az adott korcsoportban[^3].
-     - ```api/music/search```: a felhasználók kereshetnek zeneszámokat az adatbázisban.
+     - ```api/music/search/{expr}```: a felhasználók kereshetnek zeneszámokat az adatbázisban.
+     - ```api/music/findmorebyartist/{expr}```: a felhasználók az adott előadótól találhatnak több számot.
      - ```api/music/addsongwithlistening```: a felhasználók hozzáadhatnak zeneszámokat az adatbázisba egy Spotify API hívás segítségével, ha esetleg még nem szerepel benne.
      - ```api/music/addsongwithcid```: a felhasználók hozzáadhatnak zeneszámokat az adatbázisba Spotify ID segítségével, ha esetleg még nem szerepel benne.
-     - ```api/music/findmore/{id}```: a felhasználók az adott zeneszámhoz megkaphatják pontosabb kereséssel a legközelebbi dalokat.
-     - ```api/music/getstatistics```: a felhasználók a különböző zenehallgatási statisztikáit nézheti meg itt.
+     - ```api/music/findmore/{trackId}```: a felhasználók az adott zeneszámhoz megkaphatják pontosabb kereséssel a legközelebbi dalokat.
+     - ```api/music/findmusic/{trackId}```: a felhasználók az adott zeneszámnak adatainak adatait nézhetik meg.
+     - ```api/music/getdailystatistics/{id}```: a felhasználók a napi zenehallgatási statisztikáit nézheti meg itt.
+     - ```api/music/getweeklystatistics/{id}```: a felhasználók a heti zenehallgatási statisztikáit nézheti meg itt.
+     - ```api/music/getmonthlystatistics/{id}```: a felhasználók a havi zenehallgatási statisztikáit nézheti meg itt.
+     - ```api/music/getyearlystatistics/{id}```: a felhasználók az évi zenehallgatási statisztikáit nézheti meg itt.
      - ```api/music/likesong```: a felhasználók kedvelhetnek dalokat az oldalon.
      - ```api/music/listen```: a felhasználók Spotify API segítségével elindíthatnak különböző zenéket.
 
