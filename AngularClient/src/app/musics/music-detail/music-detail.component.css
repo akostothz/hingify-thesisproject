@@ -9,3 +9,42 @@ h1 {
     font-size: 2em;
     color: rgb(255, 255, 255);
 }
+
+#header {
+    font-size: 2.5em;
+}
+
+#item {
+    text-align: center;
+    font-size: 3em;
+}
+
+#aitem {
+    text-decoration: none;
+    color: rgb(149, 185, 240);
+    font-size: 3em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#aitem:hover {
+    color: rgb(98, 145, 216);
+}
+
+#divc {
+    display: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.more {
+    display: flex;
+    text-align: center;
+    height: 3em;
+}
+
+hr {
+    border: 1px solid #fff;
+}

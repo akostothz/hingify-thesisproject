@@ -1,24 +1,141 @@
 <h1>Complex details</h1>
+<div class="res" *ngFor="let song of song$ | async">
 
-<div class="card" *ngFor="let song of song$ | async">
-    <div class="card-header" id="head">
-        <iframe style="border-radius:12px" [src]='srcgenerator(song.trackId)' width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>      
-    </div>
-    <div class="card-body">             
-        <p class="card-text" id="genre">Genre: <span class="badge rounded-pill bg-info">{{song.genre}}</span></p>
-        <p class="card-text" id="genre">Artist: <span class="badge rounded-pill bg-info">{{song.artistName}}</span></p>
-        <p class="card-text" id="genre">trackName: <span class="badge rounded-pill bg-info">{{song.trackName}}</span></p>
-        <p class="card-text" id="genre">popularity: <span class="badge rounded-pill bg-info">{{song.popularity}}</span></p>
-        <p class="card-text" id="genre">acousticness: <span class="badge rounded-pill bg-info">{{song.acousticness}}</span></p>
-        <p class="card-text" id="genre">danceability: <span class="badge rounded-pill bg-info">{{song.danceability}}</span></p>
-        <p class="card-text" id="genre">energy: <span class="badge rounded-pill bg-info">{{song.energy}}</span></p>
-        <p class="card-text" id="genre">key: <span class="badge rounded-pill bg-info">{{song.key}}</span></p>
-        <p class="card-text" id="genre">liveness: <span class="badge rounded-pill bg-info">{{song.liveness}}</span></p>
-        <p class="card-text" id="genre">loudness: <span class="badge rounded-pill bg-info">{{song.loudness}}</span></p>
-        <p class="card-text" id="genre">mode: <span class="badge rounded-pill bg-info">{{song.mode}}</span></p>
-        <p class="card-text" id="genre">speechiness: <span class="badge rounded-pill bg-info">{{song.speechiness}}</span></p>
-        <p class="card-text" id="genre">tempo: <span class="badge rounded-pill bg-info">{{song.tempo}}</span></p>
-        <p class="card-text" id="genre">valence: <span class="badge rounded-pill bg-info">{{song.valence}}</span></p>
+    <div class="card">
+        <h5 class="card-header" id="header">Track name</h5>
+        <div class="card-body">
+          <h5 class="card-title" id="item">{{song.trackName}}</h5>
+        </div>
     </div>
     
+    <hr>
+
+    <div class="card">
+        <h5 class="card-header" id="header">Artist name</h5>
+        <div class="card-body">
+            <div class="more">
+                <a class="card-title" id="aitem" href="#">{{song.artistName}}</a>
+            </div>        
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="card">
+        <h5 class="card-header" id="header">Play on Spotify</h5>
+        <div class="card-body">
+            <iframe style="border-radius:12px" [src]='srcgenerator(song.trackId)' width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>      
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="card">
+        <h5 class="card-header" id="header">Genre</h5>
+        <div class="card-body">
+          <h5 class="card-title" id="item">{{song.genre}}</h5>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="card">
+        <h5 class="card-header" id="header">Mode</h5>
+        <div class="card-body">
+          <h5 class="card-title" id="item">{{song.mode}}</h5>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="card">
+        <h5 class="card-header" id="header">Tempo</h5>
+        <div class="card-body">
+          <h5 class="card-title" id="item">{{song.tempo}}BPM</h5>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="card">
+        <h5 class="card-header" id="header">Popularity</h5>
+        <div class="card-body">
+          <h5 class="card-title" id="item">{{song.popularity}}</h5>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="card">
+        <h5 class="card-header" id="header">Danceability</h5>
+        <div class="card-body">
+          <h5 class="card-title" id="item">{{song.danceability}}</h5>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="card">
+        <h5 class="card-header" id="header">Energy</h5>
+        <div class="card-body">
+          <h5 class="card-title" id="item">{{song.energy}}</h5>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="card">
+        <h5 class="card-header" id="header">Valence</h5>
+        <div class="card-body">
+          <h5 class="card-title" id="item">{{song.valence}}</h5>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="card">
+        <h5 class="card-header" id="header">Acousticness</h5>
+        <div class="card-body">
+          <h5 class="card-title" id="item">{{song.acousticness}}</h5>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="card">
+        <h5 class="card-header" id="header">Key</h5>
+        <div class="card-body">
+          <h5 class="card-title" id="item">{{song.key}}</h5>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="card">
+        <h5 class="card-header" id="header">Speechiness</h5>
+        <div class="card-body">
+          <h5 class="card-title" id="item">{{song.speechiness}}</h5>
+        </div>
+    </div>
+    
+    <hr>
+    
+    <div class="card">
+        <h5 class="card-header" id="header">Loudness</h5>
+        <div class="card-body">
+          <h5 class="card-title" id="item">{{song.loudness}}</h5>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="card">
+        <h5 class="card-header" id="header">Liveness</h5>
+        <div class="card-body">
+          <h5 class="card-title" id="item">{{song.liveness}}</h5>
+        </div>
+    </div>
+    
+    <hr>
+  
 </div>
