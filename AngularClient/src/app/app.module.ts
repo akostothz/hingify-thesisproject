@@ -31,6 +31,8 @@ import { SearchComponent } from './search/search.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { HelperComponent } from './helper/helper.component';
 import { DiscovermoreComponent } from './discovermore/discovermore.component';
+import { ArtistComponent } from './artist/artist.component';
+import { MoreComponent } from './musics/more/more.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { DiscovermoreComponent } from './discovermore/discovermore.component';
     SearchComponent,
     StatisticsComponent,
     HelperComponent,
-    DiscovermoreComponent
+    DiscovermoreComponent,
+    ArtistComponent,
+    MoreComponent
   ],
   imports: [
     BrowserModule,

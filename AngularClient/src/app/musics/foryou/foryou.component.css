@@ -38,6 +38,10 @@ h3 {
   font-weight: bold;
 }
 
+hr {
+  border: 1px solid #fff;
+}
+
 #title {
   font-size: 2em;
 }
