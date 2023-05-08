@@ -53,6 +53,7 @@ export class AccountService {
   }
 
   retrieveFromSpotify(bearer: string) {
+    console.log('retrieveFromSpotify')
     let accesstoken = <AccessToken>({
       userid: JSON.parse(localStorage.getItem('user'))?.id,
       token: bearer
@@ -61,8 +62,8 @@ export class AccountService {
       response => {
         map((response: User) => {
           const user = response;
-          localStorage.removeItem('user');
-          localStorage.setItem('user', JSON.stringify(user));
+          //localStorage.removeItem('user');
+          //localStorage.setItem('user', JSON.stringify(user));
         })
         this.toastr.success('Profile successfully updated. Might need to hard refresh or log in again to see the changes.');
       },

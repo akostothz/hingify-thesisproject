@@ -1,7 +1,7 @@
 <div class="row" *ngIf="user">
     <h1>Set your profile picture.</h1>
     <div class="picdiv">
-        <img src="{{user.photoUrl || './assets/user2.png'}}" alt="Profile Picture" class="card-img">                 
+        <img src="{{this.picUrl || './assets/user2.png'}}" alt="Profile Picture" class="card-img">                 
     </div>   
     <p class="name">{{user.firstName}} {{user.lastName}}</p>
     <h3>@{{user.username}}</h3>

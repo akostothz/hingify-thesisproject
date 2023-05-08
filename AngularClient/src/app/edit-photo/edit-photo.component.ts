@@ -14,8 +14,10 @@ import { AccountService } from '../_services/account.service';
 export class EditPhotoComponent implements OnInit {
   user: User | undefined;
   uploader: FileUploader | undefined;
+  spotyUploader: FileUploader | undefined;
   hasBaseDropZoneOver = false;
   baseUrl = environment.apiUrl;
+  picUrl: string;
 
   constructor(private accountService: AccountService, private toastr: ToastrService) {
     this.accountService.currentUser$.pipe(take(1)).subscribe({
@@ -25,6 +27,9 @@ export class EditPhotoComponent implements OnInit {
   
   ngOnInit(): void {
     this.initializeUploader();
+    this.accountService.getPicture(JSON.parse(localStorage.getItem('user'))?.id).subscribe(url => {
+      this.picUrl = url[0].valueOf();
+  })
   }
 
   fileOverBase(e: any) {
@@ -62,6 +67,8 @@ export class EditPhotoComponent implements OnInit {
       const authorizationCode = urlParams.get('code');
       console.log(authorizationCode);
       this.accountService.retrieveFromSpotify(authorizationCode);*/
+      
+      
     }
 
     upload() {

@@ -12,16 +12,16 @@ import { AccountService } from '../_services/account.service';
 })
 export class NavComponent implements OnInit {
   model: any = {};
-  picUrl$: Observable<string>;
+  picUrl: string;
 
     constructor(public accountService: AccountService, private router: Router, 
       private toastr: ToastrService) {}
 
     ngOnInit(): void {
-      this.picUrl$ = this.accountService.getPicture(JSON.parse(localStorage.getItem('user'))?.id);
-      
-    }
-
+      this.accountService.getPicture(JSON.parse(localStorage.getItem('user'))?.id).subscribe(url => {
+        this.picUrl = url[0].valueOf();
+    })
+  }
 
     logout() {
       this.accountService.logout();

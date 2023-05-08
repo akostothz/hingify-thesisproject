@@ -118,11 +118,14 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         }
 
         [HttpGet("userpic/{id}")]
-        public async Task<ActionResult<string>> GetUserPic(int id)
+        public async Task<ActionResult<IEnumerable<string>>> GetUserPic(int id)
         {
             var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == id);
+            var pics = new List<string>();
+            pics.Add(user.PhotoUrl);
+            var x = user.PhotoUrl;
             ;
-            return user.PhotoUrl;
+            return pics;
         }
 
 

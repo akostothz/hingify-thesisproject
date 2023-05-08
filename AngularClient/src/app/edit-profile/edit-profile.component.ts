@@ -18,6 +18,7 @@ export class EditProfileComponent implements OnInit {
     }
   }
   user: User | undefined;
+  picUrl: string;
 
   constructor(private accountService: AccountService, private toastr: ToastrService) {
     this.accountService.currentUser$.pipe(take(1)).subscribe({
@@ -26,7 +27,9 @@ export class EditProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    this.accountService.getPicture(JSON.parse(localStorage.getItem('user'))?.id).subscribe(url => {
+      this.picUrl = url[0].valueOf();
+  })
   }
 
   submitChanges() {
