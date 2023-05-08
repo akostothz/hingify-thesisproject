@@ -23,6 +23,8 @@ namespace UNN1N9_SOF_2022231_BACKEND.Models
         [StringLength(50)]
         public string TimeOfDay { get; set; }
 
+        public bool IsLiked { get; set; }
+
         public DateOnly Date { get; set; }
 
         public virtual AppUser User { get; set; }
