@@ -269,11 +269,12 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         }
 
         [HttpPost("addphoto")]
-        public async Task<ActionResult<PhotoDto>> AddPhoto(IFormFile file) 
+        public async Task<ActionResult<IEnumerable<PhotoDto>>> AddPhoto(IFormFile file) 
         {
             var username = User.GetUsername();
             var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == username);
-
+            var pics = new List<PhotoDto>();
+            ;
             if (user == null)
                 return NotFound();
 
@@ -284,9 +285,14 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
             user.PhotoUrl = result.SecureUrl.AbsoluteUri;
             user.PublicId = result.PublicId;
+            ;
 
             if (await _context.SaveChangesAsync() > 0)
-                return _mapper.Map<PhotoDto>(user);
+            {
+                pics.Add(_mapper.Map<PhotoDto>(user));
+                return pics;
+            }
+                
 
             return BadRequest("An error occured while uploading your photo. Please try again.");
         }

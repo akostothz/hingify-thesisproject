@@ -49,11 +49,19 @@ export class AccountService {
   }
 
   uploadPhoto(file: any) {
-    return this.http.post(this.baseUrl + 'account/updateuser', file);
+    console.log('uploadPhoto()')
+    console.log(this.http.post(this.baseUrl + 'account/updateuser', file))
+    return this.http.post(this.baseUrl + 'account/updateuser', file).subscribe(
+      resp => {
+        map(x => {
+            console.log(x)
+        })
+      }
+
+    );
   }
 
   retrieveFromSpotify(bearer: string) {
-    console.log('retrieveFromSpotify')
     let accesstoken = <AccessToken>({
       userid: JSON.parse(localStorage.getItem('user'))?.id,
       token: bearer

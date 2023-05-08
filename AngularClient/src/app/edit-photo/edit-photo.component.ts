@@ -43,8 +43,7 @@ export class EditPhotoComponent implements OnInit {
       isHTML5: true,
       allowedFileType: ['image'],
       removeAfterUpload: true,
-      autoUpload: false,
-      maxFileSize: 10 * 1024 * 1024
+      autoUpload: false
     });
 
     this.uploader.onAfterAddingFile = (file) => {
@@ -73,6 +72,9 @@ export class EditPhotoComponent implements OnInit {
 
     upload() {
       this.accountService.uploadPhoto(this.uploader);
+      this.accountService.getPicture(JSON.parse(localStorage.getItem('user'))?.id).subscribe(url => {
+        this.picUrl = url[0].valueOf();
+    })
     }
   }
 
