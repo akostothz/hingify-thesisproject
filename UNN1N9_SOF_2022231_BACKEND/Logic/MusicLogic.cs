@@ -20,6 +20,21 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             _context = context;
         }
 
+        public bool IsLiked(int userid, int musicid)
+        {
+            var likedsong = _context.LikedSongs.FirstOrDefault(x => x.UserId == userid && x.MusicId == musicid);
+
+            ;
+            if (_context.LikedSongs.Contains(likedsong))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public void AddLikedSong(int userid, int musicid)
         {
             var givenuser = _context.Users.FirstOrDefault(x => x.Id == userid);
@@ -29,7 +44,17 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 UserId = userid,
                 MusicId = musicid
             });
-            ;
+
+            _context.SaveChangesAsync();
+        }
+
+        public void RemoveFromLikedSong(int userid, int musicid)
+        {
+            var givenuser = _context.Users.FirstOrDefault(x => x.Id == userid);
+            var toRemove = _context.LikedSongs.FirstOrDefault(x => x.UserId == userid && x.MusicId == musicid);
+
+            _context.LikedSongs.Remove(toRemove);
+
             _context.SaveChangesAsync();
         }
 

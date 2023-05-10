@@ -42,6 +42,20 @@ export class MusicDetailComponent implements OnInit {
     this.musicService.likeMusic(lsong);
   }
 
+  dislikeSong(id: number) {
+    var lsong: LikedSong = {
+      userId: JSON.parse(localStorage.getItem('user'))?.id,
+      musicId: id
+    }
+    this.musicService.dislikeMusic(lsong);
+  }
+
+  isLiked(music: Music) {
+    var res = this.musicService.isLiked(music);
+    console.log(res);
+    return res;
+  }
+
   msToMins(ms: number) {
     let conv: number = 1.6667E-5;
     return <number>conv * ms;

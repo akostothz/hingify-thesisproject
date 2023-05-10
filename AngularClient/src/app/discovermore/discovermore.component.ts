@@ -35,6 +35,20 @@ export class DiscovermoreComponent implements OnInit {
     this.musicService.likeMusic(lsong);
   }
 
+  dislikeSong(id: number) {
+    var lsong: LikedSong = {
+      userId: JSON.parse(localStorage.getItem('user'))?.id,
+      musicId: id
+    }
+    this.musicService.dislikeMusic(lsong);
+  }
+
+  isLiked(music: Music) {
+    var res = this.musicService.isLiked(music);
+    console.log(res);
+    return res;
+  }
+
   srcgenerator(trrackId: string) {
     let x = 'https://open.spotify.com/embed/track/' + trrackId + '?utm_source=generator';
     console.log(x);

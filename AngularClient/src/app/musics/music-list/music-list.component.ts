@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, Observable, ReplaySubject, filter } from 'rxjs';
 import { Behavior } from 'src/app/_models/behavior';
 import { LikedSong } from 'src/app/_models/likedsong';
 import { Music } from 'src/app/_models/music';
@@ -14,6 +14,7 @@ import { MusicsService } from 'src/app/_services/musics.service';
 })
 export class MusicListComponent implements OnInit {
   likedsongs$: Observable<Music[]> | undefined;
+  likedsongs: Music[] = [];
   originsongs$: Observable<Music[]> | undefined;
   agesongs$: Observable<Music[]> | undefined;
   gendersongs$: Observable<Music[]> | undefined;
@@ -35,6 +36,20 @@ export class MusicListComponent implements OnInit {
       musicId: id
     }
     this.musicService.likeMusic(lsong);
+  }
+
+  dislikeSong(id: number) {
+    var lsong: LikedSong = {
+      userId: JSON.parse(localStorage.getItem('user'))?.id,
+      musicId: id
+    }
+    this.musicService.dislikeMusic(lsong);
+  }
+
+  isLiked(music: Music) {
+    var res = this.musicService.isLiked(music);
+    console.log(res);
+    return res;
   }
 
   srcgenerator(trrackId: string) {

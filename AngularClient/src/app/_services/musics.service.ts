@@ -27,6 +27,7 @@ export class MusicsService {
   monthlyStats: Stat[] = [];
   yearlyStats: Stat[] = [];
   artistSongs: Music[] = [];
+  isItLiked: Boolean = false;
   
 
   constructor(private http: HttpClient, private toastr: ToastrService) { }
@@ -43,6 +44,31 @@ export class MusicsService {
     );;
     
   }
+
+  dislikeMusic(model: any) {
+    return this.http.post(this.baseUrl + 'Music/DisikeSong', model).subscribe(
+      response => {
+        map((response: any) => {
+          console.log(response);
+          
+        })
+        this.toastr.success('Song removed from Liked Songs.');
+      },
+    );;
+    
+  }
+
+  isLiked(model: Music) {
+      var contains = false;
+      this.likedsongs.forEach(x => {
+        if(x.trackId === model.trackId) {
+          contains = true;
+        }    
+      });
+     
+      return contains;
+  }
+
   public ToHttpParams(request: any): HttpParams {
     let httpParams = new HttpParams();
     Object.keys(request).forEach(function (key) {
@@ -55,7 +81,7 @@ export class MusicsService {
     if (this.artistSongs.length > 0) return of(this.artistSongs);
     return this.http.get<Music[]>(this.baseUrl + 'Music/FindMoreByArtist/' + expr).pipe(
       map(artistSongs => {
-        this.artistSongs = this.artistSongs;
+        this.artistSongs = artistSongs;
         return artistSongs;
       })
     );
@@ -130,7 +156,7 @@ export class MusicsService {
     if (this.likedsongs.length > 0) return of(this.likedsongs);
     return this.http.get<Music[]>(this.baseUrl + 'Music/GetActualLikedSongs/' + id).pipe(
       map(likedsongs => {
-        this.likedsongs = this.likedsongs;
+        this.likedsongs = likedsongs;
         return likedsongs;
       })
     );

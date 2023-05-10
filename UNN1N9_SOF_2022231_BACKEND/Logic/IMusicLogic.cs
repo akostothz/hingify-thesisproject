@@ -21,7 +21,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         Task<IEnumerable<StatDto>> GetWeeklyStatistics(int id);
         Task<IEnumerable<StatDto>> GetMonthlyStatistics(int id);
         Task<IEnumerable<StatDto>> GetYearlyStatistics(int id);
+        bool IsLiked(int userid, int musicid);
         void AddLikedSong(int userid, int musicid);
+        void RemoveFromLikedSong(int userid, int musicid);
         public string TimeOfDayConverter();
     }
 }

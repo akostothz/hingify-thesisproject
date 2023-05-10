@@ -159,11 +159,26 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         [HttpPost]
         public async Task<ActionResult> LikeSong(LikedSongDto likedSongDto)
         {
-            ;
             _logic.AddLikedSong(likedSongDto.UserId, likedSongDto.MusicId);
     
             return NoContent();
         }
 
+        [HttpPost]
+        public async Task<ActionResult> DisikeSong(LikedSongDto likedSongDto)
+        {
+            _logic.RemoveFromLikedSong(likedSongDto.UserId, likedSongDto.MusicId);
+
+            return NoContent();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<bool>> IsLiked(LikedSongDto likedSongDto)
+        {
+            ;
+            _logic.IsLiked(likedSongDto.UserId, likedSongDto.MusicId);
+
+            return Ok(_logic.IsLiked(likedSongDto.UserId, likedSongDto.MusicId));
+        }
     }
 }

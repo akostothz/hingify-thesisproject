@@ -33,7 +33,8 @@
               <iframe style="border-radius:12px" [src]='srcgenerator(foundsong.trackId)' width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
               <div class="buttons">
                 <a class="btn btn-primary" id="btn" routerLink="/discover/{{foundsong.trackId}}">Find more like this</a>
-                <a class="btn btn-secondary" id="btn2" (click)="likeSong(foundsong.id)"><i class="fa-solid fa-heart"></i></a>
+                <a class="btn btn-secondary" *ngIf="!isLiked(foundsong)" id="btn2" (click)="likeSong(foundsong.id)"><i class="fa-solid fa-heart"></i></a>
+                <a class="btn btn-danger" *ngIf="isLiked(foundsong)" id="btn2" (click)="dislikeSong(foundsong.id)"><i class="fa-solid fa-trash"></i></a>
                 <a class="btn btn-secondary" id="btn3" routerLink="/musics/{{foundsong.trackId}}"><i class="fa-solid fa-circle-info"></i></a>
               </div>
             </div>

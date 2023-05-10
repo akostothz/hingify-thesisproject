@@ -19,7 +19,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
             context.Database.EnsureCreated();
             //AddMusics(context);
             //AddTestUsers(context);
-            AddTestConnections(context);
+            //AddTestConnections(context);
             //AddFullDb(context);
         }
 
