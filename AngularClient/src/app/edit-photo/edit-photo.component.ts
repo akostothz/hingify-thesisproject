@@ -58,6 +58,13 @@ export class EditPhotoComponent implements OnInit {
     
     }
 
+    deletePic() {
+      this.picUrl = '';
+      this.accountService.deletePhoto(JSON.parse(localStorage.getItem('user'))?.id).subscribe(url => {
+        this.picUrl = url[0].valueOf();
+      });
+    }
+
     retrieveSpotifyPic() {
       /*
       const queryString = window.location.search;

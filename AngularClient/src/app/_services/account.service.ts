@@ -48,8 +48,11 @@ export class AccountService {
     this.currentUserSource.next(user);
   }
 
+  deletePhoto(id: number) {
+    return this.http.get(this.baseUrl + 'account/deletephoto/' + id);
+  }
+
   uploadPhoto(file: any) {
-    console.log('uploadPhoto()')
     console.log(this.http.post(this.baseUrl + 'account/updateuser', file))
     return this.http.post(this.baseUrl + 'account/updateuser', file).subscribe(
       resp => {

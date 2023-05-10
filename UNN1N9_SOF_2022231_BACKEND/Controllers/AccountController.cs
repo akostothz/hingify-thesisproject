@@ -127,7 +127,16 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             ;
             return pics;
         }
+        [HttpGet("deletephoto/{id}")]
+        public async Task<ActionResult> DeletePhoto(int id)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            user.PhotoUrl = null;
 
+            _context.SaveChangesAsync();
+
+            return Ok(user.PhotoUrl);
+        }
 
         [HttpPut("spotifypic")]
         public async Task<ActionResult<UserDto>> SpotifyPic(AccessTokenDTO accessToken)

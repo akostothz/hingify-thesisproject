@@ -21,7 +21,7 @@
             </button>
         </tr>
         <tr>
-            <button type="button" class="btn2 btn-outline-secondary" *ngIf="user.photoUrl">
+            <button type="button" class="btn2 btn-outline-secondary" (click)="deletePic()" *ngIf="this.picUrl">
                 Delete Current
             </button>
         </tr>
