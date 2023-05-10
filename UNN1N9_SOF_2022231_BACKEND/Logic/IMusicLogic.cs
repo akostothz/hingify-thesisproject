@@ -8,6 +8,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
     {
         Task<IEnumerable<string>> GetStyles(int id);
         Task<IEnumerable<Music>> GetPersonalizedMix(int id);
+        Task<IEnumerable<Music>> GetActualLikedSongs(int id);
         Task<IEnumerable<Music>> GetLikedSongs(int id);
         Task<IEnumerable<Music>> GetMusicsBySex(int id);
         Task<IEnumerable<Music>> GetMusicsByCountry(int id);

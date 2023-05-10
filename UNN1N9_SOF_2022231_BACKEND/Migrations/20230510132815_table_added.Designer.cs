@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using UNN1N9_SOF_2022231_BACKEND.Data;
@@ -11,9 +12,11 @@ using UNN1N9_SOF_2022231_BACKEND.Data;
 namespace UNN1N9SOF2022231BACKEND.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230510132815_table_added")]
+    partial class tableadded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -88,29 +91,6 @@ namespace UNN1N9SOF2022231BACKEND.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("UNN1N9_SOF_2022231_BACKEND.Models.LikedSong", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("MusicId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MusicId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("LikedSongs");
                 });
 
             modelBuilder.Entity("UNN1N9_SOF_2022231_BACKEND.Models.Music", b =>
@@ -222,26 +202,7 @@ namespace UNN1N9SOF2022231BACKEND.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserBehaviors");
-                });
-
-            modelBuilder.Entity("UNN1N9_SOF_2022231_BACKEND.Models.LikedSong", b =>
-                {
-                    b.HasOne("UNN1N9_SOF_2022231_BACKEND.Models.Music", "Music")
-                        .WithMany()
-                        .HasForeignKey("MusicId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("UNN1N9_SOF_2022231_BACKEND.Models.AppUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Music");
-
-                    b.Navigation("User");
+                    b.ToTable("UserBehavior");
                 });
 
             modelBuilder.Entity("UNN1N9_SOF_2022231_BACKEND.Models.UserBehavior", b =>

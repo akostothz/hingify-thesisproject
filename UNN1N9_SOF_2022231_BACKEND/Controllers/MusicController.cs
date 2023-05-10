@@ -43,6 +43,15 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         }
 
         [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<MusicDto>>> GetActualLikedSongs(int id)
+        {
+            var musics = await _logic.GetActualLikedSongs(id);
+            var musicsToReturn = _mapper.Map<IEnumerable<MusicDto>>(musics);
+
+            return Ok(musicsToReturn);
+        }
+
+        [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<MusicDto>>> GetLikedSongs(int id)
         {
             var musics = await _logic.GetLikedSongs(id);

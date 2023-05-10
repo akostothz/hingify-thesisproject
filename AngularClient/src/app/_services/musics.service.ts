@@ -119,7 +119,7 @@ export class MusicsService {
 
   getLikedSongs(id: number) {
     if (this.likedsongs.length > 0) return of(this.likedsongs);
-    return this.http.get<Music[]>(this.baseUrl + 'Music/GetLikedSongs/' + id).pipe(
+    return this.http.get<Music[]>(this.baseUrl + 'Music/GetActualLikedSongs/' + id).pipe(
       map(likedsongs => {
         this.likedsongs = this.likedsongs;
         return likedsongs;

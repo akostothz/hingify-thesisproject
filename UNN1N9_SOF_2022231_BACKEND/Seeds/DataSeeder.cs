@@ -19,7 +19,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
             context.Database.EnsureCreated();
             //AddMusics(context);
             //AddTestUsers(context);
-            //AddTestConnections(context);
+            AddTestConnections(context);
             //AddFullDb(context);
         }
 
@@ -192,66 +192,60 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
             var paliMusic1 = context.Musics.FirstOrDefault(y => y.Id == 119);
             var paliMusic2 = context.Musics.FirstOrDefault(y => y.Id == 125);
 
-            context.UserBehaviors.Add(new Models.UserBehavior()
+            context.LikedSongs.Add(new Models.LikedSong()
             {
                 UserId = 3,
-                MusicId = 119,
-                ListeningCount = 3,
-                NameOfDay = "Monday",
-                TimeOfDay = "Evening"
+                MusicId = 119
             });
-            context.UserBehaviors.Add(new Models.UserBehavior()
+            context.LikedSongs.Add(new Models.LikedSong()
             {
                 UserId = 3,
-                MusicId = 125,
-                ListeningCount = 4,
-                NameOfDay = "Monday",
-                TimeOfDay = "Evening"
+                MusicId = 125
             });
 
             //adel > 2 alternatív zene, azaz a nőknek, a franciáknak 
             //és a 26-39 éves korosztályban ezeket kéne bedobni
-            var adel = context.Users.FirstOrDefault(x => x.Id == 6);
-            var adelMusic1 = context.Musics.FirstOrDefault(y => y.Id == 388);
-            var adelMusic2 = context.Musics.FirstOrDefault(y => y.Id == 385);
+            //var adel = context.Users.FirstOrDefault(x => x.Id == 6);
+            //var adelMusic1 = context.Musics.FirstOrDefault(y => y.Id == 388);
+            //var adelMusic2 = context.Musics.FirstOrDefault(y => y.Id == 385);
 
-            context.UserBehaviors.Add(new Models.UserBehavior()
-            {
-                UserId = 6,
-                MusicId = 388,
-                ListeningCount = 5,
-                NameOfDay = "Friday",
-                TimeOfDay = "Morning"
-            });
-            context.UserBehaviors.Add(new Models.UserBehavior()
-            {
-                UserId = 6,
-                MusicId = 385,
-                ListeningCount = 9,
-                NameOfDay = "Friday",
-                TimeOfDay = "Forenoon"
-            });
+            //context.UserBehaviors.Add(new Models.UserBehavior()
+            //{
+            //    UserId = 6,
+            //    MusicId = 388,
+            //    ListeningCount = 5,
+            //    NameOfDay = "Friday",
+            //    TimeOfDay = "Morning"
+            //});
+            //context.UserBehaviors.Add(new Models.UserBehavior()
+            //{
+            //    UserId = 6,
+            //    MusicId = 385,
+            //    ListeningCount = 9,
+            //    NameOfDay = "Friday",
+            //    TimeOfDay = "Forenoon"
+            //});
 
-            var ozil = context.Users.FirstOrDefault(x => x.Id == 5);
-            var ozilMusic1 = context.Musics.FirstOrDefault(y => y.Id == 1538);
-            var ozilMusic2 = context.Musics.FirstOrDefault(y => y.Id == 1571);
+            //var ozil = context.Users.FirstOrDefault(x => x.Id == 5);
+            //var ozilMusic1 = context.Musics.FirstOrDefault(y => y.Id == 1538);
+            //var ozilMusic2 = context.Musics.FirstOrDefault(y => y.Id == 1571);
 
-            context.UserBehaviors.Add(new Models.UserBehavior()
-            {
-                UserId = 5,
-                MusicId = 1538,
-                ListeningCount = 5,
-                NameOfDay = "Friday",
-                TimeOfDay = "Morning"
-            });
-            context.UserBehaviors.Add(new Models.UserBehavior()
-            {
-                UserId = 5,
-                MusicId = 1571,
-                ListeningCount = 9,
-                NameOfDay = "Friday",
-                TimeOfDay = "Forenoon"
-            });
+            //context.UserBehaviors.Add(new Models.UserBehavior()
+            //{
+            //    UserId = 5,
+            //    MusicId = 1538,
+            //    ListeningCount = 5,
+            //    NameOfDay = "Friday",
+            //    TimeOfDay = "Morning"
+            //});
+            //context.UserBehaviors.Add(new Models.UserBehavior()
+            //{
+            //    UserId = 5,
+            //    MusicId = 1571,
+            //    ListeningCount = 9,
+            //    NameOfDay = "Friday",
+            //    TimeOfDay = "Forenoon"
+            //});
 
             context.SaveChanges();
         }

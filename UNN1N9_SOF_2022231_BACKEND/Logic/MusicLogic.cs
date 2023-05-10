@@ -573,6 +573,27 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return musics;
         }
 
+        public async Task<IEnumerable<Music>> GetActualLikedSongs(int id)
+        {
+            var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            var musics = new List<Music>();
+            var behaviours = new List<LikedSong>();
+            foreach (var behav in _context.LikedSongs)
+            {
+                if (id == behav.UserId)
+                {
+                    behaviours.Add(behav);
+                }
+            }
+            foreach (var music in _context.Musics)
+            {
+                if (ContainsLikedSong(music.Id, behaviours))
+                {
+                    musics.Add(music);
+                }
+            }
+            return musics;
+        }
         public async Task<IEnumerable<Music>> GetLikedSongs(int id)
         {
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
@@ -717,6 +738,17 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             foreach (var behaviour in behaviours)
             {
                 if (id == behaviour.MusicId)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool ContainsLikedSong(int id, List<LikedSong> songs)
+        {
+            foreach (var s in songs)
+            {
+                if (id == s.MusicId)
                 {
                     return true;
                 }
