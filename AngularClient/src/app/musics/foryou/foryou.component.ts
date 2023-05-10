@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
+import { LikedSong } from 'src/app/_models/likedsong';
 import { Music } from 'src/app/_models/music';
 import { MusicsService } from 'src/app/_services/musics.service';
 
@@ -25,6 +26,14 @@ export class ForyouComponent implements OnInit {
 
   loadMusics() { 
     this.lhsongs$ = this.musicService.getLikedSongs(JSON.parse(localStorage.getItem('user'))?.id);
+  }
+
+  likeSong(id: number) {
+    var lsong: LikedSong = {
+      userId: JSON.parse(localStorage.getItem('user'))?.id,
+      musicId: id
+    }
+    this.musicService.likeMusic(lsong);
   }
   
   TimeSetter() {

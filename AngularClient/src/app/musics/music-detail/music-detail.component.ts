@@ -3,6 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DetailedMusic } from 'src/app/_models/detailedmusic';
+import { LikedSong } from 'src/app/_models/likedsong';
 import { Music } from 'src/app/_models/music';
 import { MusicsService } from 'src/app/_services/musics.service';
 
@@ -31,6 +32,14 @@ export class MusicDetailComponent implements OnInit {
     let x = 'https://open.spotify.com/embed/track/' + trrackId + '?utm_source=generator';
     
     return this.sanitizer.bypassSecurityTrustResourceUrl(x);
+  }
+
+  likeSong(id: number) {
+    var lsong: LikedSong = {
+      userId: JSON.parse(localStorage.getItem('user'))?.id,
+      musicId: id
+    }
+    this.musicService.likeMusic(lsong);
   }
 
   msToMins(ms: number) {

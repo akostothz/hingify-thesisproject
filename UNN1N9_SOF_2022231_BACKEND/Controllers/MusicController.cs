@@ -157,9 +157,10 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> LikeSong(BehaviorDto behaviorDto)
+        public async Task<ActionResult> LikeSong(LikedSongDto likedSongDto)
         {
-            _logic.AddLikedSong(behaviorDto.UserId, behaviorDto.MusicId);
+            ;
+            _logic.AddLikedSong(likedSongDto.UserId, likedSongDto.MusicId);
     
             return NoContent();
         }

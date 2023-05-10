@@ -3,6 +3,7 @@ import { MusicsService } from '../_services/musics.service';
 import { Observable } from 'rxjs';
 import { Music } from '../_models/music';
 import { DomSanitizer } from '@angular/platform-browser';
+import { LikedSong } from '../_models/likedsong';
 
 
 @Component({
@@ -28,6 +29,14 @@ export class SearchComponent implements OnInit {
     this.searchInput = inputElement.value;
     
     this.foundsongs$ = this.musicService.search(this.searchInput);
+  }
+
+  likeSong(id: number) {
+    var lsong: LikedSong = {
+      userId: JSON.parse(localStorage.getItem('user'))?.id,
+      musicId: id
+    }
+    this.musicService.likeMusic(lsong);
   }
 
   srcgenerator(trrackId: string) {

@@ -23,18 +23,13 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         public void AddLikedSong(int userid, int musicid)
         {
             var givenuser = _context.Users.FirstOrDefault(x => x.Id == userid);
-            string nameOfDay = DateTime.Now.DayOfWeek.ToString();
-            string timeOfDay = TimeOfDayConverter();
 
-            _context.UserBehaviors.Add(new UserBehavior()
+            _context.LikedSongs.Add(new LikedSong()
             {
                 UserId = userid,
-                MusicId = musicid,
-                ListeningCount = 1,
-                NameOfDay = nameOfDay,
-                TimeOfDay = timeOfDay
+                MusicId = musicid
             });
-
+            ;
             _context.SaveChangesAsync();
         }
 

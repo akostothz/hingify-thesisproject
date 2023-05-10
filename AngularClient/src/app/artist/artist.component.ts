@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Music } from '../_models/music';
 import { MusicsService } from '../_services/musics.service';
+import { LikedSong } from '../_models/likedsong';
 
 @Component({
   selector: 'app-artist',
@@ -26,6 +27,14 @@ export class ArtistComponent implements OnInit {
 
     this.songs$ = this.musicService.findArtistMusics(searchedartist);
   })  
+  }
+
+  likeSong(id: number) {
+    var lsong: LikedSong = {
+      userId: JSON.parse(localStorage.getItem('user'))?.id,
+      musicId: id
+    }
+    this.musicService.likeMusic(lsong);
   }
 
   srcgenerator(trrackId: string) {

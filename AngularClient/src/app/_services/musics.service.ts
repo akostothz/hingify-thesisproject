@@ -7,6 +7,7 @@ import { Music } from '../_models/music';
 import { User } from '../_models/user';
 import { DetailedMusic } from '../_models/detailedmusic';
 import { Stat } from '../_models/stat';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -28,10 +29,18 @@ export class MusicsService {
   artistSongs: Music[] = [];
   
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   likeMusic(model: any) {
-    return this.http.post(this.baseUrl + 'Music/LikeSong', model);
+    return this.http.post(this.baseUrl + 'Music/LikeSong', model).subscribe(
+      response => {
+        map((response: any) => {
+          console.log(response);
+          
+        })
+        this.toastr.success('Song added to Liked Songs.');
+      },
+    );;
     
   }
   public ToHttpParams(request: any): HttpParams {

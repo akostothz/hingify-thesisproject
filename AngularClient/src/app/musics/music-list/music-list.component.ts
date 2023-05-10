@@ -3,6 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
 import { Behavior } from 'src/app/_models/behavior';
+import { LikedSong } from 'src/app/_models/likedsong';
 import { Music } from 'src/app/_models/music';
 import { MusicsService } from 'src/app/_services/musics.service';
 
@@ -29,14 +30,11 @@ export class MusicListComponent implements OnInit {
   }
 
   likeSong(id: number) {
-    var behav: Behavior = {
-      userid: JSON.parse(localStorage.getItem('user'))?.id,
-      musicid: id,
-      nameofday: '',
-      timeofday: ''
+    var lsong: LikedSong = {
+      userId: JSON.parse(localStorage.getItem('user'))?.id,
+      musicId: id
     }
-    this.behavior = behav;
-    this.musicService.likeMusic(this.behavior).subscribe();
+    this.musicService.likeMusic(lsong);
   }
 
   srcgenerator(trrackId: string) {

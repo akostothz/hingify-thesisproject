@@ -48,3 +48,18 @@ h1 {
 hr {
     border: 1px solid #fff;
 }
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+  
+}
+
+#btn {
+    font-size: 1.1em;
+}
+  
+#btn2 {
+    margin-left: 1em;
+}

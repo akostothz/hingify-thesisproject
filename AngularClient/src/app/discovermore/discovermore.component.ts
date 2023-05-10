@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Music } from '../_models/music';
+import { LikedSong } from '../_models/likedsong';
 
 @Component({
   selector: 'app-discovermore',
@@ -24,6 +25,14 @@ export class DiscovermoreComponent implements OnInit {
 
       this.disvoceredsongs$ = this.musicService.discover(searchedTrackId);
     })  
+  }
+
+  likeSong(id: number) {
+    var lsong: LikedSong = {
+      userId: JSON.parse(localStorage.getItem('user'))?.id,
+      musicId: id
+    }
+    this.musicService.likeMusic(lsong);
   }
 
   srcgenerator(trrackId: string) {
