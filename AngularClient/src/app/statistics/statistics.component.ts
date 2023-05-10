@@ -20,7 +20,7 @@ export class StatisticsComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {   
+  ngOnInit(): void {
     this.TimeSetter();
     this.getStatistics();
   }

@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using UNN1N9_SOF_2022231_BACKEND.Data;
 using UNN1N9_SOF_2022231_BACKEND.DTOs;
+using UNN1N9_SOF_2022231_BACKEND.Helpers;
 using UNN1N9_SOF_2022231_BACKEND.Interfaces;
 using UNN1N9_SOF_2022231_BACKEND.Models;
 using UNN1N9_SOF_2022231_BACKEND.Services;
@@ -21,6 +22,30 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
             //AddTestUsers(context);
             //AddTestConnections(context);
             //AddFullDb(context);
+            //FixConnectionDates(context);
+            //AddTestConnectionForAkos(context);
+        }
+
+        private static void AddTestConnectionForAkos(DataContext context)
+        {
+            foreach (var item in context.UserBehaviors.Where(x => x.UserId == 3))
+            {
+                if (RandomGenerator.rnd.Next(1, 3) == 1)
+                {
+                    item.Date = new DateOnly(2023, 5, RandomGenerator.rnd.Next(1, 12));
+                }
+            }
+            context.SaveChanges();
+        }
+
+        private static void FixConnectionDates(DataContext context)
+        {
+            foreach (var item in context.UserBehaviors)
+            {
+                item.Date = new DateOnly(2023, RandomGenerator.rnd.Next(1, 5), RandomGenerator.rnd.Next(1, 28));
+            }
+
+            context.SaveChanges();
         }
 
         private static void AddFullDb(DataContext context)
