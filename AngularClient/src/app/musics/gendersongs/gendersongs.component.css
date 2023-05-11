@@ -1,0 +1,114 @@
+h2 {
+    color: white;
+    text-align: left;
+    font-size: 5em;
+    padding-top: 1em;
+    margin-bottom: 1em;
+}
+
+hr {
+    border: 0.5px solid #fcf3f3;
+}
+
+.card {
+    margin-bottom: 1em;
+}
+
+#genre {
+    font-size: 2.4em;
+    color: rgb(255, 255, 255);
+  }
+  
+  #btn2 {
+    margin-left: 1em;
+  }
+  
+  #btn3 {
+    background-color: rgb(36, 187, 207);
+    border-color: #ffffff;
+    margin-left: 1em;
+  }
+  
+  #btn3:hover {
+    background-color: rgb(22, 103, 170);
+    border-color: #ffffff;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+  
+  }
+
+  .description {
+    text-align: left;
+    font-size: 3em;
+    color: white;
+  }
+
+  .desc {
+    width: 190px;
+    height: 254px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                -15px -15px 30px rgb(60, 60, 60);
+   }
+
+
+   .hover {
+    position: relative;
+    width: 80svw;
+    height: 6em;
+    background: #1e3c9d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5em;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+  }
+  
+  .hover::before,
+  .hover::after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: #4569dc;
+    transition: all 0.5s;
+  }
+  
+  .hover::before {
+    top: 0;
+    right: 0;
+    border-radius: 0 15px 0 100%;
+  }
+  
+  .hover::after {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 100%  0 15px;
+  }
+  
+  .hover:hover::before,
+  .hover:hover:after {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transition: all 0.5s;
+  }
+  
+  .hover:hover:after {
+    content: "These songs are liked by Your gender.";
+  }

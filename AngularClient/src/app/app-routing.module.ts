@@ -22,6 +22,10 @@ import { HelperComponent } from './helper/helper.component';
 import { DiscovermoreComponent } from './discovermore/discovermore.component';
 import { ArtistComponent } from './artist/artist.component';
 import { MoreComponent } from './musics/more/more.component';
+import { LikedsongsComponent } from './musics/likedsongs/likedsongs.component';
+import { AgegroupsongsComponent } from './musics/agegroupsongs/agegroupsongs.component';
+import { GendersongsComponent } from './musics/gendersongs/gendersongs.component';
+import { CountrysongsComponent } from './musics/countrysongs/countrysongs.component';
 
 const routes: Routes = [
   {path: '', component: AboutComponent},
@@ -31,6 +35,10 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {path: 'musics', component: MusicListComponent},
+      {path: 'musics/liked', component: LikedsongsComponent},
+      {path: 'musics/agegroup', component: AgegroupsongsComponent},
+      {path: 'musics/gender', component: GendersongsComponent},
+      {path: 'musics/country', component: CountrysongsComponent},
       {path: 'musics/:trackId', component: MusicDetailComponent},
       {path: 'edit', component: EditProfileComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'editphoto', component: EditPhotoComponent, canDeactivate: [PreventUnsavedChangesGuard]},

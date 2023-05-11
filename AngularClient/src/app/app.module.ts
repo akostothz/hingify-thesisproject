@@ -33,6 +33,10 @@ import { HelperComponent } from './helper/helper.component';
 import { DiscovermoreComponent } from './discovermore/discovermore.component';
 import { ArtistComponent } from './artist/artist.component';
 import { MoreComponent } from './musics/more/more.component';
+import { LikedsongsComponent } from './musics/likedsongs/likedsongs.component';
+import { GendersongsComponent } from './musics/gendersongs/gendersongs.component';
+import { CountrysongsComponent } from './musics/countrysongs/countrysongs.component';
+import { AgegroupsongsComponent } from './musics/agegroupsongs/agegroupsongs.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +62,11 @@ import { MoreComponent } from './musics/more/more.component';
     HelperComponent,
     DiscovermoreComponent,
     ArtistComponent,
-    MoreComponent
+    MoreComponent,
+    LikedsongsComponent,
+    GendersongsComponent,
+    CountrysongsComponent,
+    AgegroupsongsComponent
   ],
   imports: [
     BrowserModule,

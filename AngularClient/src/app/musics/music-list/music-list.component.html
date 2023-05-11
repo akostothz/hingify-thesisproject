@@ -1,113 +1,90 @@
-<h1>We've made a couple of playlist for You based on your profile infos.</h1>
+<div class="wrap">
 
-<div class="lsongs" *ngIf="(likedsongs$ |async)?.length > 0">
-    <div class="results">
-        <h2>
-            <i class="fa-solid fa-align-left" id="ik"></i>
-            Your liked songs
-        </h2>
-        <div class="card" *ngFor="let likedsong of likedsongs$ | async">
-            <div class="card-header" id="head">
-                <p class="card-text" id="genre">Genre: <span class="badge rounded-pill bg-danger">{{likedsong.genre}}</span></p>
-            </div>
-            <div class="card-body">
-                <iframe style="border-radius:12px" [src]='srcgenerator(likedsong.trackId)' width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                <div class="buttons">
-                  <a class="btn btn-primary" id="btn" routerLink="/discover/{{likedsong.trackId}}">Find more like this</a>
-                  <a class="btn btn-danger" id="btn2" (click)="dislikeSong(likedsong.id)"><i class="fa-solid fa-trash"></i></a>
-                  <a class="btn btn-secondary" id="btn3" routerLink="/musics/{{likedsong.trackId}}"><i class="fa-solid fa-circle-info"></i></a>
-                </div>
-            </div>
-            <hr>
-        </div>
-    </div>  
-    <div class="more">
-        <a href="#" class="morebutton">More ></a>
+    <div class="div1"> 
+        <h1>We've made a couple of playlist for You based on your profile infos.</h1>
     </div>
-</div>
 
-<div class="lsongs" *ngIf="(originsongs$ |async)?.length > 0">
-    <div class="results">
-        <h2>
-            <i class="fa-solid fa-align-left" id="ik"></i>
-            Top hits in your area
-        </h2>
-        <div class="card" *ngFor="let originsong of originsongs$ | async">
-            <div class="card-header" id="head">
-                <p class="card-text" id="genre">Genre: <span class="badge rounded-pill bg-success">{{originsong.genre}}</span></p>
-            </div>
-            <div class="card-body">
-                <iframe style="border-radius:12px" [src]='srcgenerator(originsong.trackId)' width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                <div class="buttons">
-                  <a class="btn btn-primary" id="btn" routerLink="/discover/{{originsong.trackId}}">Find more like this</a>
-                  <a class="btn btn-secondary" *ngIf="!isLiked(originsong)" id="btn2" (click)="likeSong(originsong.id)"><i class="fa-solid fa-heart"></i></a>
-                  <a class="btn btn-danger" *ngIf="isLiked(originsong)" id="btn2" (click)="dislikeSong(originsong.id)"><i class="fa-solid fa-trash"></i></a>
-                  <a class="btn btn-secondary" id="btn3" routerLink="/musics/{{originsong.trackId}}"><i class="fa-solid fa-circle-info"></i></a>
-                </div>
-            </div>
-            <hr>
+    <div class="div2"> 
+        <div class="card">
+            <h2>Liked songs</h2>            
         </div>
     </div>
-    <div class="more">
-        <a href="#" class="morebutton">More ></a>
+
+    <div class="div3"> 
+        <div class="buttons" *ngIf="(likedsongs$ |async)?.length > 0">
+            <button routerLink="/musics/liked">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> VIEW LIST
+              </button>
+        </div>  
+
     </div>
-</div>
 
+    <div class="div4"> 
+        <div class="card">
+            <h2>Top hits in your area</h2>          
+        </div>  
+    </div>
 
+    <div class="div5"> 
+        <div class="buttons">
+            <button routerLink="/musics/country">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> VIEW LIST
+              </button>
+        </div>  
+    </div>
 
-<div class="lsongs" *ngIf="(agesongs$ |async)?.length > 0">
-    <div class="results">
-        <h2>
-            <i class="fa-solid fa-align-left" id="ik"></i>
-            People around your age also liked..
-        </h2>
-        <div class="card" *ngFor="let agesong of agesongs$ | async">
-            <div class="card-header" id="head">
-                <p class="card-text" id="genre">Genre: <span class="badge rounded-pill bg-light">{{agesong.genre}}</span></p>
-            </div>
-            <div class="card-body">
-                <iframe style="border-radius:12px" [src]='srcgenerator(agesong.trackId)' width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                <div class="buttons">
-                  <a class="btn btn-primary" id="btn" routerLink="/discover/{{agesong.trackId}}">Find more like this</a>
-                  <a class="btn btn-secondary" *ngIf="!isLiked(agesong)" id="btn2" (click)="likeSong(agesong.id)"><i class="fa-solid fa-heart"></i></a>
-                  <a class="btn btn-danger" *ngIf="isLiked(agesong)" id="btn2" (click)="dislikeSong(agesong.id)"><i class="fa-solid fa-trash"></i></a>
-                  <a class="btn btn-secondary" id="btn3" routerLink="/musics/{{agesong.trackId}}"><i class="fa-solid fa-circle-info"></i></a>
-                </div>
-            </div>
-            <hr>
+    <div class="div6"> 
+        <div class="card">
+            <h2>People around your age also liked..</h2>     
+        </div> 
+    </div>
+
+    
+    <div class="div7"> 
+        <div class="buttons">
+            <button routerLink="/musics/agegroup">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> VIEW LIST
+              </button>
+        </div>  
+    </div>
+
+    <div class="div8"> 
+        <div class="card">
+            <h2>Gender rules!</h2>       
         </div>
-        
     </div>
-    <div class="more">
-        <a href="#" class="morebutton">More ></a>
+
+    <div class="div9"> 
+        <div class="buttons">
+            <button routerLink="/musics/gender">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> VIEW LIST
+              </button>
+        </div>  
     </div>
+
 </div>
 
 
-<div class="lsongs" *ngIf="(likedsongs$ |async)?.length > 0">
-    <div class="results">
-        <h2>
-            <i class="fa-solid fa-align-left" id="ik"></i>
-            Gender rules!
-        </h2>
-        <div class="card" *ngFor="let gendersong of gendersongs$ | async">
-            <div class="card-header" id="head">
-                <p class="card-text" id="genre">Genre: <span class="badge rounded-pill bg-secondary">{{gendersong.genre}}</span></p>
-            </div>
-            <div class="card-body">
-                <iframe style="border-radius:12px" [src]='srcgenerator(gendersong.trackId)' width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                <div class="buttons">
-                  <a class="btn btn-primary" id="btn" routerLink="/discover/{{gendersong.trackId}}">Find more like this</a>
-                  <a class="btn btn-secondary" *ngIf="!isLiked(gendersong)" id="btn2" (click)="likeSong(gendersong.id)"><i class="fa-solid fa-heart"></i></a>
-                  <a class="btn btn-danger" *ngIf="isLiked(gendersong)" id="btn2" (click)="dislikeSong(gendersong.id)"><i class="fa-solid fa-trash"></i></a>
-                  <a class="btn btn-secondary" id="btn3" routerLink="/musics/{{gendersong.trackId}}"><i class="fa-solid fa-circle-info"></i></a>
-                </div>
-            </div>
-            <hr>
-        </div>
-    </div>
-    <div class="more">
-        <a href="#" class="morebutton">More ></a>
-    </div>
-</div>
+
+
+
+
+
+
+
+
+
+
 

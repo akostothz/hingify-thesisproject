@@ -1,0 +1,22 @@
+<div class="lsongs" *ngIf="(agesongs$ |async)?.length > 0">
+    <div class="results">
+        <div class="hover">
+            People around your age also liked..
+        </div>       
+        <div class="card" *ngFor="let agesong of agesongs$ | async">
+            <div class="card-header" id="head">
+                <p class="card-text" id="genre">Genre: <span class="badge rounded-pill bg-danger">{{agesong.genre}}</span></p>
+            </div>
+            <div class="card-body">
+                <iframe style="border-radius:12px" [src]='srcgenerator(agesong.trackId)' width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <div class="buttons">
+                  <a class="btn btn-primary" id="btn" routerLink="/discover/{{agesong.trackId}}">Find more like this</a>
+                  <a class="btn btn-secondary" *ngIf="!isLiked(agesong)" id="btn2" (click)="likeSong(agesong.id)"><i class="fa-solid fa-heart"></i></a>
+                  <a class="btn btn-danger" *ngIf="isLiked(agesong)" id="btn2" (click)="dislikeSong(agesong.id)"><i class="fa-solid fa-trash"></i></a>
+                  <a class="btn btn-secondary" id="btn3" routerLink="/musics/{{agesong.trackId}}"><i class="fa-solid fa-circle-info"></i></a>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
