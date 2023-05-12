@@ -1,14 +1,54 @@
 <div class="container">
     <div class="divS" *ngIf="!registerMode">
+        
         <h1>Find the music that best fits you.</h1>
         <p class="lead">Generate curated playlists using AI.</p>
-        <section class="neonpurple">
-            <a class="neon-purple" (click)="registerToggle()" href="/register">Sign up to start the experience</a>
-                      
+
+        
+        <section class="loader">
+
+            <div class="slider" style="--i:0">
+            </div>
+            <div class="slider" style="--i:1">
+            </div>
+            <div class="slider" style="--i:2">
+            </div>
+            <div class="slider" style="--i:3">
+            </div>
+            <div class="slider" style="--i:4">
+            </div>
+            <div class="slider" style="--i:0">
+            </div>
+            <div class="slider" style="--i:1">
+            </div>
+            <div class="slider" style="--i:2">
+            </div>
+            <div class="slider" style="--i:3">
+            </div>
+            <div class="slider" style="--i:4">
+            </div>
+            <div class="slider" style="--i:0">
+            </div>
+            <div class="slider" style="--i:1">
+            </div>
+            <div class="slider" style="--i:2">
+            </div>
+            <div class="slider" style="--i:3">
+            </div>
+            <div class="slider" style="--i:4">
+            </div>
         </section>
-        <section class="neongreen">
-            <a class="neon-green" href="/about">Learn more</a>                 
-        </section>
+
+
+
+
+        <div class="buttons">
+            <button (click)="registerToggle()">
+              <span>Register now ></span>
+            </button>
+            
+          </div>
+
     </div>
     <div *ngIf="registerMode" class="container">
         <div class="row justify-content-center">
