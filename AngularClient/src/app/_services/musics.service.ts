@@ -200,7 +200,7 @@ export class MusicsService {
     if (this.personalizedsongs.length > 0) return of(this.personalizedsongs);
     return this.http.get<Music[]>(this.baseUrl + 'Music/GetPersonalizedMix/' + id).pipe(
       map(personalizedsongs => {
-        this.personalizedsongs = this.personalizedsongs;
+        this.personalizedsongs = personalizedsongs;
         return personalizedsongs;
       })
     );

@@ -25,7 +25,7 @@ export class ForyouComponent implements OnInit {
   }
 
   loadMusics() { 
-    this.lhsongs$ = this.musicService.getLikedSongs(JSON.parse(localStorage.getItem('user'))?.id);
+    this.lhsongs$ = this.musicService.getPersonalizedMix(JSON.parse(localStorage.getItem('user'))?.id);
   }
 
   likeSong(id: number) {
