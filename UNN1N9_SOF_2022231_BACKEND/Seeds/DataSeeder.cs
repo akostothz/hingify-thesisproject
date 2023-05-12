@@ -26,7 +26,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
             //AddTestConnectionForAkos(context);
             //AddLikedSongs(context);
             //AddUserBehaviors(context);
-            AddUserBehaviorsFor345ID(context);
+            //AddUserBehaviorsFor345ID(context);
         }
 
         private static void AddUserBehaviorsFor345ID(DataContext context)
