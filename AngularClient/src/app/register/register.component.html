@@ -1,5 +1,5 @@
 <h1>Sign up for free!</h1>
-<h3><b>Choose your credentials carefully! </b>You can not change your username, nor any information that might affect your playlists.</h3>
+
 
 
 
@@ -114,13 +114,30 @@
                 </ul>
             </div>
 
+            
+
             <div>
                 <button [disabled]="!registerForm.valid" class="btn btn-success mr-2" type="submit" (click)="register()">Sign Up</button>
+            </div>
+
+            <div class="social-message">
+                <div class="line"></div>
+                <p class="message">Login with social accounts</p>
+                <div class="line"></div>
+    
+                
+            </div>
+
+            <div class="social">
+                <button id="spotify"><i class="fa-brands fa-spotify"></i></button>
             </div>
             
         </div>
         
     </form>
+
+
+    <h3><b>Choose your credentials carefully! </b>You can not change your username, nor any information that might affect your playlists.</h3>
     
 
         

@@ -30,8 +30,9 @@ h1 {
 
 h3 {
     color: rgb(223, 30, 30);
-    font-size: 1.8em;
-    padding-bottom: 1em;
+    font-size: 2em;
+    margin-top: 2em;
+    margin-bottom: 5em;
     text-align: center;
 }
 
@@ -70,4 +71,38 @@ select {
 option {
     background-color: rgb(60, 7, 139);
     color: #ffff;
+}
+
+.social-message {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+  }
+  .social-message .message {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: rgba(156, 163, 175, 1);
+  }
+.line {
+    height: 1px;
+    flex: 1 1 0%;
+    background-color: rgba(55, 65, 81, 1);
+  }
+
+.social {
+    display: wrap;
+    justify-content: center;
+    margin-left: auto;
+    justify-items: center;
+    margin-right: auto;
+    text-align: center;
+}
+
+#spotify {
+    font-size: 3em;
+    background-color: transparent;
+    border: 0;
 }
