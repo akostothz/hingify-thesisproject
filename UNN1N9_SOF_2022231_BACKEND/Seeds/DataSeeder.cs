@@ -24,6 +24,409 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
             //AddFullDb(context);
             //FixConnectionDates(context);
             //AddTestConnectionForAkos(context);
+            //AddLikedSongs(context);
+            //AddUserBehaviors(context);
+            AddUserBehaviorsFor345ID(context);
+        }
+
+        private static void AddUserBehaviorsFor345ID(DataContext context)
+        {
+            //először kitörlöm az összes behaviort, ami hozzájuk tartozik
+            foreach (var item in context.UserBehaviors)
+            {
+                if (item.UserId == 3)
+                {
+                    context.UserBehaviors.Remove(item);
+                }
+                if (item.UserId == 4)
+                {
+                    context.UserBehaviors.Remove(item);
+                }
+                if (item.UserId == 5)
+                {
+                    context.UserBehaviors.Remove(item);
+                }
+            }
+
+            context.SaveChanges();
+
+            // majd feltöltöm statikusan (az egysezerűség kedvéért minden nap és napszakhoz ugyan
+            // azokat a zenéket adom hozzá egy usernél - (6/stílus) db
+
+            // id == 3 -> csak Alternatív zenék >> 6db
+            // id == 4 -> Rock és Rap zenék >> 3db - 3db
+            // id == 5 -> Dance, Electronic és Hip-Hop zenék >> 2db - 2db - 2db
+
+            foreach (var item in context.Users)
+            {
+                if (item.Id == 3 || item.Id == 4 || item.Id == 5)
+                {
+                    for (int i = 0; i < 7; i++)
+                    {
+                        for (int j = 0; j < 6; j++)
+                        {
+                            string day = GetDay(i);
+                            string timeofDay = GetTimeOfDay(j);
+                            int listeningCount = RandomGenerator.rnd.Next(1, 6);
+                            DateOnly date;
+                            if (day == "Monday")
+                            {
+                                date = new DateOnly(2023, 5, 1);
+                            }
+                            else if (day == "Tuesday")
+                            {
+                                date = new DateOnly(2023, 5, 2);
+                            }
+                            else if (day == "Wednesday")
+                            {
+                                date = new DateOnly(2023, 5, 3);
+                            }
+                            else if (day == "Thursday")
+                            {
+                                date = new DateOnly(2023, 5, 4);
+                            }
+                            else if (day == "Friday")
+                            {
+                                date = new DateOnly(2023, 5, 5);
+                            }
+                            else if (day == "Saturday")
+                            {
+                                date = new DateOnly(2023, 5, 6);
+                            }
+                            else
+                            {
+                                date = new DateOnly(2023, 5, 7);
+                            }
+
+
+                            if (item.Id == 3)
+                            {
+                                //a 6db alternatív zene id-ja: 358, 360, 361, 366, 380, 394
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 3,
+                                    MusicId = 358,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 3,
+                                    MusicId = 360,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 3,
+                                    MusicId = 361,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 3,
+                                    MusicId = 366,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 3,
+                                    MusicId = 380,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 3,
+                                    MusicId = 394,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+
+                            }
+                            if (item.Id == 4)
+                            {
+                                //3db rock: 153000, 153004, 153193
+                                //3db Rap: 115991, 116031, 116047
+
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 4,
+                                    MusicId = 153000,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 4,
+                                    MusicId = 153004,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 4,
+                                    MusicId = 153193,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 4,
+                                    MusicId = 115991,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 4,
+                                    MusicId = 116031,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 4,
+                                    MusicId = 116047,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                            }
+                            if (item.Id == 5)
+                            {
+                                //2db dance: 548, 592
+                                //2db electronic: 693, 700
+                                //2db hip-hop: 71423, 71425 
+
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 5,
+                                    MusicId = 548,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 5,
+                                    MusicId = 592,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 5,
+                                    MusicId = 693,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 5,
+                                    MusicId = 700,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 5,
+                                    MusicId = 71423,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = 5,
+                                    MusicId = 71425,
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                            }
+                        }
+                    }
+                }
+                            
+               
+            }
+
+            context.SaveChanges();
+        }
+
+        private static void AddUserBehaviors(DataContext context)
+        {
+            // a 3-as és 4-es és 5-ös id-jú egyedeket szándékosan kezelem külön és töltöm fel más számokkal,
+            // nekik 1, 2 illetve 3 fajta stílust szeretnék csak megadni a teszt érdekében. 
+            // a többiek pedig vegyesek lesznek, remélhetőleg 3-nál több fajta stílussal egy napszakban
+
+            foreach (var item in context.Users)
+            {
+                if (item.Id != 3 || item.Id != 4 || item.Id != 5)
+                {
+                    for (int i = 0; i < 7; i++) //minden nap
+                    {
+                        string day = GetDay(i);
+                        for (int j = 0; j < 6; j++) //minden napszakjába rakok Behaviorok-et
+                        {
+                            int numberToAdd = RandomGenerator.rnd.Next(6, 12); //de csak 6-11 db-ot
+                            for (int k = 0; k < numberToAdd; k++)
+                            {
+                                string timeofDay = GetTimeOfDay(j);
+                                int listeningCount = RandomGenerator.rnd.Next(1, 6);
+                                DateOnly date;
+                                if (day == "Monday")
+                                {
+                                    date = new DateOnly(2023, 5, 1);
+                                }
+                                else if (day == "Tuesday")
+                                {
+                                    date = new DateOnly(2023, 5, 2);
+                                }
+                                else if (day == "Wednesday")
+                                {
+                                   date = new DateOnly(2023, 5, 3);
+                                }
+                                else if (day == "Thursday")
+                                {
+                                    date = new DateOnly(2023, 5, 4);
+
+                                }
+                                else if (day == "Friday")
+                                {
+                                    date = new DateOnly(2023, 5, 5);
+                                }
+                                else if (day == "Saturday")
+                                {
+                                    date = new DateOnly(2023, 5, 6);
+                                }
+                                else
+                                {
+                                    date = new DateOnly(2023, 5, 7);
+                                }
+
+                                context.UserBehaviors.Add(new UserBehavior()
+                                {
+                                    UserId = item.Id,
+                                    MusicId = RandomGenerator.rnd.Next(1, 220000),
+                                    ListeningCount = listeningCount,
+                                    NameOfDay = day,
+                                    TimeOfDay = timeofDay,
+                                    Date = date
+                                });
+                            }                         
+                        }
+                    }
+                    
+                }     
+            }
+            context.SaveChanges();
+        }
+        private static string GetTimeOfDay(int j)
+        {
+            switch (j)
+            {
+                case 0:
+                    return "Dawn";
+                    break;
+                case 1:
+                    return "Morning";
+                    break;
+                case 2:
+                    return "Forenoon";
+                    break;
+                case 3:
+                    return "Afternoon";
+                    break;
+                case 4:
+                    return "Evening";
+                    break;
+                case 5:
+                    return "Night";
+                    break;
+                default:
+                    return "Forenoon";
+                    break;
+            }
+        }
+        private static string GetDay(int i)
+        {
+            switch (i)
+            {
+                case 0: 
+                    return "Monday";
+                    break;
+                case 1:
+                    return "Tuesday";
+                    break;
+                case 2:
+                    return "Wednesday";
+                    break;
+                case 3:
+                    return "Thursday";
+                    break;
+                case 4:
+                    return "Friday";
+                    break;
+                case 5:
+                    return "Saturday";
+                    break;
+                case 6:
+                    return "Sunday";
+                    break;
+                default:
+                    return "Saturday";
+                    break;
+            }
+        }
+
+        private static void AddLikedSongs(DataContext context)
+        {
+            foreach (var item in context.Users)
+            {
+                int numberToAdd = RandomGenerator.rnd.Next(15, 30);
+                for (int i = 0; i < numberToAdd; i++)
+                {
+                    context.LikedSongs.Add(new LikedSong() { UserId = item.Id, MusicId = RandomGenerator.rnd.Next(1, 220000) });
+                }             
+            }
+
+            context.SaveChanges();
         }
 
         private static void AddTestConnectionForAkos(DataContext context)
