@@ -24,7 +24,6 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         {
             var likedsong = _context.LikedSongs.FirstOrDefault(x => x.UserId == userid && x.MusicId == musicid);
 
-            ;
             if (_context.LikedSongs.Contains(likedsong))
             {
                 return true;
