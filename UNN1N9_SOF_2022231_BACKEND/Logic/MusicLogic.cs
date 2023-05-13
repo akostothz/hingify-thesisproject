@@ -103,6 +103,8 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             var behaviours = new List<UserBehavior>();
             var genres = new List<string>();
             var style = "";
+            var styles = new List<string>();
+            
 
             foreach (var behav in _context.UserBehaviors)
             {
@@ -120,7 +122,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             }
             //itt megvannak a hallgatott zenék abban az időszakban, ahol épp vagyunk
 
-            // stílusok számának lekérdezése; ha több, mint 5, akkor vegyes mixet kap, ha nem, akkor azt amiből a legtöbb van
+            // stílusok számának lekérdezése; ha több, mint 3, akkor vegyes mixet kap, ha nem, akkor azt amiből a legtöbb van
 
             var dict = new Dictionary<string, int>();
 
@@ -130,31 +132,30 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 {
                     genres.Add(music.Genre);
                     dict[music.Genre] = 1;
+                    styles.Add(music.Genre);
                 }
                 else
                 {
                     dict[music.Genre] += 1;
                 }
             }
-
-            if (genres.Count >= 5) //vegyes mix
-            {
-
-            }
-            else //mix a legtöbbet előfordultból
+            
+            if (genres.Count <= 3) //mix a legtöbbet előfordultból
             {
                 style = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key; //a stílus neve
             }
 
             //a napszakból való hátramaradó idő kiszámítása
             int endHour = EndHour(timeOfDay);
-            int currHour = DateTime.UtcNow.Hour;
-            int currMins = DateTime.UtcNow.Minute;
-
+            int currHour = DateTime.Now.Hour;
+            int currMins = DateTime.Now.Minute;
+            
             int hoursLeft = 0;
             int minsLeft = 0;
 
-            if (currHour != endHour)
+            if (currMins != 0)
+                hoursLeft = endHour - currHour - 1;
+            else
                 hoursLeft = endHour - currHour;
 
             minsLeft = 60 - currMins;
@@ -162,26 +163,39 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             if (hoursLeft != 0)
                 minsLeft = minsLeft + hoursLeft * 60;
 
+
             //itt ki van számítva, minsLeft hosszúságú lista kell vissza
 
             var selectedMusics = new List<Music>();
-
             var songsToChooseFrom = new List<Music>();
-
-            //kevert megoldás
-
-
-            //nem kevert megoldás
-
-            foreach (var music in musics)
+            
+            if (genres.Count >= 3) //kevert megoldás
             {
-                foreach (var allM in _context.Musics.Where(x => x.Genre == style && x.Mode == music.Mode))
+                foreach (var music in musics)
                 {
-                    if (EnergyInBourdaries(music.Energy, allM.Energy)
-                        && ValenceInBourdaries(music.Valence, allM.Valence) &&
-                        AcousticnessInBourdaries(music.Acousticness, allM.Acousticness))
+                    foreach (var allM in _context.Musics.Where(x => x.Genre == music.Genre && x.Mode == music.Mode))
                     {
-                        songsToChooseFrom.Add(allM);
+                        if (EnergyInBourdaries(music.Energy, allM.Energy)
+                            && ValenceInBourdaries(music.Valence, allM.Valence) &&
+                            AcousticnessInBourdaries(music.Acousticness, allM.Acousticness))
+                        {
+                            songsToChooseFrom.Add(allM);
+                        }
+                    }
+                }
+            }
+            else //nem kevert megoldás
+            {         
+                foreach (var music in musics)
+                {
+                    foreach (var allM in _context.Musics.Where(x => x.Genre == style && x.Mode == music.Mode))
+                    {
+                        if (EnergyInBourdaries(music.Energy, allM.Energy)
+                            && ValenceInBourdaries(music.Valence, allM.Valence) &&
+                            AcousticnessInBourdaries(music.Acousticness, allM.Acousticness))
+                        {
+                            songsToChooseFrom.Add(allM);
+                        }
                     }
                 }
             }
@@ -189,32 +203,40 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             //le van szűrve az összes választható szám - márcsak végig kell menni,
             //euklidészi távolságot számolni, prioritásos sorba rakni és a kimeneti zenékbe rakni amíg belefér -> lehetne láncolt lista is, ahol távolság alapján szúrjuk be
 
-            //PriorityQueue<(double, Music)> closestObjects = new PriorityQueue<(double, Music)>();
             LinkedList closestMusics = new LinkedList();
-
-            foreach (var music in musics) //végigmegyünk a zenéken
+            var checker = new List<Music>();
+            
+            foreach (var music in musics.Distinct()) //végigmegyünk a zenéken
             {
                 foreach (var item in songsToChooseFrom) //és a választható zenéken
                 {
-                    while (EnergyInBourdaries(music.Energy, item.Energy)
-                        && ValenceInBourdaries(music.Valence, item.Valence) &&
-                        AcousticnessInBourdaries(music.Acousticness, item.Acousticness)) //addig, amíg a hozzátartózó zenék vannak és számolunk egy távolságot, prioritásos sorba rakjuk ez alapján
+                    if (!checker.Contains(item))
                     {
                         double dist = EuclideanDistance(music, item);
                         closestMusics.Add(dist, item);
-                        
-                    }
+                        checker.Add(item);
+                    }                
                 }
             }
+            
             LinkedListNode current = closestMusics.Head;
+
+            int chooseableLength = 0;
+            foreach (var item in songsToChooseFrom)
+            {
+                chooseableLength += MsToMins(item.DurationMs);
+            }
+            int minCounter = 0;
             while (current != null)
             {
                 if (LLMinsSum(selectedMusics) < minsLeft && (LLMinsSum(selectedMusics) + MsToMins(current.Object.DurationMs)) <= minsLeft)
                 {
                     selectedMusics.Add(current.Object);
+                    minCounter += MsToMins(current.Object.DurationMs);
                 }
                 current = current.Next;
             }
+
             return selectedMusics;
         }
 
@@ -240,7 +262,8 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         private int MsToMins(int ms)
         {
             double conv = 1.6667E-5;
-            return (int)conv * ms;
+
+            return (int)(conv * ms);
         }
 
         private double EuclideanDistance(Music currMusic, Music dbMusic)

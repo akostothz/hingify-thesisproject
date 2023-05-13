@@ -5,19 +5,39 @@ h1 {
     padding-bottom: 1em;
 }
 
-h2 {
+.time {
     color: white;
     text-align: left;
     font-size: 4.5em;
-    padding-bottom: 1em;
+    margin-bottom: 1.5em;
 }
 
 h3 {
   color: white;
   text-align: center;
   font-size: 3.5em;
-  padding-bottom: 2em;
-  margin-top: 1em;
+}
+
+
+
+.create {
+  color: white;
+  text-align: left;
+  font-size: 2em;
+  padding-bottom: 1em;
+}
+
+#spoty {
+  background-color: rgb(30, 215, 96);
+    border-radius: 12px;
+    font-size: 2em;
+    margin-top: 1em;
+    margin-bottom: 0.6em;
+    border: 1.5px solid #fff;
+}
+
+#spoty i {
+  margin-right: 0.3em;
 }
 
 .card {
@@ -73,3 +93,60 @@ hr {
 
 }
 
+.acch3 {
+  color: white;
+  text-align: left;
+  font-size: 2.3em;
+}
+
+h4 {
+  color: white;
+  text-align: left;
+  font-size: 2em;
+  margin-top: 1em;
+}
+
+.accordion {
+  margin-bottom: 3em;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #ffffff;
+  background-color: #7ec2e2;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.accordion-button {
+  color: #d7dadf;
+  background-color: #5542b2;
+}
+
+.accordion-button:after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+ul {
+  list-style: none
+}
+
+#acci {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#accbtn {
+  height: 3em;
+  font-size: 1.1em;
+}
+
+span {
+  margin-right: 1em;
+}
+
+.results {
+  margin-top: 1.5em;
+}

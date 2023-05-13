@@ -1,23 +1,58 @@
 <h1>This playlist is based on your listening history divided into days and various times of the day.</h1>
-<h2>Right now it's {{day}}, {{timeofday}}.</h2>
+<h2 class="time">Right now it's {{day}}, {{timeofday}}.</h2>
 
-<!--
-<div class="card" *ngFor="let lhsong of lhsongs$ | async">
-    <div class="card-header" id="head">
-        <i class="fa-solid fa-users"></i>
-        {{lhsong.artistName}}
-    </div>
-    <div class="card-body">
-      <h5 class="card-title" id="title">{{lhsong.trackName}}</h5>
-      <p class="card-text" id="genre">{{lhsong.genre}}</p>
-      <a href="#" class="btn btn-info" ><i class="fa-solid fa-play"></i></a>
-      <a href="#" class="btn btn-warning" id="btn2"><i class="fa-solid fa-heart"></i></a>
-      <a href="#" class="btn btn-secondary" id="btn3"><i class="fa-brands fa-spotify"></i></a>
-    </div>
-    <hr>
-</div>
+  <div class="accordion accordion-flush" id="accordionFlushExample">
 
--->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" id="accbtn">
+          <i class="fa-solid fa-clipboard-question" id="acci"></i>What time of days are there?
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <h3 class="acch3">There are 6 times of the days;</h3>
+          <ul>
+            <li>
+              <h4><span class="badge rounded-pill bg-primary">1.</span>Dawn</h4>
+            </li>
+            <li>
+              <h4><span class="badge rounded-pill bg-primary">2.</span>Morning</h4>
+            </li>
+            <li>
+              <h4><span class="badge rounded-pill bg-primary">3.</span>Forenoon</h4>
+            </li>
+            <li>
+              <h4><span class="badge rounded-pill bg-primary">4.</span>Afternoon</h4>
+            </li>
+            <li>
+              <h4><span class="badge rounded-pill bg-primary">5.</span>Evening</h4>
+            </li>
+            <li>
+              <h4><span class="badge rounded-pill bg-primary">6.</span>Night</h4>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" id="accbtn">
+          <i class="fa-solid fa-clipboard-question" id="acci"></i>Can I save this playlist on Spotfy?
+        </button>
+      </h2>
+      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <h3 class="acch3">Yes! The playlist will be called "{{day}}, {{timeofday}} by Hingify". You just have to click the button below.</h3>
+          <div class="buttons">
+            <button class="btn btn-info" id="spoty"><i class="fa-brands fa-spotify"></i>CREATE PLAYLIST</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <div class="results" *ngFor="let lhsong of lhsongs$ | async">
 
 <div class="card" >
