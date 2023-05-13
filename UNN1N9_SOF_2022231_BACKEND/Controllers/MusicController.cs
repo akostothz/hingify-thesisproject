@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Newtonsoft.Json;
+using RestSharp;
 using System.Security.AccessControl;
 using UNN1N9_SOF_2022231_BACKEND.Data;
 using UNN1N9_SOF_2022231_BACKEND.DTOs;
@@ -24,6 +26,52 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             _logic = logic;
             _mapper = mapper;
         }
+
+        [HttpPost]
+        public async Task<ActionResult> CreatePlaylist(List<string> mIds)
+        {
+            AccessTokenDTO accessToken = new AccessTokenDTO();
+            ;
+            for (int i = 0; i < mIds.Count(); i++)
+            {
+                if (i == 0)
+                {
+                    accessToken.userid = int.Parse(mIds[i]);
+                    mIds.Remove(mIds[i]);
+                }
+                if (i == 1)
+                {
+                    accessToken.token = mIds[i];
+                    mIds.Remove(mIds[i]);
+                }
+            }
+            ;
+            var user = await _logic.GetUser(accessToken.userid);
+            _logic.RetrieveAccessToken(accessToken);
+            ;
+            HttpClient httpClient = new HttpClient();
+            
+            httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", user.SpotifyAccessToken);
+
+            // Set up the request body
+            var timeOfDay = _logic.TimeOfDayConverter();
+            var day = DateTime.Now.DayOfWeek.ToString();
+            DateOnly date = new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            var playlistName = $"{day}, {timeOfDay} by Hingify";
+            var desc = $"This playlist was created for {user.UserName} by Hingify on {date}";
+            var requestContent = new StringContent(JsonConvert.SerializeObject(new { name = playlistName, description = desc }));
+            requestContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+
+            // Send the POST request to create the playlist
+            var response = await httpClient.PostAsync($"https://api.spotify.com/v1/users/{user.SpotifyId}/playlists", requestContent);
+            response.EnsureSuccessStatusCode();
+
+            // Get the response content
+            var responseContent = await response.Content.ReadAsStringAsync();
+
+            return Ok();
+        }
+       
 
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<MusicDto>>> GetPersonalizedMix(int id)

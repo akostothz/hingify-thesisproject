@@ -3,6 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { LikedSong } from 'src/app/_models/likedsong';
 import { Music } from 'src/app/_models/music';
+import { AccountService } from 'src/app/_services/account.service';
 import { MusicsService } from 'src/app/_services/musics.service';
 
 @Component({
@@ -14,18 +15,35 @@ export class ForyouComponent implements OnInit {
   lhsongs$: Observable<Music[]> | undefined;
   day: string;
   timeofday: string;
+  token: string = '';
 
-  constructor(private musicService: MusicsService, private sanitizer: DomSanitizer) {
+  constructor(private musicService: MusicsService, private sanitizer: DomSanitizer, private accountService: AccountService) {
 
   }
 
   ngOnInit(): void {
+    this.getAccessToken();
     this.loadMusics();    
     this.TimeSetter();
   }
 
   loadMusics() { 
     this.lhsongs$ = this.musicService.getPersonalizedMix(JSON.parse(localStorage.getItem('user'))?.id);
+  }
+
+  getAccessToken() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const authorizationCode = urlParams.get('code');
+    this.token = authorizationCode;
+
+    console.log(authorizationCode);
+    this.accountService.retrieveFromSpotify(authorizationCode);
+  }
+
+  createPlaylist() {
+    this.musicService.createPlaylist(this.token);
   }
 
   likeSong(id: number) {
@@ -46,7 +64,7 @@ export class ForyouComponent implements OnInit {
 
   isLiked(music: Music) {
     var res = this.musicService.isLiked(music);
-    console.log(res);
+
     return res;
   }
   

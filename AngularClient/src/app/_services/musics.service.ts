@@ -8,6 +8,7 @@ import { User } from '../_models/user';
 import { DetailedMusic } from '../_models/detailedmusic';
 import { Stat } from '../_models/stat';
 import { ToastrService } from 'ngx-toastr';
+import { AccessToken } from '../_models/accesstoken';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,28 @@ export class MusicsService {
   
 
   constructor(private http: HttpClient, private toastr: ToastrService) { }
+
+
+  createPlaylist(token: string) {
+    
+    const mIds: Array<String> = [];
+
+    mIds.push(JSON.parse(localStorage.getItem('user'))?.id);
+    mIds.push(token);
+
+    this.personalizedsongs.forEach(x => {
+       mIds.push(x.trackId);
+    });
+
+    return this.http.post(this.baseUrl + 'Music/CreatePlaylist', mIds).subscribe(
+      response => {
+        map((response: any) => {
+          console.log(response);
+          
+        })
+      })
+
+  }
 
   likeMusic(model: any) {
     return this.http.post(this.baseUrl + 'Music/LikeSong', model).subscribe(
