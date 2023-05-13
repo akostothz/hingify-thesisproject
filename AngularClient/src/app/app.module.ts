@@ -37,6 +37,7 @@ import { LikedsongsComponent } from './musics/likedsongs/likedsongs.component';
 import { GendersongsComponent } from './musics/gendersongs/gendersongs.component';
 import { CountrysongsComponent } from './musics/countrysongs/countrysongs.component';
 import { AgegroupsongsComponent } from './musics/agegroupsongs/agegroupsongs.component';
+import { SpotifyRegisterComponent } from './spotify-register/spotify-register.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { AgegroupsongsComponent } from './musics/agegroupsongs/agegroupsongs.com
     LikedsongsComponent,
     GendersongsComponent,
     CountrysongsComponent,
-    AgegroupsongsComponent
+    AgegroupsongsComponent,
+    SpotifyRegisterComponent
   ],
   imports: [
     BrowserModule,

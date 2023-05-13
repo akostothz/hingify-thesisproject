@@ -14,6 +14,7 @@ using System.Text;
 using UNN1N9_SOF_2022231_BACKEND.Data;
 using UNN1N9_SOF_2022231_BACKEND.DTOs;
 using UNN1N9_SOF_2022231_BACKEND.Extensions;
+using UNN1N9_SOF_2022231_BACKEND.Helpers;
 using UNN1N9_SOF_2022231_BACKEND.Interfaces;
 using UNN1N9_SOF_2022231_BACKEND.Models;
 
@@ -89,6 +90,29 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
         }
 
+       
+
+        [HttpGet("userpic/{id}")]
+        public async Task<ActionResult<IEnumerable<string>>> GetUserPic(int id)
+        {
+            var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == id);
+            var pics = new List<string>();
+            pics.Add(user.PhotoUrl);
+            var x = user.PhotoUrl;
+            ;
+            return pics;
+        }
+        [HttpGet("deletephoto/{id}")]
+        public async Task<ActionResult> DeletePhoto(int id)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            user.PhotoUrl = null;
+
+            _context.SaveChangesAsync();
+
+            return Ok(user.PhotoUrl);
+        }
+
         private void RetrieveAccessToken(AccessTokenDTO accessToken)
         {
             var user = _context.Users.SingleOrDefault(x => x.Id == accessToken.userid);
@@ -117,31 +141,78 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             }
         }
 
-        [HttpGet("userpic/{id}")]
-        public async Task<ActionResult<IEnumerable<string>>> GetUserPic(int id)
+        [HttpGet("spotify-register/{token}")]
+        public ActionResult<UserDto> SpotifyRegister(string token)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == id);
-            var pics = new List<string>();
-            pics.Add(user.PhotoUrl);
-            var x = user.PhotoUrl;
             ;
-            return pics;
-        }
-        [HttpGet("deletephoto/{id}")]
-        public async Task<ActionResult> DeletePhoto(int id)
-        {
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
-            user.PhotoUrl = null;
+            string authorizationCode = token;
+            string redirectUri = "http://localhost:4200/spotify-register";
+            string clientId = "1ec4eab22f26449491c0d514d9b464ef";
+            string clientSecret = "ede6e9fc0b024434a1e9f6302f7873a4";
 
-            _context.SaveChangesAsync();
+            RestClient client = new RestClient("https://accounts.spotify.com");
+            RestRequest request = new RestRequest("api/token", Method.Post);
+            request.AddParameter("grant_type", "authorization_code");
+            request.AddParameter("code", authorizationCode);
+            request.AddParameter("redirect_uri", redirectUri);
+            request.AddParameter("client_id", clientId);
+            request.AddParameter("client_secret", clientSecret);
+            ;
+            RestResponse response = client.Execute(request);
+            string responseBody = response.Content;
+            string access_token = "";
 
-            return Ok(user.PhotoUrl);
+            if (!responseBody.ToLower().Contains("error"))
+            {
+                var cut = JsonConvert.DeserializeObject<ResponseDTO>(responseBody);
+                access_token = cut.access_token;
+            }
+            ;
+            if (access_token != "")
+            {
+                ;
+                var client2 = new RestClient("https://api.spotify.com");
+                var request2 = new RestRequest("/v1/me", Method.Get);
+                request2.AddHeader("Authorization", $"Bearer {access_token}");
+
+                var response2 = client2.Execute(request2);
+                ;
+                if (response2.IsSuccessful)
+                {
+                    
+                    
+                    ;
+                    var spotyuser = JsonConvert.DeserializeObject<SpotifyAccountDTO>(response2.Content);
+                    RegisterDto dto = new RegisterDto() 
+                    { 
+                        UserName = spotyuser.display_name, 
+                        Country = CountryCovert.CountryConvert(spotyuser.country), 
+                        Email = spotyuser.email,
+                        Gender = _photoService.TransformImage(spotyuser.images[0].url)
+                    };
+                    var user = _mapper.Map<AppUser>(dto);
+
+                    return new UserDto
+                    {
+                        Id = user.Id,
+                        Username = user.UserName,
+                        Country = user.Country,
+                        Email = user.Email,
+                        PhotoUrl = user.Gender,
+                        Gender = ""
+                    };
+                }
+                else
+                {
+                    return BadRequest("Something went wrong!");
+                }
+            }
+            return BadRequest("Something went wrong!");
         }
 
         [HttpPut("spotifypic")]
         public async Task<ActionResult<UserDto>> SpotifyPic(AccessTokenDTO accessToken)
         {
-            //terjunk vissza userdto-val es akkor lehet frissul
             var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == accessToken.userid);
             ;
             RetrieveAccessToken(accessToken);

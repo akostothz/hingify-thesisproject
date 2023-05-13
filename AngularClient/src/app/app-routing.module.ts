@@ -26,6 +26,7 @@ import { LikedsongsComponent } from './musics/likedsongs/likedsongs.component';
 import { AgegroupsongsComponent } from './musics/agegroupsongs/agegroupsongs.component';
 import { GendersongsComponent } from './musics/gendersongs/gendersongs.component';
 import { CountrysongsComponent } from './musics/countrysongs/countrysongs.component';
+import { SpotifyRegisterComponent } from './spotify-register/spotify-register.component';
 
 const routes: Routes = [
   {path: '', component: AboutComponent},
@@ -56,6 +57,7 @@ const routes: Routes = [
   {path: 'errors', component: TestErrorComponent},
   {path: 'not-found', component: NotFoundComponent},
   {path: 'server-error', component: ServerErrorComponent},
+  {path: 'spotify-register', component: SpotifyRegisterComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'about', component: AboutComponent},

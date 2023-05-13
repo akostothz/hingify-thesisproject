@@ -64,6 +64,14 @@ export class AccountService {
     );
   }
 
+  retrieveFromSpotifyWithString(token: string) {
+    return this.http.get(this.baseUrl + 'account/spotify-register/' + token).pipe(
+      map((user: User) => {
+        console.log(user);
+        return user;
+      }))
+  }
+
   retrieveFromSpotify(bearer: string) {
     let accesstoken = <AccessToken>({
       userid: JSON.parse(localStorage.getItem('user'))?.id,
