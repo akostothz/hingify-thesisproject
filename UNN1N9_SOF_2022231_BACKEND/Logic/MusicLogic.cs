@@ -676,7 +676,10 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             {
                 if (ContainsMusic(music.Id, behaviours))
                 {
-                    musics.Add(music);
+                    if (musics.Count() < 50)
+                    {
+                        musics.Add(music);
+                    }
                 }
             }
             return musics;
@@ -700,7 +703,10 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             {
                 if (ContainsMusic(music.Id, behaviours))
                 {
-                    musics.Add(music);
+                    if (musics.Count() < 50)
+                    {
+                        musics.Add(music);
+                    }
                 }
             }
             return musics;
@@ -738,7 +744,10 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             {
                 if (ContainsMusic(music.Id, behaviours))
                 {
-                    musics.Add(music);
+                    if (musics.Count() < 50)
+                    {
+                        musics.Add(music);
+                    }
                 }
             }
 

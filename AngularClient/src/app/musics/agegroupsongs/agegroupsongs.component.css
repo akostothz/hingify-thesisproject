@@ -59,9 +59,9 @@ hr {
 
    .hover {
     position: relative;
-    width: 80svw;
+    width: 80%;
     height: 6em;
-    background: #1e3c9d;
+    background: #057333;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,6 +71,7 @@ hr {
     cursor: pointer;
     margin-left: auto;
     margin-right: auto;
+    color: #fff;
     margin-bottom: 1.5em;
   }
   
@@ -85,7 +86,8 @@ hr {
     justify-content: center;
     font-size: 25px;
     font-weight: bold;
-    background-color: #4569dc;
+    color: #fff;
+    background-color: #45dc7a;
     transition: all 0.5s;
   }
   

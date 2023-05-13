@@ -59,7 +59,7 @@ hr {
 
    .hover {
     position: relative;
-    width: 80svw;
+    width: 80%;
     height: 6em;
     background: #1e3c9d;
     display: flex;
