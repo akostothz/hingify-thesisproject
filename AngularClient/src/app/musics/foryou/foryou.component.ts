@@ -23,12 +23,8 @@ export class ForyouComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAccessToken();
-    this.loadMusics();    
+    this.loadMusics();  
     this.TimeSetter();
-  }
-
-  loadMusics() { 
-    this.lhsongs$ = this.musicService.getPersonalizedMix(JSON.parse(localStorage.getItem('user'))?.id);
   }
 
   getAccessToken() {
@@ -38,13 +34,18 @@ export class ForyouComponent implements OnInit {
     const authorizationCode = urlParams.get('code');
     this.token = authorizationCode;
 
+    this.accountService.updateToken(this.token);
     console.log(authorizationCode);
-    this.accountService.retrieveFromSpotify(authorizationCode);
   }
 
   createPlaylist() {
     this.musicService.createPlaylist(this.token);
   }
+
+  loadMusics() { 
+    this.lhsongs$ = this.musicService.getPersonalizedMix(JSON.parse(localStorage.getItem('user'))?.id);
+  }
+
 
   likeSong(id: number) {
     var lsong: LikedSong = {

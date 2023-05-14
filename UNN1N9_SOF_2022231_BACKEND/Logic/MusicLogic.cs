@@ -122,6 +122,43 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 _context.SaveChanges();
             }
         }
+
+        public async void RefreshToken(AccessTokenDTO accessToken)
+        {
+            string authorizationCode = accessToken.token;
+            string redirectUri = "http://localhost:4200/foryou";
+            string clientId = "1ec4eab22f26449491c0d514d9b464ef";
+            string clientSecret = "ede6e9fc0b024434a1e9f6302f7873a4";
+            ;
+            var user = _context.Users.SingleOrDefault(x => x.Id == accessToken.userid);
+
+            HttpClient httpClient2 = new HttpClient();
+
+            // Set up the request body
+            var requestContent2 = new FormUrlEncodedContent(new Dictionary<string, string>
+            {
+            {"grant_type", "authorization_code"},
+            {"code", authorizationCode},
+            {"redirect_uri", redirectUri},
+            {"client_id", clientId},
+            {"client_secret", clientSecret}
+            });
+            ;
+            // Send the POST request to get the access token and refresh token
+            var response2 = await httpClient2.PostAsync("https://accounts.spotify.com/api/token", requestContent2);
+            ;
+            response2.EnsureSuccessStatusCode();
+            ;
+            // Get the response content
+            var responseContent2 = await response2.Content.ReadAsStringAsync();
+            // Parse the JSON response to get the new access token
+            var tokenResponse2 = JsonConvert.DeserializeObject<ResponseDTO>(responseContent2);
+            ;
+
+            user.SpotifyAccessToken = tokenResponse2.access_token;
+            _context.SaveChanges();
+        }
+
         public async Task<IEnumerable<Music>> GetPersonalizedMix(int id)
         {
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);

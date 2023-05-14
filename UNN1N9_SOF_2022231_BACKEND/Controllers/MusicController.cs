@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json;
 using RestSharp;
+using System.Net.Http.Headers;
 using System.Security.AccessControl;
 using UNN1N9_SOF_2022231_BACKEND.Data;
 using UNN1N9_SOF_2022231_BACKEND.DTOs;
@@ -30,8 +31,8 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         [HttpPost]
         public async Task<ActionResult> CreatePlaylist(List<string> mIds)
         {
-            AccessTokenDTO accessToken = new AccessTokenDTO();
-            ;
+            AccessTokenDTO accessToken = new AccessTokenDTO();   
+
             for (int i = 0; i < mIds.Count(); i++)
             {
                 if (i == 0)
@@ -41,33 +42,44 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
                 }
                 if (i == 1)
                 {
-                    accessToken.token = mIds[i];
-                    mIds.Remove(mIds[i]);
+                    accessToken.token = mIds[i - 1];
+                    mIds.Remove(mIds[i - 1]);
                 }
             }
-            ;
             var user = await _logic.GetUser(accessToken.userid);
-            _logic.RetrieveAccessToken(accessToken);
-            ;
+            
+
             HttpClient httpClient = new HttpClient();
             
             httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", user.SpotifyAccessToken);
 
-            // Set up the request body
             var timeOfDay = _logic.TimeOfDayConverter();
             var day = DateTime.Now.DayOfWeek.ToString();
             DateOnly date = new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
             var playlistName = $"{day}, {timeOfDay} by Hingify";
-            var desc = $"This playlist was created for {user.UserName} by Hingify on {date}";
-            var requestContent = new StringContent(JsonConvert.SerializeObject(new { name = playlistName, description = desc }));
+            var desc = $"This playlist was created for @{user.UserName} by Hingify on {date}.";
+
+            var requestContent = new StringContent(JsonConvert.SerializeObject(new { name = playlistName }));
+
             requestContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
 
-            // Send the POST request to create the playlist
             var response = await httpClient.PostAsync($"https://api.spotify.com/v1/users/{user.SpotifyId}/playlists", requestContent);
+
             response.EnsureSuccessStatusCode();
 
-            // Get the response content
             var responseContent = await response.Content.ReadAsStringAsync();
+
+            var playlist = JsonConvert.DeserializeObject<PlaylistDto>(responseContent);
+
+            HttpClient httpClient2 = new HttpClient();
+            httpClient2.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.SpotifyAccessToken);
+
+            var requestContent2 = new StringContent(JsonConvert.SerializeObject(new { uris = mIds }));
+            requestContent2.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+         
+            var response2 = await httpClient2.PostAsync($"https://api.spotify.com/v1/playlists/{playlist.Id}/tracks", requestContent2);
+            
+            response.EnsureSuccessStatusCode();
 
             return Ok();
         }

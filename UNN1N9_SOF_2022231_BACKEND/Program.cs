@@ -16,11 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddScoped<ITokenService, TokenService>();
-builder.Services.AddDbContext<DataContext>(options =>
-{
-    options
-        .UseNpgsql(connectionString);
-});
+builder.Services.AddDbContext<DataContext>(options => options.UseNpgsql(connectionString), ServiceLifetime.Scoped);
 
 builder.Services.AddControllers();
 builder.Services.AddCors();

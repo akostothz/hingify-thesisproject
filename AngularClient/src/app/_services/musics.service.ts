@@ -37,13 +37,14 @@ export class MusicsService {
   createPlaylist(token: string) {
     
     const mIds: Array<String> = [];
-
-    mIds.push(JSON.parse(localStorage.getItem('user'))?.id);
+    console.log('Token: ' + token)
+    mIds.push((JSON.parse(localStorage.getItem('user'))?.id).toString());
     mIds.push(token);
 
     this.personalizedsongs.forEach(x => {
-       mIds.push(x.trackId);
+       mIds.push('spotify:track:' + x.trackId);
     });
+
 
     return this.http.post(this.baseUrl + 'Music/CreatePlaylist', mIds).subscribe(
       response => {

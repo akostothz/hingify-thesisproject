@@ -23,6 +23,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         Task<IEnumerable<StatDto>> GetYearlyStatistics(int id);
         Task<AppUser> GetUser(int id);
         void RetrieveAccessToken(AccessTokenDTO accessToken);
+        void RefreshToken(AccessTokenDTO accessToken);
         bool IsLiked(int userid, int musicid);
         void AddLikedSong(int userid, int musicid);
         void RemoveFromLikedSong(int userid, int musicid);
