@@ -1,4 +1,5 @@
-﻿using UNN1N9_SOF_2022231_BACKEND.Data;
+﻿using System.Collections.Generic;
+using UNN1N9_SOF_2022231_BACKEND.Data;
 using UNN1N9_SOF_2022231_BACKEND.DTOs;
 using UNN1N9_SOF_2022231_BACKEND.Models;
 
@@ -22,8 +23,8 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         Task<IEnumerable<StatDto>> GetMonthlyStatistics(int id);
         Task<IEnumerable<StatDto>> GetYearlyStatistics(int id);
         Task<AppUser> GetUser(int id);
-        Task<Music> AddSongWithListening(int id);
-        Task<Music> AddSong(int id, string trackId);
+        Task<IEnumerable<Music>> AddSongWithListening(int id);
+        Task<IEnumerable<Music>> AddSong(int id, string trackId);
         void RetrieveAccessToken(AccessTokenDTO accessToken);
         void RefreshToken(AccessTokenDTO accessToken);
         bool IsLiked(int userid, int musicid);

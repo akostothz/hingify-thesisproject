@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../_services/account.service';
 import { MusicsService } from '../_services/musics.service';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Observable } from 'rxjs';
+import { Music } from '../_models/music';
+import { LikedSong } from '../_models/likedsong';
 
 @Component({
   selector: 'app-helper',
@@ -10,8 +14,9 @@ import { MusicsService } from '../_services/musics.service';
 export class HelperComponent implements OnInit {
   token: string = '';
   cid: string = '';
+  addedSong$: Observable<Music[]> | undefined;
 
-  constructor(private musicService: MusicsService, private accountService: AccountService) { }
+  constructor(private musicService: MusicsService, private sanitizer: DomSanitizer, private accountService: AccountService) { }
 
   ngOnInit(): void {
     this.getAccessToken();
@@ -28,12 +33,13 @@ export class HelperComponent implements OnInit {
   }
 
   currentlyPlaying() {
-    this.musicService.currentlyPlaying();
+    this.addedSong$ = this.musicService.currentlyPlaying();
   }
 
   addSong() {
     let inputElement = document.getElementById('cid') as HTMLInputElement;
     this.cid = inputElement.value.toString();
-    this.musicService.addASong(this.cid);
+    this.addedSong$ = this.musicService.addASong(this.cid);
   }
+  
 }

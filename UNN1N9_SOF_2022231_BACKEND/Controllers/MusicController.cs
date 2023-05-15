@@ -29,25 +29,25 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<MusicDto>> AddSongWithListening(int id)
+        public async Task<ActionResult<IEnumerable<MusicDto>>> AddSongWithListening(int id)
         {
-            ;
-            var music = await _logic.AddSongWithListening(id);
+            var musics = await _logic.AddSongWithListening(id);
+            var musicsToReturn = _mapper.Map<IEnumerable<MusicDto>>(musics);
 
-            return Ok();
+            return Ok(musicsToReturn);
         }
 
         [HttpGet("{cid}")]
-        public async Task<ActionResult> AddSongWithCid(string cid)
+        public async Task<ActionResult<IEnumerable<MusicDto>>> AddSongWithCid(string cid)
         {
             string[] line = cid.Split(';');
             int id = int.Parse(line[0]);
             string trackId = line[1];
             
-            var music = await _logic.AddSong(id, trackId);
-            
-            
-            return Ok();
+            var musics = await _logic.AddSong(id, trackId);
+            var musicsToReturn = _mapper.Map<IEnumerable<MusicDto>>(musics);
+
+            return Ok(musicsToReturn);
         }
 
         [HttpPost]
@@ -257,7 +257,6 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         [HttpPost]
         public async Task<ActionResult<bool>> IsLiked(LikedSongDto likedSongDto)
         {
-            ;
             _logic.IsLiked(likedSongDto.UserId, likedSongDto.MusicId);
 
             return Ok(_logic.IsLiked(likedSongDto.UserId, likedSongDto.MusicId));

@@ -17,6 +17,13 @@ h3 {
     font-size: 2.3em;
 }
 
+.succ-add {
+    color: rgb(42, 205, 77);
+    text-align: center;
+    font-size: 2.1em;
+    margin-top: 3em;
+}
+
 h4 {
     color: white;
     text-align: left;

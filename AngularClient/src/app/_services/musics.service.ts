@@ -29,14 +29,23 @@ export class MusicsService {
   yearlyStats: Stat[] = [];
   artistSongs: Music[] = [];
   isItLiked: Boolean = false;
-  currPlaying: Music;
-  addedMusic: Music;
+  addedMusics: Music[] = [];
 
   constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   currentlyPlaying() {
     let id = JSON.parse(localStorage.getItem('user'))?.id;
-    return this.http.get<Music>(this.baseUrl + 'Music/AddSongWithListening/' + id).subscribe(x => this.currPlaying = x);
+    return this.http.get<Music[]>(this.baseUrl + 'Music/AddSongWithListening/' + id).pipe(
+      map(addedMusics => {
+        this.addedMusics = addedMusics;
+        if(this.addedMusics.length > 0) {
+          this.toastr.success('Song added to the database.');
+        }
+        else {
+          this.toastr.error('Something went wrong. Either it is already in the database, or you are not listening to the song.');
+        }
+        return addedMusics;
+      }));
   }
 
   addASong(cidUncut: String) {
@@ -47,7 +56,18 @@ export class MusicsService {
     cid += cidPlus[0].substring(77);
     
     console.log(cid);
-    return this.http.get<Music>(this.baseUrl + 'Music/AddSongWithCid/' + cid).subscribe(x => this.addedMusic = x);
+    return this.http.get<Music[]>(this.baseUrl + 'Music/AddSongWithCid/' + cid).pipe(
+      map(addedMusics => {
+        this.addedMusics = addedMusics;
+        if(this.addedMusics.length > 0) {
+          this.toastr.success('Song added to the database.');
+        }
+        else {
+          this.toastr.error('Something went wrong. Either it is already in the database, or the code is wrong.');
+        }
+        return addedMusics;
+      })
+    );
   }
 
   createPlaylist(token: string) {
@@ -68,6 +88,7 @@ export class MusicsService {
           console.log(response);
           
         })
+        this.toastr.success('Playlist created on Spotify.')
       })
 
   }

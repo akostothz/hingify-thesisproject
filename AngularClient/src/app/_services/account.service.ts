@@ -111,7 +111,7 @@ export class AccountService {
           //localStorage.removeItem('user');
           //localStorage.setItem('user', JSON.stringify(user));
         })
-        this.toastr.success('Profile successfully updated. Might need to hard refresh or log in again to see the changes.');
+        this.toastr.success('Profile successfully updated. Might need to hard refresh to see the changes.');
       },
     );
   }
