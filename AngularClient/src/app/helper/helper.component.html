@@ -35,7 +35,7 @@
         <h3>Make sure you have authorized Hingify to collect data from your Spotify Account.</h3>
         <h3>If not, pressing the button may take you to a page where you have to authorize it first.</h3>
         <div class="button">
-          <button type="button" class="btn btn-light" id="spotifybtn">I'm listening!</button>
+          <button type="button" class="btn btn-light" id="spotifybtn" (click)="currentlyPlaying()">I'm listening!</button>
         </div>
       </div>
     </div>
@@ -57,8 +57,8 @@
           <li class="steps">Click on "COPY" and just paste it here, we'll handle from there.</li>
         </ol>
         <div class="input">
-          <input type="text" placeholder="Paste the embed code here.." />
-          <button type="button" class="btn btn-light" id="go">I've got the code!</button>
+          <input type="text" id="cid" placeholder="Paste the embed code here.." />
+          <button type="button" id="go" (click)="addSong()">I've got the code!</button>
         </div>
         
       </div>

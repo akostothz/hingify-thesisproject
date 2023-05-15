@@ -95,6 +95,8 @@ i {
     border-radius: 12px;
     margin-bottom: 2em; 
     background-color: #5542b2;
+    width: fit-content;
+    margin-top: 2em;
 }
 
 input[type=text] {

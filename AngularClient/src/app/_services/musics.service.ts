@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, of } from 'rxjs';
+import { map, of, pipe } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Behavior } from '../_models/behavior';
 import { Music } from '../_models/music';
@@ -29,10 +29,25 @@ export class MusicsService {
   yearlyStats: Stat[] = [];
   artistSongs: Music[] = [];
   isItLiked: Boolean = false;
-  
+  currPlaying: Music;
+  addedMusic: Music;
 
   constructor(private http: HttpClient, private toastr: ToastrService) { }
 
+  currentlyPlaying() {
+    return this.http.get<Music>(this.baseUrl + 'Music/AddSongWithListening').subscribe(x => this.currPlaying = x);
+  }
+
+  addASong(cidUncut: String) {
+    let cid: String = (JSON.parse(localStorage.getItem('user'))?.id).toString() + ';'
+    let u: String[] = [];
+    u.push(cidUncut);
+    let cidPlus = u.map(e => e.replace('?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>', ''))
+    cid += cidPlus[0].substring(77);
+    
+    console.log(cid);
+    return this.http.get<Music>(this.baseUrl + 'Music/AddSongWithCid/' + cid).subscribe(x => this.addedMusic = x);
+  }
 
   createPlaylist(token: string) {
     
@@ -76,7 +91,7 @@ export class MusicsService {
           console.log(response);
           
         })
-        this.toastr.success('Song removed from Liked Songs.');
+        this.toastr.warning('Song removed from Liked Songs.');
       },
     );;
     

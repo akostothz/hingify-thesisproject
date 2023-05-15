@@ -52,6 +52,19 @@ export class AccountService {
       },
     );
   }
+  updateTokenForHelp(token: string) {
+    let accesstoken = <AccessToken>({
+      userid: JSON.parse(localStorage.getItem('user'))?.id,
+      token: token
+    });
+    return this.http.put(this.baseUrl + 'account/updatetokenforhelp', accesstoken).subscribe(
+      response => {
+        map((response: User) => {
+          const user = response;
+        })
+      },
+    );
+  }
 
   update(user: User) {
     return this.http.put(this.baseUrl + 'account/updateuser', user);

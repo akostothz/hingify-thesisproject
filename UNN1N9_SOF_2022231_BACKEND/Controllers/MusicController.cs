@@ -28,6 +28,27 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet]
+        public async Task<ActionResult<MusicDto>> AddSongWithListening()
+        {
+            ;
+
+            return Ok();
+        }
+
+        [HttpGet("{cid}")]
+        public async Task<ActionResult> AddSongWithCid(string cid)
+        {
+            string[] line = cid.Split(';');
+            int id = int.Parse(line[0]);
+            string trackId = line[1];
+            
+            var music = await _logic.AddSong(id, trackId);
+            
+            
+            return Ok();
+        }
+
         [HttpPost]
         public async Task<ActionResult> CreatePlaylist(List<string> mIds)
         {

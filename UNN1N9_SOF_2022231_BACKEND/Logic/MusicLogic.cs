@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using RestSharp;
+using SpotifyAPI.Web.Http;
 using SpotifyWebApi;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using UNN1N9_SOF_2022231_BACKEND.Data;
 using UNN1N9_SOF_2022231_BACKEND.DTOs;
 using UNN1N9_SOF_2022231_BACKEND.Helpers;
@@ -1262,6 +1264,78 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         public async Task<AppUser> GetUser(int id)
         {
             return await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<Music> AddSong(int id, string trackId)
+        {
+            var user = _context.Users.FirstOrDefault(x => x.Id == id);
+            HttpClient httpClient = new HttpClient();
+            var request = new HttpRequestMessage(HttpMethod.Get, $"https://api.spotify.com/v1/tracks/{trackId}");
+            request.Headers.Add("Authorization", $"Bearer {user.SpotifyAccessToken}");
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.SpotifyAccessToken);
+
+            var response = await httpClient.GetAsync($"https://api.spotify.com/v1/audio-features/{trackId}");
+            
+            response.EnsureSuccessStatusCode();
+
+            // Get the response content
+            var responseContent = await response.Content.ReadAsStringAsync();
+
+            // Parse the JSON response to get the track's audio features
+            var audioFeatures = JsonConvert.DeserializeObject<SpotifyTrackDto>(responseContent);
+
+            var httpClient2 = new HttpClient();
+            httpClient2.DefaultRequestHeaders.Authorization =
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", user.SpotifyAccessToken);
+
+            var response2 = await httpClient2.GetAsync($"https://api.spotify.com/v1/tracks/{trackId}");
+            var responseContent2 = await response2.Content.ReadAsStringAsync();
+            
+            var track = JsonConvert.DeserializeObject<SpoitifyTrackMainFeaturesDto>(responseContent2);
+
+            var artistId = track.Artists[0].Id;
+            request = new HttpRequestMessage(HttpMethod.Get, $"https://api.spotify.com/v1/artists/{artistId}");
+            request.Headers.Add("Authorization", $"Bearer {user.SpotifyAccessToken}");
+
+            response = await httpClient.SendAsync(request);
+            responseContent = await response.Content.ReadAsStringAsync();
+            var artistInfo = JsonConvert.DeserializeObject<Artist>(responseContent);
+            
+            var musicToAdd = new Music()
+            {
+                Genre = artistInfo.Genres[0],
+                ArtistName = artistInfo.Name,
+                TrackName = track.Name,
+                TrackId = track.Id,
+                Popularity = track.Popularity,
+                Acousticness = audioFeatures.Acousticness,
+                Danceability = audioFeatures.Danceability,
+                DurationMs = audioFeatures.Duration_ms,
+                Energy = audioFeatures.Energy,
+                Key = audioFeatures.Key.ToString(),
+                Liveness = audioFeatures.Liveness,
+                Loudness = audioFeatures.Loudness,
+                Mode = RandomMode(),
+                Speechiness = audioFeatures.Speechiness,
+                Tempo = audioFeatures.Tempo,
+                Valence = audioFeatures.Valence
+            };
+
+            if (_context.Musics.FirstOrDefault(x => x.TrackId == musicToAdd.TrackId) == null)
+            {
+                _context.Musics.Add(musicToAdd);
+                _context.SaveChanges();
+            }
+
+            return musicToAdd;
+        }
+
+        private string RandomMode()
+        {
+            if (RandomGenerator.rnd.Next(1, 3) == 1)
+                return "Major";
+            else
+                return "Minor";
         }
     }
 }
