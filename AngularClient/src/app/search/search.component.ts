@@ -49,7 +49,6 @@ export class SearchComponent implements OnInit {
 
   isLiked(music: Music) {
     var res = this.musicService.isLiked(music);
-    console.log(res);
     return res;
   }
 

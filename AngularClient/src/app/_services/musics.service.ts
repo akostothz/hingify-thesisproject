@@ -35,7 +35,8 @@ export class MusicsService {
   constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   currentlyPlaying() {
-    return this.http.get<Music>(this.baseUrl + 'Music/AddSongWithListening').subscribe(x => this.currPlaying = x);
+    let id = JSON.parse(localStorage.getItem('user'))?.id;
+    return this.http.get<Music>(this.baseUrl + 'Music/AddSongWithListening/' + id).subscribe(x => this.currPlaying = x);
   }
 
   addASong(cidUncut: String) {

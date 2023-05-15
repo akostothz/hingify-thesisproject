@@ -41,7 +41,10 @@ ul {
     margin-bottom: 0.6em;
     border-color: #ffffff;
 }
-
+#spoty {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
 i {
     margin-left: 1em;
     margin-right: 1em;

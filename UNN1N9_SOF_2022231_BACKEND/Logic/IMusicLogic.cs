@@ -22,6 +22,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         Task<IEnumerable<StatDto>> GetMonthlyStatistics(int id);
         Task<IEnumerable<StatDto>> GetYearlyStatistics(int id);
         Task<AppUser> GetUser(int id);
+        Task<Music> AddSongWithListening(int id);
         Task<Music> AddSong(int id, string trackId);
         void RetrieveAccessToken(AccessTokenDTO accessToken);
         void RefreshToken(AccessTokenDTO accessToken);

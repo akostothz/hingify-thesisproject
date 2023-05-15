@@ -1278,10 +1278,8 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             
             response.EnsureSuccessStatusCode();
 
-            // Get the response content
             var responseContent = await response.Content.ReadAsStringAsync();
 
-            // Parse the JSON response to get the track's audio features
             var audioFeatures = JsonConvert.DeserializeObject<SpotifyTrackDto>(responseContent);
 
             var httpClient2 = new HttpClient();
@@ -1315,12 +1313,13 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 Key = audioFeatures.Key.ToString(),
                 Liveness = audioFeatures.Liveness,
                 Loudness = audioFeatures.Loudness,
-                Mode = RandomMode(),
+                Mode = ModeConverter(audioFeatures.Mode),
                 Speechiness = audioFeatures.Speechiness,
                 Tempo = audioFeatures.Tempo,
                 Valence = audioFeatures.Valence
             };
 
+            ;
             if (_context.Musics.FirstOrDefault(x => x.TrackId == musicToAdd.TrackId) == null)
             {
                 _context.Musics.Add(musicToAdd);
@@ -1330,12 +1329,36 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return musicToAdd;
         }
 
-        private string RandomMode()
+        private string ModeConverter(int num)
         {
-            if (RandomGenerator.rnd.Next(1, 3) == 1)
+            if (num == 1)
                 return "Major";
             else
                 return "Minor";
+        }
+
+        public async Task<Music> AddSongWithListening(int id)
+        {
+            var user = _context.Users.FirstOrDefault(x => x.Id == id);
+
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.SpotifyAccessToken);
+
+            var response = await httpClient.GetAsync("https://api.spotify.com/v1/me/player/currently-playing");
+            if (!response.IsSuccessStatusCode)
+            {
+                return new Music();
+            }
+            else
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                var currentlyPlaying = JsonConvert.DeserializeObject<CurrentlyPlayingDto>(responseContent);
+                ;
+                string spotifyId = currentlyPlaying?.Item?.Id;
+                //itt megvan az id, de még 3 kérés, hogy minden adatunk meglegyen, de ez ugyan az mint a másik hozzáadási metódus
+                return await AddSong(user.Id, spotifyId);
+
+            }
         }
     }
 }

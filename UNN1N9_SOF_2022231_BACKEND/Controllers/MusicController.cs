@@ -28,10 +28,11 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<MusicDto>> AddSongWithListening()
+        [HttpGet("{id}")]
+        public async Task<ActionResult<MusicDto>> AddSongWithListening(int id)
         {
             ;
+            var music = await _logic.AddSongWithListening(id);
 
             return Ok();
         }

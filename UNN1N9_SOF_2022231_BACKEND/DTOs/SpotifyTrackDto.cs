@@ -10,6 +10,7 @@
         public float Acousticness { get; set; }
         public float Instrumentalness { get; set; }
         public float Liveness { get; set; }
+        public int Mode { get; set; }
         public float Valence { get; set; }
         public float Tempo { get; set; }
         public string Id { get; set; }
