@@ -31,6 +31,15 @@ h4 {
     margin-top: 1em;
 }
 
+
+h5 {
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    font-style: italic;
+    margin-top: 1em;
+}
+
 #btn {
     height: 3em;
     font-size: 1.1em;
@@ -106,6 +115,15 @@ ul {
     background-color: #5542b2;
 }
 
+hr {
+    border: 1px solid #fff;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+    align-items: center;
+}
+
 input[type=text] {
     margin-bottom: 2em; 
     margin-top: 3em; 
@@ -124,3 +142,94 @@ input[type=text] {
 input[type=text]::placeholder {
     color: #fff;
 }
+
+#show {
+    margin-top: 2em;
+    background: #46b9d6;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    width: 16em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+  }
+  
+  #showspan {
+    display: inline-block;
+    transform: skew(21deg);
+  }
+  
+  #show::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: rgb(106, 44, 163);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+  
+  #show:hover {
+    color: #fff;
+  }
+  
+  #show:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  .modal-content {
+    border: transparent;
+    box-shadow: none;
+    width: 85em;
+  }
+  
+  .modal-header {
+    background-color: rgb(60, 58, 58);
+    font-size: 4em;
+  }
+  
+  .modal-body {
+    background-color: rgb(51, 50, 50);
+    font-size: 2em;
+  }
+  
+  .modal-footer {
+    background-color: rgb(51, 50, 50);
+  }
+  
+  #modalbtn {
+    font-size: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 10px;
+    color: rgb(30, 215, 96);
+    background-color: #212224;
+    border: 2px solid rgb(30, 215, 96);
+  }
+  
+  #staticBackdropLabel {
+    font-size: 2.2em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40em;
+    text-align: center;
+  }

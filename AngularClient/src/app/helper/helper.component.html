@@ -65,9 +65,135 @@
     </div>
   </div>
 
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour" id="btn">
+        <i class="fa-solid fa-clipboard-question" id="ii"></i>What are all these buttons below the songs?
+      </button>
+    </h2>
+    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        <div class="button">
+          <button type="button" class="btn btn-light" id="show" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <span id="showspan">Show tutorial</span>
+          </button>
+        </div>   
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-2" id="staticBackdropLabel">Overall look</h1>
+        </div>
+        <div class="modal-body">
+          <img src="./assets/buttons.png">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-target="#staticBackdrop2" data-bs-dismiss="modal" data-bs-toggle="modal" id="modalbtn" >Next ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-2" id="staticBackdropLabel">"Find more like this" button</h1>
+        </div>
+        <div class="modal-body"> 
+          <h5>With this button, you can find the closest songs to a song.</h5>
+          <hr>
+          <img src="./assets/dark_findmore.png">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-target="#staticBackdrop3" data-bs-dismiss="modal" data-bs-toggle="modal" id="modalbtn" >Next ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-2" id="staticBackdropLabel">"Like" button</h1>
+        </div>
+        <div class="modal-body">      
+          <img src="./assets/dark_like.png">
+          <hr>
+          <h5>With this button, you can add a songs to your liked songs.</h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-target="#staticBackdrop4" data-bs-dismiss="modal" data-bs-toggle="modal" id="modalbtn" >Next ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-2" id="staticBackdropLabel">"Remove" button</h1>
+        </div>
+        <div class="modal-body">
+          <h5>With this button, you can remove a songs from your liked songs.</h5>
+          <hr>
+          <img src="./assets/dark_remove.png">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-target="#staticBackdrop5" data-bs-dismiss="modal" data-bs-toggle="modal" id="modalbtn" >Next ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="staticBackdrop5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-2" id="staticBackdropLabel">"Info" button</h1>
+        </div>
+        <div class="modal-body">
+          <img src="./assets/dark_info.png">
+          <hr>
+          <h5>With this button, you can find more detailed information about a song.</h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-target="#staticBackdrop6" data-bs-dismiss="modal" data-bs-toggle="modal" id="modalbtn" >Next ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="staticBackdrop6" data-bs-backdrop="static" aria-hidden="true" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-2" id="staticBackdropLabel">"Add" button</h1>
+        </div>
+        <div class="modal-body">
+          <h5>With this button, you can add a song to your Behaviors for that time and name of day.</h5>
+          <hr>
+          <img src="./assets/dark_plus.png">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="modalbtn">Got it!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   
 </div>
 
 <div class="added" *ngIf="(addedSong$ | async).length > 0">
   
 </div>
+

@@ -22,6 +22,10 @@ export class HelperComponent implements OnInit {
     this.getAccessToken();
   }
 
+  write() {
+    
+  }
+
   getAccessToken() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
