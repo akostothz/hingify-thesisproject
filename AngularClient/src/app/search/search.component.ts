@@ -31,6 +31,10 @@ export class SearchComponent implements OnInit {
     this.foundsongs$ = this.musicService.search(this.searchInput);
   }
 
+  addBehaviorWithButton(trackId: String) {
+    this.musicService.addNewBehaviorWithButton(trackId);
+  }
+
   likeSong(id: number) {
     var lsong: LikedSong = {
       userId: JSON.parse(localStorage.getItem('user'))?.id,

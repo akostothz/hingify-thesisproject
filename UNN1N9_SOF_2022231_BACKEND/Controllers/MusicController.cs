@@ -28,6 +28,23 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             _mapper = mapper;
         }
 
+        [HttpPost]
+        public async Task<ActionResult> AddBehaviorWithListening(int id)
+        {
+            var behav = await _logic.AddBehaviorWithListening(id);
+            ;
+
+            return Ok();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> AddBehaviorWithButton(AccessTokenDTO dto) //azért kap ezt át, mert ebbe benne van az id, és a trackId-t is bele lehet rakni
+        {
+            var behav = await _logic.AddBehaviorWithButton(dto);
+            ;
+            return Ok();
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<MusicDto>>> AddSongWithListening(int id)
         {
@@ -70,6 +87,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             }
             var user = await _logic.GetUser(accessToken.userid);
             
+            //ezt kiszervezni Logicba
 
             HttpClient httpClient = new HttpClient();
             

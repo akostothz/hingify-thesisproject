@@ -20,6 +20,10 @@ export class LikedsongsComponent implements OnInit {
     this.likedsongs$ = this.musicService.getLikedSongs(JSON.parse(localStorage.getItem('user'))?.id);
   }
 
+  addBehaviorWithButton(trackId: String) {
+    this.musicService.addNewBehaviorWithButton(trackId);
+  }
+
   dislikeSong(id: number) {
     var lsong: LikedSong = {
       userId: JSON.parse(localStorage.getItem('user'))?.id,

@@ -51,6 +51,10 @@ export class ArtistComponent implements OnInit {
     return res;
   }
 
+  addBehaviorWithButton(trackId: String) {
+    this.musicService.addNewBehaviorWithButton(trackId);
+  }
+
   srcgenerator(trrackId: string) {
     let x = 'https://open.spotify.com/embed/track/' + trrackId + '?utm_source=generator';
 

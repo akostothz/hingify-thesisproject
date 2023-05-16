@@ -20,6 +20,10 @@ export class CountrysongsComponent implements OnInit {
     this.originsongs$ = this.musicService.getMusicsByCountry(JSON.parse(localStorage.getItem('user'))?.id);
     }
 
+    addBehaviorWithButton(trackId: String) {
+      this.musicService.addNewBehaviorWithButton(trackId);
+    }
+
   likeSong(id: number) {
     var lsong: LikedSong = {
       userId: JSON.parse(localStorage.getItem('user'))?.id,

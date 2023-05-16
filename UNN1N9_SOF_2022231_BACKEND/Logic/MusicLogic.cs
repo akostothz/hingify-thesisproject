@@ -1361,5 +1361,98 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
 
             }
         }
+
+        public async Task<UserBehavior> AddBehaviorWithListening(int id)
+        {
+            var user = _context.Users.FirstOrDefault(x => x.Id == id);
+            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.SpotifyAccessToken);
+
+            var response = await httpClient.GetAsync("https://api.spotify.com/v1/me/player/currently-playing");
+
+            if (!response.IsSuccessStatusCode)
+            {
+                var behav = new UserBehavior();
+                return behav;
+            }
+            else
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                var currentlyPlaying = JsonConvert.DeserializeObject<CurrentlyPlayingDto>(responseContent);
+                string spotifyId = currentlyPlaying?.Item?.Id;
+                /// ha nincs az adatbázisban, akkor először hozzáadjuk
+                var m = _context.Musics.FirstOrDefault(x => x.TrackId == spotifyId);
+
+                if (m == null) //hozzá kell adni
+                {
+                    var ms = await AddSong(user.Id, spotifyId);
+                    //itt hozzá van már adva a zenékhez, márcsak a behaviorokhoz kell
+                    m = _context.Musics.FirstOrDefault(x => x.TrackId == spotifyId);
+                }
+                var behavior = _context.UserBehaviors.FirstOrDefault(x => x.UserId == user.Id && x.MusicId == m.Id);
+
+                ;
+                if (behavior == null)
+                {
+                    behavior = new UserBehavior()
+                    {
+                        UserId = user.Id,
+                        MusicId = m.Id,
+                        Date = today,
+                        ListeningCount = 1,
+                        NameOfDay = DateTime.Now.DayOfWeek.ToString(),
+                        TimeOfDay = TimeOfDayConverter()
+                    };
+                    ;
+                    _context.UserBehaviors.Add(behavior);
+                }
+                else
+                {
+                    behavior.ListeningCount++;
+                    _context.UserBehaviors.Update(behavior);
+                    ;
+                }
+                _context.SaveChanges();
+
+                return behavior;
+            }
+
+
+           
+            
+        }
+
+        public async Task<UserBehavior> AddBehaviorWithButton(AccessTokenDTO dto)
+        {
+            var user = _context.Users.FirstOrDefault(x => x.Id == dto.userid);
+            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+            var music = _context.Musics.FirstOrDefault(x => x.Id == int.Parse(dto.token));
+            var behav = _context.UserBehaviors.FirstOrDefault(x => x.UserId == dto.userid && x.MusicId.ToString() == dto.token);
+            ;
+            if (behav == null)
+            {
+                behav = new UserBehavior()
+                {
+                    UserId = user.Id,
+                    MusicId = music.Id,
+                    Date = today,
+                    ListeningCount = 1,
+                    NameOfDay = DateTime.Now.DayOfWeek.ToString(),
+                    TimeOfDay = TimeOfDayConverter()
+                };
+                ;
+                _context.UserBehaviors.Add(behav);
+            }
+            else
+            {
+                behav.ListeningCount++;
+                _context.UserBehaviors.Update(behav);
+                ;
+            }
+            _context.SaveChanges();
+
+            return behav;
+        }
     }
 }

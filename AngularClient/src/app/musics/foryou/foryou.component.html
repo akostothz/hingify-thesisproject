@@ -36,22 +36,22 @@
           <h3 class="acch3">There are 6 times of the days;</h3>
           <ul>
             <li>
-              <h4><span class="badge rounded-pill bg-primary">1.</span>Dawn</h4>
+              <h4><span class="badge rounded-pill bg-primary">1.</span>Dawn (0.00h-5.00h)</h4>
             </li>
             <li>
-              <h4><span class="badge rounded-pill bg-primary">2.</span>Morning</h4>
+              <h4><span class="badge rounded-pill bg-primary">2.</span>Morning (5.00h-9.00h)</h4>
             </li>
             <li>
-              <h4><span class="badge rounded-pill bg-primary">3.</span>Forenoon</h4>
+              <h4><span class="badge rounded-pill bg-primary">3.</span>Forenoon (9.00h-12.00h)</h4>
             </li>
             <li>
-              <h4><span class="badge rounded-pill bg-primary">4.</span>Afternoon</h4>
+              <h4><span class="badge rounded-pill bg-primary">4.</span>Afternoon (12.00h-17.00h)</h4>
             </li>
             <li>
-              <h4><span class="badge rounded-pill bg-primary">5.</span>Evening</h4>
+              <h4><span class="badge rounded-pill bg-primary">5.</span>Evening (17.00h-21.00h)</h4>
             </li>
             <li>
-              <h4><span class="badge rounded-pill bg-primary">6.</span>Night</h4>
+              <h4><span class="badge rounded-pill bg-primary">6.</span>Night (21.00h-0.00h)</h4>
             </li>
           </ul>
         </div>
@@ -68,9 +68,9 @@
         <div class="accordion-body">
           <h3 class="acch3">Yes! The playlist will be called "{{day}}, {{timeofday}} by Hingify". You just have to click the button below.</h3>
           <div class="buttons">
-            <a class="btn btn-info" id="spoty" href="https://accounts.spotify.com/authorize?client_id=1ec4eab22f26449491c0d514d9b464ef&response_type=code&redirect_uri=http://localhost:4200/foryou&scope=playlist-modify-public%20playlist-modify-private"
+            <a class="btn btn-info" id="modalbtn" href="https://accounts.spotify.com/authorize?client_id=1ec4eab22f26449491c0d514d9b464ef&response_type=code&redirect_uri=http://localhost:4200/foryou&scope=playlist-modify-public%20playlist-modify-private"
             (click)="createPlaylist()">
-              <i class="fa-brands fa-spotify"></i>CREATE PLAYLIST</a>
+            <i class="fa-brands fa-spotify" id="info2"></i>CREATE PLAYLIST</a>
           </div>
         </div>
       </div>
@@ -89,7 +89,8 @@
       <a class="btn btn-primary" id="btn" routerLink="/discover/{{lhsong.trackId}}">Find more like this</a>
       <a class="btn btn-secondary" *ngIf="!isLiked(lhsong)" id="btn2" (click)="likeSong(lhsong.id)"><i class="fa-solid fa-heart"></i></a>
       <a class="btn btn-danger" *ngIf="isLiked(lhsong)" id="btn2" (click)="dislikeSong(lhsong.id)"><i class="fa-solid fa-trash"></i></a>
-      <a class="btn btn-secondary" id="btn3" routerLink="/musics/{{lhsong.trackId}}"><i class="fa-solid fa-circle-info"></i></a>
+      <a class="btn btn-info" id="btn3" routerLink="/musics/{{lhsong.trackId}}"><i class="fa-solid fa-circle-info"></i></a>
+      <a class="btn btn-success" id="btn4" (click)="addBehaviorWithButton(lhsong.trackId)"><i class="fa-solid fa-plus"></i></a>
     </div>
   </div>
   

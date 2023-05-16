@@ -51,6 +51,10 @@ export class MusicsService {
     console.log('implement this')
   }
 
+  addNewBehaviorWithButton(trackId: String) {
+    console.log('implement this too')
+  }
+
   addASong(cidUncut: String) {
     let cid: String = (JSON.parse(localStorage.getItem('user'))?.id).toString() + ';'
     let u: String[] = [];

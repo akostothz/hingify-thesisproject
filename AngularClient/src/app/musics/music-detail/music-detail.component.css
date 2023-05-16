@@ -56,10 +56,24 @@ hr {
   
 }
 
-#btn {
-    font-size: 1.1em;
-}
-  
 #btn2 {
     margin-left: 1em;
-}
+    margin-right: 0.5em;
+  }
+  
+  #btn3 {
+    background-color: rgb(36, 187, 207);
+  }
+  
+  #btn3:hover {
+    background-color: rgb(22, 103, 170);
+  }
+  
+  #btn4 {
+    margin-left: 0.5em;
+    background-color: rgb(7, 157, 72);
+  }
+  
+  #btn4:hover {
+    background-color: rgb(5, 102, 47);
+  }

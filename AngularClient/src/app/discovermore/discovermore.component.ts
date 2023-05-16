@@ -26,6 +26,10 @@ export class DiscovermoreComponent implements OnInit {
       this.disvoceredsongs$ = this.musicService.discover(searchedTrackId);
     })  
   }
+  
+  addBehaviorWithButton(trackId: String) {
+    this.musicService.addNewBehaviorWithButton(trackId);
+  }
 
   likeSong(id: number) {
     var lsong: LikedSong = {

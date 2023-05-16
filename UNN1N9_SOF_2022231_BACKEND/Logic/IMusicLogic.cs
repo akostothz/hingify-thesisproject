@@ -25,6 +25,8 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         Task<AppUser> GetUser(int id);
         Task<IEnumerable<Music>> AddSongWithListening(int id);
         Task<IEnumerable<Music>> AddSong(int id, string trackId);
+        Task<UserBehavior> AddBehaviorWithListening(int id);
+        Task<UserBehavior> AddBehaviorWithButton(AccessTokenDTO dto);
         void RetrieveAccessToken(AccessTokenDTO accessToken);
         void RefreshToken(AccessTokenDTO accessToken);
         bool IsLiked(int userid, int musicid);

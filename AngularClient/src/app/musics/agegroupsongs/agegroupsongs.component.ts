@@ -20,6 +20,10 @@ export class AgegroupsongsComponent implements OnInit {
     this.agesongs$ = this.musicService.getMusicsByAgeGroup(JSON.parse(localStorage.getItem('user'))?.id);
     }
 
+    addBehaviorWithButton(trackId: String) {
+      this.musicService.addNewBehaviorWithButton(trackId);
+    }
+
     likeSong(id: number) {
       var lsong: LikedSong = {
         userId: JSON.parse(localStorage.getItem('user'))?.id,

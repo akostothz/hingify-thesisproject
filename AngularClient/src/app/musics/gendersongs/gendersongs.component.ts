@@ -20,6 +20,10 @@ export class GendersongsComponent implements OnInit {
     this.gendersongs$ = this.musicService.getMusicsBySex(JSON.parse(localStorage.getItem('user'))?.id);
   }
 
+  addBehaviorWithButton(trackId: String) {
+    this.musicService.addNewBehaviorWithButton(trackId);
+  }
+
   likeSong(id: number) {
     var lsong: LikedSong = {
       userId: JSON.parse(localStorage.getItem('user'))?.id,

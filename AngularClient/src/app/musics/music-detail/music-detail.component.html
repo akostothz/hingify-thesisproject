@@ -29,6 +29,7 @@
               <a class="btn btn-primary" id="btn" routerLink="/discover/{{song.trackId}}">Find more like this</a>
               <a class="btn btn-secondary" *ngIf="!isLiked(song)" id="btn2" (click)="likeSong(song.id)"><i class="fa-solid fa-heart"></i></a>
               <a class="btn btn-danger" *ngIf="isLiked(song)" id="btn2" (click)="dislikeSong(song.id)"><i class="fa-solid fa-trash"></i></a>
+              <a class="btn btn-success" id="btn4" (click)="addBehaviorWithButton(song.trackId)"><i class="fa-solid fa-plus"></i></a>
             </div>
           </div>
     </div>

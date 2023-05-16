@@ -34,6 +34,10 @@ export class MusicDetailComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl(x);
   }
 
+  addBehaviorWithButton(trackId: String) {
+    this.musicService.addNewBehaviorWithButton(trackId);
+  }
+
   likeSong(id: number) {
     var lsong: LikedSong = {
       userId: JSON.parse(localStorage.getItem('user'))?.id,

@@ -13,6 +13,7 @@
             <a class="btn btn-secondary" *ngIf="!isLiked(disvoceredsong)" id="btn2" (click)="likeSong(disvoceredsong.id)"><i class="fa-solid fa-heart"></i></a>
             <a class="btn btn-danger" *ngIf="isLiked(disvoceredsong)" id="btn2" (click)="dislikeSong(disvoceredsong.id)"><i class="fa-solid fa-trash"></i></a>
             <a class="btn btn-secondary" id="btn3" routerLink="/musics/{{disvoceredsong.trackId}}"><i class="fa-solid fa-circle-info"></i></a>
+            <a class="btn btn-success" id="btn4" (click)="addBehaviorWithButton(disvoceredsong.trackId)"><i class="fa-solid fa-plus"></i></a>
           </div>
         </div>
         
