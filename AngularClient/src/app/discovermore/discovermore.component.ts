@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Music } from '../_models/music';
 import { LikedSong } from '../_models/likedsong';
+import { Behavior } from '../_models/behavior';
 
 @Component({
   selector: 'app-discovermore',
@@ -14,6 +15,7 @@ import { LikedSong } from '../_models/likedsong';
 export class DiscovermoreComponent implements OnInit {
   route: ActivatedRoute;
   disvoceredsongs$: Observable<Music[]> | undefined;
+  addedBehaviors$: Observable<Behavior[]> | undefined;
 
   constructor(private musicService: MusicsService, private sanitizer: DomSanitizer, route: ActivatedRoute) {
     this.route = route;
@@ -27,9 +29,6 @@ export class DiscovermoreComponent implements OnInit {
     })  
   }
   
-  addBehaviorWithButton(trackId: String) {
-    this.musicService.addNewBehaviorWithButton(trackId);
-  }
 
   likeSong(id: number) {
     var lsong: LikedSong = {
@@ -59,4 +58,8 @@ export class DiscovermoreComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl(x);
   }
 
+  
+  addBehaviorWithButton(trackId: String) {
+    this.addedBehaviors$ = this.musicService.addNewBehaviorWithButton(trackId);
+  }
 }

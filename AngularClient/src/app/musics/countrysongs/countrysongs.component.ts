@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
+import { Behavior } from 'src/app/_models/behavior';
 import { LikedSong } from 'src/app/_models/likedsong';
 import { Music } from 'src/app/_models/music';
 import { MusicsService } from 'src/app/_services/musics.service';
@@ -12,6 +13,7 @@ import { MusicsService } from 'src/app/_services/musics.service';
 })
 export class CountrysongsComponent implements OnInit {
   originsongs$: Observable<Music[]> | undefined;
+  addedBehaviors$: Observable<Behavior[]> | undefined;
 
   constructor(private musicService: MusicsService, private sanitizer: DomSanitizer) {
   }
@@ -20,9 +22,6 @@ export class CountrysongsComponent implements OnInit {
     this.originsongs$ = this.musicService.getMusicsByCountry(JSON.parse(localStorage.getItem('user'))?.id);
     }
 
-    addBehaviorWithButton(trackId: String) {
-      this.musicService.addNewBehaviorWithButton(trackId);
-    }
 
   likeSong(id: number) {
     var lsong: LikedSong = {
@@ -50,5 +49,10 @@ export class CountrysongsComponent implements OnInit {
     let x = 'https://open.spotify.com/embed/track/' + trrackId + '?utm_source=generator';
     
     return this.sanitizer.bypassSecurityTrustResourceUrl(x);
+  }
+
+  
+  addBehaviorWithButton(trackId: String) {
+    this.addedBehaviors$ = this.musicService.addNewBehaviorWithButton(trackId);
   }
 }

@@ -1,3 +1,5 @@
+
+
 <div class="wrap">
 
     <div class="expl"> 
@@ -13,6 +15,7 @@
             </button>
         </div>
     </div>
+
 
     <div class="res">
         <h3 class="results" *ngIf="searchInput !== ''">Results for <i class="lblue">{{searchInput}}</i>
@@ -46,7 +49,7 @@
 
     </div>
 
-    
+  
 
     <div class="accordion accordion-flush" id="accordionFlushExample" *ngIf="searchInput !== ''">
         
@@ -75,6 +78,10 @@
         </div>
     </div>
 
+    
+  
 
 </div>
 
+<div *ngFor="let b of addedBehaviors$ | async">
+</div>

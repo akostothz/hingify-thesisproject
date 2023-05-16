@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Music } from '../_models/music';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LikedSong } from '../_models/likedsong';
+import { Behavior } from '../_models/behavior';
 
 
 @Component({
@@ -14,6 +15,7 @@ import { LikedSong } from '../_models/likedsong';
 export class SearchComponent implements OnInit {
   foundsongs$: Observable<Music[]> | undefined;
   searchInput: string  = '';
+  addedBehaviors$: Observable<Behavior[]> | undefined;
 
   ngOnInit(): void {
     
@@ -31,9 +33,7 @@ export class SearchComponent implements OnInit {
     this.foundsongs$ = this.musicService.search(this.searchInput);
   }
 
-  addBehaviorWithButton(trackId: String) {
-    this.musicService.addNewBehaviorWithButton(trackId);
-  }
+  
 
   likeSong(id: number) {
     var lsong: LikedSong = {
@@ -60,6 +60,10 @@ export class SearchComponent implements OnInit {
     let x = 'https://open.spotify.com/embed/track/' + trrackId + '?utm_source=generator';
 
     return this.sanitizer.bypassSecurityTrustResourceUrl(x);
+  }
+
+  addBehaviorWithButton(trackId: String) {
+    this.addedBehaviors$ = this.musicService.addNewBehaviorWithButton(trackId);
   }
 
 }

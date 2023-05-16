@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
+import { Behavior } from 'src/app/_models/behavior';
 import { LikedSong } from 'src/app/_models/likedsong';
 import { Music } from 'src/app/_models/music';
 import { AccountService } from 'src/app/_services/account.service';
@@ -16,6 +17,7 @@ export class ForyouComponent implements OnInit {
   day: string;
   timeofday: string;
   token: string = '';
+  addedBehaviors$: Observable<Behavior[]> | undefined;
 
   constructor(private musicService: MusicsService, private sanitizer: DomSanitizer, private accountService: AccountService) {
 
@@ -50,9 +52,6 @@ export class ForyouComponent implements OnInit {
     this.musicService.addNewBehavior();
   }
 
-  addBehaviorWithButton(trackId: String) {
-    this.musicService.addNewBehaviorWithButton(trackId);
-  }
 
   likeSong(id: number) {
     var lsong: LikedSong = {
@@ -101,5 +100,10 @@ export class ForyouComponent implements OnInit {
     let x = 'https://open.spotify.com/embed/track/' + trrackId + '?utm_source=generator';
     
     return this.sanitizer.bypassSecurityTrustResourceUrl(x);
+  }
+
+  
+  addBehaviorWithButton(trackId: String) {
+    this.addedBehaviors$ = this.musicService.addNewBehaviorWithButton(trackId);
   }
 }

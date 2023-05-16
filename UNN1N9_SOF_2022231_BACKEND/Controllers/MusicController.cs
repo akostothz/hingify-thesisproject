@@ -28,21 +28,30 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             _mapper = mapper;
         }
 
-        [HttpPost]
-        public async Task<ActionResult> AddBehaviorWithListening(int id)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<BehaviorDto>>> AddBehaviorWithListening(int id)
         {
-            var behav = await _logic.AddBehaviorWithListening(id);
+            var behavs = new List<UserBehavior>();
+            behavs.Add(await _logic.AddBehaviorWithListening(id));
+            ;
+            var behavsToReturn = _mapper.Map<IEnumerable<UserBehavior>>(behavs);
+
             ;
 
-            return Ok();
+            return Ok(behavsToReturn);
         }
 
-        [HttpPost]
-        public async Task<ActionResult> AddBehaviorWithButton(AccessTokenDTO dto) //azért kap ezt át, mert ebbe benne van az id, és a trackId-t is bele lehet rakni
+        [HttpGet("{ids}")]
+        public async Task<ActionResult<IEnumerable<BehaviorDto>>> AddBehaviorWithButton(string ids) //azért kap ezt át, mert ebbe benne van az id, és a trackId-t is bele lehet rakni
         {
-            var behav = await _logic.AddBehaviorWithButton(dto);
-            ;
-            return Ok();
+            string[] lines = ids.Split('.');
+            AccessTokenDTO dto = new AccessTokenDTO() { userid = int.Parse(lines[0]), token = lines[1] };
+            var behavs = new List<UserBehavior>();
+            var b = await _logic.AddBehaviorWithButton(dto);
+            behavs.Add(b);
+            var behavsToReturn = _mapper.Map<IEnumerable<BehaviorDto>>(behavs);
+            
+            return Ok(behavsToReturn);
         }
 
         [HttpGet("{id}")]

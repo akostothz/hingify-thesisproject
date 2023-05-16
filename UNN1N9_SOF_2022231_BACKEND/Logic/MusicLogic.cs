@@ -1318,7 +1318,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 Tempo = audioFeatures.Tempo,
                 Valence = audioFeatures.Valence
             };
-
+            ;
             var musics = new List<Music>();
             if (_context.Musics.FirstOrDefault(x => x.TrackId == musicToAdd.TrackId) == null)
             {
@@ -1356,6 +1356,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 var responseContent = await response.Content.ReadAsStringAsync();
                 var currentlyPlaying = JsonConvert.DeserializeObject<CurrentlyPlayingDto>(responseContent);
                 string spotifyId = currentlyPlaying?.Item?.Id;
+                ;
                 //itt megvan az id, de még 3 kérés, hogy minden adatunk meglegyen, de ez ugyan az mint a másik hozzáadási metódus
                 return await AddSong(user.Id, spotifyId);
 
@@ -1381,9 +1382,10 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 var responseContent = await response.Content.ReadAsStringAsync();
                 var currentlyPlaying = JsonConvert.DeserializeObject<CurrentlyPlayingDto>(responseContent);
                 string spotifyId = currentlyPlaying?.Item?.Id;
+                ;
                 /// ha nincs az adatbázisban, akkor először hozzáadjuk
                 var m = _context.Musics.FirstOrDefault(x => x.TrackId == spotifyId);
-
+                ;
                 if (m == null) //hozzá kell adni
                 {
                     var ms = await AddSong(user.Id, spotifyId);
@@ -1425,11 +1427,11 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
 
         public async Task<UserBehavior> AddBehaviorWithButton(AccessTokenDTO dto)
         {
-            var user = _context.Users.FirstOrDefault(x => x.Id == dto.userid);
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Id == dto.userid);
             DateOnly today = DateOnly.FromDateTime(DateTime.Now);
-            var music = _context.Musics.FirstOrDefault(x => x.Id == int.Parse(dto.token));
-            var behav = _context.UserBehaviors.FirstOrDefault(x => x.UserId == dto.userid && x.MusicId.ToString() == dto.token);
-            ;
+            var music = await _context.Musics.FirstOrDefaultAsync(x => x.TrackId == dto.token);
+            var behav = await _context.UserBehaviors.FirstOrDefaultAsync(x => x.UserId == dto.userid && x.MusicId == music.Id);
+
             if (behav == null)
             {
                 behav = new UserBehavior()
@@ -1441,14 +1443,12 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                     NameOfDay = DateTime.Now.DayOfWeek.ToString(),
                     TimeOfDay = TimeOfDayConverter()
                 };
-                ;
                 _context.UserBehaviors.Add(behav);
             }
             else
             {
                 behav.ListeningCount++;
                 _context.UserBehaviors.Update(behav);
-                ;
             }
             _context.SaveChanges();
 

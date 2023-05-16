@@ -72,10 +72,12 @@
             (click)="createPlaylist()">
             <i class="fa-brands fa-spotify" id="info2"></i>CREATE PLAYLIST</a>
           </div>
+ 
         </div>
       </div>
     </div>
   </div>
+ 
 
 <div class="results" *ngFor="let lhsong of lhsongs$ | async">
 
@@ -93,8 +95,13 @@
       <a class="btn btn-success" id="btn4" (click)="addBehaviorWithButton(lhsong.trackId)"><i class="fa-solid fa-plus"></i></a>
     </div>
   </div>
-  
+
 </div>
 
 <hr>
 </div>
+
+
+<div *ngFor="let b of addedBehaviors$ | async">
+</div>
+

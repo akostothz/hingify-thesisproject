@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
+import { Behavior } from 'src/app/_models/behavior';
 import { LikedSong } from 'src/app/_models/likedsong';
 import { Music } from 'src/app/_models/music';
 import { MusicsService } from 'src/app/_services/musics.service';
@@ -12,16 +13,13 @@ import { MusicsService } from 'src/app/_services/musics.service';
 })
 export class AgegroupsongsComponent implements OnInit {
   agesongs$: Observable<Music[]> | undefined;
+  addedBehaviors$: Observable<Behavior[]> | undefined;
 
   constructor(private musicService: MusicsService, private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
     this.agesongs$ = this.musicService.getMusicsByAgeGroup(JSON.parse(localStorage.getItem('user'))?.id);
-    }
-
-    addBehaviorWithButton(trackId: String) {
-      this.musicService.addNewBehaviorWithButton(trackId);
     }
 
     likeSong(id: number) {
@@ -50,4 +48,9 @@ export class AgegroupsongsComponent implements OnInit {
       
       return this.sanitizer.bypassSecurityTrustResourceUrl(x);
     }
+
+    
+    addBehaviorWithButton(trackId: String) {
+    this.addedBehaviors$ = this.musicService.addNewBehaviorWithButton(trackId);
+  }
 }

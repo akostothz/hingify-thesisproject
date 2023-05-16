@@ -30,6 +30,9 @@ export class MusicsService {
   artistSongs: Music[] = [];
   isItLiked: Boolean = false;
   addedMusics: Music[] = [];
+  day: string;
+  timeofday: string;
+  addedBehaviors: Behavior[] = [];
 
   constructor(private http: HttpClient, private toastr: ToastrService) { }
 
@@ -48,11 +51,60 @@ export class MusicsService {
       }));
   }
   addNewBehavior() {
-    console.log('implement this')
+    let userid = JSON.parse(localStorage.getItem('user'))?.id;
+
+    return this.http.get<Behavior[]>(this.baseUrl + 'Music/AddBehaviorWithListening/' + userid).pipe(
+      map(addedBehaviors => {
+        this.addedBehaviors = addedBehaviors;
+        if(this.addedBehaviors.length > 0) {
+          this.toastr.success('Behavior added. (' + this.day + ', ' + this.timeofday + ')');
+        }
+        else {
+          this.toastr.error('Something went wrong. Refresh the page, and try again.');
+        }
+        return addedBehaviors;
+      })
+    );
   }
 
   addNewBehaviorWithButton(trackId: String) {
-    console.log('implement this too')
+    let userid = JSON.parse(localStorage.getItem('user'))?.id;
+    let ids: String = userid.toString() + '.' + trackId;
+    this.TimeSetter();
+
+    return this.http.get<Behavior[]>(this.baseUrl + 'Music/AddBehaviorWithButton/' + ids).pipe(
+      map(addedBehaviors => {
+        this.addedBehaviors = addedBehaviors;
+        if(this.addedBehaviors.length > 0) {
+          this.toastr.success('Behavior added. (' + this.day + ', ' + this.timeofday + ')');
+        }
+        else {
+          this.toastr.error('Something went wrong. Refresh the page, and try again.');
+        }
+        return addedBehaviors;
+      })
+    );
+  
+  }
+  TimeSetter() {
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var d = new Date(Date.now()); 
+    this.day = days[d.getDay()];
+
+    var time = d.getHours();
+    
+    if (time < 5)
+        this.timeofday = 'Dawn';
+    else if (time >= 5 && time < 9)
+        this.timeofday = 'Morning';
+    else if (time >= 9 && time < 12)
+        this.timeofday = 'Forenoon';
+    else if (time >= 12 && time < 17)
+        this.timeofday = 'Afternoon';
+    else if (time >= 17 && time < 21)
+        this.timeofday = 'Evening';
+    else
+        this.timeofday = 'Night';
   }
 
   addASong(cidUncut: String) {

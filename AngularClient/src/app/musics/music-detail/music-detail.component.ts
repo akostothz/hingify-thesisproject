@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Behavior } from 'src/app/_models/behavior';
 import { DetailedMusic } from 'src/app/_models/detailedmusic';
 import { LikedSong } from 'src/app/_models/likedsong';
 import { Music } from 'src/app/_models/music';
@@ -15,6 +16,7 @@ import { MusicsService } from 'src/app/_services/musics.service';
 export class MusicDetailComponent implements OnInit {
   route: ActivatedRoute;
   song$: Observable<DetailedMusic[]> | undefined;
+  addedBehaviors$: Observable<Behavior[]> | undefined;
 
   constructor(private musicService: MusicsService, private sanitizer: DomSanitizer, route: ActivatedRoute) {
     this.route = route;
@@ -32,10 +34,6 @@ export class MusicDetailComponent implements OnInit {
     let x = 'https://open.spotify.com/embed/track/' + trrackId + '?utm_source=generator';
     
     return this.sanitizer.bypassSecurityTrustResourceUrl(x);
-  }
-
-  addBehaviorWithButton(trackId: String) {
-    this.musicService.addNewBehaviorWithButton(trackId);
   }
 
   likeSong(id: number) {
@@ -63,5 +61,10 @@ export class MusicDetailComponent implements OnInit {
   msToMins(ms: number) {
     let conv: number = 1.6667E-5;
     return <number>conv * ms;
+  }
+
+  
+  addBehaviorWithButton(trackId: String) {
+    this.addedBehaviors$ = this.musicService.addNewBehaviorWithButton(trackId);
   }
 }
