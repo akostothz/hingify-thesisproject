@@ -1,5 +1,27 @@
 <h1>This playlist is based on your listening history divided into days and various times of the day.</h1>
-<h2 class="time">Right now it's {{day}}, {{timeofday}}.</h2>
+<h2 class="time">
+  Right now it's {{day}}, {{timeofday}}. 
+  <button class="bttn"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"> 
+    Add a song to this period >
+  </button>
+</h2>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2" id="staticBackdropLabel"><i class="fa-solid fa-circle-info" id="info"></i>Important to note</h1>
+      </div>
+      <div class="modal-body">
+        In order for this feature to work here, make sure that you are listening to something on Spotify.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="modalbtn" (click)="addBehavior()"><i class="fa-brands fa-spotify" id="info2"></i>I'm ready & listening!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <div class="accordion accordion-flush" id="accordionFlushExample">
 

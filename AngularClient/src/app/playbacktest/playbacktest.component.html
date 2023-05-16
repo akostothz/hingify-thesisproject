@@ -1,0 +1,37 @@
+<!--
+<a type="button" class="btn btn-primary" (click)="getLikedSongs()">Click me</a>
+
+<div class="results" *ngFor="let lhsong of lhsongs$ | async">
+
+  <div class="card" >
+    <div class="card-header" id="head">
+        <p class="card-text" id="genre">Genre: <span class="badge rounded-pill bg-info">{{lhsong.genre}}</span></p>
+    </div>
+    <div class="card-body">             
+      <iframe style="border-radius:12px" [src]='srcgenerator(lhsong.trackId)' width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+    </div>
+    
+</div>
+
+-->
+
+<button class="bttn"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"> 
+  Add a song to this period >
+</button>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-2" id="staticBackdropLabel"><i class="fa-solid fa-circle-info"></i>Important to note</h1>
+      </div>
+      <div class="modal-body">
+        In order for this feature to work here, make sure that you are listening to something on Spotify.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="modalbtn">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>

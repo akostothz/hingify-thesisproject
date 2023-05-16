@@ -47,6 +47,9 @@ export class MusicsService {
         return addedMusics;
       }));
   }
+  addNewBehavior() {
+    console.log('implement this')
+  }
 
   addASong(cidUncut: String) {
     let cid: String = (JSON.parse(localStorage.getItem('user'))?.id).toString() + ';'
@@ -68,6 +71,15 @@ export class MusicsService {
         return addedMusics;
       })
     );
+  }
+
+  getTrackIds() {
+    console.log(this.likedsongs);
+    const mIds: Array<String> = [];
+    this.likedsongs.forEach(x => {
+      mIds.push(x.trackId);
+   });
+   return mIds;
   }
 
   createPlaylist(token: string) {

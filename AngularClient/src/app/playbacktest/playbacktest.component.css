@@ -1,0 +1,29 @@
+.modal-header {
+    background-color: rgb(60, 58, 58);
+    font-size: 4em;
+}
+
+.modal-body {
+    background-color: rgb(51, 50, 50);
+    font-size: 2em;
+}
+
+.modal-footer {
+    background-color: rgb(51, 50, 50);
+}
+
+#modalbtn {
+    font-size: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 10px;
+    background-color: rgb(85, 174, 226);
+}
+
+#staticBackdropLabel {
+    font-size: 2.2em;
+}
+
+i {
+    margin-right: 0.6em;
+}

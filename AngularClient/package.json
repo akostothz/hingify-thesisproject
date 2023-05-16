@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
     "@schematics/angular": "^9.1.0",
+    "@types/spotify-web-playback-sdk": "^0.1.15",
     "bootstrap": "^5.2.2",
     "bootswatch": "^5.2.3",
     "font-awesome": "^4.7.0",

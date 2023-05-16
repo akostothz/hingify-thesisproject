@@ -27,6 +27,7 @@ import { AgegroupsongsComponent } from './musics/agegroupsongs/agegroupsongs.com
 import { GendersongsComponent } from './musics/gendersongs/gendersongs.component';
 import { CountrysongsComponent } from './musics/countrysongs/countrysongs.component';
 import { SpotifyRegisterComponent } from './spotify-register/spotify-register.component';
+import { PlaybacktestComponent } from './playbacktest/playbacktest.component';
 
 const routes: Routes = [
   {path: '', component: AboutComponent},
@@ -51,7 +52,8 @@ const routes: Routes = [
       {path: 'help', component: HelperComponent},
       {path: 'discover/:trackId', component: DiscovermoreComponent},
       {path: 'artist/:artistName', component: ArtistComponent},
-      {path: 'musics/more/:type', component: MoreComponent}
+      {path: 'musics/more/:type', component: MoreComponent},
+      {path: 'testplay', component: PlaybacktestComponent} //EZ CSAK TESZT A PLAYBACKNEK. TÖRÖLNI HA SIKERÜLT!!
     ]
   }, 
   {path: 'errors', component: TestErrorComponent},

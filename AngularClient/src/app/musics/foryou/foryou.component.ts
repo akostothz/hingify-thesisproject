@@ -46,6 +46,9 @@ export class ForyouComponent implements OnInit {
     this.lhsongs$ = this.musicService.getPersonalizedMix(JSON.parse(localStorage.getItem('user'))?.id);
   }
 
+  addBehavior() {
+    this.musicService.addNewBehavior();
+  }
 
   likeSong(id: number) {
     var lsong: LikedSong = {

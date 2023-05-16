@@ -17,8 +17,108 @@ h3 {
   text-align: center;
   font-size: 3.5em;
 }
+.modal-content {
+  border: transparent;
+  box-shadow: none;
+}
+
+.modal-header {
+  background-color: rgb(60, 58, 58);
+  font-size: 4em;
+}
+
+.modal-body {
+  background-color: rgb(51, 50, 50);
+  font-size: 2em;
+}
+
+.modal-footer {
+  background-color: rgb(51, 50, 50);
+}
+
+#modalbtn {
+  font-size: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 10px;
+  color: rgb(30, 215, 96);
+  background-color: #212224;
+  border: 2px solid rgb(30, 215, 96);
+}
+
+#staticBackdropLabel {
+  font-size: 2.2em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#info {
+  margin-right: 0.6em;
+}
+#info2 {
+  margin-right: 0.4em;
+  background-color: black;
+  border-radius: 50%;
+  color: rgb(30, 215, 96);
+}
 
 
+.bttn {
+  --color: #0060a9;
+  --color2: rgb(249, 251, 251);
+  padding: 0.8em;
+  margin-left: 1em;
+  background-color: transparent;
+  border-radius: 6px;
+  border: .3px solid var(--color);
+  transition: .5s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: 300;
+  font-size: 17px;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  text-transform: uppercase;
+  color: var(--color);
+ }
+ 
+ .bttn::after, .bttn::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -1;
+  transition: .5s ease-out;
+  background-color: var(--color);
+ }
+ 
+ .bttn::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+ }
+ 
+ .bttn:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+ }
+ 
+ .bttn:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+ }
+ 
+ .bttn:hover {
+  color: var(--color2);
+ }
+ 
+ .bttn:active {
+  filter: brightness(.7);
+  transform: scale(.98);
+ }
 
 .create {
   color: white;
