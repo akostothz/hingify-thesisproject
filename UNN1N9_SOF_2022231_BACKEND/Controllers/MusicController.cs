@@ -32,13 +32,15 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         public async Task<ActionResult<IEnumerable<BehaviorDto>>> AddBehaviorWithListening(int id)
         {
             var behavs = new List<UserBehavior>();
-            behavs.Add(await _logic.AddBehaviorWithListening(id));
-            ;
-            var behavsToReturn = _mapper.Map<IEnumerable<UserBehavior>>(behavs);
+            var b = await _logic.AddBehaviorWithListening(id);
+            behavs.Add(b);
+            var behavsToReturn = _mapper.Map<IEnumerable<BehaviorDto>>(behavs);
 
-            ;
+            if (behavsToReturn.Count() == 0)
+                return BadRequest();
+            else
+                return Ok(behavsToReturn);
 
-            return Ok(behavsToReturn);
         }
 
         [HttpGet("{ids}")]
@@ -94,43 +96,12 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
                     mIds.Remove(mIds[i - 1]);
                 }
             }
-            var user = await _logic.GetUser(accessToken.userid);
-            
-            //ezt kiszervezni Logicba
+            var playlist = await _logic.CreateSpotifyPlaylist(accessToken, mIds);
 
-            HttpClient httpClient = new HttpClient();
-            
-            httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", user.SpotifyAccessToken);
-
-            var timeOfDay = _logic.TimeOfDayConverter();
-            var day = DateTime.Now.DayOfWeek.ToString();
-            DateOnly date = new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-            var playlistName = $"{day}, {timeOfDay} by Hingify";
-            var desc = $"This playlist was created for @{user.UserName} by Hingify on {date}.";
-
-            var requestContent = new StringContent(JsonConvert.SerializeObject(new { name = playlistName }));
-
-            requestContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-
-            var response = await httpClient.PostAsync($"https://api.spotify.com/v1/users/{user.SpotifyId}/playlists", requestContent);
-
-            response.EnsureSuccessStatusCode();
-
-            var responseContent = await response.Content.ReadAsStringAsync();
-
-            var playlist = JsonConvert.DeserializeObject<PlaylistDto>(responseContent);
-
-            HttpClient httpClient2 = new HttpClient();
-            httpClient2.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.SpotifyAccessToken);
-
-            var requestContent2 = new StringContent(JsonConvert.SerializeObject(new { uris = mIds }));
-            requestContent2.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-         
-            var response2 = await httpClient2.PostAsync($"https://api.spotify.com/v1/playlists/{playlist.Id}/tracks", requestContent2);
-            
-            response.EnsureSuccessStatusCode();
-
-            return Ok();
+            if (playlist.Id == null)
+                return BadRequest();
+            else
+                return Ok();
         }
        
 

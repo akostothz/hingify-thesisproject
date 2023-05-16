@@ -49,7 +49,7 @@ export class ForyouComponent implements OnInit {
   }
 
   addBehavior() {
-    this.musicService.addNewBehavior();
+    this.addedBehaviors$ = this.musicService.addNewBehavior();
   }
 
 

@@ -1281,7 +1281,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             var responseContent = await response.Content.ReadAsStringAsync();
 
             var audioFeatures = JsonConvert.DeserializeObject<SpotifyTrackDto>(responseContent);
-
+            
             var httpClient2 = new HttpClient();
             httpClient2.DefaultRequestHeaders.Authorization =
                 new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", user.SpotifyAccessToken);
@@ -1290,7 +1290,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             var responseContent2 = await response2.Content.ReadAsStringAsync();
             
             var track = JsonConvert.DeserializeObject<SpoitifyTrackMainFeaturesDto>(responseContent2);
-
+            
             var artistId = track.Artists[0].Id;
             request = new HttpRequestMessage(HttpMethod.Get, $"https://api.spotify.com/v1/artists/{artistId}");
             request.Headers.Add("Authorization", $"Bearer {user.SpotifyAccessToken}");
@@ -1298,27 +1298,55 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             response = await httpClient.SendAsync(request);
             responseContent = await response.Content.ReadAsStringAsync();
             var artistInfo = JsonConvert.DeserializeObject<Artist>(responseContent);
-            
-            var musicToAdd = new Music()
+            var musicToAdd = new Music();
+
+            if (artistInfo.Genres.Length == 0)
             {
-                Genre = artistInfo.Genres[0],
-                ArtistName = artistInfo.Name,
-                TrackName = track.Name,
-                TrackId = track.Id,
-                Popularity = track.Popularity,
-                Acousticness = audioFeatures.Acousticness,
-                Danceability = audioFeatures.Danceability,
-                DurationMs = audioFeatures.Duration_ms,
-                Energy = audioFeatures.Energy,
-                Key = audioFeatures.Key.ToString(),
-                Liveness = audioFeatures.Liveness,
-                Loudness = audioFeatures.Loudness,
-                Mode = ModeConverter(audioFeatures.Mode),
-                Speechiness = audioFeatures.Speechiness,
-                Tempo = audioFeatures.Tempo,
-                Valence = audioFeatures.Valence
-            };
-            ;
+                musicToAdd = new Music()
+                {
+                    Genre = "Unspecified",
+                    ArtistName = artistInfo.Name,
+                    TrackName = track.Name,
+                    TrackId = track.Id,
+                    Popularity = track.Popularity,
+                    Acousticness = audioFeatures.Acousticness,
+                    Danceability = audioFeatures.Danceability,
+                    DurationMs = audioFeatures.Duration_ms,
+                    Energy = audioFeatures.Energy,
+                    Key = audioFeatures.Key.ToString(),
+                    Liveness = audioFeatures.Liveness,
+                    Loudness = audioFeatures.Loudness,
+                    Mode = ModeConverter(audioFeatures.Mode),
+                    Speechiness = audioFeatures.Speechiness,
+                    Tempo = audioFeatures.Tempo,
+                    Valence = audioFeatures.Valence
+                };
+            }
+            else
+            {
+                musicToAdd = new Music()
+                {
+                    Genre = artistInfo.Genres[0],
+                    ArtistName = artistInfo.Name,
+                    TrackName = track.Name,
+                    TrackId = track.Id,
+                    Popularity = track.Popularity,
+                    Acousticness = audioFeatures.Acousticness,
+                    Danceability = audioFeatures.Danceability,
+                    DurationMs = audioFeatures.Duration_ms,
+                    Energy = audioFeatures.Energy,
+                    Key = audioFeatures.Key.ToString(),
+                    Liveness = audioFeatures.Liveness,
+                    Loudness = audioFeatures.Loudness,
+                    Mode = ModeConverter(audioFeatures.Mode),
+                    Speechiness = audioFeatures.Speechiness,
+                    Tempo = audioFeatures.Tempo,
+                    Valence = audioFeatures.Valence
+                };
+                
+            }
+            
+            
             var musics = new List<Music>();
             if (_context.Musics.FirstOrDefault(x => x.TrackId == musicToAdd.TrackId) == null)
             {
@@ -1356,7 +1384,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 var responseContent = await response.Content.ReadAsStringAsync();
                 var currentlyPlaying = JsonConvert.DeserializeObject<CurrentlyPlayingDto>(responseContent);
                 string spotifyId = currentlyPlaying?.Item?.Id;
-                ;
+                
                 //itt megvan az id, de még 3 kérés, hogy minden adatunk meglegyen, de ez ugyan az mint a másik hozzáadási metódus
                 return await AddSong(user.Id, spotifyId);
 
@@ -1382,19 +1410,22 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 var responseContent = await response.Content.ReadAsStringAsync();
                 var currentlyPlaying = JsonConvert.DeserializeObject<CurrentlyPlayingDto>(responseContent);
                 string spotifyId = currentlyPlaying?.Item?.Id;
-                ;
+
                 /// ha nincs az adatbázisban, akkor először hozzáadjuk
                 var m = _context.Musics.FirstOrDefault(x => x.TrackId == spotifyId);
-                ;
+                
                 if (m == null) //hozzá kell adni
                 {
+                    if (spotifyId == null) //van amikor bugos az api hívás
+                    {
+                        return null;
+                    }
                     var ms = await AddSong(user.Id, spotifyId);
                     //itt hozzá van már adva a zenékhez, márcsak a behaviorokhoz kell
                     m = _context.Musics.FirstOrDefault(x => x.TrackId == spotifyId);
                 }
                 var behavior = _context.UserBehaviors.FirstOrDefault(x => x.UserId == user.Id && x.MusicId == m.Id);
 
-                ;
                 if (behavior == null)
                 {
                     behavior = new UserBehavior()
@@ -1406,23 +1437,17 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                         NameOfDay = DateTime.Now.DayOfWeek.ToString(),
                         TimeOfDay = TimeOfDayConverter()
                     };
-                    ;
                     _context.UserBehaviors.Add(behavior);
                 }
                 else
                 {
                     behavior.ListeningCount++;
                     _context.UserBehaviors.Update(behavior);
-                    ;
                 }
                 _context.SaveChanges();
 
                 return behavior;
             }
-
-
-           
-            
         }
 
         public async Task<UserBehavior> AddBehaviorWithButton(AccessTokenDTO dto)
@@ -1453,6 +1478,44 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             _context.SaveChanges();
 
             return behav;
+        }
+
+        public async Task<PlaylistDto> CreateSpotifyPlaylist(AccessTokenDTO dto, List<string> mIds)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Id == dto.userid);
+            HttpClient httpClient = new HttpClient();
+
+            httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", user.SpotifyAccessToken);
+
+            var timeOfDay = TimeOfDayConverter();
+            var day = DateTime.Now.DayOfWeek.ToString();
+            DateOnly date = new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            var playlistName = $"{day}, {timeOfDay} by Hingify";
+            var desc = $"This playlist was created for @{user.UserName} by Hingify on {date}.";
+
+            var requestContent = new StringContent(JsonConvert.SerializeObject(new { name = playlistName }));
+
+            requestContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+
+            var response = await httpClient.PostAsync($"https://api.spotify.com/v1/users/{user.SpotifyId}/playlists", requestContent);
+
+            response.EnsureSuccessStatusCode();
+
+            var responseContent = await response.Content.ReadAsStringAsync();
+
+            var playlist = JsonConvert.DeserializeObject<PlaylistDto>(responseContent);
+
+            HttpClient httpClient2 = new HttpClient();
+            httpClient2.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.SpotifyAccessToken);
+
+            var requestContent2 = new StringContent(JsonConvert.SerializeObject(new { uris = mIds }));
+            requestContent2.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            var response2 = await httpClient2.PostAsync($"https://api.spotify.com/v1/playlists/{playlist.Id}/tracks", requestContent2);
+
+            response.EnsureSuccessStatusCode();
+
+            return playlist;
         }
     }
 }

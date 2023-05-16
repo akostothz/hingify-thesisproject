@@ -27,6 +27,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         Task<IEnumerable<Music>> AddSong(int id, string trackId);
         Task<UserBehavior> AddBehaviorWithListening(int id);
         Task<UserBehavior> AddBehaviorWithButton(AccessTokenDTO dto);
+        Task<PlaylistDto> CreateSpotifyPlaylist(AccessTokenDTO dto, List<string> mIds);
         void RetrieveAccessToken(AccessTokenDTO accessToken);
         void RefreshToken(AccessTokenDTO accessToken);
         bool IsLiked(int userid, int musicid);

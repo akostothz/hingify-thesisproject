@@ -52,6 +52,7 @@ export class MusicsService {
   }
   addNewBehavior() {
     let userid = JSON.parse(localStorage.getItem('user'))?.id;
+    this.TimeSetter();
 
     return this.http.get<Behavior[]>(this.baseUrl + 'Music/AddBehaviorWithListening/' + userid).pipe(
       map(addedBehaviors => {
