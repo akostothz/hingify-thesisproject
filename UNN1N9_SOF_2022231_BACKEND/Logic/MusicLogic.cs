@@ -171,15 +171,42 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             var genres = new List<string>();
             var style = "";
             var styles = new List<string>();
-            
+            DateOnly Date = DateOnly.FromDateTime(DateTime.Now);
 
             foreach (var behav in _context.UserBehaviors)
             {
-                if (behav.UserId == givenuser.Id && behav.NameOfDay.Equals(nameOfDay) && behav.TimeOfDay.Equals(timeOfDay))
+                if (behav.UserId == givenuser.Id && 
+                    behav.NameOfDay.Equals(nameOfDay) 
+                    && behav.TimeOfDay.Equals(timeOfDay) 
+                    && behav.Date == Date.AddDays(-7))
                 {
                     behaviours.Add(behav);
                 }
             }
+            
+            if (behaviours.Count() == 0) //ha nincs a múlthéten 
+            {
+                //akkor először ránézünk az azelőtti hetire, mert a megszokott hallgatásból kimaradthat 1 hét bármi miatt
+                foreach (var behav in _context.UserBehaviors)
+                {
+                    if (behav.UserId == givenuser.Id &&
+                        behav.NameOfDay.Equals(nameOfDay)
+                        && behav.TimeOfDay.Equals(timeOfDay)
+                        && behav.Date == Date.AddDays(-14))
+                    {
+                        behaviours.Add(behav);
+                    }
+                }
+
+                //ha ott sincs, akkor visszább felesleges menni, az már nem szokás amit 2 hete nem csináltunk,
+                // úgyhogy lekérjük Spotify-ról a nemrégiben játszott zenéket, és az alapján ajánlunk
+                if (behaviours.Count() == 0)
+                {
+                    behaviours = await GetRecentlyPlayedTracks(id);
+                }
+                
+            }
+
             foreach (var music in _context.Musics)
             {
                 if (ContainsMusic(music.Id, behaviours))
@@ -188,6 +215,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 }
             }
             //itt megvannak a hallgatott zenék abban az időszakban, ahol épp vagyunk
+
+            //ha üres, akkor lekérjük Spotify API segítségével a 'Get Recently Played Tracks' endponttal a nemrégiben
+            // lejátszott zenéit, hozzáadjuk a Behaviour-eihez (ha nincs benne a zenékhez is), és ez alapján csináljuk
 
             // stílusok számának lekérdezése; ha több, mint 3, akkor vegyes mixet kap, ha nem, akkor azt amiből a legtöbb van
 
@@ -305,6 +335,52 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             }
 
             return selectedMusics;
+        }
+
+        private async Task<List<UserBehavior>> GetRecentlyPlayedTracks(int id)
+        {
+            var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            var behavsToReturn = new List<UserBehavior>();
+            var httpClient = new HttpClient();
+            ;
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", givenuser.SpotifyAccessToken);
+
+            var response = await httpClient.GetAsync("https://api.spotify.com/v1/me/player/recently-played");
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                var recentlyPlayed = JsonConvert.DeserializeObject<RecentlyPlayedDto>(responseContent);
+                var trackIds = recentlyPlayed?.Items?.Select(item => item.Track?.Id).ToList();
+                ;
+                //megnézni, hogy melyek azok, amelyek nincsenek benne az adatbázisban
+                if (trackIds.Count() != 0) //ha kaptunk vissza zenéket
+                {
+                    foreach (var item in trackIds) //akkor ezeken végigmegyünk
+                    {
+                        if (!ContainsMusicInDB(item)) //ha nincs benne az adatbázisban a zene, akkor hozzáadjuk
+                        {
+                            ;
+                            var x = await AddSong(givenuser.Id, item);
+                        }
+                        //majd a behavior-okhoz is
+                        AccessTokenDTO dto = new AccessTokenDTO() { userid = givenuser.Id, token = item };
+                        var b = await AddBehaviorWithButton(dto);
+                        ;
+                        behavsToReturn.Add(b);
+                        
+                    }
+                }         
+            }
+            ;
+            return behavsToReturn;
+        }
+
+        private bool ContainsMusicInDB(string? trackId)
+        {
+            if (_context.Musics.FirstOrDefault(x => x.TrackId == trackId) != null)
+                return true;
+            else
+                return false;
         }
 
         private int LLMinsSum(List<Music> ml)
@@ -1299,7 +1375,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             responseContent = await response.Content.ReadAsStringAsync();
             var artistInfo = JsonConvert.DeserializeObject<Artist>(responseContent);
             var musicToAdd = new Music();
-
+            
             if (artistInfo.Genres.Length == 0)
             {
                 musicToAdd = new Music()
@@ -1345,7 +1421,6 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 };
                 
             }
-            
             
             var musics = new List<Music>();
             if (_context.Musics.FirstOrDefault(x => x.TrackId == musicToAdd.TrackId) == null)
@@ -1456,7 +1531,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             DateOnly today = DateOnly.FromDateTime(DateTime.Now);
             var music = await _context.Musics.FirstOrDefaultAsync(x => x.TrackId == dto.token);
             var behav = await _context.UserBehaviors.FirstOrDefaultAsync(x => x.UserId == dto.userid && x.MusicId == music.Id);
-
+            
             if (behav == null)
             {
                 behav = new UserBehavior()
@@ -1468,6 +1543,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                     NameOfDay = DateTime.Now.DayOfWeek.ToString(),
                     TimeOfDay = TimeOfDayConverter()
                 };
+                
                 _context.UserBehaviors.Add(behav);
             }
             else
