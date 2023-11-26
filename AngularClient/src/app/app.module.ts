@@ -43,6 +43,7 @@ import { DailyComponent } from './stats/daily/daily.component';
 import { WeeklyComponent } from './stats/weekly/weekly.component';
 import { MonthlyComponent } from './stats/monthly/monthly.component';
 import { YearlyComponent } from './stats/yearly/yearly.component';
+import { MainComponent } from './stats/main/main.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { YearlyComponent } from './stats/yearly/yearly.component';
     DailyComponent,
     WeeklyComponent,
     MonthlyComponent,
-    YearlyComponent
+    YearlyComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
