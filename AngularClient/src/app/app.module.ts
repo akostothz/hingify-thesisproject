@@ -39,6 +39,10 @@ import { CountrysongsComponent } from './musics/countrysongs/countrysongs.compon
 import { AgegroupsongsComponent } from './musics/agegroupsongs/agegroupsongs.component';
 import { SpotifyRegisterComponent } from './spotify-register/spotify-register.component';
 import { PlaybacktestComponent } from './playbacktest/playbacktest.component';
+import { DailyComponent } from './stats/daily/daily.component';
+import { WeeklyComponent } from './stats/weekly/weekly.component';
+import { MonthlyComponent } from './stats/monthly/monthly.component';
+import { YearlyComponent } from './stats/yearly/yearly.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +74,11 @@ import { PlaybacktestComponent } from './playbacktest/playbacktest.component';
     CountrysongsComponent,
     AgegroupsongsComponent,
     SpotifyRegisterComponent,
-    PlaybacktestComponent
+    PlaybacktestComponent,
+    DailyComponent,
+    WeeklyComponent,
+    MonthlyComponent,
+    YearlyComponent
   ],
   imports: [
     BrowserModule,
