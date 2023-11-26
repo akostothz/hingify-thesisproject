@@ -28,6 +28,11 @@ import { GendersongsComponent } from './musics/gendersongs/gendersongs.component
 import { CountrysongsComponent } from './musics/countrysongs/countrysongs.component';
 import { SpotifyRegisterComponent } from './spotify-register/spotify-register.component';
 import { PlaybacktestComponent } from './playbacktest/playbacktest.component';
+import { MainComponent } from './stats/main/main.component';
+import { DailyComponent } from './stats/daily/daily.component';
+import { WeeklyComponent } from './stats/weekly/weekly.component';
+import { MonthlyComponent } from './stats/monthly/monthly.component';
+import { YearlyComponent } from './stats/yearly/yearly.component';
 
 const routes: Routes = [
   {path: '', component: AboutComponent},
@@ -53,7 +58,12 @@ const routes: Routes = [
       {path: 'discover/:trackId', component: DiscovermoreComponent},
       {path: 'artist/:artistName', component: ArtistComponent},
       {path: 'musics/more/:type', component: MoreComponent},
-      {path: 'testplay', component: PlaybacktestComponent} //EZ CSAK TESZT A PLAYBACKNEK. TÖRÖLNI HA SIKERÜLT!!
+      {path: 'testplay', component: PlaybacktestComponent}, //EZ CSAK TESZT A PLAYBACKNEK. TÖRÖLNI HA SIKERÜLT!!
+      {path: 'stats', component: MainComponent},
+      {path: 'stats/daily', component: DailyComponent},
+      {path: 'stats/weekly', component: WeeklyComponent},
+      {path: 'stats/monthly', component: MonthlyComponent},
+      {path: 'stats/yearly', component: YearlyComponent},
     ]
   }, 
   {path: 'errors', component: TestErrorComponent},
