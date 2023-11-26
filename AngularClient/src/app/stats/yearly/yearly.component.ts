@@ -31,11 +31,7 @@ export class YearlyComponent implements OnInit {
       this.last7daysMins = await this.musicService.getLast7DaysMins(userId).toPromise();
     } catch (error) {
       console.error('Error fetching data:', error);
-    }
-
-      console.log(this.last7daysDays)
-      console.log(this.last7daysMins)
-      
+    }     
       
   }
   
