@@ -1,0 +1,123 @@
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 1em;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    }
+    
+    .div1 { 
+        grid-area: 1 / 1 / 2 / 5; 
+        border-radius: 15px;
+        height: fit-content;
+        margin-bottom: 0;
+    }
+        .p1 {
+            background-color: transparent;
+            font-size: 6em;
+            color: #fafafa;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+            text-align: center;
+        }
+
+    .div2 { 
+        grid-area: 2 / 1 / 3 / 3;
+        background-color: #414FB1;
+        border-radius: 15px;
+    }
+
+    .mins {
+        background-color: transparent;
+        font-size: 3em;
+        margin-top: 2em;
+        color: #ebcf45;
+    }
+    .desc {
+        background-color: transparent;
+        font-size: 1.2em;
+        color: #FFF;
+    }
+    .div2c {
+        display: flex;
+        justify-content: center !important;
+        align-self: center;
+        vertical-align: middle;
+        align-items: center !important;
+    }
+
+    .div2c1 {
+        background-color: transparent;
+        display: block;
+        text-align: center;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    .div3 { 
+        grid-area: 3 / 1 / 5 / 3; 
+        background-color: #414FB1;
+        border-radius: 15px;
+        padding: 0.6em;
+    }
+    .div4 { 
+        grid-area: 2 / 3 / 4 / 4; 
+        background-color: #414FB1;
+        border-radius: 15px;
+    }
+    .div5 { 
+        grid-area: 4 / 3 / 5 / 5; 
+        background-color: #414FB1;
+        border-radius: 15px;
+    }
+        
+    .div6 { 
+        grid-area: 2 / 4 / 4 / 5; 
+        background-color: #414FB1;
+        border-radius: 15px;
+    }
+
+.mostlistened {
+    font-size: 2.2em;
+    color: #fff;
+    background-color: transparent;
+    margin-left: 1.2em;
+    margin-top: 0.5em;
+}
+
+.classol {
+    background-color: transparent;
+    font-size: 1.2em;
+    color: #ebcf45;
+    margin-left: 0.8em;
+}
+
+.classli {
+    background-color: transparent;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+    color: #ebcf45;
+    padding-left: 0.7em;
+}
+
+.olgen {
+    background-color: transparent;
+    font-size: 1.5em;
+    color: #ebcf45;
+    margin-left: 0.6em;
+}
+
+.ligen {
+    background-color: transparent;
+    margin-top: 0.3em;
+    color: #ebcf45;
+    padding-left: 0.7em;
+}
