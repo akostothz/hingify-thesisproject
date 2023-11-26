@@ -10,21 +10,33 @@ import { MusicsService } from 'src/app/_services/musics.service';
 })
 export class YearlyComponent implements OnInit {
 
-  last7daysDays$: Observable<String[]> | undefined;
-  last7daysMins$: Observable<number[]> | undefined;
+  last7daysDays: string[] = [];
+  last7daysMins: number[] = [];
 
   constructor(private musicService: MusicsService) {
 
   }
 
-  ngOnInit(): void {
-    this.getStatistics();
+  async ngOnInit(): Promise<void> {
+    await this.getStatistics();
     this.drawChart();
   }
   
-  getStatistics() {
-    this.last7daysDays$ = this.musicService.getLast7Days(JSON.parse(localStorage.getItem('user'))?.id);
-    this.last7daysMins$ = this.musicService.getLast7DaysMins(JSON.parse(localStorage.getItem('user'))?.id);
+  async getStatistics(): Promise<void> {
+    
+    const userId = JSON.parse(localStorage.getItem('user'))?.id;
+
+    try {
+      this.last7daysDays = await this.musicService.getLast7Days(userId).toPromise();
+      this.last7daysMins = await this.musicService.getLast7DaysMins(userId).toPromise();
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+
+      console.log(this.last7daysDays)
+      console.log(this.last7daysMins)
+      
+      
   }
   
   drawChart(): void {
@@ -59,10 +71,10 @@ export class YearlyComponent implements OnInit {
     const chartConfig: ChartConfiguration<'bar'> = {
       type: 'bar',
       data: {
-        labels: ['11.13. (Monday)', '11.14. (Tuesday)', '11.15. (Wednesday)', '11.16. (Thursday)', '11.17. (Friday)', '11.18. (Saturday)', '11.19. (Sunday)'],
+        labels: this.last7daysDays,
         datasets: [{
           label: 'Minutes spent on listening to music',
-          data: [73, 94, 167, 15, 44, 87, 104],
+          data: this.last7daysMins,
           backgroundColor: '#ebcf45'
         }],
       },

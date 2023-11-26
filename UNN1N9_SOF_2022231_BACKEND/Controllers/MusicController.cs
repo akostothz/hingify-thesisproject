@@ -241,6 +241,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         {
             ;
             var stats = await _logic.GetLast7Days(id);
+            ;
 
             return Ok(stats);
         }
@@ -250,6 +251,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         {
             ;
             var stats = await _logic.GetLast7DaysMins(id);
+            ;
 
             return Ok(stats);
         }

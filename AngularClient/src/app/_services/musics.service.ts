@@ -28,7 +28,7 @@ export class MusicsService {
   weeklyStats: Stat[] = [];
   monthlyStats: Stat[] = [];
   yearlyStats: Stat[] = [];
-  last7daysDays: String[] = [];
+  last7daysDays: string[] = [];
   last7daysMins: number[] = [];
   artistSongs: Music[] = [];
   isItLiked: Boolean = false;
@@ -274,6 +274,7 @@ export class MusicsService {
     return this.http.get<number[]>(this.baseUrl + 'Music/GetLast7DaysMins/' + id).pipe(
       map(last7daysMins => {
         this.last7daysMins = last7daysMins;
+        console.log('musicService')
         console.log(this.last7daysMins)
         return last7daysMins;
       })
@@ -281,9 +282,10 @@ export class MusicsService {
   }
 
   getLast7Days(id: number) {
-    return this.http.get<String[]>(this.baseUrl + 'Music/GetLast7Days/' + id).pipe(
+    return this.http.get<string[]>(this.baseUrl + 'Music/GetLast7Days/' + id).pipe(
       map(last7daysDays => {
         this.last7daysDays = last7daysDays;
+        console.log('musicService')
         console.log(this.last7daysDays)
         return last7daysDays;
       })
