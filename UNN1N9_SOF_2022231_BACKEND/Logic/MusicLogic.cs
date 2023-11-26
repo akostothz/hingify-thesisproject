@@ -1184,6 +1184,109 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return statstoReturn;
         }
 
+        public async Task<IEnumerable<StatDto>> GetWeeklyStatistics2(int id)
+        {
+            var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            var statstoReturn = new List<StatDto>();
+            var behaviours = new List<UserBehavior>();
+            var stat = new StatDto();
+            var dict = new Dictionary<string, int>();
+            var genres = new List<string>();
+            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+
+            //kiszedjük az elmúlt egy hét (a mai naptól visszamenőleg 1 hétre)
+            foreach (var item in _context.UserBehaviors.Where(x => x.Date > today.AddDays(-7) && x.UserId == givenuser.Id))
+            {
+                behaviours.Add(item);
+            }
+
+            if (behaviours.Count() == 0)
+            {
+                stat.MostListenedGenre = "-";
+                stat.MinsSpent = 0;
+                stat.MostListenedArtist = "-";
+                stat.MostListenedSong = "-";
+                stat.NumOfListenedGenre = 0;
+                stat.Type = "Weekly";
+            }
+            else
+            {
+                //mostListenedGenre
+                foreach (var item in behaviours)
+                {
+                    var music = _context.Musics.FirstOrDefault(x => x.Id == item.MusicId);
+                    if (!genres.Contains(music.Genre))
+                    {
+                        genres.Add(music.Genre);
+                        dict[music.Genre] = item.ListeningCount;
+                    }
+                    else
+                    {
+                        dict[music.Genre] += 1 * item.ListeningCount;
+                    }
+                }
+                stat.MostListenedGenre = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+
+                //minsSpent
+                var minsSpent = 0;
+                foreach (var item in behaviours)
+                {
+                    var music = _context.Musics.FirstOrDefault(x => x.Id == item.MusicId);
+                    minsSpent += (int)Math.Round((StatMsToMins(music.DurationMs) * item.ListeningCount));
+                }
+
+                stat.MinsSpent = minsSpent;
+
+                //mostListenedArtist
+                var mostListenedArtist = from x in behaviours
+                                         group x by x.Music.ArtistName into g
+                                         select new KeyValuePair<string, double>
+                                         (g.Key, g.Sum(y => y.ListeningCount * StatMsToMins(y.Music.DurationMs)));
+
+                stat.MostListenedArtist = mostListenedArtist.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+
+                //mostListenedSong
+
+                var mostListenedSong = from x in behaviours
+                                       group x by x.Music.TrackName into g
+                                       select new KeyValuePair<string, double>
+                                       (g.Key, g.Sum(y => y.ListeningCount));
+
+                stat.MostListenedSong = mostListenedSong.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+
+                //numOfListednedGenre
+
+                stat.NumOfListenedGenre = dict.Count();
+                stat.Type = "Weekly";
+
+                var topGenres = dict.OrderByDescending(kv => kv.Value).Take(5).Select(kv => kv.Key).ToList();
+                var topArtists = mostListenedArtist.OrderByDescending(kv => kv.Value).Take(5).Select(kv => kv.Key).ToList();
+                var topSongs = mostListenedSong.OrderByDescending(kv => kv.Value).Take(5).Select(kv => kv.Key).ToList();
+
+                stat.MostListenedGenre = topGenres.ElementAtOrDefault(0) ?? "-";
+                stat.SecondMostListenedGenre = topGenres.ElementAtOrDefault(1) ?? "-";
+                stat.ThirdMostListenedGenre = topGenres.ElementAtOrDefault(2) ?? "-";
+                stat.FourthMostListenedGenre = topGenres.ElementAtOrDefault(3) ?? "-";
+                stat.FifthMostListenedGenre = topGenres.ElementAtOrDefault(4) ?? "-";
+
+                stat.MostListenedArtist = topArtists.ElementAtOrDefault(0) ?? "-";
+                stat.SecondMostListenedArtist = topArtists.ElementAtOrDefault(1) ?? "-";
+                stat.ThirdMostListenedArtist = topArtists.ElementAtOrDefault(2) ?? "-";
+                stat.FourthMostListenedArtist = topArtists.ElementAtOrDefault(3) ?? "-";
+                stat.FifthMostListenedArtist = topArtists.ElementAtOrDefault(4) ?? "-";
+
+                stat.MostListenedSong = topSongs.ElementAtOrDefault(0) ?? "-";
+                stat.SecondMostListenedSong = topSongs.ElementAtOrDefault(1) ?? "-";
+                stat.ThirdMostListenedSong = topSongs.ElementAtOrDefault(2) ?? "-";
+                stat.FourthMostListenedSong = topSongs.ElementAtOrDefault(3) ?? "-";
+                stat.FifthMostListenedSong = topSongs.ElementAtOrDefault(4) ?? "-";
+            }
+
+            statstoReturn.Add(stat);
+
+            return statstoReturn;
+        }
+
         public async Task<IEnumerable<StatDto>> GetWeeklyStatistics(int id)
         {
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
@@ -1265,6 +1368,109 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return statstoReturn;
         }
 
+        public async Task<IEnumerable<StatDto>> GetMonthlyStatistics2(int id)
+        {
+            var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            var statstoReturn = new List<StatDto>();
+            var behaviours = new List<UserBehavior>();
+            var stat = new StatDto();
+            var dict = new Dictionary<string, int>();
+            var genres = new List<string>();
+            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+
+            //kiszedjük a jelenlegi hónap adatait
+            foreach (var item in _context.UserBehaviors.Where(x => x.Date.Month == today.Month && x.UserId == givenuser.Id))
+            {
+                behaviours.Add(item);
+            }
+
+            if (behaviours.Count() == 0)
+            {
+                stat.MostListenedGenre = "-";
+                stat.MinsSpent = 0;
+                stat.MostListenedArtist = "-";
+                stat.MostListenedSong = "-";
+                stat.NumOfListenedGenre = 0;
+                stat.Type = "Monthly";
+            }
+            else
+            {
+
+                //mostListenedGenre
+                foreach (var item in behaviours)
+                {
+                    var music = _context.Musics.FirstOrDefault(x => x.Id == item.MusicId);
+                    if (!genres.Contains(music.Genre))
+                    {
+                        genres.Add(music.Genre);
+                        dict[music.Genre] = item.ListeningCount;
+                    }
+                    else
+                    {
+                        dict[music.Genre] += 1 * item.ListeningCount;
+                    }
+                }
+                stat.MostListenedGenre = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+
+                //minsSpent
+                var minsSpent = 0;
+                foreach (var item in behaviours)
+                {
+                    var music = _context.Musics.FirstOrDefault(x => x.Id == item.MusicId);
+                    minsSpent += (int)Math.Round((StatMsToMins(music.DurationMs) * item.ListeningCount));
+                }
+
+                stat.MinsSpent = minsSpent;
+
+                //mostListenedArtist
+                var mostListenedArtist = from x in behaviours
+                                         group x by x.Music.ArtistName into g
+                                         select new KeyValuePair<string, double>
+                                         (g.Key, g.Sum(y => y.ListeningCount * StatMsToMins(y.Music.DurationMs)));
+
+                stat.MostListenedArtist = mostListenedArtist.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+
+                //mostListenedSong
+
+                var mostListenedSong = from x in behaviours
+                                       group x by x.Music.TrackName into g
+                                       select new KeyValuePair<string, double>
+                                       (g.Key, g.Sum(y => y.ListeningCount));
+
+                stat.MostListenedSong = mostListenedSong.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+
+                //numOfListednedGenre
+
+                stat.NumOfListenedGenre = dict.Count();
+                stat.Type = "Monthly";
+
+                var topGenres = dict.OrderByDescending(kv => kv.Value).Take(5).Select(kv => kv.Key).ToList();
+                var topArtists = mostListenedArtist.OrderByDescending(kv => kv.Value).Take(5).Select(kv => kv.Key).ToList();
+                var topSongs = mostListenedSong.OrderByDescending(kv => kv.Value).Take(5).Select(kv => kv.Key).ToList();
+
+                stat.MostListenedGenre = topGenres.ElementAtOrDefault(0) ?? "-";
+                stat.SecondMostListenedGenre = topGenres.ElementAtOrDefault(1) ?? "-";
+                stat.ThirdMostListenedGenre = topGenres.ElementAtOrDefault(2) ?? "-";
+                stat.FourthMostListenedGenre = topGenres.ElementAtOrDefault(3) ?? "-";
+                stat.FifthMostListenedGenre = topGenres.ElementAtOrDefault(4) ?? "-";
+
+                stat.MostListenedArtist = topArtists.ElementAtOrDefault(0) ?? "-";
+                stat.SecondMostListenedArtist = topArtists.ElementAtOrDefault(1) ?? "-";
+                stat.ThirdMostListenedArtist = topArtists.ElementAtOrDefault(2) ?? "-";
+                stat.FourthMostListenedArtist = topArtists.ElementAtOrDefault(3) ?? "-";
+                stat.FifthMostListenedArtist = topArtists.ElementAtOrDefault(4) ?? "-";
+
+                stat.MostListenedSong = topSongs.ElementAtOrDefault(0) ?? "-";
+                stat.SecondMostListenedSong = topSongs.ElementAtOrDefault(1) ?? "-";
+                stat.ThirdMostListenedSong = topSongs.ElementAtOrDefault(2) ?? "-";
+                stat.FourthMostListenedSong = topSongs.ElementAtOrDefault(3) ?? "-";
+                stat.FifthMostListenedSong = topSongs.ElementAtOrDefault(4) ?? "-";
+            }
+
+            statstoReturn.Add(stat);
+
+            return statstoReturn;
+        }
         public async Task<IEnumerable<StatDto>> GetMonthlyStatistics(int id)
         {
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
@@ -1340,6 +1546,111 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
 
                 stat.NumOfListenedGenre = dict.Count();
                 stat.Type = "Monthly";
+            }
+
+            statstoReturn.Add(stat);
+
+            return statstoReturn;
+        }
+
+        public async Task<IEnumerable<StatDto>> GetYearlyStatistics2(int id)
+        {
+            var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            var statstoReturn = new List<StatDto>();
+            var behaviours = new List<UserBehavior>();
+            var stat = new StatDto();
+            var dict = new Dictionary<string, int>();
+            var genres = new List<string>();
+            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+            var xxx = today.Year;
+
+            //kiszedjük a jelenlegi év adatait
+            foreach (var item in _context.UserBehaviors.Where(x => x.Date.Year == today.Year && x.UserId == givenuser.Id))
+            {
+                behaviours.Add(item);
+            }
+
+            if (behaviours.Count() == 0)
+            {
+                stat.MostListenedGenre = "-";
+                stat.MinsSpent = 0;
+                stat.MostListenedArtist = "-";
+                stat.MostListenedSong = "-";
+                stat.NumOfListenedGenre = 0;
+                stat.Type = "Yearly";
+            }
+            else
+            {
+
+                //mostListenedGenre
+                foreach (var item in behaviours)
+                {
+                    var music = _context.Musics.FirstOrDefault(x => x.Id == item.MusicId);
+                    if (!genres.Contains(music.Genre))
+                    {
+                        genres.Add(music.Genre);
+                        dict[music.Genre] = item.ListeningCount;
+                    }
+                    else
+                    {
+                        dict[music.Genre] += 1 * item.ListeningCount;
+                    }
+                }
+                stat.MostListenedGenre = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+
+                //minsSpent
+                var minsSpent = 0;
+                foreach (var item in behaviours)
+                {
+                    var music = _context.Musics.FirstOrDefault(x => x.Id == item.MusicId);
+                    minsSpent += (int)Math.Round((StatMsToMins(music.DurationMs) * item.ListeningCount));
+                }
+
+                stat.MinsSpent = minsSpent;
+
+                //mostListenedArtist
+                var mostListenedArtist = from x in behaviours
+                                         group x by x.Music.ArtistName into g
+                                         select new KeyValuePair<string, double>
+                                         (g.Key, g.Sum(y => y.ListeningCount * StatMsToMins(y.Music.DurationMs)));
+
+                stat.MostListenedArtist = mostListenedArtist.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+
+                //mostListenedSong
+
+                var mostListenedSong = from x in behaviours
+                                       group x by x.Music.TrackName into g
+                                       select new KeyValuePair<string, double>
+                                       (g.Key, g.Sum(y => y.ListeningCount));
+
+                stat.MostListenedSong = mostListenedSong.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+
+                //numOfListednedGenre
+
+                stat.NumOfListenedGenre = dict.Count();
+                stat.Type = "Yearly";
+
+                var topGenres = dict.OrderByDescending(kv => kv.Value).Take(5).Select(kv => kv.Key).ToList();
+                var topArtists = mostListenedArtist.OrderByDescending(kv => kv.Value).Take(5).Select(kv => kv.Key).ToList();
+                var topSongs = mostListenedSong.OrderByDescending(kv => kv.Value).Take(5).Select(kv => kv.Key).ToList();
+
+                stat.MostListenedGenre = topGenres.ElementAtOrDefault(0) ?? "-";
+                stat.SecondMostListenedGenre = topGenres.ElementAtOrDefault(1) ?? "-";
+                stat.ThirdMostListenedGenre = topGenres.ElementAtOrDefault(2) ?? "-";
+                stat.FourthMostListenedGenre = topGenres.ElementAtOrDefault(3) ?? "-";
+                stat.FifthMostListenedGenre = topGenres.ElementAtOrDefault(4) ?? "-";
+
+                stat.MostListenedArtist = topArtists.ElementAtOrDefault(0) ?? "-";
+                stat.SecondMostListenedArtist = topArtists.ElementAtOrDefault(1) ?? "-";
+                stat.ThirdMostListenedArtist = topArtists.ElementAtOrDefault(2) ?? "-";
+                stat.FourthMostListenedArtist = topArtists.ElementAtOrDefault(3) ?? "-";
+                stat.FifthMostListenedArtist = topArtists.ElementAtOrDefault(4) ?? "-";
+
+                stat.MostListenedSong = topSongs.ElementAtOrDefault(0) ?? "-";
+                stat.SecondMostListenedSong = topSongs.ElementAtOrDefault(1) ?? "-";
+                stat.ThirdMostListenedSong = topSongs.ElementAtOrDefault(2) ?? "-";
+                stat.FourthMostListenedSong = topSongs.ElementAtOrDefault(3) ?? "-";
+                stat.FifthMostListenedSong = topSongs.ElementAtOrDefault(4) ?? "-";
             }
 
             statstoReturn.Add(stat);

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, ChartOptions, ChartConfiguration } from 'chart.js/auto';
 import { MusicsService } from 'src/app/_services/musics.service';
+import { Observable } from 'rxjs';
+import { Stat } from 'src/app/_models/stat';
 
 @Component({
   selector: 'app-monthly',
@@ -11,6 +13,7 @@ export class MonthlyComponent implements OnInit {
   
   last7daysDays: string[] = [];
   last7daysMins: number[] = [];
+  monthlyStats$: Observable<Stat[]> | undefined;
 
   constructor(private musicService: MusicsService) {
 
@@ -24,6 +27,8 @@ export class MonthlyComponent implements OnInit {
   async getStatistics(): Promise<void> {
     
     const userId = JSON.parse(localStorage.getItem('user'))?.id;
+
+    this.monthlyStats$ = this.musicService.getMonthlyStat(userId);
 
     try {
       this.last7daysDays = await this.musicService.getLast7Days(userId).toPromise();

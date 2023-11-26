@@ -21,8 +21,11 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         Task<IEnumerable<StatDto>> GetDailyStatistics(int id);
         Task<IEnumerable<StatDto>> GetDailyStatistics2(int id);
         Task<IEnumerable<StatDto>> GetWeeklyStatistics(int id);
+        Task<IEnumerable<StatDto>> GetWeeklyStatistics2(int id);
         Task<IEnumerable<StatDto>> GetMonthlyStatistics(int id);
+        Task<IEnumerable<StatDto>> GetMonthlyStatistics2(int id);
         Task<IEnumerable<StatDto>> GetYearlyStatistics(int id);
+        Task<IEnumerable<StatDto>> GetYearlyStatistics2(int id);
         Task<IEnumerable<String>> GetLast7Days(int id);
         Task<IEnumerable<int>> GetLast7DaysMins(int id);
         Task<AppUser> GetUser(int id);

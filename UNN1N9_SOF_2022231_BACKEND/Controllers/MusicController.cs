@@ -229,6 +229,14 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         }
 
         [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<MusicDto>>> GetWeeklyStatistics2(int id)
+        {
+            var stats = await _logic.GetWeeklyStatistics2(id);
+
+            return Ok(stats);
+        }
+
+        [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<MusicDto>>> GetMonthlyStatistics(int id)
         {
             var stats = await _logic.GetMonthlyStatistics(id);
@@ -237,9 +245,25 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         }
 
         [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<MusicDto>>> GetMonthlyStatistics2(int id)
+        {
+            var stats = await _logic.GetMonthlyStatistics2(id);
+
+            return Ok(stats);
+        }
+
+        [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<MusicDto>>> GetYearlyStatistics(int id)
         {
             var stats = await _logic.GetYearlyStatistics(id);
+
+            return Ok(stats);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<MusicDto>>> GetYearlyStatistics2(int id)
+        {
+            var stats = await _logic.GetYearlyStatistics2(id);
 
             return Ok(stats);
         }

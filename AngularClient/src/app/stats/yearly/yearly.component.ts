@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, ChartOptions, ChartConfiguration } from 'chart.js/auto';
 import { Observable } from 'rxjs';
+import { Stat } from 'src/app/_models/stat';
 import { MusicsService } from 'src/app/_services/musics.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class YearlyComponent implements OnInit {
 
   last7daysDays: string[] = [];
   last7daysMins: number[] = [];
+  yearlyStats$: Observable<Stat[]> | undefined;
 
   constructor(private musicService: MusicsService) {
 
@@ -19,23 +21,32 @@ export class YearlyComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.getStatistics();
+  }
+
+  ngAfterViewInit(): void {
     this.drawChart();
   }
   
   async getStatistics(): Promise<void> {
-    
     const userId = JSON.parse(localStorage.getItem('user'))?.id;
 
     try {
-      this.last7daysDays = await this.musicService.getLast7Days(userId).toPromise();
-      this.last7daysMins = await this.musicService.getLast7DaysMins(userId).toPromise();
+      this.yearlyStats$ = this.musicService.getYearlyStat(userId);
+  
+      const [last7daysDays, last7daysMins] = await Promise.all([
+        this.musicService.getLast7Days(userId).toPromise(),
+        this.musicService.getLast7DaysMins(userId).toPromise(),
+      ]);
+  
+      this.last7daysDays = last7daysDays;
+      this.last7daysMins = last7daysMins;
     } catch (error) {
       console.error('Error fetching data:', error);
-    }     
-      
+    }
   }
   
   drawChart(): void {
+    this.yearlyStats$.subscribe(() => {
     const ctx = document.getElementById('myChart') as HTMLCanvasElement;
     const options: ChartOptions<'bar'> = {
       plugins: {
@@ -76,7 +87,8 @@ export class YearlyComponent implements OnInit {
       },
       options: options,
     };
-
+    
     const myChart = new Chart(ctx.getContext('2d'), chartConfig);
+  });
   }
 }

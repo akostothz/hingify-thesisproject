@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, ChartOptions, ChartConfiguration } from 'chart.js/auto';
+import { Observable } from 'rxjs';
+import { Stat } from 'src/app/_models/stat';
 import { MusicsService } from 'src/app/_services/musics.service';
 
 @Component({
@@ -11,6 +13,7 @@ export class WeeklyComponent implements OnInit {
   
   last7daysDays: string[] = [];
   last7daysMins: number[] = [];
+  weeklyStats$: Observable<Stat[]> | undefined;
 
   constructor(private musicService: MusicsService) {
 
@@ -24,6 +27,8 @@ export class WeeklyComponent implements OnInit {
   async getStatistics(): Promise<void> {
     
     const userId = JSON.parse(localStorage.getItem('user'))?.id;
+
+    this.weeklyStats$ = this.musicService.getWeeklyStat(userId);
 
     try {
       this.last7daysDays = await this.musicService.getLast7Days(userId).toPromise();

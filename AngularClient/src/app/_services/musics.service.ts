@@ -241,7 +241,7 @@ export class MusicsService {
   }
 
   getWeeklyStat(id: number) {
-    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetWeeklyStatistics/' + id).pipe(
+    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetWeeklyStatistics2/' + id).pipe(
       map(weeklyStats => {
         this.weeklyStats = weeklyStats;
         console.log(this.weeklyStats)
@@ -251,7 +251,7 @@ export class MusicsService {
   }
 
   getMonthlyStat(id: number) {
-    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetMonthlyStatistics/' + id).pipe(
+    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetMonthlyStatistics2/' + id).pipe(
       map(monthlyStats => {
         this.monthlyStats = monthlyStats;
         console.log(this.monthlyStats)
@@ -261,7 +261,7 @@ export class MusicsService {
   }
 
   getYearlyStat(id: number) {
-    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetYearlyStatistics/' + id).pipe(
+    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetYearlyStatistics2/' + id).pipe(
       map(yearlyStats => {
         this.yearlyStats = yearlyStats;
         console.log(this.yearlyStats)

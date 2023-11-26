@@ -43,9 +43,6 @@ export class DailyComponent implements OnInit {
     } catch (error) {
       console.error('Error fetching data:', error);
     }     
-    console.log('DAILY COMPONENT')
-    console.log(this.last7daysDays)
-    console.log(this.last7daysMins)
       
   }
 
