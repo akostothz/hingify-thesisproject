@@ -19,6 +19,7 @@ h2 {
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 15px;
     grid-row-gap: 15px;
+    margin-bottom: 2em;
     }
     
     .div1 { 
@@ -129,3 +130,49 @@ h2 {
     color: #ebcf45;
     padding-left: 0.7em;
 }
+
+.btndiv {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin-top: 2em;
+    display: inline-block;
+    border-radius: 12px;
+    background-color: #342332;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 130px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+   }
+   
+   button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+   
+   button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+   }
+   
+   button:hover span {
+    padding-right: 15px;
+   }
+   
+   button:hover span:after {
+    opacity: 1;
+    right: 0;
+   }
