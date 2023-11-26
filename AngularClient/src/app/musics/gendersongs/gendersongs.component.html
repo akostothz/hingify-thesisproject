@@ -1,7 +1,7 @@
 <div class="lsongs" *ngIf="(gendersongs$ |async)?.length > 0">
     <div class="results">
         <div class="hover">
-            People around your age also liked..
+            Your gender also liked..
         </div>       
         <div class="card" *ngFor="let gendersong of gendersongs$ | async">
             <div class="card-header" id="head">
