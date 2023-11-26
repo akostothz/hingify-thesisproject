@@ -1039,7 +1039,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                         dict[music.Genre] += 1 * item.ListeningCount;
                     }
                 }
-                stat.MostListenedGenre = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+                //stat.MostListenedGenre = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
 
                 //minsSpent
                 var minsSpent = 0;
@@ -1057,7 +1057,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                                          select new KeyValuePair<string, double>
                                          (g.Key, g.Sum(y => y.ListeningCount * StatMsToMins(y.Music.DurationMs)));
 
-                stat.MostListenedArtist = mostListenedArtist.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+                //stat.MostListenedArtist = mostListenedArtist.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
 
                 //mostListenedSong
 
@@ -1066,12 +1066,36 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                                        select new KeyValuePair<string, double>
                                        (g.Key, g.Sum(y => y.ListeningCount));
 
-                stat.MostListenedSong = mostListenedSong.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+                //stat.MostListenedSong = mostListenedSong.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
 
                 //numOfListednedGenre
 
                 stat.NumOfListenedGenre = dict.Count();
                 stat.Type = "Daily";
+
+                var topGenres = dict.OrderByDescending(kv => kv.Value).Take(5).Select(kv => kv.Key).ToList();
+                var topArtists = mostListenedArtist.OrderByDescending(kv => kv.Value).Take(5).Select(kv => kv.Key).ToList();
+                var topSongs = mostListenedSong.OrderByDescending(kv => kv.Value).Take(5).Select(kv => kv.Key).ToList();
+
+                stat.MostListenedGenre = topGenres.ElementAtOrDefault(0) ?? "-";
+                stat.SecondMostListenedGenre = topGenres.ElementAtOrDefault(1) ?? "-";
+                stat.ThirdMostListenedGenre = topGenres.ElementAtOrDefault(2) ?? "-";
+                stat.FourthMostListenedGenre = topGenres.ElementAtOrDefault(3) ?? "-";
+                stat.FifthMostListenedGenre = topGenres.ElementAtOrDefault(4) ?? "-";
+
+                stat.MostListenedArtist = topArtists.ElementAtOrDefault(0) ?? "-";
+                stat.SecondMostListenedArtist = topArtists.ElementAtOrDefault(1) ?? "-";
+                stat.ThirdMostListenedArtist = topArtists.ElementAtOrDefault(2) ?? "-";
+                stat.FourthMostListenedArtist = topArtists.ElementAtOrDefault(3) ?? "-";
+                stat.FifthMostListenedArtist = topArtists.ElementAtOrDefault(4) ?? "-";
+
+                stat.MostListenedSong = topSongs.ElementAtOrDefault(0) ?? "-";
+                stat.SecondMostListenedSong = topSongs.ElementAtOrDefault(1) ?? "-";
+                stat.ThirdMostListenedSong = topSongs.ElementAtOrDefault(2) ?? "-";
+                stat.FourthMostListenedSong = topSongs.ElementAtOrDefault(3) ?? "-";
+                stat.FifthMostListenedSong = topSongs.ElementAtOrDefault(4) ?? "-";
+
+                ;
             }
 
             statstoReturn.Add(stat);

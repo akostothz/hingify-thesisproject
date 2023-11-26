@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, ChartOptions, ChartConfiguration } from 'chart.js/auto';
+import { Observable } from 'rxjs';
+import { Stat } from 'src/app/_models/stat';
 import { MusicsService } from 'src/app/_services/musics.service';
 
 @Component({
@@ -11,6 +13,7 @@ export class DailyComponent implements OnInit {
   day: string;
   last7daysDays: string[] = [];
   last7daysMins: number[] = [];
+  dailyStats$: Observable<Stat[]> | undefined;
 
   constructor(private musicService: MusicsService) {
 
@@ -32,12 +35,17 @@ export class DailyComponent implements OnInit {
     
     const userId = JSON.parse(localStorage.getItem('user'))?.id;
 
+    this.dailyStats$ = this.musicService.getDailyStat(userId);
+    
     try {
       this.last7daysDays = await this.musicService.getLast7Days(userId).toPromise();
       this.last7daysMins = await this.musicService.getLast7DaysMins(userId).toPromise();
     } catch (error) {
       console.error('Error fetching data:', error);
     }     
+    console.log('DAILY COMPONENT')
+    console.log(this.last7daysDays)
+    console.log(this.last7daysMins)
       
   }
 

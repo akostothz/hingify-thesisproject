@@ -213,6 +213,14 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         }
 
         [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<MusicDto>>> GetDailyStatistics2(int id)
+        {
+            var stats = await _logic.GetDailyStatistics2(id);
+
+            return Ok(stats);
+        }
+
+        [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<MusicDto>>> GetWeeklyStatistics(int id)
         {
             var stats = await _logic.GetWeeklyStatistics(id);

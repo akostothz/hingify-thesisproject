@@ -231,7 +231,7 @@ export class MusicsService {
   }
 
   getDailyStat(id: number) {
-    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetDailyStatistics/' + id).pipe(
+    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetDailyStatistics2/' + id).pipe(
       map(dailyStats => {
         this.dailyStats = dailyStats;
         console.log(this.dailyStats)

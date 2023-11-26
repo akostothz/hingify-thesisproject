@@ -1,4 +1,4 @@
-<div class="parent">
+<div class="parent" *ngFor="let stat of dailyStats$ | async">
     <div class="div1"> 
         <p class="p1">Daily statistics</p>
     </div>
@@ -7,7 +7,7 @@
     <div class="div2"> 
         <div class="div2c">
             <div class="div2c1">
-                <p class="mins">584</p>
+                <p class="mins">{{stat.minsSpent}}</p>
                 <p class="desc">minutes spent listening total on {{day}}s</p>
             </div>
         </div>
@@ -26,41 +26,41 @@
         <p class="mostlistened">Most listened artists</p>
         <ol class="classol">
             <li class="classli">
-                Dominic Fike
+                {{stat.mostListenedArtist}}
             </li>
             <li class="classli">
-                Dzsúdló
+                {{stat.secondMostListenedArtist}}
             </li>
             <li class="classli">
-                Pixies
+                {{stat.thirdMostListenedArtist}}
             </li>
             <li class="classli">
-                The Prodigy
+                {{stat.fourthMostListenedArtist}}
             </li>
             <li class="classli">
-                The Smiths
+                {{stat.fifthMostListenedArtist}}
             </li>
         </ol>
     </div>
 
 
     <div class="div5"> 
-        <p class="mostlistened">Most listened genres</p>
+        <p class="mostlistened">Most listened genres ({{stat.numOfListenedGenre}} listened genre(s) total)</p>
         <ol class="olgen">
             <li class="ligen">
-                Alternative
+                {{stat.mostListenedGenre}}
             </li>
             <li class="ligen">
-                Hip-Hop
+                {{stat.secondMostListenedGenre}}
             </li>
             <li class="ligen">
-                Pop
+                {{stat.thirdMostListenedGenre}}
             </li>
             <li class="ligen">
-                R&B
+                {{stat.fourthMostListenedGenre}}
             </li>
             <li class="ligen">
-                Rock
+                {{stat.fifthMostListenedGenre}}
             </li>
         </ol>
 
@@ -71,19 +71,19 @@
         <p class="mostlistened">Most listened songs</p>
         <ol class="classol">
             <li class="classli">
-                Várnék
+                {{stat.mostListenedSong}}
             </li>
             <li class="classli">
-                KERINGŐ
+                {{stat.secondMostListenedSong}}
             </li>
             <li class="classli">
-                Mama's Boy
+                {{stat.thirdMostListenedSong}}
             </li>
             <li class="classli">
-                Nem állhatunk szóba
+                {{stat.fourthMostListenedSong}}
             </li>
             <li class="classli">
-                Think Of me Once In A While, Take Care
+                {{stat.fifthMostListenedSong}}
             </li>
         </ol>
         
