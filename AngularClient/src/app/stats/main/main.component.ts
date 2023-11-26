@@ -13,10 +13,10 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getDay();
+    this.getToday();
   }
 
-  getDay() {
+  getToday() {
     var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     var d = new Date(Date.now()); 
     this.day = days[d.getDay()];
