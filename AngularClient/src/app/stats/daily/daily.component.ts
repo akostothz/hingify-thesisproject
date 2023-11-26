@@ -60,7 +60,7 @@ export class DailyComponent implements OnInit {
         datasets: [{
           label: 'Minutes spent on listening to music',
           data: [73, 94, 167, 15, 44, 87, 104],
-          backgroundColor: '#F0E199'
+          backgroundColor: '#ebcf45'
         }],
       },
       options: options,
