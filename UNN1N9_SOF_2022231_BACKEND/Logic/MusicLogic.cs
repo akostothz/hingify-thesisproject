@@ -11,6 +11,7 @@ using UNN1N9_SOF_2022231_BACKEND.Data;
 using UNN1N9_SOF_2022231_BACKEND.DTOs;
 using UNN1N9_SOF_2022231_BACKEND.Helpers;
 using UNN1N9_SOF_2022231_BACKEND.Models;
+using static SpotifyAPI.Web.PlayerSetRepeatRequest;
 using static SpotifyAPI.Web.PlaylistRemoveItemsRequest;
 
 namespace UNN1N9_SOF_2022231_BACKEND.Logic
@@ -1321,6 +1322,66 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             statstoReturn.Add(stat);
 
             return statstoReturn;
+        }
+
+        public async Task<IEnumerable<String>> GetLast7Days(int id)
+        {
+            var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            var statstoReturn = new List<String>();
+
+            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+
+            statstoReturn.Add(today.AddDays(-6).ToString());
+            statstoReturn.Add(today.AddDays(-5).ToString());
+            statstoReturn.Add(today.AddDays(-4).ToString());
+            statstoReturn.Add(today.AddDays(-3).ToString());
+            statstoReturn.Add(today.AddDays(-2).ToString());
+            statstoReturn.Add(today.AddDays(-1).ToString());
+            statstoReturn.Add(today.ToString());
+
+
+            return statstoReturn;
+
+        }
+        public async Task<IEnumerable<int>> GetLast7DaysMins(int id)
+        {
+            var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            var statstoReturn = new List<int>();
+
+            var behaviours = new List<UserBehavior>();
+
+            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+
+            //kiszedjük az elmúlt egy hét (a mai naptól visszamenőleg 1 hétre)
+            foreach (var item in _context.UserBehaviors.Where(x => x.Date > today.AddDays(-7) && x.UserId == givenuser.Id))
+            {
+                behaviours.Add(item);
+            }
+
+
+            statstoReturn.Add(GetMinutes(behaviours.Where(x => x.Date == today.AddDays(-6))));
+            statstoReturn.Add(GetMinutes(behaviours.Where(x => x.Date == today.AddDays(-5))));
+            statstoReturn.Add(GetMinutes(behaviours.Where(x => x.Date == today.AddDays(-4))));
+            statstoReturn.Add(GetMinutes(behaviours.Where(x => x.Date == today.AddDays(-3))));
+            statstoReturn.Add(GetMinutes(behaviours.Where(x => x.Date == today.AddDays(-2))));
+            statstoReturn.Add(GetMinutes(behaviours.Where(x => x.Date == today.AddDays(-1))));
+            statstoReturn.Add(GetMinutes(behaviours.Where(x => x.Date == today)));
+
+
+            return statstoReturn;
+        }
+        private int GetMinutes(IEnumerable<UserBehavior> behavs)
+        {
+            int mins = 0;
+
+            foreach (var item in behavs)
+            {
+                var music = _context.Musics.FirstOrDefault(x => x.Id == item.MusicId);
+                mins += (int)Math.Round((StatMsToMins(music.DurationMs) * item.ListeningCount));
+            }
+            
+
+            return mins;
         }
 
         public async Task<IEnumerable<Music>> FindMoreByArtist(string expr)

@@ -14,6 +14,7 @@ import { AccessToken } from '../_models/accesstoken';
   providedIn: 'root'
 })
 export class MusicsService {
+  
   baseUrl = environment.apiUrl;
   likedsongs: Music[] = [];
   gendersongs: Music[] = [];
@@ -27,6 +28,8 @@ export class MusicsService {
   weeklyStats: Stat[] = [];
   monthlyStats: Stat[] = [];
   yearlyStats: Stat[] = [];
+  last7daysDays: String[] = [];
+  last7daysMins: number[] = [];
   artistSongs: Music[] = [];
   isItLiked: Boolean = false;
   addedMusics: Music[] = [];
@@ -263,6 +266,26 @@ export class MusicsService {
         this.yearlyStats = yearlyStats;
         console.log(this.yearlyStats)
         return yearlyStats;
+      })
+    );
+  }
+
+  getLast7DaysMins(id: number) {
+    return this.http.get<number[]>(this.baseUrl + 'Music/GetLast7DaysMins/' + id).pipe(
+      map(last7daysMins => {
+        this.last7daysMins = last7daysMins;
+        console.log(this.last7daysMins)
+        return last7daysMins;
+      })
+    );
+  }
+
+  getLast7Days(id: number) {
+    return this.http.get<String[]>(this.baseUrl + 'Music/GetLast7Days/' + id).pipe(
+      map(last7daysDays => {
+        this.last7daysDays = last7daysDays;
+        console.log(this.last7daysDays)
+        return last7daysDays;
       })
     );
   }

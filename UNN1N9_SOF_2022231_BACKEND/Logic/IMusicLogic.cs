@@ -22,6 +22,8 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
         Task<IEnumerable<StatDto>> GetWeeklyStatistics(int id);
         Task<IEnumerable<StatDto>> GetMonthlyStatistics(int id);
         Task<IEnumerable<StatDto>> GetYearlyStatistics(int id);
+        Task<IEnumerable<String>> GetLast7Days(int id);
+        Task<IEnumerable<int>> GetLast7DaysMins(int id);
         Task<AppUser> GetUser(int id);
         Task<IEnumerable<Music>> AddSongWithListening(int id);
         Task<IEnumerable<Music>> AddSong(int id, string trackId);

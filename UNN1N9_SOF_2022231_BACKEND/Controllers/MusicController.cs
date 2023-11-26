@@ -236,6 +236,24 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             return Ok(stats);
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<String>>> GetLast7Days(int id)
+        {
+            ;
+            var stats = await _logic.GetLast7Days(id);
+
+            return Ok(stats);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<int>>> GetLast7DaysMins(int id)
+        {
+            ;
+            var stats = await _logic.GetLast7DaysMins(id);
+
+            return Ok(stats);
+        }
+
         [HttpPost]
         public async Task<ActionResult> LikeSong(LikedSongDto likedSongDto)
         {
