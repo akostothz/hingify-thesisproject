@@ -63,7 +63,7 @@ const routes: Routes = [
       {path: 'stats/daily', component: DailyComponent},
       {path: 'stats/weekly', component: WeeklyComponent},
       {path: 'stats/monthly', component: MonthlyComponent},
-      {path: 'stats/yearly', component: YearlyComponent},
+      {path: 'stats/yearly', component: YearlyComponent}
     ]
   }, 
   {path: 'errors', component: TestErrorComponent},
