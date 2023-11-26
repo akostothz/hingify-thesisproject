@@ -1,3 +1,10 @@
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 1em;
+}
+
 .parent {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -83,13 +90,14 @@
     color: #fff;
     background-color: transparent;
     margin-left: 1.2em;
+    margin-top: 0.5em;
 }
 
 .classol {
     background-color: transparent;
     font-size: 1.2em;
     color: #F0E199;
-    margin-left: 0.6em;
+    margin-left: 0.8em;
 }
 
 .classli {
@@ -97,6 +105,7 @@
     font-size: 1.5em;
     margin-top: 0.5em;
     color: #F0E199;
+    padding-left: 0.7em;
 }
 
 .olgen {
@@ -110,4 +119,5 @@
     background-color: transparent;
     margin-top: 0.3em;
     color: #F0E199;
+    padding-left: 0.7em;
 }
