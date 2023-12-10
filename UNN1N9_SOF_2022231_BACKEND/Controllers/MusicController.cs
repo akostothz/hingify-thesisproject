@@ -108,9 +108,13 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<MusicDto>>> GetPersonalizedMix(int id)
         {
+            // a kérés továbbítása a Logic felé
             var musics = await _logic.GetPersonalizedMix(id);
+
+            // AutoMapper segítségével átalakítjuk az objektumokat Music-ról MusicDto-ra
             var musicsToReturn = _mapper.Map<IEnumerable<MusicDto>>(musics);
 
+            // nincs ellenőrzés, mivel ha nincsen adat, akkor is egy véletlenszerű listát fog visszaadni
             return Ok(musicsToReturn);
         }
 

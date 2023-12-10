@@ -187,7 +187,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             
             if (behaviours.Count() == 0) //ha nincs a múlthéten 
             {
-                //akkor először ránézünk az azelőtti hetire, mert a megszokott hallgatásból kimaradthat 1 hét bármi miatt
+                //akkor először ránézünk az azelőtti hetire, mert a megszokott hallgatásból kimaradthat 1 hét valami miatt
                 foreach (var behav in _context.UserBehaviors)
                 {
                     if (behav.UserId == givenuser.Id &&
@@ -343,7 +343,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             var behavsToReturn = new List<UserBehavior>();
             var httpClient = new HttpClient();
-            ;
+
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", givenuser.SpotifyAccessToken);
 
             var response = await httpClient.GetAsync("https://api.spotify.com/v1/me/player/recently-played");
@@ -352,7 +352,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 var responseContent = await response.Content.ReadAsStringAsync();
                 var recentlyPlayed = JsonConvert.DeserializeObject<RecentlyPlayedDto>(responseContent);
                 var trackIds = recentlyPlayed?.Items?.Select(item => item.Track?.Id).ToList();
-                ;
+
                 //megnézni, hogy melyek azok, amelyek nincsenek benne az adatbázisban
                 if (trackIds.Count() != 0) //ha kaptunk vissza zenéket
                 {
@@ -363,10 +363,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                             ;
                             var x = await AddSong(givenuser.Id, item);
                         }
-                        //majd a behavior-okhoz is
+                        //majd a Behavior táblához is
                         AccessTokenDTO dto = new AccessTokenDTO() { userid = givenuser.Id, token = item };
                         var b = await AddBehaviorWithButton(dto);
-                        ;
                         behavsToReturn.Add(b);
                         
                     }
