@@ -19,7 +19,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
             using var scope = host.Services.CreateScope();
             using var context = scope.ServiceProvider.GetRequiredService<DataContext>();
             context.Database.EnsureCreated();
-            ChooseRandomSongs(context);
+            //ChooseRandomSongs(context);
             //AddMusics(context);
             //AddTestUsers(context);
             //AddTestConnections(context);
@@ -34,7 +34,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
         private static void ChooseRandomSongs(DataContext context)
         {
             var songs = new List<Music>();
-            var genre = "Country";
+            var genre = "Pop";
             int totalMusicCount = context.Musics.Where(x => x.Genre.Equals(genre)).Count();          
 
             for (int i = 0; i < 15; i++)
