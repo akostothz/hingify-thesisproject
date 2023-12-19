@@ -449,7 +449,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 double dist = EuclideanDistance(choosenMusic, song);
                 closestMusics.Add(dist, song);
             }
-            
+
+            Get5ClosestSongs(closestMusics); //csak a tesztelés miatt van
+
             List<Music> selectedMusics = new List<Music>();
 
             LinkedListNode current = closestMusics.Head;
@@ -462,6 +464,38 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             }
             
             return selectedMusics;
+        }
+
+        private void Get5ClosestSongs(LinkedList closestMusics)
+        {
+            LinkedListNode current = closestMusics.Head;
+            double[] distances = new double[6];
+            int counter = 0;
+            while (current != null)
+            {
+                Console.WriteLine(current.Object.ArtistName + ": " + current.Object.TrackName + " >>> " + Math.Round(current.Value, 4));
+                if (counter == 5)
+                {
+                    distances[counter] = Math.Round(current.Value, 4);
+                    current = null;
+                }
+                else
+                {
+                    distances[counter] = Math.Round(current.Value, 4);
+                    current = current.Next;
+                    counter++;
+                }
+            }
+            double sum = 0;
+            for (int i = 1; i < distances.Length; i++)
+            {
+                sum += distances[i];
+            }
+            ;
+            double x = (double)sum / 5;
+            ;
+            Console.WriteLine("Mean: " + Math.Round(x, 4));
+            ;
         }
 
         private bool EverythingInBoundaries(Music music, Music? choosenMusic)

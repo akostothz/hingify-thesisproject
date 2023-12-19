@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Internal;
 using SpotifyAPI.Web;
+using System;
 using System.Security.Cryptography;
 using System.Text;
 using UNN1N9_SOF_2022231_BACKEND.Data;
@@ -18,6 +19,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
             using var scope = host.Services.CreateScope();
             using var context = scope.ServiceProvider.GetRequiredService<DataContext>();
             context.Database.EnsureCreated();
+            ChooseRandomSongs(context);
             //AddMusics(context);
             //AddTestUsers(context);
             //AddTestConnections(context);
@@ -28,6 +30,27 @@ namespace UNN1N9_SOF_2022231_BACKEND.Seeds
             //AddUserBehaviors(context);
             //AddUserBehaviorsFor345ID(context);
         }
+
+        private static void ChooseRandomSongs(DataContext context)
+        {
+            var songs = new List<Music>();
+            var genre = "Country";
+            int totalMusicCount = context.Musics.Where(x => x.Genre.Equals(genre)).Count();          
+
+            for (int i = 0; i < 15; i++)
+            {
+                int randomIndex = RandomGenerator.rnd.Next(totalMusicCount);
+                var song = context.Musics.Where(x => x.Genre.Equals(genre)).OrderBy(m => m.Id).Skip(randomIndex).FirstOrDefault();
+                songs.Add(song);
+            }
+
+            foreach (var song in songs)
+            {
+                Console.WriteLine(song.ArtistName + ": " + song.TrackName);
+            }
+        }
+
+
 
         private static void AddUserBehaviorsFor345ID(DataContext context)
         {
