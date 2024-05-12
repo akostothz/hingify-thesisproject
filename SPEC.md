@@ -1,4 +1,4 @@
-# Kliensoldali fejlesztés féléves feladat
+# Hingify - szakdolgozat
 
 <br>
 
