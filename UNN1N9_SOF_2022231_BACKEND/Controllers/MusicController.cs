@@ -15,7 +15,6 @@ using UNN1N9_SOF_2022231_BACKEND.Models;
 namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 {
     [ApiController]
-    //[Authorize]
     [Route("api/[controller]/[action]")]
     public class MusicController : ControllerBase
     {
@@ -52,7 +51,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             var b = await _logic.AddBehaviorWithButton(dto);
             behavs.Add(b);
             var behavsToReturn = _mapper.Map<IEnumerable<BehaviorDto>>(behavs);
-            
+
             return Ok(behavsToReturn);
         }
 
@@ -71,7 +70,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             string[] line = cid.Split(';');
             int id = int.Parse(line[0]);
             string trackId = line[1];
-            
+
             var musics = await _logic.AddSong(id, trackId);
             var musicsToReturn = _mapper.Map<IEnumerable<MusicDto>>(musics);
 
@@ -81,7 +80,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         [HttpPost]
         public async Task<ActionResult> CreatePlaylist(List<string> mIds)
         {
-            AccessTokenDTO accessToken = new AccessTokenDTO();   
+            AccessTokenDTO accessToken = new AccessTokenDTO();
 
             for (int i = 0; i < mIds.Count(); i++)
             {
@@ -103,13 +102,13 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             else
                 return Ok();
         }
-       
+
 
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<MusicDto>>> GetPersonalizedMix(int id)
         {
             // a kérés továbbítása a Logic felé
-            var musics = await _logic.GetPersonalizedMix(id);
+            var musics = await _logic.GetPersonalizedMixCluster(id);
 
             // AutoMapper segítségével átalakítjuk az objektumokat Music-ról MusicDto-ra
             var musicsToReturn = _mapper.Map<IEnumerable<MusicDto>>(musics);
@@ -130,15 +129,6 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         public async Task<ActionResult<IEnumerable<MusicDto>>> GetActualLikedSongs(int id)
         {
             var musics = await _logic.GetActualLikedSongs(id);
-            var musicsToReturn = _mapper.Map<IEnumerable<MusicDto>>(musics);
-
-            return Ok(musicsToReturn);
-        }
-
-        [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<MusicDto>>> GetLikedSongs(int id)
-        {
-            var musics = await _logic.GetLikedSongs(id);
             var musicsToReturn = _mapper.Map<IEnumerable<MusicDto>>(musics);
 
             return Ok(musicsToReturn);
@@ -184,7 +174,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         public async Task<ActionResult<IEnumerable<DetailedMusicDto>>> FindMusic(string trackId)
         {
             var music = await _logic.FindMusic(trackId);
-            
+
             var musicToReturn = _mapper.Map<IEnumerable<DetailedMusicDto>>(music);
 
             return Ok(musicToReturn);
@@ -208,13 +198,13 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             return Ok(musicsToReturn);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<MusicDto>>> GetDailyStatistics(int id)
-        {
-            var stats = await _logic.GetDailyStatistics(id);
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<IEnumerable<MusicDto>>> GetDailyStatistics(int id)
+        //{
+        //    var stats = await _logic.GetDailyStatistics(id);
 
-            return Ok(stats);
-        }
+        //    return Ok(stats);
+        //}
 
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<MusicDto>>> GetDailyStatistics2(int id)
@@ -224,13 +214,13 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             return Ok(stats);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<MusicDto>>> GetWeeklyStatistics(int id)
-        {
-            var stats = await _logic.GetWeeklyStatistics(id);
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<IEnumerable<MusicDto>>> GetWeeklyStatistics(int id)
+        //{
+        //    var stats = await _logic.GetWeeklyStatistics(id);
 
-            return Ok(stats);
-        }
+        //    return Ok(stats);
+        //}
 
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<MusicDto>>> GetWeeklyStatistics2(int id)
@@ -240,13 +230,13 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             return Ok(stats);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<MusicDto>>> GetMonthlyStatistics(int id)
-        {
-            var stats = await _logic.GetMonthlyStatistics(id);
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<IEnumerable<MusicDto>>> GetMonthlyStatistics(int id)
+        //{
+        //    var stats = await _logic.GetMonthlyStatistics(id);
 
-            return Ok(stats);
-        }
+        //    return Ok(stats);
+        //}
 
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<MusicDto>>> GetMonthlyStatistics2(int id)
@@ -256,13 +246,13 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             return Ok(stats);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<MusicDto>>> GetYearlyStatistics(int id)
-        {
-            var stats = await _logic.GetYearlyStatistics(id);
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<IEnumerable<MusicDto>>> GetYearlyStatistics(int id)
+        //{
+        //    var stats = await _logic.GetYearlyStatistics(id);
 
-            return Ok(stats);
-        }
+        //    return Ok(stats);
+        //}
 
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<MusicDto>>> GetYearlyStatistics2(int id)
@@ -275,9 +265,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<String>>> GetLast7Days(int id)
         {
-            ;
             var stats = await _logic.GetLast7Days(id);
-            ;
 
             return Ok(stats);
         }
@@ -285,9 +273,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<int>>> GetLast7DaysMins(int id)
         {
-            ;
             var stats = await _logic.GetLast7DaysMins(id);
-            ;
 
             return Ok(stats);
         }
@@ -296,7 +282,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         public async Task<ActionResult> LikeSong(LikedSongDto likedSongDto)
         {
             _logic.AddLikedSong(likedSongDto.UserId, likedSongDto.MusicId);
-    
+
             return NoContent();
         }
 

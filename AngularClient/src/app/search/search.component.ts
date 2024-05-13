@@ -26,14 +26,12 @@ export class SearchComponent implements OnInit {
   play(trackId: string) {
     
   }
+  
   search() {
     let inputElement = document.getElementById('search-input') as HTMLInputElement;
     this.searchInput = inputElement.value;
-    
     this.foundsongs$ = this.musicService.search(this.searchInput);
   }
-
-  
 
   likeSong(id: number) {
     var lsong: LikedSong = {
@@ -58,7 +56,6 @@ export class SearchComponent implements OnInit {
 
   srcgenerator(trrackId: string) {
     let x = 'https://open.spotify.com/embed/track/' + trrackId + '?utm_source=generator';
-
     return this.sanitizer.bypassSecurityTrustResourceUrl(x);
   }
 

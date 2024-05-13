@@ -20,5 +20,34 @@
         public string FifthMostListenedGenre { get; set; }
         public string FifthMostListenedArtist { get; set; }
         public string FifthMostListenedSong { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            StatDto other = (StatDto)obj;
+
+            return Type == other.Type &&
+                   MinsSpent == other.MinsSpent &&
+                   NumOfListenedGenre == other.NumOfListenedGenre &&
+                   MostListenedGenre == other.MostListenedGenre &&
+                   MostListenedArtist == other.MostListenedArtist &&
+                   MostListenedSong == other.MostListenedSong &&
+                   SecondMostListenedGenre == other.SecondMostListenedGenre &&
+                   SecondMostListenedArtist == other.SecondMostListenedArtist &&
+                   SecondMostListenedSong == other.SecondMostListenedSong &&
+                   ThirdMostListenedGenre == other.ThirdMostListenedGenre &&
+                   ThirdMostListenedArtist == other.ThirdMostListenedArtist &&
+                   ThirdMostListenedSong == other.ThirdMostListenedSong &&
+                   FourthMostListenedGenre == other.FourthMostListenedGenre &&
+                   FourthMostListenedArtist == other.FourthMostListenedArtist &&
+                   FourthMostListenedSong == other.FourthMostListenedSong &&
+                   FifthMostListenedGenre == other.FifthMostListenedGenre &&
+                   FifthMostListenedArtist == other.FifthMostListenedArtist &&
+                   FifthMostListenedSong == other.FifthMostListenedSong;
+        }
     }
 }

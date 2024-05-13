@@ -36,18 +36,24 @@ namespace UNN1N9_SOF_2022231_BACKEND.Services
         
         public string TransformImage(string imageUrl)
         {
-            Transformation transformation = new Transformation().Height(400).Width(400).Crop("fill").Gravity("face");
-            ;
-            ImageUploadResult uploadResult = _cloudinary.Upload(new ImageUploadParams()
-            {
-                File = new FileDescription(imageUrl),
-                Transformation = transformation,
-                Folder = "user-pics"
-            });
-            ;
-            string transformedImageUrl = _cloudinary.Api.UrlImgUp.Transform(transformation).BuildUrl(uploadResult.PublicId + "." + uploadResult.Format);
+            // levágjuk 400x400px méretre a képet és ráközelítünk a fejére
+            Transformation transformation = 
+                new Transformation().Height(400).Width(400).Crop("fill").Gravity("face");
 
-            ;
+            // feltöltjük a képet a user-pics mappába Cloudinary-n belül
+            ImageUploadResult uploadResult = _cloudinary
+                .Upload(new ImageUploadParams()
+                {
+                    File = new FileDescription(imageUrl),
+                    Transformation = transformation,
+                    Folder = "user-pics"
+                });
+
+            // megszerezzük a feltöltött kép linkjét, hogy beállíthassuk a felhasználónak a képeként
+            string transformedImageUrl = _cloudinary.Api.UrlImgUp
+                    .Transform(transformation)
+                    .BuildUrl(uploadResult.PublicId + "." + uploadResult.Format);
+
             return transformedImageUrl;
         }
 

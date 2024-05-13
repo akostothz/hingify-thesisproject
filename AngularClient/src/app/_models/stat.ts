@@ -20,5 +20,4 @@ export interface Stat {
     fifthMostListenedGenre: string;
     fifthMostListenedArtist: string;
     fifthMostListenedSong: string;
-    //still expanding
 }

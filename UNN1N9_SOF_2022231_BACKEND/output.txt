@@ -1,0 +1,1440 @@
+-----------------------------------------
+FIRST SONG :: If You Could See Me Now by The Script (Rock)
+SECOND SONG :: Listen To Her Heart by Tom Petty and the Heartbreakers (Rock)
+
+
+[[[Rock - Rock]]] >>> 0,3596
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: All You Need Is Love - Remastered 2009 by The Beatles (Rock)
+SECOND SONG :: RA by SLUMBERJACK (Electronic)
+
+
+[[[Rock - Electronic]]] >>> 0,6169
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: 1.618 by BT (Electronic)
+SECOND SONG :: Letting Love Go - 2013 Remaster by Everything But The Girl (Electronic)
+
+
+[[[Electronic - Electronic]]] >>> 0,643
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Fly - FKJ Remix by June Marieezy (Alternative)
+SECOND SONG :: Love Your Friends, Die Laughing by Man Overboard (Alternative)
+
+
+[[[Alternative - Alternative]]] >>> 0,551
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: blkswn by Smino (Alternative)
+SECOND SONG :: Do Ya' by K.T. Oslin (Country)
+
+
+[[[Alternative - Country]]] >>> 0,2052
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Temptation by Carter Winter (Country)
+SECOND SONG :: Sunny and 75 by Joe Nichols (Country)
+
+
+[[[Country - Country]]] >>> 0,3898
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Eyes Closed by Halsey (Pop)
+SECOND SONG :: Forget to Forget by SHY Martin (Pop)
+
+
+[[[Pop - Pop]]] >>> 0,7766
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Without You (feat. Sandro Cavazza) by Avicii (Pop)
+SECOND SONG :: Ferns by Iris Temple (R&B)
+
+
+[[[Pop - R&B]]] >>> 0,8067
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: P.O.V. by dvsn (R&B)
+SECOND SONG :: Midnight by Lianne La Havas (R&B)
+
+
+[[[R&B - R&B]]] >>> 0,5987
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: It's A Flex (feat. NAV) by 88GLAM (Hip-Hop)
+SECOND SONG :: Space Cadet by Quality Control (Hip-Hop)
+
+
+[[[Hip-Hop - Hip-Hop]]] >>> 0,2632
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: John Gotti by Kevin Gates (Hip-Hop)
+SECOND SONG :: Nardis by Jacob Karlzon (Jazz)
+
+
+[[[Hip-Hop - Jazz]]] >>> 1,0769
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Me Vas a Hacer Falta by Monsieur Periné (Jazz)
+SECOND SONG :: Whateva Will Be by A Tribe Called Quest (Jazz)
+
+
+[[[Jazz - Jazz]]] >>> 0,4875
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Tired/Reflections by Boogie (Rap)
+SECOND SONG :: Studio feat. Young Thug by Jacquees (Rap)
+
+
+[[[Rap - Rap]]] >>> 0,2708
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Bachelor by A$AP Mob (Rap)
+SECOND SONG :: Bones (feat. OneRepublic) by Galantis (Dance)
+
+
+[[[Rap - Dance]]] >>> 0,3763
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: When They Fight, They Fight by Generationals (Dance)
+SECOND SONG :: "Elastic Heart - From ""The Hunger Games: Catching Fire"" Soundtrack" by Sia (Dance)
+
+
+[[[Dance - Dance]]] >>> 0,5004
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Promenade: Walking the Dog by George Gershwin (Classical)
+SECOND SONG :: Clair de Lune, No. 3 by Claude Debussy (Classical)
+
+
+[[[Classical - Classical]]] >>> 0,4759
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Variations on a Rococo Theme in A Major, Op. 33, TH 57 (Original Version): Var. 7, Andante sostenuto by Pyotr Ilyich Tchaikovsky (Classical)
+SECOND SONG :: Someday by The Strokes (Indie)
+
+
+[[[Classical - Indie]]] >>> 1,2481
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Hold It Down by Rowlan (Indie)
+SECOND SONG :: How To Disappear Completely by Radiohead (Indie)
+
+
+[[[Indie - Indie]]] >>> 0,2981
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Baby's on Fire by Die Antwoord (Rock)
+SECOND SONG :: Hey Jude - Remastered 2015 by The Beatles (Rock)
+
+
+[[[Rock - Rock]]] >>> 0,3328
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Vegas Lights by Panic! At The Disco (Rock)
+SECOND SONG :: oh baby by LCD Soundsystem (Electronic)
+
+
+[[[Rock - Electronic]]] >>> 0,2319
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Far Away Trains Passing By by Ulrich Schnauss (Electronic)
+SECOND SONG :: I Know It's You by The Crystal Method (Electronic)
+
+
+[[[Electronic - Electronic]]] >>> 0,4338
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Honest by Jay Wile (Alternative)
+SECOND SONG :: Bridge Burning by Foo Fighters (Alternative)
+
+
+[[[Alternative - Alternative]]] >>> 1,1077
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: This Sweet Love by James Yuill (Alternative)
+SECOND SONG :: Just Sayin' by Buddy Brown (Country)
+
+
+[[[Alternative - Country]]] >>> 0,2538
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Seminole Wind by John Anderson (Country)
+SECOND SONG :: Back of Your Mind by Jimmie Allen (Country)
+
+
+[[[Country - Country]]] >>> 0,4754
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Ill Mind of Hopsin 8 by Hopsin (Pop)
+SECOND SONG :: Kin by Penny and Sparrow (Pop)
+
+
+[[[Pop - Pop]]] >>> 0,8635
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Programs by Mac Miller (Pop)
+SECOND SONG :: Bad Dream/No Looking Back by Syd (R&B)
+
+
+[[[Pop - R&B]]] >>> 0,5361
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Get Right by Sammie (R&B)
+SECOND SONG :: You Come First (feat. Saweetie) by Zak Abel (R&B)
+
+
+[[[R&B - R&B]]] >>> 0,5603
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Ned Flanders (feat. A$AP Ferg) by MadeinTYO (Hip-Hop)
+SECOND SONG :: Extinction by Killstation (Hip-Hop)
+
+
+[[[Hip-Hop - Hip-Hop]]] >>> 0,1872
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Put It On by Big L (Hip-Hop)
+SECOND SONG :: The Nature of Love by Sinitus Tempo (Jazz)
+
+
+[[[Hip-Hop - Jazz]]] >>> 1,0143
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Gods Blessings by Sinitus Tempo (Jazz)
+SECOND SONG :: The Finer Things by Kankick (Jazz)
+
+
+[[[Jazz - Jazz]]] >>> 0,5618
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: The Rage by Kid Cudi (Rap)
+SECOND SONG :: Demons by Sik World (Rap)
+
+
+[[[Rap - Rap]]] >>> 0,3314
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Drippin' (feat. Chris Brown) by Rich The Kid (Rap)
+SECOND SONG :: Love Is Love - Remastered 2003 by Culture Club (Dance)
+
+
+[[[Rap - Dance]]] >>> 0,3748
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: All We Do by Trey Songz (Dance)
+SECOND SONG :: Ready or Not by Bridgit Mendler (Dance)
+
+
+[[[Dance - Dance]]] >>> 0,6303
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: "Symphony No. 9 in E Minor, Op. 95 ""From the New World"": III. Scherzo. Molto vivace" by Antonín Dvořák (Classical)
+SECOND SONG :: Asato Maa by Ravi Shankar (Classical)
+
+
+[[[Classical - Classical]]] >>> 0,1254
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Göttingen by Roland Dyens (Classical)
+SECOND SONG :: Penelope by Pinback (Indie)
+
+
+[[[Classical - Indie]]] >>> 0,574
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Banjo Odyssey by The Dead South (Indie)
+SECOND SONG :: Last Snowstorm of the Year by Hippo Campus (Indie)
+
+
+[[[Indie - Indie]]] >>> 0,5342
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: DVP by PUP (Rock)
+SECOND SONG :: Destroy The Obvious by Evans Blue (Rock)
+
+
+[[[Rock - Rock]]] >>> 0,1144
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Take It From Me by KONGOS (Rock)
+SECOND SONG :: On My Own by Ulrich Schnauss (Electronic)
+
+
+[[[Rock - Electronic]]] >>> 0,5333
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Need You - ShockOne Remix by Dillon Francis (Electronic)
+SECOND SONG :: End Of The World (feat. Skrillex) by Mr. Oizo (Electronic)
+
+
+[[[Electronic - Electronic]]] >>> 0,2323
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Novacane by Frank Ocean (Alternative)
+SECOND SONG :: Hollow Tune by Brick + Mortar (Alternative)
+
+
+[[[Alternative - Alternative]]] >>> 0,2952
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Herside Story by GoldLink (Alternative)
+SECOND SONG :: Living in Fast Forward by Kenny Chesney (Country)
+
+
+[[[Alternative - Country]]] >>> 0,7256
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Asking For A Friend by Devin Dawson (Country)
+SECOND SONG :: I Think I'll Just Stay Here And Drink - Re-Recorded In Stereo by Merle Haggard (Country)
+
+
+[[[Country - Country]]] >>> 0,3468
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Georgia by Vance Joy (Pop)
+SECOND SONG :: Til It Happens To You by Lady Gaga (Pop)
+
+
+[[[Pop - Pop]]] >>> 0,3357
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Sinner by Andy Grammer (Pop)
+SECOND SONG :: Slow by SOLE (R&B)
+
+
+[[[Pop - R&B]]] >>> 0,7071
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Joshua Tree by Cautious Clay (R&B)
+SECOND SONG :: Real One by Marc E. Bassy (R&B)
+
+
+[[[R&B - R&B]]] >>> 0,2418
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Borrowed Love (feat. Swae Lee & WizKid) by Metro Boomin (Hip-Hop)
+SECOND SONG :: You Got Me by G-Eazy (Hip-Hop)
+
+
+[[[Hip-Hop - Hip-Hop]]] >>> 0,4571
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Bloodshed by Denzel Curry (Hip-Hop)
+SECOND SONG :: Blues in Hoss' Flat - 2003 Remaster by Count Basie (Jazz)
+
+
+[[[Hip-Hop - Jazz]]] >>> 0,8958
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: You Are Loved by Four Tet (Jazz)
+SECOND SONG :: Swing Thing by Boogie Belgique (Jazz)
+
+
+[[[Jazz - Jazz]]] >>> 0,4926
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Fasho Fasho (feat. Offset) by Lil Pump (Rap)
+SECOND SONG :: Drive My Car by Landon Cube (Rap)
+
+
+[[[Rap - Rap]]] >>> 0,3431
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Miami by Will Smith (Rap)
+SECOND SONG :: Little Bit by Timeflies (Dance)
+
+
+[[[Rap - Dance]]] >>> 0,5075
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Jesus to a Child by George Michael (Dance)
+SECOND SONG :: If I ever feel better by Phoenix (Dance)
+
+
+[[[Dance - Dance]]] >>> 0,7135
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Suite española, Op.47: No. 3 Sevilla by Isaac Albéniz (Classical)
+SECOND SONG :: Keyboard Sonata in G Major, Wq. 58 No. 2, H. 273: I. Grazioso by Carl Philipp Emanuel Bach (Classical)
+
+
+[[[Classical - Classical]]] >>> 0,6082
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Le Carnaval des Animaux, R.125: 13. The Swan (Arr. Hodge for Cello, Harp & Ensemble) by Camille Saint-Saëns (Classical)
+SECOND SONG :: Between Dusk And Dawn by alayna (Indie)
+
+
+[[[Classical - Indie]]] >>> 0,1447
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: All Washed Out by DREAMERS (Indie)
+SECOND SONG :: Run by Rainbow Kitten Surprise (Indie)
+
+
+[[[Indie - Indie]]] >>> 0,1013
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Read My Mind by Catfish and the Bottlemen (Rock)
+SECOND SONG :: Bound For The Floor by Local H (Rock)
+
+
+[[[Rock - Rock]]] >>> 0,6891
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Holiday by Vampire Weekend (Rock)
+SECOND SONG :: Ray Ban Vision - Casper & B. Remix by A-Trak (Electronic)
+
+
+[[[Rock - Electronic]]] >>> 0,3385
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Seven Stars by Air (Electronic)
+SECOND SONG :: Intro by The Prodigy (Electronic)
+
+
+[[[Electronic - Electronic]]] >>> 0,4769
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: You Wouldn't Know by HELLYEAH (Alternative)
+SECOND SONG :: Petals by TOPS (Alternative)
+
+
+[[[Alternative - Alternative]]] >>> 0,8258
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Salvation by Five Finger Death Punch (Alternative)
+SECOND SONG :: Sad Girls by Jillian Jacqueline (Country)
+
+
+[[[Alternative - Country]]] >>> 1,1389
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Meanwhile Back At Mama's by Tim McGraw (Country)
+SECOND SONG :: Breakfast in Hell by Slaid Cleaves (Country)
+
+
+[[[Country - Country]]] >>> 0,4085
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: FEEL. by Kendrick Lamar (Pop)
+SECOND SONG :: HOLD ME TIGHT OR DON’T by Fall Out Boy (Pop)
+
+
+[[[Pop - Pop]]] >>> 0,3011
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Silent Ride by Boogie (Pop)
+SECOND SONG :: You're Not My Kind Of Girl by New Edition (R&B)
+
+
+[[[Pop - R&B]]] >>> 0,6642
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Normal Girl by SZA (R&B)
+SECOND SONG :: Blessings on Blessings by OSHUN (R&B)
+
+
+[[[R&B - R&B]]] >>> 0,2712
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: No Effort by Tee Grizzley (Hip-Hop)
+SECOND SONG :: Patiently Waiting by 50 Cent (Hip-Hop)
+
+
+[[[Hip-Hop - Hip-Hop]]] >>> 0,3586
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Jump (feat. Gizzle) by Lupe Fiasco (Hip-Hop)
+SECOND SONG :: Bambro Koyo Ganda by Bonobo (Jazz)
+
+
+[[[Hip-Hop - Jazz]]] >>> 0,8157
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: La Fiesta de Pilito by El Gran Combo De Puerto Rico (Jazz)
+SECOND SONG :: Mbira Beat by GoldFish (Jazz)
+
+
+[[[Jazz - Jazz]]] >>> 0,7495
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: I Can't Help by Sarcastic Sounds (Rap)
+SECOND SONG :: Mo'murda by Bone Thugs-N-Harmony (Rap)
+
+
+[[[Rap - Rap]]] >>> 0,5786
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: All She Wants by Polo G (Rap)
+SECOND SONG :: Bastards by Kesha (Dance)
+
+
+[[[Rap - Dance]]] >>> 0,5189
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Down To Earth by Justin Bieber (Dance)
+SECOND SONG :: Champagne & Sunshine (Ellusive Remix) by PLVTINUM (Dance)
+
+
+[[[Dance - Dance]]] >>> 0,4295
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Le Nozze di Figaro, K. 492: Sinfonia by Wolfgang Amadeus Mozart (Classical)
+SECOND SONG :: Knightrider of Doom by Rhapsody (Classical)
+
+
+[[[Classical - Classical]]] >>> 1,2405
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Requiem in D Minor, K. 626 (Süssmayr - Dutron 2016 completion): I. Introitus - Requiem æternam by Wolfgang Amadeus Mozart (Classical)
+SECOND SONG :: The Fruitful Darkness by Trevor Hall (Indie)
+
+
+[[[Classical - Indie]]] >>> 0,1908
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: L.I.F.E.G.O.E.S.O.N. by Noah And The Whale (Indie)
+SECOND SONG :: Don't Stop Believing by Clementine Duo (Indie)
+
+
+[[[Indie - Indie]]] >>> 0,9254
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Same Ol' Situation (S.O.S.) by Mötley Crüe (Rock)
+SECOND SONG :: Sisters of the Moon - 2015 Remaster by Fleetwood Mac (Rock)
+
+
+[[[Rock - Rock]]] >>> 0,499
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Back In The U.S.S.R. - 2018 Mix by The Beatles (Rock)
+SECOND SONG :: Le Monde by Thievery Corporation (Electronic)
+
+
+[[[Rock - Electronic]]] >>> 0,7886
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Starchild by Jamiroquai (Electronic)
+SECOND SONG :: No Diga Más by Dillon Francis (Electronic)
+
+
+[[[Electronic - Electronic]]] >>> 0,4908
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: When I'm Able by The Revivalists (Alternative)
+SECOND SONG :: Molly (16 Candles) by Sponge (Alternative)
+
+
+[[[Alternative - Alternative]]] >>> 0,1969
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Carmen Sandiego by Grizfolk (Alternative)
+SECOND SONG :: We'll Meet Again by Johnny Cash (Country)
+
+
+[[[Alternative - Country]]] >>> 0,9953
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: The Devil Is Alive and Well by Brad Paisley (Country)
+SECOND SONG :: Runaway by Gary Allan (Country)
+
+
+[[[Country - Country]]] >>> 0,742
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: break da law by 21 Savage (Pop)
+SECOND SONG :: Lie To Me (feat. Julia Michaels) by 5 Seconds of Summer (Pop)
+
+
+[[[Pop - Pop]]] >>> 0,4172
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: You're Lost by Lil Uzi Vert (Pop)
+SECOND SONG :: Who You? by Simon Dominic (R&B)
+
+
+[[[Pop - R&B]]] >>> 0,3983
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Stay Right Here by Saba (R&B)
+SECOND SONG :: Didn't We Almost Have It All by Whitney Houston (R&B)
+
+
+[[[R&B - R&B]]] >>> 0,41
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Daddy's Birthday by Young Thug (Hip-Hop)
+SECOND SONG :: What's It Gonna Be?! (feat. Janet Jackson) by Busta Rhymes (Hip-Hop)
+
+
+[[[Hip-Hop - Hip-Hop]]] >>> 0,6169
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: GLOWED UP by KAYTRANADA (Hip-Hop)
+SECOND SONG :: Mayflowers by Proleter (Jazz)
+
+
+[[[Hip-Hop - Jazz]]] >>> 0,4694
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Linger Awhile by Vic Damone (Jazz)
+SECOND SONG :: Marseille by Andy Snitzer (Jazz)
+
+
+[[[Jazz - Jazz]]] >>> 0,4066
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Perfect Circle / God Speed by Mac Miller (Rap)
+SECOND SONG :: 4 Min Convo (Favorite Song) by A Boogie Wit da Hoodie (Rap)
+
+
+[[[Rap - Rap]]] >>> 0,3389
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: GO GETTA by BEXEY (Rap)
+SECOND SONG :: Locked Up by Akon (Dance)
+
+
+[[[Rap - Dance]]] >>> 0,0426
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Half a Person - 2011 Remaster by The Smiths (Dance)
+SECOND SONG :: Don't Let Me Fall by B.o.B (Dance)
+
+
+[[[Dance - Dance]]] >>> 0,3476
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Piano Concerto No. 2 in F Minor, Op. 21: II. Larghetto by New York Philharmonic (Classical)
+SECOND SONG :: Eternal Source Of Light Divine (Ode For The Birthday Of Queen Anne), HWV 74 by George Frideric Handel (Classical)
+
+
+[[[Classical - Classical]]] >>> 0,0769
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Fidelio, Op. 72, Act I: Drei Mann auf den Wall - Hauptmann! (Live) by Ludwig van Beethoven (Classical)
+SECOND SONG :: Ghost by Sir Sly (Indie)
+
+
+[[[Classical - Indie]]] >>> 0,8654
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Work This Time by King Gizzard & The Lizard Wizard (Indie)
+SECOND SONG :: Sorry by Aquilo (Indie)
+
+
+[[[Indie - Indie]]] >>> 0,6743
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Luz De Dia by Los Enanitos Verdes (Rock)
+SECOND SONG :: You May Be Right by Billy Joel (Rock)
+
+
+[[[Rock - Rock]]] >>> 0,6091
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: American Life by Primus (Rock)
+SECOND SONG :: Catchy Song by Dillon Francis (Electronic)
+
+
+[[[Rock - Electronic]]] >>> 0,2807
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: DJs Gotta Dance More by A-Trak (Electronic)
+SECOND SONG :: Dansakoni by Peter Power (Electronic)
+
+
+[[[Electronic - Electronic]]] >>> 0,4072
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Vitamin R (Leading Us Along) by Chevelle (Alternative)
+SECOND SONG :: Maps by The Front Bottoms (Alternative)
+
+
+[[[Alternative - Alternative]]] >>> 0,2741
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: The Light by Common (Alternative)
+SECOND SONG :: Red Clay (feat. Them Riverbank Boys) by Jawga Boyz (Country)
+
+
+[[[Alternative - Country]]] >>> 0,4369
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Church On Cumberland Road by Shenandoah (Country)
+SECOND SONG :: Mmm, Mmm, Mmm by Dylan Scott (Country)
+
+
+[[[Country - Country]]] >>> 0,3863
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Pyramids by Frank Ocean (Pop)
+SECOND SONG :: Time (feat. G-Eazy & Olivver the Kid) by Skizzy Mars (Pop)
+
+
+[[[Pop - Pop]]] >>> 0,1901
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: BABE by HyunA (Pop)
+SECOND SONG :: No Limit (feat. Young Thug) by Usher (R&B)
+
+
+[[[Pop - R&B]]] >>> 0,5069
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Love For Me by Empress Of (R&B)
+SECOND SONG :: Purity by Jadu Heart (R&B)
+
+
+[[[R&B - R&B]]] >>> 0,72
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: "Chamma Chamma (From ""Fraud Saiyaan"")" by Neha Kakkar (Hip-Hop)
+SECOND SONG :: Wii Trapped by Joey Trap (Hip-Hop)
+
+
+[[[Hip-Hop - Hip-Hop]]] >>> 0,4405
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Can’t Take A Joke by Drake (Hip-Hop)
+SECOND SONG :: Feeling good by Lynne Arriale Trio (Jazz)
+
+
+[[[Hip-Hop - Jazz]]] >>> 0,6072
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Come Back To Sorrento by Dean Martin (Jazz)
+SECOND SONG :: Fanfare for the Common Man - Single Edit by Emerson, Lake & Palmer (Jazz)
+
+
+[[[Jazz - Jazz]]] >>> 0,5992
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Honest by Future (Rap)
+SECOND SONG :: Get Like by Kehlani (Rap)
+
+
+[[[Rap - Rap]]] >>> 0,1504
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Like Dat by Kodak Black (Rap)
+SECOND SONG :: Lonely Weekend by Kacey Musgraves (Dance)
+
+
+[[[Rap - Dance]]] >>> 0,7141
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Why Won’t You Love Me by 5 Seconds of Summer (Dance)
+SECOND SONG :: I Got Time by Bebe Rexha (Dance)
+
+
+[[[Dance - Dance]]] >>> 0,3702
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: The Forgotten, Pt. 2 by Joe Satriani (Classical)
+SECOND SONG :: Suite in C-dur: IV. III. Courante by Wolfgang Amadeus Mozart (Classical)
+
+
+[[[Classical - Classical]]] >>> 1,0037
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: O Nata Lux by Morten Lauridsen (Classical)
+SECOND SONG :: Movin' on Up by Primal Scream (Indie)
+
+
+[[[Classical - Indie]]] >>> 1,1601
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Dollar Bill by Hippo Campus (Indie)
+SECOND SONG :: Standing in the Rain by The Paper Kites (Indie)
+
+
+[[[Indie - Indie]]] >>> 0,8861
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Fine Again by Seether (Rock)
+SECOND SONG :: Devuelveme a mi chica by Hombres G (Rock)
+
+
+[[[Rock - Rock]]] >>> 0,1013
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Take What You Want (feat. 5 Seconds of Summer) by ONE OK ROCK (Rock)
+SECOND SONG :: Wait by Gaullin (Electronic)
+
+
+[[[Rock - Electronic]]] >>> 0,2239
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Shiawase by Dion Timmer (Electronic)
+SECOND SONG :: Tetsujin by Juno Reactor (Electronic)
+
+
+[[[Electronic - Electronic]]] >>> 0,308
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Human Animal by Total Giovanni (Alternative)
+SECOND SONG :: Cynics & Critics by Icon For Hire (Alternative)
+
+
+[[[Alternative - Alternative]]] >>> 0,1244
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Oh Lord by In This Moment (Alternative)
+SECOND SONG :: Slow Dance In A Parking Lot by Jordan Davis (Country)
+
+
+[[[Alternative - Country]]] >>> 0,2833
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Tough by Kellie Pickler (Country)
+SECOND SONG :: Ballad Of The Alamo by Marty Robbins (Country)
+
+
+[[[Country - Country]]] >>> 0,8582
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Ships In The Night by Mat Kearney (Pop)
+SECOND SONG :: Just A Girl by No Doubt (Pop)
+
+
+[[[Pop - Pop]]] >>> 0,6364
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Serendipity (Full Length Edition) by BTS (Pop)
+SECOND SONG :: Good Enough by Little Mix (R&B)
+
+
+[[[Pop - R&B]]] >>> 0,3822
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: In the Morning by Nao (R&B)
+SECOND SONG :: Timeless by James Blake (R&B)
+
+
+[[[R&B - R&B]]] >>> 0,5058
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Mr. Grizzley by Tee Grizzley (Hip-Hop)
+SECOND SONG :: Hard For by Kevin Gates (Hip-Hop)
+
+
+[[[Hip-Hop - Hip-Hop]]] >>> 0,4829
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Company by Drake (Hip-Hop)
+SECOND SONG :: Christmas Chill by Mujo (Jazz)
+
+
+[[[Hip-Hop - Jazz]]] >>> 0,7776
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: By The Time This Night Is Over by Kenny G (Jazz)
+SECOND SONG :: If I Tried by Birocratic (Jazz)
+
+
+[[[Jazz - Jazz]]] >>> 0,3183
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Move Along by The All-American Rejects (Rap)
+SECOND SONG :: Aftershock by Pouya (Rap)
+
+
+[[[Rap - Rap]]] >>> 0,5064
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Alkaline by Kota the Friend (Rap)
+SECOND SONG :: Tender by Blur (Dance)
+
+
+[[[Rap - Dance]]] >>> 0,2119
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Valentine by 5 Seconds of Summer (Dance)
+SECOND SONG :: Lay It All on Me (feat. Ed Sheeran) by Rudimental (Dance)
+
+
+[[[Dance - Dance]]] >>> 0,3017
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Frühlingsstimmen (Voices of Spring), Op. 410 (RV 410) by Johann Strauss II (Classical)
+SECOND SONG :: Flute Concerto in A Minor, Wq. 166, H. 431: III. Allegro assai by Carl Philipp Emanuel Bach (Classical)
+
+
+[[[Classical - Classical]]] >>> 0,13
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Beethoven : Symphony No.6 in F major Op.68, 'Pastoral' : I Allegro, ma non troppo by Ludwig van Beethoven (Classical)
+SECOND SONG :: Visions of Gideon by Sufjan Stevens (Indie)
+
+
+[[[Classical - Indie]]] >>> 0,3149
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Washed Away by Eyes on the Shore (Indie)
+SECOND SONG :: Flatline by Dizzy Wright (Indie)
+
+
+[[[Indie - Indie]]] >>> 0,4526
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Fire by Kasabian (Rock)
+SECOND SONG :: Another Brick in the Wall, Pt. 3 by Pink Floyd (Rock)
+
+
+[[[Rock - Rock]]] >>> 0,3818
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Believer by American Authors (Rock)
+SECOND SONG :: F O R C E / I M P U L S E by 1788-L (Electronic)
+
+
+[[[Rock - Electronic]]] >>> 0,6478
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Move Any Mountain (Beat Edit) by The Shamen (Electronic)
+SECOND SONG :: Risingson by Massive Attack (Electronic)
+
+
+[[[Electronic - Electronic]]] >>> 0,5072
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Poncho & Lefty by Townes Van Zandt (Alternative)
+SECOND SONG :: Blue by The Neighbourhood (Alternative)
+
+
+[[[Alternative - Alternative]]] >>> 0,511
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Garden by Pearl Jam (Alternative)
+SECOND SONG :: Tequila Makes Her Clothes Fall Off by Joe Nichols (Country)
+
+
+[[[Alternative - Country]]] >>> 0,5727
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Once You've Loved Somebody by Dixie Chicks (Country)
+SECOND SONG :: Rearview Town by Jason Aldean (Country)
+
+
+[[[Country - Country]]] >>> 0,7284
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: El Lujo De Tenerte by Regulo Caro (Pop)
+SECOND SONG :: Slumber Party feat. Tinashe by Britney Spears (Pop)
+
+
+[[[Pop - Pop]]] >>> 0,3649
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Growin' Up by Walker McGuire (Pop)
+SECOND SONG :: Can't Believe The Way We Flow by James Blake (R&B)
+
+
+[[[Pop - R&B]]] >>> 0,743
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Growing Pains - Acoustic by Alessia Cara (R&B)
+SECOND SONG :: Eye To Eye - Edit by Jordan Rakei (R&B)
+
+
+[[[R&B - R&B]]] >>> 0,5832
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Hypnotize (feat. Pam Long) - 2016 Remaster by The Notorious B.I.G. (Hip-Hop)
+SECOND SONG :: God Is Fair, Sexy Nasty (feat. Kendrick Lamar) by Mac Miller (Hip-Hop)
+
+
+[[[Hip-Hop - Hip-Hop]]] >>> 0,5933
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Si El Mundo Se Acabara by Justin Quiles (Hip-Hop)
+SECOND SONG :: "說散就散 - ""前任3:再見前任""電影主題曲" by Tia Ray (Jazz)
+
+
+[[[Hip-Hop - Jazz]]] >>> 0,6661
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Chicken by Jaco Pastorius (Jazz)
+SECOND SONG :: Cockroach King by Haken (Jazz)
+
+
+[[[Jazz - Jazz]]] >>> 0,7056
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Play With Us (feat. Kevin Gates) by Lil Durk (Rap)
+SECOND SONG :: Pimp Hoe by Mike Sherm (Rap)
+
+
+[[[Rap - Rap]]] >>> 0,1728
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: With That (feat. Duke) by Young Thug (Rap)
+SECOND SONG :: Daughter by Four Tet (Dance)
+
+
+[[[Rap - Dance]]] >>> 0,7881
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: The Need to Know (feat. SZA) by Wale (Dance)
+SECOND SONG :: Bad At Love by Halsey (Dance)
+
+
+[[[Dance - Dance]]] >>> 0,6794
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Tchaikovsky: Symphony No. 4 in F Minor, Op. 36, TH 27: IV. Finale (Allegro con fuoco) by Pyotr Ilyich Tchaikovsky (Classical)
+SECOND SONG :: The Hornburg by Howard Shore (Classical)
+
+
+[[[Classical - Classical]]] >>> 0,2169
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Symphony in G Major, Bryan G6: II. Andante molto grazioso by Johann Baptist Vanhal (Classical)
+SECOND SONG :: We Come Running by Youngblood Hawke (Indie)
+
+
+[[[Classical - Indie]]] >>> 1,2082
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: The Crane Wife 3 by The Decemberists (Indie)
+SECOND SONG :: Weight in Gold by Gallant (Indie)
+
+
+[[[Indie - Indie]]] >>> 0,4186
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Fast Times by Albert Hammond, Jr. (Rock)
+SECOND SONG :: Barefoot Blue Jean Night by Jake Owen (Rock)
+
+
+[[[Rock - Rock]]] >>> 0,2856
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Only the Wild Ones by Dispatch (Rock)
+SECOND SONG :: Scum by Datsik (Electronic)
+
+
+[[[Rock - Electronic]]] >>> 0,5292
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: R U I N by Ekali (Electronic)
+SECOND SONG :: You Make It Easy by Air (Electronic)
+
+
+[[[Electronic - Electronic]]] >>> 0,2823
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Decadence by Disturbed (Alternative)
+SECOND SONG :: Bills by grandson (Alternative)
+
+
+[[[Alternative - Alternative]]] >>> 0,3469
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: What If I Was Nothing by All That Remains (Alternative)
+SECOND SONG :: Lost by Chris Young (Country)
+
+
+[[[Alternative - Country]]] >>> 0,626
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Fenceposts by Cody Johnson (Country)
+SECOND SONG :: Honky-Tonk Man by Johnny Horton (Country)
+
+
+[[[Country - Country]]] >>> 0,5818
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Just For Tonight by James Bay (Pop)
+SECOND SONG :: Poison & Wine by The Civil Wars (Pop)
+
+
+[[[Pop - Pop]]] >>> 1,0878
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Ambiente by J Balvin (Pop)
+SECOND SONG :: Superstar by Ms. Lauryn Hill (R&B)
+
+
+[[[Pop - R&B]]] >>> 0,1736
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: I Won't by H.E.R. (R&B)
+SECOND SONG :: Surprise Yourself by Jack Garratt (R&B)
+
+
+[[[R&B - R&B]]] >>> 0,3552
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: 1539 N. Calvert by JPEGMAFIA (Hip-Hop)
+SECOND SONG :: Spaceship by 6 Dogs (Hip-Hop)
+
+
+[[[Hip-Hop - Hip-Hop]]] >>> 0,7767
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Blank Blank by DaBaby (Hip-Hop)
+SECOND SONG :: Utopia by TesseracT (Jazz)
+
+
+[[[Hip-Hop - Jazz]]] >>> 0,624
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Killing Me by Tal Wilkenfeld (Jazz)
+SECOND SONG :: Powers That Be by Hieroglyphics (Jazz)
+
+
+[[[Jazz - Jazz]]] >>> 0,4252
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Main Chick by Marc E. Bassy (Rap)
+SECOND SONG :: alarm by atlas (Rap)
+
+
+[[[Rap - Rap]]] >>> 0,5505
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Unforgettable by Drake (Rap)
+SECOND SONG :: Young Americans - 2016 Remastered Version by David Bowie (Dance)
+
+
+[[[Rap - Dance]]] >>> 0,7895
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: One Time by Justin Bieber (Dance)
+SECOND SONG :: No More Sad Songs by Little Mix (Dance)
+
+
+[[[Dance - Dance]]] >>> 0,0634
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Daphnis et Chloé, M. 57, Acte I, Deuxième partie: Danse suppliante de Chloé - Live by Maurice Ravel (Classical)
+SECOND SONG :: "Bagatelle In A Minor, WoO 59 -""Für Elise""" by Ludwig van Beethoven (Classical)
+
+
+[[[Classical - Classical]]] >>> 0,1692
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Lemminkainen Suite, Op. 22: II. The Swan of Tuonela by Jean Sibelius (Classical)
+SECOND SONG :: Bonfires by Elder Island (Indie)
+
+
+[[[Classical - Indie]]] >>> 0,9437
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Zero by Electric Guest (Indie)
+SECOND SONG :: Damelo by Ceaese (Indie)
+
+
+[[[Indie - Indie]]] >>> 0,7403
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Autumn Town Leaves by Iron & Wine (Rock)
+SECOND SONG :: Monte Carlo (feat. WET) by Toro y Moi (Rock)
+
+
+[[[Rock - Rock]]] >>> 0,8187
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Not Today by Twenty One Pilots (Rock)
+SECOND SONG :: Get Your Shirt by Underworld (Electronic)
+
+
+[[[Rock - Electronic]]] >>> 0,2199
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Safe and Sound by Justice (Electronic)
+SECOND SONG :: '79 aka The Shouty Track by Lemon Jelly (Electronic)
+
+
+[[[Electronic - Electronic]]] >>> 0,4922
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: St. Marie by Stone Sour (Alternative)
+SECOND SONG :: Never by Trevor Daniel (Alternative)
+
+
+[[[Alternative - Alternative]]] >>> 0,4463
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Water in a Well by Sturgill Simpson (Alternative)
+SECOND SONG :: She's Not Me by Jenny Lewis (Country)
+
+
+[[[Alternative - Country]]] >>> 0,682
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: David Ashley Parker From Powder Springs by Travis Denning (Country)
+SECOND SONG :: Loveless (feat. Robert James) by Upchurch (Country)
+
+
+[[[Country - Country]]] >>> 0,3962
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Daydream (백일몽) by j-hope (Pop)
+SECOND SONG :: Just Give Me a Reason by P!nk (Pop)
+
+
+[[[Pop - Pop]]] >>> 0,6781
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Vacation by Takeoff (Pop)
+SECOND SONG :: Quick by Brielle Lesley (R&B)
+
+
+[[[Pop - R&B]]] >>> 0,1893
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Hope You Do by Chris Brown (R&B)
+SECOND SONG :: Tell Me You Love Me - Spanish Version by Demi Lovato (R&B)
+
+
+[[[R&B - R&B]]] >>> 0,1073
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Walk by Young M.A (Hip-Hop)
+SECOND SONG :: Dirt Off Your Shoulder / Lying From You by JAY Z (Hip-Hop)
+
+
+[[[Hip-Hop - Hip-Hop]]] >>> 0,7678
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Way Back by Shakewell (Hip-Hop)
+SECOND SONG :: Perdido - Remastered - Take 1 by Duke Ellington (Jazz)
+
+
+[[[Hip-Hop - Jazz]]] >>> 0,7571
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: I'll Be Doggone by Solomon Burke (Jazz)
+SECOND SONG :: Are You Ready? by Four80East (Jazz)
+
+
+[[[Jazz - Jazz]]] >>> 0,6669
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Bastard by Tyler, The Creator (Rap)
+SECOND SONG :: The Law (feat. Mac Miller & Rapsody) by Ab-Soul (Rap)
+
+
+[[[Rap - Rap]]] >>> 0,6279
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Drowning (feat. Kodak Black) by A Boogie Wit da Hoodie (Rap)
+SECOND SONG :: Star by Bazzi (Dance)
+
+
+[[[Rap - Dance]]] >>> 0,6178
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: I Wanna Be by Kehlani (Dance)
+SECOND SONG :: History by Cosmo's Midnight (Dance)
+
+
+[[[Dance - Dance]]] >>> 0,1134
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: "Piano Sonata No. 2 in B-Flat Minor, Op. 35 ""Funeral March"": II. Scherzo" by Frédéric Chopin (Classical)
+SECOND SONG :: Goldberg Variations, BWV 988: Variation 29 a 1 ovvero 2 Clav. - Remastered by Johann Sebastian Bach (Classical)
+
+
+[[[Classical - Classical]]] >>> 0,7237
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: The Needle Lies - Remastered 2003 by Queensrÿche (Classical)
+SECOND SONG :: Cupid by pH-1 (Indie)
+
+
+[[[Classical - Indie]]] >>> 0,5046
+-----------------------------------------
+
+-----------------------------------------
+FIRST SONG :: Japan by Rex Orange County (Indie)
+SECOND SONG :: Worship You by Vampire Weekend (Indie)
+
+
+[[[Indie - Indie]]] >>> 0,9646
+-----------------------------------------
+

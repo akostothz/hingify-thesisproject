@@ -37,7 +37,6 @@ export class ForyouComponent implements OnInit {
     this.token = authorizationCode;
 
     this.accountService.updateToken(this.token);
-    console.log(authorizationCode);
   }
 
   createPlaylist() {
@@ -51,7 +50,6 @@ export class ForyouComponent implements OnInit {
   addBehavior() {
     this.addedBehaviors$ = this.musicService.addNewBehavior();
   }
-
 
   likeSong(id: number) {
     var lsong: LikedSong = {
@@ -98,7 +96,6 @@ export class ForyouComponent implements OnInit {
 
   srcgenerator(trrackId: string) {
     let x = 'https://open.spotify.com/embed/track/' + trrackId + '?utm_source=generator';
-    
     return this.sanitizer.bypassSecurityTrustResourceUrl(x);
   }
 

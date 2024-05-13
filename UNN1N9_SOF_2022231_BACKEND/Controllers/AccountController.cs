@@ -3,6 +3,7 @@ using Azure.Core;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using RestSharp;
 using SpotifyAPI.Web;
@@ -17,6 +18,7 @@ using UNN1N9_SOF_2022231_BACKEND.Extensions;
 using UNN1N9_SOF_2022231_BACKEND.Helpers;
 using UNN1N9_SOF_2022231_BACKEND.Interfaces;
 using UNN1N9_SOF_2022231_BACKEND.Models;
+using UNN1N9_SOF_2022231_BACKEND.Services;
 
 namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 {
@@ -28,37 +30,24 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
         private readonly IPhotoService _photoService;
+        private readonly SpotifySettings _spotifySettings;
 
-        public AccountController(DataContext context, ITokenService tokenService, IMapper mapper, IPhotoService photoService)
+        public AccountController(DataContext context, ITokenService tokenService, IMapper mapper, IPhotoService photoService, IOptions<SpotifySettings> spotifySettings)
         {
             this._context = context;
             this._tokenService = tokenService;
             this._mapper = mapper;
             this._photoService = photoService;
+            this._spotifySettings = spotifySettings.Value;
         }
 
-        [HttpGet("spotify-auth")]
-        public async Task<ActionResult> SpotifyAuth()
-        {
-            
-
-
-            return Ok();
-        }
         [HttpPost("getaccesstoken")]
         public async Task<ActionResult> GetAccessToken(AccessTokenDTO accessToken)
         {
             string authorizationCode = accessToken.token;
             string redirectUri = "http://localhost:4200/spotify-success";
-            string clientId = "1ec4eab22f26449491c0d514d9b464ef";
-            string clientSecret = "ede6e9fc0b024434a1e9f6302f7873a4";
-
-            Console.WriteLine(authorizationCode);
-
-            ;
-
-            
-
+            string clientId = _spotifySettings.ClientId;
+            string clientSecret = _spotifySettings.ClientSecret;
 
             RestClient client = new RestClient("https://accounts.spotify.com");
             RestRequest request = new RestRequest("api/token", Method.Post);
@@ -71,8 +60,6 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             RestResponse response = client.Execute(request);
             string responseBody = response.Content;
 
-            ;
-
             if (responseBody.ToLower().Contains("error"))
             {
                 return BadRequest();
@@ -81,27 +68,27 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             {
                 var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == accessToken.userid);
                 var cut = JsonConvert.DeserializeObject<ResponseDTO>(responseBody);
-                ;
+
                 user.SpotifyAccessToken = cut.access_token;
-                ;
+
                 _context.SaveChanges();
                 return Ok();
-            }
 
+            }
         }
+
         [HttpPut("updatetokenforhelp")]
         public async Task<ActionResult<UserDto>> UpdateTokenForHelp(AccessTokenDTO accessToken)
         {
             string authorizationCode = accessToken.token;
             string redirectUri = "http://localhost:4200/help";
-            string clientId = "1ec4eab22f26449491c0d514d9b464ef";
-            string clientSecret = "ede6e9fc0b024434a1e9f6302f7873a4";
-            ;
+            string clientId = _spotifySettings.ClientId;
+            string clientSecret = _spotifySettings.ClientSecret;
+
             var user = _context.Users.SingleOrDefault(x => x.Id == accessToken.userid);
 
             HttpClient httpClient2 = new HttpClient();
 
-            // Set up the request body
             var requestContent2 = new FormUrlEncodedContent(new Dictionary<string, string>
             {
             {"grant_type", "authorization_code"},
@@ -110,17 +97,15 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             {"client_id", clientId},
             {"client_secret", clientSecret}
             });
-            ;
-            // Send the POST request to get the access token and refresh token
+            
             var response2 = await httpClient2.PostAsync("https://accounts.spotify.com/api/token", requestContent2);
-            ;
+            
             response2.EnsureSuccessStatusCode();
-            ;
-            // Get the response content
+            
             var responseContent2 = await response2.Content.ReadAsStringAsync();
-            // Parse the JSON response to get the new access token
+
             var tokenResponse2 = JsonConvert.DeserializeObject<ResponseDTO>(responseContent2);
-            ;
+            
 
             user.SpotifyAccessToken = tokenResponse2.access_token;
             _context.SaveChanges();
@@ -133,14 +118,13 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         {
             string authorizationCode = accessToken.token;
             string redirectUri = "http://localhost:4200/foryou";
-            string clientId = "1ec4eab22f26449491c0d514d9b464ef";
-            string clientSecret = "ede6e9fc0b024434a1e9f6302f7873a4";
-            ;
+            string clientId = _spotifySettings.ClientId;
+            string clientSecret = _spotifySettings.ClientSecret;
+            
             var user = _context.Users.SingleOrDefault(x => x.Id == accessToken.userid);
 
             HttpClient httpClient2 = new HttpClient();
 
-            // Set up the request body
             var requestContent2 = new FormUrlEncodedContent(new Dictionary<string, string>
             {
             {"grant_type", "authorization_code"},
@@ -149,17 +133,14 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             {"client_id", clientId},
             {"client_secret", clientSecret}
             });
-            ;
-            // Send the POST request to get the access token and refresh token
+            
             var response2 = await httpClient2.PostAsync("https://accounts.spotify.com/api/token", requestContent2);
-            ;
+            
             response2.EnsureSuccessStatusCode();
-            ;
-            // Get the response content
+            
             var responseContent2 = await response2.Content.ReadAsStringAsync();
-            // Parse the JSON response to get the new access token
             var tokenResponse2 = JsonConvert.DeserializeObject<ResponseDTO>(responseContent2);
-            ;
+            
 
             user.SpotifyAccessToken = tokenResponse2.access_token;
             _context.SaveChanges();
@@ -174,7 +155,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             var pics = new List<string>();
             pics.Add(user.PhotoUrl);
             var x = user.PhotoUrl;
-            ;
+            
             return pics;
         }
         [HttpGet("deletephoto/{id}")]
@@ -194,8 +175,8 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
             string authorizationCode = accessToken.token;
             string redirectUri = "http://localhost:4200/spotify-success";
-            string clientId = "1ec4eab22f26449491c0d514d9b464ef";
-            string clientSecret = "ede6e9fc0b024434a1e9f6302f7873a4";
+            string clientId = _spotifySettings.ClientId;
+            string clientSecret = _spotifySettings.ClientSecret;
 
             RestClient client = new RestClient("https://accounts.spotify.com");
             RestRequest request = new RestRequest("api/token", Method.Post);
@@ -219,11 +200,10 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         [HttpGet("spotify-register/{token}")]
         public ActionResult<UserDto> SpotifyRegister(string token)
         {
-            ;
             string authorizationCode = token;
             string redirectUri = "http://localhost:4200/spotify-register";
-            string clientId = "1ec4eab22f26449491c0d514d9b464ef";
-            string clientSecret = "ede6e9fc0b024434a1e9f6302f7873a4";
+            string clientId = _spotifySettings.ClientId;
+            string clientSecret = _spotifySettings.ClientSecret;
 
             RestClient client = new RestClient("https://accounts.spotify.com");
             RestRequest request = new RestRequest("api/token", Method.Post);
@@ -232,7 +212,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
             request.AddParameter("redirect_uri", redirectUri);
             request.AddParameter("client_id", clientId);
             request.AddParameter("client_secret", clientSecret);
-            ;
+            
             RestResponse response = client.Execute(request);
             string responseBody = response.Content;
             string access_token = "";
@@ -242,26 +222,22 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
                 var cut = JsonConvert.DeserializeObject<ResponseDTO>(responseBody);
                 access_token = cut.access_token;
             }
-            ;
+            
             if (access_token != "")
             {
-                ;
                 var client2 = new RestClient("https://api.spotify.com");
                 var request2 = new RestRequest("/v1/me", Method.Get);
                 request2.AddHeader("Authorization", $"Bearer {access_token}");
 
                 var response2 = client2.Execute(request2);
-                ;
+                
                 if (response2.IsSuccessful)
                 {
-                    
-                    
-                    ;
                     var spotyuser = JsonConvert.DeserializeObject<SpotifyAccountDTO>(response2.Content);
-                    RegisterDto dto = new RegisterDto() 
-                    { 
-                        UserName = spotyuser.display_name, 
-                        Country = CountryCovert.CountryConvert(spotyuser.country), 
+                    RegisterDto dto = new RegisterDto()
+                    {
+                        UserName = spotyuser.display_name,
+                        Country = CountryCovert.CountryConvert(spotyuser.country),
                         Email = spotyuser.email,
                         Gender = _photoService.TransformImage(spotyuser.images[0].url)
                     };
@@ -289,9 +265,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         public async Task<ActionResult<UserDto>> SpotifyPic(AccessTokenDTO accessToken)
         {
             var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == accessToken.userid);
-            ;
             RetrieveAccessToken(accessToken);
-            ;
 
             if (user.SpotifyAccessToken != null)
             {
@@ -300,14 +274,12 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
                 request.AddHeader("Authorization", $"Bearer {user.SpotifyAccessToken}");
 
                 var response = client.Execute(request);
-                  ;
+
                 if (response.IsSuccessful)
                 {
-                    ;
                     var spotyuser = JsonConvert.DeserializeObject<SpotifyAccountDTO>(response.Content);
-                    ;
                     user.PhotoUrl = _photoService.TransformImage(spotyuser.images[0].url);
-                    ;
+
                     _context.SaveChanges();
                     return new UserDto
                     {
@@ -377,7 +349,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
-            ;
+            
             if (user == null)
                 return Unauthorized("Invalid username!");
 
@@ -424,12 +396,12 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         }
 
         [HttpPost("addphoto")]
-        public async Task<ActionResult<IEnumerable<PhotoDto>>> AddPhoto(IFormFile file) 
+        public async Task<ActionResult<IEnumerable<PhotoDto>>> AddPhoto(IFormFile file)
         {
             var username = User.GetUsername();
             var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == username);
             var pics = new List<PhotoDto>();
-            ;
+            
             if (user == null)
                 return NotFound();
 
@@ -440,14 +412,14 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
             user.PhotoUrl = result.SecureUrl.AbsoluteUri;
             user.PublicId = result.PublicId;
-            ;
+            
 
             if (await _context.SaveChangesAsync() > 0)
             {
                 pics.Add(_mapper.Map<PhotoDto>(user));
                 return pics;
             }
-                
+
 
             return BadRequest("An error occured while uploading your photo. Please try again.");
         }
@@ -463,3 +435,4 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
     }
 }
+

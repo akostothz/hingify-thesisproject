@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNN1N9_SOF_2022231_BACKEND", "UNN1N9_SOF_2022231_BACKEND\UNN1N9_SOF_2022231_BACKEND.csproj", "{6EFE9ADA-CF80-477E-9904-D0B37DC0D190}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HingifyTests", "HingifyTests\HingifyTests.csproj", "{18373C69-DCBD-4C44-B411-377F13A3CD28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6EFE9ADA-CF80-477E-9904-D0B37DC0D190}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EFE9ADA-CF80-477E-9904-D0B37DC0D190}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EFE9ADA-CF80-477E-9904-D0B37DC0D190}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18373C69-DCBD-4C44-B411-377F13A3CD28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18373C69-DCBD-4C44-B411-377F13A3CD28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18373C69-DCBD-4C44-B411-377F13A3CD28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18373C69-DCBD-4C44-B411-377F13A3CD28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

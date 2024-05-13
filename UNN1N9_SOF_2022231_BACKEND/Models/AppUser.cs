@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace UNN1N9_SOF_2022231_BACKEND.Models
 {
-    public class AppUser/* : IdentityUser*/
+    public class AppUser
     {
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -20,7 +20,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Models
         [StringLength(50)]
         public string UserName { get; set; }
 
-        public byte[] PasswordHash { get; set; } //ezt még kicserélni IdentityUser-es verzióra
+        public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
 
         [Required]

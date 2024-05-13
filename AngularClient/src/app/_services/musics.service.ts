@@ -53,6 +53,7 @@ export class MusicsService {
         return addedMusics;
       }));
   }
+
   addNewBehavior() {
     let userid = JSON.parse(localStorage.getItem('user'))?.id;
     this.TimeSetter();
@@ -118,7 +119,6 @@ export class MusicsService {
     let cidPlus = u.map(e => e.replace('?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>', ''))
     cid += cidPlus[0].substring(77);
     
-    console.log(cid);
     return this.http.get<Music[]>(this.baseUrl + 'Music/AddSongWithCid/' + cid).pipe(
       map(addedMusics => {
         this.addedMusics = addedMusics;
@@ -134,7 +134,6 @@ export class MusicsService {
   }
 
   getTrackIds() {
-    console.log(this.likedsongs);
     const mIds: Array<String> = [];
     this.likedsongs.forEach(x => {
       mIds.push(x.trackId);
@@ -145,7 +144,6 @@ export class MusicsService {
   createPlaylist(token: string) {
     
     const mIds: Array<String> = [];
-    console.log('Token: ' + token)
     mIds.push((JSON.parse(localStorage.getItem('user'))?.id).toString());
     mIds.push(token);
 
@@ -156,9 +154,7 @@ export class MusicsService {
 
     return this.http.post(this.baseUrl + 'Music/CreatePlaylist', mIds).subscribe(
       response => {
-        map((response: any) => {
-          console.log(response);
-          
+        map((response: any) => {      
         })
         this.toastr.success('Playlist created on Spotify.')
       })
@@ -169,8 +165,6 @@ export class MusicsService {
     return this.http.post(this.baseUrl + 'Music/LikeSong', model).subscribe(
       response => {
         map((response: any) => {
-          console.log(response);
-          
         })
         this.toastr.success('Song added to Liked Songs.');
       },
@@ -182,8 +176,6 @@ export class MusicsService {
     return this.http.post(this.baseUrl + 'Music/DisikeSong', model).subscribe(
       response => {
         map((response: any) => {
-          console.log(response);
-          
         })
         this.toastr.warning('Song removed from Liked Songs.');
       },
@@ -234,7 +226,6 @@ export class MusicsService {
     return this.http.get<Stat[]>(this.baseUrl + 'Music/GetDailyStatistics2/' + id).pipe(
       map(dailyStats => {
         this.dailyStats = dailyStats;
-        console.log(this.dailyStats)
         return dailyStats;
       })
     );
@@ -244,7 +235,6 @@ export class MusicsService {
     return this.http.get<Stat[]>(this.baseUrl + 'Music/GetWeeklyStatistics2/' + id).pipe(
       map(weeklyStats => {
         this.weeklyStats = weeklyStats;
-        console.log(this.weeklyStats)
         return weeklyStats;
       })
     );
@@ -254,7 +244,6 @@ export class MusicsService {
     return this.http.get<Stat[]>(this.baseUrl + 'Music/GetMonthlyStatistics2/' + id).pipe(
       map(monthlyStats => {
         this.monthlyStats = monthlyStats;
-        console.log(this.monthlyStats)
         return monthlyStats;
       })
     );
@@ -264,7 +253,6 @@ export class MusicsService {
     return this.http.get<Stat[]>(this.baseUrl + 'Music/GetYearlyStatistics2/' + id).pipe(
       map(yearlyStats => {
         this.yearlyStats = yearlyStats;
-        console.log(this.yearlyStats)
         return yearlyStats;
       })
     );
@@ -274,8 +262,6 @@ export class MusicsService {
     return this.http.get<number[]>(this.baseUrl + 'Music/GetLast7DaysMins/' + id).pipe(
       map(last7daysMins => {
         this.last7daysMins = last7daysMins;
-        console.log('musicService')
-        console.log(this.last7daysMins)
         return last7daysMins;
       })
     );
@@ -285,8 +271,6 @@ export class MusicsService {
     return this.http.get<string[]>(this.baseUrl + 'Music/GetLast7Days/' + id).pipe(
       map(last7daysDays => {
         this.last7daysDays = last7daysDays;
-        console.log('musicService')
-        console.log(this.last7daysDays)
         return last7daysDays;
       })
     );
@@ -313,7 +297,8 @@ export class MusicsService {
 
   getLikedSongs(id: number) {
     if (this.likedsongs.length > 0) return of(this.likedsongs);
-    return this.http.get<Music[]>(this.baseUrl + 'Music/GetActualLikedSongs/' + id).pipe(
+    return this.http.get<Music[]>(this.baseUrl + 'Music/GetActualLikedSongs/' + id)
+    .pipe(
       map(likedsongs => {
         this.likedsongs = likedsongs;
         return likedsongs;

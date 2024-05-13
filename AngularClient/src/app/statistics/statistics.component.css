@@ -29,8 +29,6 @@ h3 {
     cursor: pointer;
 }
 
-
-
 .wrap {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -45,48 +43,19 @@ h3 {
     
     .dailystat { 
         grid-area: 2 / 1 / 5 / 2; 
-
-        /*
-        border-radius: 12px;
-        border-width: 2px;
-        border-color: rgb(23, 77, 192);
-        border-style: solid;
-        */
     }
 
     .weeklystat { 
         grid-area: 2 / 2 / 5 / 3; 
-
-        /*
-        border-radius: 12px;
-        border-width: 2px;
-        border-color: rgb(23, 77, 192);
-        border-style: solid;
-        */
     }
 
     .monthlystat { 
         grid-area: 2 / 3 / 5 / 4; 
-
-        /*
-        border-radius: 12px;
-        border-width: 2px;
-        border-color: rgb(23, 77, 192);
-        border-style: solid;
-        */
     }
 
     .yearlystat { 
         grid-area: 2 / 4 / 5 / 5; 
-
-        /*
-        border-radius: 12px;
-        border-width: 2px;
-        border-color: rgb(23, 77, 192);
-        border-style: solid;
-        */
     }
-
 
     .card {
         margin-bottom: 1em;

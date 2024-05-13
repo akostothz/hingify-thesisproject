@@ -45,12 +45,6 @@
                 </a>
               </li> 
               
-              <!--
-            <li class="nav-item">
-              <a class="nav-link" id="navitem" routerLink="/spotify-auth" routerLinkActive="active">
-                Authorize
-              </a>
-            </li> -->
           </ng-container> 
 
           <ng-container>
@@ -64,8 +58,7 @@
           </ng-container>
           
         </ul>
-
-       
+   
         
         <div class="dropdown" id="ddown" *ngIf="(accountService.currentUser$ | async) === null" dropdown>
           <a class="dropdown-toggle" id="dtoggle" dropdownToggle>Log In / Sign Up</a>
@@ -82,7 +75,7 @@
           <img src="{{ this.picUrl || './assets/user2.png'}}" all="user photo">
           <a class="dropdown-toggle" id="dtoggle" dropdownToggle>{{user.firstName}} {{user.lastName}}</a>
           <div class="dropdown-menu mt-3 bg-dark" id="dmenu" *dropdownMenu="">
-            <a class="dropdown-item"  routerLink="/edit">Logged in as: @{{user.username}}</a>
+            <a class="dropdown-item"  routerLink="/edit">Logged in as: {{user.username}}</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" routerLink="/edit">
               <i class="fa-solid fa-pen-to-square" id="icon"></i>

@@ -72,9 +72,7 @@ export class EditPhotoComponent implements OnInit {
 
       const authorizationCode = urlParams.get('code');
       console.log(authorizationCode);
-      this.accountService.retrieveFromSpotify(authorizationCode);*/
-      
-      
+      this.accountService.retrieveFromSpotify(authorizationCode);*/     
     }
 
     upload() {

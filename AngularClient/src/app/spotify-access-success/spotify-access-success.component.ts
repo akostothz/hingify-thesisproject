@@ -21,7 +21,6 @@ export class SpotifyAccessSuccessComponent implements OnInit {
 
     const authorizationCode = urlParams.get('code');
 
-    console.log(authorizationCode);
     this.accountService.retrieveFromSpotify(authorizationCode);
   }
 }

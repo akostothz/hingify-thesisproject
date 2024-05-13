@@ -15,8 +15,7 @@ export class LikedsongsComponent implements OnInit {
   likedsongs$: Observable<Music[]> | undefined;
   addedBehaviors$: Observable<Behavior[]> | undefined;
 
-  constructor(private musicService: MusicsService, private sanitizer: DomSanitizer) {
-  }
+  constructor(private musicService: MusicsService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.likedsongs$ = this.musicService.getLikedSongs(JSON.parse(localStorage.getItem('user'))?.id);
@@ -32,7 +31,6 @@ export class LikedsongsComponent implements OnInit {
 
   isLiked(music: Music) {
     var res = this.musicService.isLiked(music);
-    console.log(res);
     return res;
   }
 

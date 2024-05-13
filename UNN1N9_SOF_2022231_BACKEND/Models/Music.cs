@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
+using UNN1N9_SOF_2022231_BACKEND.DTOs;
 
 namespace UNN1N9_SOF_2022231_BACKEND.Models
 {
@@ -60,6 +61,20 @@ namespace UNN1N9_SOF_2022231_BACKEND.Models
         public virtual ICollection<AppUser> Users { get; set; }
         [JsonIgnore]
         public virtual ICollection<UserBehavior> UserBehaviors { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Music other = (Music)obj;
+
+            return ArtistName == other.ArtistName &&
+                TrackName == other.TrackName &&
+                TrackId == other.TrackId;
+        }
 
     }
 }

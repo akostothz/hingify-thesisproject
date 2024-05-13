@@ -45,7 +45,6 @@ export class AgegroupsongsComponent implements OnInit {
   
     srcgenerator(trrackId: string) {
       let x = 'https://open.spotify.com/embed/track/' + trrackId + '?utm_source=generator';
-      
       return this.sanitizer.bypassSecurityTrustResourceUrl(x);
     }
 

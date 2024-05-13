@@ -108,8 +108,6 @@ export class AccountService {
       response => {
         map((response: User) => {
           const user = response;
-          //localStorage.removeItem('user');
-          //localStorage.setItem('user', JSON.stringify(user));
         })
         this.toastr.success('Profile successfully updated. Might need to hard refresh to see the changes.');
       },

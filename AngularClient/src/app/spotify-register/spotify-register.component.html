@@ -10,7 +10,7 @@
 <div class="card" *ngIf="displayedUser != null">
     <h5 class="card-header">
         <img src="{{displayedUser.photoUrl || './assets/user2.png'}}">
-        @{{displayedUser.username}}
+        {{displayedUser.username}}
     </h5>
     <div class="card-body">
       <h5 class="card-title">{{displayedUser.country}}</h5>

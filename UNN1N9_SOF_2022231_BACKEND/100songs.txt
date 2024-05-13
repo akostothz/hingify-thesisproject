@@ -1,0 +1,2509 @@
+Genre: Rock
+
+Rainbow Kitten Surprise: American Hero
+Mean: 0,1256
+Tesla: Love Song
+Mean: 0,1637
+Elle King: America's Sweetheart
+Mean: 0,0488
+Interpol: Fine Mess
+Mean: 0,0212
+Pizzagirl: Seabirds
+Mean: 0,0817
+Thirty Seconds To Mars: Kings And Queens
+Mean: 0,0875
+Trampled by Turtles: Wildflowers
+Mean: 0,1118
+Fleetwood Mac: Think About Me - 2015 Remaster
+Mean: 0,0357
+Shinedown: Adrenaline
+Mean: 0,0268
+Polyphia: Nasty (feat. Jason Richardson)
+Mean: 0,0208
+No Doubt: Underneath It All - Acoustic Live - German Radio
+Mean: 0,0957
+Peter Frampton: Do You Feel Like We Do - Live
+Mean: 0,1085
+Florida Georgia Line: Good Good
+Mean: 0,0328
+Radiohead: Knives Out
+Mean: 0,0879
+Diamond Rio: Beautiful Mess
+Mean: 0,1031
+Oh Wonder: Shark
+Mean: 0,1051
+Papa Roach: Elevate
+Mean: 0,0626
+Oh Wonder: Landslide
+Mean: 0,0535
+Anthrax: Caught In A Mosh
+Mean: 0,0563
+Blackberry Smoke: One Horse Town
+Mean: 0,0622
+Shinedown: 45
+Mean: 0,0573
+Pink Floyd: Echoes
+Mean: 0,1191
+Staind: Epiphany
+Mean: 0,0737
+Catfish and the Bottlemen: Oxygen
+Mean: 0,0322
+Joy Division: Disorder - 2007 Remastered Version
+Mean: 0,0432
+Panic! At The Disco: This Is Gospel
+Mean: 0,0412
+Two Door Cinema Club: Sleep Alone
+Mean: 0,0432
+Shinedown: KILL YOUR CONSCIENCE
+Mean: 0,0366
+TV Girl: Anjela
+Mean: 0,0576
+The Marcus King Band: How Long
+Mean: 0,0477
+10cc: The Things We Do For Love
+Mean: 0,0568
+Muse: Blockades
+Mean: 0,0315
+The Breeders: Cannonball
+Mean: 0,0317
+Beck: I'm So Free
+Mean: 0,0287
+Toots & The Maytals: Take Me Home, Country Roads
+Mean: 0,1344
+Beck: Loser
+Mean: 0,0891
+Nick Drake: Place To Be
+Mean: 0,0547
+Icon For Hire: Make A Move
+Mean: 0,0627
+Bring Me The Horizon: The House Of Wolves
+Mean: 0,1072
+Cold War Kids: Can We Hang On ?
+Mean: 0,0583
+Owl City: Good Time
+Mean: 0,0281
+Interpol: Obstacle 1
+Mean: 0,0308
+QUEEN BEE: Fire
+Mean: 0,0471
+Bastille: Oblivion
+Mean: 0,0783
+Jim Croce: Walking Back To Georgia
+Mean: 0,0579
+Three Dog Night: One - Single Version
+Mean: 0,1098
+The Revivalists: It Was A Sin
+Mean: 0,1445
+AC/DC: If You Want Blood (You've Got It)
+Mean: 0,0258
+No Doubt: Hella Good
+Mean: 0,0364
+Twenty One Pilots: Leave The City
+Mean: 0,0811
+Pink Floyd: Empty Spaces
+Mean: 0,1377
+YUNGBLUD: Kill Somebody
+Mean: 0,1531
+Beck: Heart Is A Drum
+Mean: 0,0471
+Beck: Heart Is A Drum
+Mean: 0,0471
+Stone Temple Pilots: Plush - Remastered
+Mean: 0,0315
+Pearl Jam: The Fixer
+Mean: 0,0768
+Chubby Checker: The Twist
+Mean: 0,0832
+The Postal Service: Such Great Heights - Remastered
+Mean: 0,0645
+Queen: We Are The Champions
+Mean: 0,0646
+Diamond Rio: One More Day
+Mean: 0,1034
+SALES: Chinese New Year
+Mean: 0
+Des'ree: You Gotta Be
+Mean: 0,0495
+Faith Hill: Breathe
+Mean: 0,0792
+The 1975: Nana
+Mean: 0,0905
+Alanis Morissette: Head over Feet - 2015 Remaster
+Mean: 0,0408
+Cage The Elephant: House Of Glass
+Mean: 0,015
+X Ambassadors: BOOM
+Mean: 0,0713
+Lewis Del Mar: Live That Long
+Mean: 0,0842
+The Cult: She Sells Sanctuary
+Mean: 0,0305
+The Growlers: Going Gets Tough
+Mean: 0,0882
+Coconut Records: West Coast
+Mean: 0,078
+Darius Rucker: For The First Time
+Mean: 0,0325
+X Ambassadors: Renegades - Live Session / Acoustic Version
+Mean: 0,1202
+Cass McCombs: Brighter!
+Mean: 0,1075
+Meredith Brooks: Bitch
+Mean: 0,0242
+AJR: Let the Games Begin
+Mean: 0,0361
+Led Zeppelin: Since I've Been Loving You - Remastered
+Mean: 0,1662
+Stevie Ray Vaughan: Love Struck Baby
+Mean: 0,1308
+Arctic Monkeys: Love is a Laserquest
+Mean: 0,0975
+Mellow Fellow: Dancing
+Mean: 0,0601
+The Smashing Pumpkins: Bullet With Butterfly Wings - Remastered 2012
+Mean: 0,0717
+The Beatles: Ticket To Ride - Remastered 2015
+Mean: 0,0512
+Black Sabbath: Jack The Stripper/Fairies Wear Boots - Remastered Version
+Mean: 0,0516
+Aaron Tippin: You've Got to Stand for Something
+Mean: 0,0431
+The Fratellis: Whistle For The Choir
+Mean: 0,0435
+Cole Swindell: Ain't Worth The Whiskey
+Mean: 0,0278
+Nirvana: About A Girl
+Mean: 0,041
+grandson: Kiss Bang
+Mean: 0,0847
+Zayde Wølf: New Blood
+Mean: 0,0753
+Mt. Joy: Astrovan
+Mean: 0,1218
+Meat Loaf: I'd Do Anything For Love (But I Won't Do That) - Single Edit
+Mean: 0,1396
+Chevelle: Send the Pain Below
+Mean: 0,0291
+Cypress Hill: How I Could Just Kill a Man
+Mean: 0,0541
+KISS: I Love It Loud
+Mean: 0,0572
+Mr Twin Sister: Echo Arms
+Mean: 0,1023
+Fleetwood Mac: Sara
+Mean: 0,1121
+Ten Years After: I'd Love to Change the World - 2004 Remaster
+Mean: 0,1294
+Young the Giant: I Got
+Mean: 0,0471
+Mandisa: Unfinished
+Mean: 0,0404
+Panic! At The Disco: This Is Gospel
+Mean: 0,0412
+
+
+Mean of the 100 songs >>> 0,0691
+
+-----------------------------------------------
+
+
+Genre: Electronic
+
+QUIX: Stronger (feat. Elanese)
+Mean: 0,0252
+Thom Yorke: And It Rained All Night
+Mean: 0,0473
+Apashe: Golden Empire feat. Zitaa - Original Mix
+Mean: 0,0632
+Jamiroquai: Talullah
+Mean: 0,1262
+Borgore: Body and Soul (feat. Yael)
+Mean: 0,0952
+Pendulum: Crush
+Mean: 0,1209
+Flux Pavilion: Freeway
+Mean: 0,0604
+Gaullin: We Are
+Mean: 0,1067
+Liquid Stranger: Goodbye
+Mean: 0,0178
+Flux Pavilion: Ironheart
+Mean: 0,0232
+Bibio: all the flowers
+Mean: 0,0799
+Boogie T: Money
+Mean: 0,0238
+Tortoise: The Suspension Bridge at Iguazú Falls
+Mean: 0,0617
+The Avalanches: Because I’m Me - Black Milk Remix
+Mean: 0,0316
+Atrey: Dark Prince, Pt. 3
+Mean: 0,0313
+Fatboy Slim: Sunset (Bird Of Prey)
+Mean: 0,0932
+The Prodigy: Claustrophobic Sting
+Mean: 0,0302
+Yellow Claw: Summertime
+Mean: 0,0597
+Trampa: Freakshow
+Mean: 0,118
+Dwin: Day and Night
+Mean: 0,0732
+Excision: 8 Bit Superhero
+Mean: 0,0345
+Diskord: Last Time
+Mean: 0,0487
+Getter: Something New
+Mean: 0,0561
+Éric Serra: Mina Hinoo
+Mean: 0
+Lucky Luke: Make Ü Mine
+Mean: 0,0717
+Air: Parade
+Mean: 0,0265
+Minnesota: Sail Away
+Mean: 0,0349
+Ganja White Night: Blackberries
+Mean: 0,0923
+Weval: Silence On The Wall
+Mean: 0,1147
+Excision: With You (Sullivan King Remix)
+Mean: 0,0314
+DROELOE: Weird Machine - Duumu Remix
+Mean: 0,062
+Point Point: All This
+Mean: 0,0609
+Four Tet: Sing
+Mean: 0,0978
+Jamiroquai: Nights Out In The Jungle
+Mean: 0,0485
+Kora (CA): Caddo - Original
+Mean: 0,1024
+Underworld: Born Slippy (Nuxx) - Radio Edit
+Mean: 0,0163
+Moby: This Wild Darkness - Maor Levi Remix
+Mean: 0,0333
+Party Favor: Meow (Original Mix)
+Mean: 0,0394
+DJ Shadow: Organ Donor - Extended Overhaul
+Mean: 0,0371
+Space Jesus: Professor Genius
+Mean: 0,0949
+Powder: Gift - Mixed
+Mean: 0,1343
+Herobust: Booty Be Like
+Mean: 0,049
+Daft Punk: Something About Us
+Mean: 0,1004
+RL Grime: Undo
+Mean: 0,0821
+Baauer: Day Ones
+Mean: 0
+David Holmes: I Heard Wonders
+Mean: 0,0276
+Dirtcaps: Playground
+Mean: 0,0574
+Tosca: Dr. Dings
+Mean: 0,1372
+Röyksopp: Goodnite Mr. Sweetheart - Prologue
+Mean: 0,0901
+SLANDER: After All
+Mean: 0
+Snails: Forever - FuntCase Remix
+Mean: 0,0209
+Lucky Luke: Wonderwall
+Mean: 0,1372
+Tropkillaz: Mahabbah
+Mean: 0,0289
+Dubloadz: Nitro
+Mean: 0,0705
+Ookay: Thief - Slushii Remix
+Mean: 0,0429
+Borgore: Coco Puffs
+Mean: 0,0304
+Death In Vegas: Hands Around My Throat
+Mean: 0,0335
+Groove Armada: Suntoucher
+Mean: 0,0615
+Vincent: Can't Help Myself
+Mean: 0,1438
+Dillon Francis: Candy
+Mean: 0,0768
+Zomboy: Nuclear - Dillon Francis Remix
+Mean: 0,0449
+St Germain: Rose Rouge
+Mean: 0,0628
+Ookay: Echo - Radio Edit
+Mean: 0,06
+Bear Grillz: The Game
+Mean: 0,0212
+Moby: Falling Rain and Light - Glory Remix
+Mean: 0,0601
+Ookay: Thief
+Mean: 0,0353
+Daft Punk: The Game Has Changed
+Mean: 0,1292
+Armand Van Helden: My My My
+Mean: 0,0257
+DJ Koze: Moving in a Liquid
+Mean: 0,0706
+San Holo: trip
+Mean: 0
+Justice: Valentine
+Mean: 0,0488
+Pendulum: Trail of Sevens
+Mean: 0,046
+Datsik: No Requests (feat. KRS-One)
+Mean: 0,026
+Aphex Twin: Nannou
+Mean: 0,0693
+Timboletti: Dhunche
+Mean: 0,0317
+Mint Royale: Singin' in the Rain
+Mean: 0,0198
+Blue States: Metro Sound
+Mean: 0,1108
+Seven Lions: Worlds Apart (feat. Kerli)
+Mean: 0,0331
+BT: Tomahawk - Original Mix
+Mean: 0,0359
+Ekali: Leaving (feat. Yuna)
+Mean: 0,0889
+Zomboy: Miles Away - Soltan Remix
+Mean: 0,0314
+Ghastly: Kill It With Fire
+Mean: 0,0089
+Björk: One Day
+Mean: 0,0376
+Underworld: Bruce Lee
+Mean: 0,0796
+Boards of Canada: Jacquard Causeway
+Mean: 0
+Keys N Krates: Ratchet Hoe$
+Mean: 0,019
+Cerrone: Give Me Love
+Mean: 0,0963
+Ookay: Fight 4 U
+Mean: 0,0493
+Pendulum: Vault - Moby Remix
+Mean: 0,0416
+Dion Timmer: Dreaming Out Loud
+Mean: 0,0259
+Tosca: Ocean Beat
+Mean: 0,0744
+Morcheeba: Shoulder Holster
+Mean: 0,0724
+Groove Armada: History (feat. Will Young)
+Mean: 0,0362
+Justice: D.A.N.C.E
+Mean: 0,1054
+BT: All These Wounds
+Mean: 0,0265
+Kosheen: Addict
+Mean: 0,0626
+Kedr Livanskiy: Kiska (киска)
+Mean: 0,0438
+Morcheeba: Slow Down
+Mean: 0,0508
+Daft Punk: Technologic
+Mean: 0,0914
+Boombox Cartel: Widdit - Dabow Remix
+Mean: 0,033
+
+
+Mean of the 100 songs >>> 0,0572
+
+-----------------------------------------------
+
+
+Genre: Alternative
+
+Stone Sour: Absolute Zero
+Mean: 0,0603
+Kid Rock: Picture (feat. Sheryl Crow)
+Mean: 0,0852
+Clutch: Electric Worry
+Mean: 0,0467
+OK Go: Here It Goes Again
+Mean: 0,028
+Blitzen Trapper: Black River Killer
+Mean: 0,1638
+Cake: Love You Madly
+Mean: 0,0341
+Passion: Step Into The Light - Live From Passion 2019
+Mean: 0,0528
+Noname: Regal
+Mean: 0,1389
+The Offspring: Come Out And Play (Keep ‘Em Separated)
+Mean: 0,0564
+11:11: Flames
+Mean: 0,1192
+Mike Shinoda: Watching as I Fall
+Mean: 0,0559
+Sunny Day Real Estate: In Circles - Remastered
+Mean: 0,0222
+Elefante: Mentirosa
+Mean: 0,0423
+Icon For Hire: Cynics & Critics
+Mean: 0,0227
+Jane's Addiction: Jane Says
+Mean: 0,0661
+Joyce Manor: Constant Headache
+Mean: 0,0455
+Theory of a Deadman: All or Nothing
+Mean: 0,032
+Danny Brown: Grown Up
+Mean: 0,0707
+Mad Season: I Don't Know Anything
+Mean: 0,0284
+Jason Isbell: Cover Me Up
+Mean: 0,0473
+Stone Temple Pilots: Interstate Love Song
+Mean: 0,0317
+Red: Breathe Into Me
+Mean: 0,0356
+Slipknot: Psychosocial
+Mean: 0,0685
+System Of A Down: A.D.D. (American Dream Denial)
+Mean: 0,0265
+Four Tet: Teenage Birdsong
+Mean: 0
+Mandisa: Bleed The Same
+Mean: 0,0362
+Run The Jewels: Banana Clipper
+Mean: 0,0785
+Volbeat: Last Day Under The Sun
+Mean: 0,0248
+Foo Fighters: My Hero
+Mean: 0,0162
+Linkin Park: P5hng Me Aw*y
+Mean: 0,0544
+Curren$y: Friend or Foe
+Mean: 0,0875
+GZA: Shadowboxin'
+Mean: 0,0775
+Nirvana: Drain You
+Mean: 0,0246
+Jason Isbell and the 400 Unit: White Man's World
+Mean: 0,1368
+Trevor Daniel: Pretend
+Mean: 0,0646
+Unspoken: Higher
+Mean: 0,0463
+Soundgarden: Blow Up The Outside World
+Mean: 0,0307
+Soda Stereo: Cuando Pase El Temblor - Remasterizado 2007
+Mean: 0,0589
+Ab-Soul: D.R.U.G.S.
+Mean: 0,0642
+Col3trane: Heroine
+Mean: 0,1052
+THEY.: Tell Me (feat. Vic Mensa)
+Mean: 0,0863
+Earl Sweatshirt: Molasses
+Mean: 0,1099
+A Tribe Called Quest: I Left My Wallet in El Segundo
+Mean: 0,0699
+Live: Lightning Crashes
+Mean: 0,1365
+Young the Giant: Silvertongue
+Mean: 0,0287
+Tom Morello: Every Step That I Take (feat. Portugal. The Man and Whethan)
+Mean: 0,0892
+The Replacements: Swingin Party - 2008 Remaster
+Mean: 0,0403
+Matt Maher: What a Friend
+Mean: 0,0241
+Korn: It's On!
+Mean: 0,0375
+Otherwise: Die for You
+Mean: 0,0208
+Generationals: TenTwentyTen
+Mean: 0,048
+Three Days Grace: Never Too Late
+Mean: 0,0568
+Live: Top
+Mean: 0,016
+for KING & COUNTRY: Never Give Up
+Mean: 0,1017
+Three Days Grace: Fallen Angel
+Mean: 0,0292
+Elijah Blake: Black and Blue
+Mean: 0,0276
+The Mars Volta: Inertiatic Esp
+Mean: 0,0309
+Passion: Jesus Paid It All
+Mean: 0,0728
+Passion: Build My Life - Live
+Mean: 0,0776
+Billy Talent: Fallen Leaves
+Mean: 0,0363
+bLAck pARty: I Hope You Know
+Mean: 0,1411
+Kid Rock: Rebel Soul
+Mean: 0,0355
+Leikeli47: Mulita
+Mean: 0,0758
+Meredith Andrews: Open Up the Heavens
+Mean: 0,0213
+Blue October: Bleed Out
+Mean: 0,0402
+Xavier Omär: If This Is Love
+Mean: 0,0678
+The Dose: Vervain
+Mean: 0,0295
+Dave B.: Window
+Mean: 0,0939
+Chloe x Halle: Hi Lo
+Mean: 0,0552
+Future Islands: Aladdin
+Mean: 0,0362
+Shinedown: Fly from the Inside
+Mean: 0,0413
+Five Finger Death Punch: Blue on Black
+Mean: 0,0201
+Shinedown: special
+Mean: 0,1048
+Avenged Sevenfold: Bat Country
+Mean: 0,0147
+The White Stripes: Hotel Yorba
+Mean: 0
+Violent Femmes: Kiss Off
+Mean: 0,0585
+Nothing More: Friendly Fire
+Mean: 0,0168
+6LACK: Never Know
+Mean: 0,0538
+Saba: Photosynthesis
+Mean: 0,1413
+Son Volt: Windfall - 2015 Remaster
+Mean: 0,112
+Foo Fighters: Everlong
+Mean: 0,0504
+Curren$y: Plan of Attack
+Mean: 0,0866
+Radiohead: You And Whose Army?
+Mean: 0
+The Black Keys: I Got Mine
+Mean: 0,05
+Avenged Sevenfold: Lost
+Mean: 0,022
+11:11: All Year
+Mean: 0,1169
+Future Leaders of the World: Let Me Out
+Mean: 0,0206
+Default: Deny
+Mean: 0,0243
+Megadeth: Tornado Of Souls - Remastered 2004
+Mean: 0,0125
+Omar Apollo: Today (feat. Teo Halm)
+Mean: 0,0843
+Grizfolk: Bohemian Bird
+Mean: 0,0481
+Marilyn Manson: The Mephistopheles Of Los Angeles
+Mean: 0,0214
+Amon Amarth: The Pursuit Of Vikings
+Mean: 0,0129
+Blackalicious: Deception
+Mean: 0,1036
+Saba: PROM / KING
+Mean: 0
+Julieta Venegas: Algo Está Cambiando
+Mean: 0,039
+Switchfoot: Dare You to Move
+Mean: 0,0286
+Moods: Love Is Real
+Mean: 0,0688
+Radiohead: Weird Fishes/ Arpeggi
+Mean: 0,0582
+Frank Ocean: Facebook Story
+Mean: 0
+
+
+Mean of the 100 songs >>> 0,0544
+
+-----------------------------------------------
+
+
+Genre: Country
+
+Chris Young: Neon
+Mean: 0,0639
+Jason Aldean: I Took It with Me
+Mean: 0,0249
+Walker McGuire: Til Tomorrow
+Mean: 0,1018
+Brad Paisley: One Beer Can
+Mean: 0,0656
+King Calaway: World For Two
+Mean: 0,0647
+Brantley Gilbert: Hell On Wheels
+Mean: 0,0321
+Michael Ray: Think A Little Less
+Mean: 0,0323
+Eric Church: Ain't Killed Me Yet
+Mean: 0,0449
+Kacey Musgraves: The Trailer Song
+Mean: 0,0479
+Willie Nelson: On the Road Again - Live
+Mean: 0,0889
+John Conlee: Rose Colored Glasses
+Mean: 0,0829
+James Gang: Walk Away
+Mean: 0,0345
+Michael Hurley: Be Kind to Me
+Mean: 0,0919
+Travis Tritt: Foolish Pride
+Mean: 0,0545
+Trace Adkins: Ala-Freakin-Bama
+Mean: 0,0329
+Aaron Watson: Fast Cars Slow Kisses
+Mean: 0,0467
+Brett Eldredge: Christmas Time Is Here
+Mean: 0,0621
+Austin Jenckes: In My Head
+Mean: 0,1252
+Chris Young: Trouble Looking
+Mean: 0,0736
+The Allman Brothers Band: Ain't Wastin' Time No More
+Mean: 0,0545
+Marty Robbins: Devil Woman
+Mean: 0,1423
+George Jones: Her Name Is...
+Mean: 0,1236
+Jason Isbell: Flagship
+Mean: 0,1134
+Greg Brown: Spring Wind
+Mean: 0,1381
+Kenny Chesney: Reality
+Mean: 0,1438
+Blaze Ya Dead Homie: Escape Artist
+Mean: 0,0886
+Eli Young Band: Never Again
+Mean: 0,0413
+Mike Ryan: Red Eye Flight
+Mean: 0,0771
+Willie Nelson: Mamas Don't Let Your Babies Grow Up to Be Cowboys
+Mean: 0,0901
+Tom T. Hall: Faster Horses (The Cowboy And The Poet) - Single Version
+Mean: 0,0963
+Trace Adkins: Every Light In The House
+Mean: 0,0421
+Miranda Lambert: The House That Built Me
+Mean: 0
+Jonathan Edwards: Sunshine (Go Away Today)
+Mean: 0,1368
+Luke Pell: Ball Caps & Blue Jeans
+Mean: 0,0509
+Jamey Johnson: Between Jennings And Jones
+Mean: 0,0426
+Eric Church: Kill A Word - Live At Mohegan Sun Arena, Uncasville, CT / April 28, 2017
+Mean: 0,0763
+Chris Stapleton: More Of You
+Mean: 0,066
+Waylon Jennings: Old Five and Dimers (Like Me)
+Mean: 0,0676
+Upchurch: Kick It Up
+Mean: 0,1202
+Lost Immigrants: Circle In My Hand
+Mean: 0,051
+Carrie Underwood: Backsliding
+Mean: 0,0527
+Phil Vassar: Six Pack Summer
+Mean: 0,0355
+John Michael Montgomery: I Love The Way You Love Me
+Mean: 0,088
+Florida Georgia Line: Here's To The Good Times
+Mean: 0,0328
+Devin Dawson: Christmas Time Is Here - Recorded at Sound Emporium Nashville
+Mean: 0,0643
+Joe Diffie: Girl Ridin' Shotgun - feat. D-Thrash of Jawga Boyz
+Mean: 0,0269
+Lady Antebellum: Goodbye Town
+Mean: 0,0367
+Dixie Chicks: A Home
+Mean: 0,0726
+America: All My Life
+Mean: 0,0636
+Luke Bryan: Take My Drunk Ass Home
+Mean: 0,0366
+Kip Moore: Hang A While - Live From Soundcheck
+Mean: 0,0507
+Collin Raye: Love, Me
+Mean: 0,0649
+Phil Vassar: Second Avenue
+Mean: 0,06
+Renee Blair: Me Tonight
+Mean: 0,0378
+Billy Currington: Good Directions
+Mean: 0,0766
+Mark Chesnutt: Old Flames Have New Names
+Mean: 0,1001
+Sara Evans: Infinite Love
+Mean: 0,0672
+Mini Thin: Country Roads Remix (feat. Santino)
+Mean: 0,0433
+Jerry Reed: The Legend
+Mean: 0,1239
+Johnny Cash: Cry, Cry, Cry - 1988 Version
+Mean: 0
+Kacey Musgraves: "A Spoonful Of Sugar - From ""Mary Poppins"""
+Mean: 0,1012
+Stoney LaRue: Oklahoma Breakdown
+Mean: 0,0687
+Kane Brown: Short Skirt Weather
+Mean: 0,0422
+Stoney LaRue: Seven Spanish Angels
+Mean: 0,0729
+Gram Parsons: Love Hurts - Remastered Version
+Mean: 0,1039
+Jacob Bryant: 25 in Jail (Unplugged)
+Mean: 0,049
+Dixie Chicks: Once You've Loved Somebody
+Mean: 0,0601
+Jelly Roll: Ain't Livin' Long
+Mean: 0,0945
+The Lacs: Country Livin'
+Mean: 0,073
+LeAnn Rimes: One Way Ticket (Because I Can)
+Mean: 0,0292
+Mic Manik: Adios (feat. Jon Conner)
+Mean: 0,1089
+Marty Robbins: Red River Valley
+Mean: 0,0642
+Confederate Railroad: Queen Of Memphis
+Mean: 0,0496
+Dean Brody: Beautiful Freakshow (feat. Shevy Price)
+Mean: 0,0723
+Blake Shelton: Who Are You When I'm Not Looking
+Mean: 0,0624
+Drivin N Cryin: Fly Me Courageous
+Mean: 0,0293
+Dierks Bentley: Pick Up
+Mean: 0,0248
+Chris Stapleton: Scarecrow In The Garden
+Mean: 0,1482
+Chris Young: Tomorrow
+Mean: 0,0517
+Hank Williams, Jr.: Hog Wild
+Mean: 0,0589
+Scotty McCreery: Still
+Mean: 0,0448
+The Judds: Rockin' With The Rhythm Of The Rain
+Mean: 0,0984
+Shania Twain: I'm Gonna Getcha Good! - Red Single Edit
+Mean: 0,0363
+Mel McDaniel: Louisiana Saturday Night
+Mean: 0,1284
+Jamey Johnson: For The Good Times
+Mean: 0,0682
+Steve Wariner: Some Fools Never Learn
+Mean: 0,1164
+Dierks Bentley: Can't Be Replaced
+Mean: 0,0495
+The Band: The Night They Drove Old Dixie Down - Remastered
+Mean: 0,0878
+Kaylee Bell: One More Shot
+Mean: 0,0316
+Sturgill Simpson: Keep It Between The Lines
+Mean: 0,0547
+Sugarland: Bigger
+Mean: 0,0516
+Eric Paslay: Song About A Girl
+Mean: 0,0812
+Kip Moore: Magic
+Mean: 0,0668
+Carly Pearce: Honeysuckle
+Mean: 0,0737
+Granger Smith: Country Boy Love
+Mean: 0,0534
+Josh Thompson: Way Out Here
+Mean: 0,0425
+Faron Young: Wine Me Up
+Mean: 0
+Logan Mize: Bands Make Her Dance
+Mean: 0,0542
+Carrie Underwood: Wine After Whiskey
+Mean: 0,1427
+Rascal Flatts: Yours If You Want It
+Mean: 0,0532
+
+
+Mean of the 100 songs >>> 0,0677
+
+-----------------------------------------------
+
+
+Genre: Pop
+
+Julia Michaels: Uh Huh
+Mean: 0,093
+Dua Lipa: "Swan Song (From the Motion Picture ""Alita: Battle Angel"")"
+Mean: 0,1222
+Avicii: Hey Brother
+Mean: 0,0381
+Switchfoot: I Won't Let You Go
+Mean: 0,0454
+blink-182: What's My Age Again?
+Mean: 0,0216
+Drake: From Time
+Mean: 0,1689
+Kanye West: Mercy
+Mean: 0,0473
+Weezer: Piece Of Cake
+Mean: 0,0521
+blink-182: Dammit
+Mean: 0,0778
+Iron & Wine: Call It Dreaming
+Mean: 0,1389
+Halsey: Without Me (with Juice WRLD)
+Mean: 0,0828
+Gavin James: Cigarette Break
+Mean: 0,0601
+Reyli Barba: Amor del Bueno
+Mean: 0,0852
+J. Cole: False Prophets
+Mean: 0,0239
+Martin Garrix: No Sleep (feat. Bonn)
+Mean: 0,0777
+6LACK: Learn Ya
+Mean: 0,0843
+EDEN: Fumes
+Mean: 0,067
+Sara Bareilles: King of Anything
+Mean: 0,0891
+David Guetta: Like I Do
+Mean: 0,035
+One Direction: A.M.
+Mean: 0,0842
+Florida Georgia Line: People Are Different
+Mean: 0,107
+Rex Orange County: Best Friend
+Mean: 0,1024
+Still Woozy: Wolfcat
+Mean: 0,1104
+The Righteous Brothers: Unchained Melody
+Mean: 0,1608
+J. Cole: Is She Gon Pop
+Mean: 0,0658
+Twenty One Pilots: Addict With A Pen
+Mean: 0,0754
+Lil Baby: All Of A Sudden
+Mean: 0,0332
+Kodaline: Brother
+Mean: 0,0658
+Camila: Aléjate de Mí
+Mean: 0,0796
+Jason Derulo: Marry Me
+Mean: 0,042
+James TW: Ex
+Mean: 0,0759
+Counting Crows: Accidentally In Love
+Mean: 0,0492
+OneRepublic: Apologize
+Mean: 0,0881
+ILLENIUM: God Damnit (with Call Me Karizma)
+Mean: 0,0574
+Khalid: Let's Go
+Mean: 0,1421
+My Chemical Romance: The End.
+Mean: 0,1042
+Our Last Night: 1-800-273-8255
+Mean: 0,0308
+PnB Rock: Issues (feat. Russ)
+Mean: 0,0833
+Abstract: Im Good (feat. Roze & Drumma Battalion)
+Mean: 0,0391
+Missy Elliott: Work It
+Mean: 0,0672
+Gabby Barrett: I Hope
+Mean: 0,0506
+Matoma: Old Thing Back (feat. Ja Rule and Ralph Tresvant)
+Mean: 0,0537
+The Weeknd: The Morning
+Mean: 0,0861
+Ella Mai: Don't Want You
+Mean: 0
+ZAYN: Good Years
+Mean: 0,0835
+Migos: "Is You Ready - From ""Mile 22"""
+Mean: 0,1297
+Polo & Pan: Nanã
+Mean: 0,0649
+BLACKPINK: PLAYING WITH FIRE
+Mean: 0,0447
+Luis Fonsi: Despacito
+Mean: 0,0611
+Jennifer Lopez: Let's Get Loud
+Mean: 0,0599
+Duke Dumont: I Got U
+Mean: 0,0322
+2 Chainz: Bigger Than You (feat. Drake & Quavo)
+Mean: 0,08
+Novo Amor: Alps
+Mean: 0,0527
+Troye Sivan: BLUE
+Mean: 0,1231
+NOTD: Been There Done That (feat. Tove Styrke)
+Mean: 0,0669
+David Guetta: Sexy Bitch (feat. Akon)
+Mean: 0,0669
+Lorde: Green Light
+Mean: 0,0303
+Chaka Khan: Ain't Nobody
+Mean: 0,0621
+Jonas Brothers: Kids of the Future
+Mean: 0,0449
+Alvaro Soler: Loca
+Mean: 0,0554
+The Vamps: Somebody To You
+Mean: 0,0531
+Lil Wayne: Lollipop
+Mean: 0,0873
+benny blanco: More/Diamond Ring (feat. Ty Dolla $ign & 6LACK)
+Mean: 0
+Robyn: Call Your Girlfriend
+Mean: 0,0228
+Jesse & Joy: Dueles
+Mean: 0,1142
+Jay Sean: Down
+Mean: 0,0798
+J. Holiday: Suffocate - Superclean
+Mean: 0,1201
+Sasha Sloan: Ready Yet
+Mean: 0,041
+Kanye West: Homecoming
+Mean: 0,1144
+Jason Derulo: Wiggle (feat. Snoop Dogg)
+Mean: 0,0984
+Skizzy Mars: Time (feat. G-Eazy & Olivver the Kid)
+Mean: 0,0505
+Metro Boomin: Don't Come Out The House (with 21 Savage)
+Mean: 0,1376
+G-Eazy: Far Alone
+Mean: 0,0484
+Future: Temptation
+Mean: 0,0571
+Michael Jackson: The Way You Make Me Feel - 2012 Remaster
+Mean: 0,0562
+Miley Cyrus: 7 Things - Single Version
+Mean: 0,0233
+R3HAB: Rumors (With Sofia Carson)
+Mean: 0,0682
+NCT: 일곱 번째 감각 The 7th Sense
+Mean: 0,0858
+Kygo: Remind Me to Forget
+Mean: 0,0496
+T-Pain: Best Love Song
+Mean: 0,0719
+Bazzi: Gone
+Mean: 0,0507
+Marshmello: Spotlight
+Mean: 0,0281
+Ed Sheeran: Kiss Me
+Mean: 0,109
+Stone Temple Pilots: Creep - Remastered
+Mean: 0,0946
+Drake: Still Here
+Mean: 0,0531
+blackbear: Help (feat. Maejor)
+Mean: 0,1592
+Sasha Sloan: Older
+Mean: 0,1179
+Mac Miller: Another Night
+Mean: 0,0958
+A Day To Remember: If It Means a Lot to You
+Mean: 0,0664
+Ariana Grande: Honeymoon Avenue
+Mean: 0,0549
+Nicki Minaj: Rich Sex (feat. Lil Wayne)
+Mean: 0,0956
+Olivia O'Brien: Empty
+Mean: 0,0895
+Cody Simpson: Pretty Brown Eyes
+Mean: 0,0449
+Atlas Genius: Trojans
+Mean: 0,0561
+Avril Lavigne: What the Hell
+Mean: 0,0774
+Darius Rucker: Wagon Wheel
+Mean: 0,0934
+David Guetta: Sexy Bitch (feat. Akon)
+Mean: 0,0589
+Big Sean: Living Single
+Mean: 0,094
+Carly Pearce: Every Little Thing
+Mean: 0,0645
+Chris Lane: Take Back Home Girl (feat. Tori Kelly)
+Mean: 0,0666
+
+
+Mean of the 100 songs >>> 0,0727
+
+-----------------------------------------------
+
+
+Genre: R&B
+
+Timbaland: Come Around
+Mean: 0,1089
+Jesse Baez: Fácil
+Mean: 0,0826
+Ne-Yo: She Knows
+Mean: 0,0716
+IAMDDB: Back Again
+Mean: 0,0633
+Frank Ocean: Fertilizer
+Mean: 0,0213
+Greeicy: Jacuzzi
+Mean: 0,0801
+Nivea: Complicated
+Mean: 0,0722
+Vedo: No More
+Mean: 0,054
+Lloyd: Tru
+Mean: 0,0682
+Rihanna: Higher
+Mean: 0,1084
+Chloe x Halle: If God Spoke
+Mean: 0,0983
+Surfaces: Loving
+Mean: 0,1018
+Kalin White: lil freak
+Mean: 0,0311
+Jinsang: Morning.
+Mean: 0,1251
+Zico: SoulMate (feat. IU)
+Mean: 0,072
+Kehlani: I Wanna Be
+Mean: 0,0968
+Janelle Monáe: So Afraid
+Mean: 0,1315
+Anita Baker: I Apologize - Single Version
+Mean: 0,075
+Melanie Fiona: Give It To Me Right
+Mean: 0,0799
+Ty Dolla $ign: Know Ya (feat. Trey Songz)
+Mean: 0,0915
+Mocky: The Come Up
+Mean: 0,0877
+Emily King: Distance
+Mean: 0,0995
+Erykah Badu: ...& On
+Mean: 0,1302
+Tierra Whack: 4 Wings
+Mean: 0,0374
+PARTYNEXTDOOR: You've Been Missed
+Mean: 0,1262
+Tobi Lou: Lavender Town, Pt. 1 (feat. DJ Pharris)
+Mean: 0,0736
+Majid Jordan: Make It Work
+Mean: 0,0473
+Derez De’Shon: Lord Forgive Me
+Mean: 0,0933
+RKCB: Elision
+Mean: 0,0862
+ABRA: PULL UP
+Mean: 0,0996
+Arin Ray: HMU (feat. Childish Major)
+Mean: 0,0517
+Kelly Clarkson: Cruel
+Mean: 0,0578
+Ja Rule: Clap Back
+Mean: 0,1157
+Keke Palmer: Bottoms Up
+Mean: 0,0978
+Smino: New Coupe, Who Dis? (feat. Mick Jenkins)
+Mean: 0
+Shay Lia: The Cycle
+Mean: 0,0558
+Mila J: Friend Zone
+Mean: 0,076
+Erykah Badu: Back In The Day
+Mean: 0,0731
+William Singe: Pillow Talk
+Mean: 0,0722
+Teyana Taylor: WTP
+Mean: 0,0851
+Syd: Drown in It
+Mean: 0
+Trey Songz: #1Fan
+Mean: 0,1076
+Pia Mia: Mr. President
+Mean: 0,0554
+Sammie: Expiration Date
+Mean: 0,1017
+Lyrica Anderson: Faded to Sade
+Mean: 0,0504
+Lolo Zouaï: IDR
+Mean: 0,0419
+Låpsley: Station (2014)
+Mean: 0,0512
+Jeremih: Perfect Timing
+Mean: 0,1113
+Jean Deaux: Father Time
+Mean: 0,0785
+Ella Mai: Nobody Else
+Mean: 0,0666
+Joe: No One Else Comes Close
+Mean: 0,0704
+Joe Hertz: FOMO
+Mean: 0,042
+HONNE: 306 ◑
+Mean: 0,0476
+Rihanna: Nobody's Business
+Mean: 0,0498
+Ty Dolla $ign: Paranoid (feat. B.o.B)
+Mean: 0,0872
+Christina Aguilera: This Christmas
+Mean: 0,0861
+PREP: Futures
+Mean: 0,0925
+NIKI: Spell
+Mean: 0,0911
+Mint Condition: Nothing Left to Say
+Mean: 0,0604
+Dru Hill: Beauty
+Mean: 0,1258
+Beyoncé: Pretty Hurts
+Mean: 0,0556
+Alina Baraz: Electric (Electric Mantis Remix)
+Mean: 0,0594
+Surfaces: Heaven Falls / Fall on Me
+Mean: 0,137
+6LACK: Unfair
+Mean: 0,1205
+Phony Ppl: somethinG about your love.
+Mean: 0,0316
+NIKI: Spell
+Mean: 0,0911
+Chris Brown: Deuces Remix - f/Drake, Kanye West & André 3000 - Explicit Version
+Mean: 0,0274
+Jamila Woods: Lonely (feat. Lorine Chia)
+Mean: 0,0811
+Mariah Carey: Can't Let Go
+Mean: 0,1418
+Shay Lia: The Cycle
+Mean: 0,1246
+The Japanese House: Swim Against the Tide
+Mean: 0,0761
+Rels B: Lejos de Tí
+Mean: 0,0593
+LEISURE: Take It to the Top
+Mean: 0,0535
+Usher: Stay At Home (feat. Future)
+Mean: 0,0727
+PARTYNEXTDOOR: Relax With Me
+Mean: 0,0886
+Masego: TrapScat (Get Loose)
+Mean: 0,1322
+Souly Had: Crush
+Mean: 0,1393
+Jack Garratt: The Love You're Given
+Mean: 0,125
+Tori Kelly: City Dove
+Mean: 0,0262
+Lava La Rue: Widdit
+Mean: 0,0696
+James Morrison: You Give Me Something
+Mean: 0,0798
+Mabel: Finders Keepers
+Mean: 0,0599
+Cherish: Killa
+Mean: 0,0415
+Jakob Ogawa: You'll Be on My Mind
+Mean: 0,1121
+Empire Cast: Filling Spaces (feat. Jussie Smollett)
+Mean: 0,1586
+Jacquees: I Know Better
+Mean: 0,0373
+Erykah Badu: Time's A Wastin
+Mean: 0,1241
+Marc E. Bassy: Dirty Water
+Mean: 0
+6LACK: Scripture
+Mean: 0,0328
+Zara Larsson: Funeral
+Mean: 0,0675
+ELHAE: Something
+Mean: 0,1156
+T-Pain: 5 O'Clock
+Mean: 0,131
+Chris Brown: Young Love
+Mean: 0,0679
+Elton: Copy/Paste
+Mean: 0,0932
+Smino: Raw
+Mean: 0
+Nelly: Country Grammar (Hot...)
+Mean: 0,0488
+Tom Misch: Cos I Love You
+Mean: 0,044
+James Blake: I'll Come Too
+Mean: 0,1127
+Bruno Major: Easily
+Mean: 0,1022
+K CAMP: FWYB
+Mean: 0,1144
+
+
+Mean of the 100 songs >>> 0,0787
+
+-----------------------------------------------
+
+
+Genre: Hip-Hop
+
+Jay Critch: Pardon Me
+Mean: 0,0527
+Trinidad James: All Gold Everything
+Mean: 0,0709
+Drake: Mob Ties
+Mean: 0,0579
+Rick Ross: Dead Presidents
+Mean: 0,0484
+Aminé: Squeeze
+Mean: 0,1182
+J. Cole: Trouble
+Mean: 0,1115
+XXXTENTACION: Bowser
+Mean: 0,0837
+Kent Jones: Don't Mind
+Mean: 0,1038
+Jowell & Randy: Sensual Inspiration
+Mean: 0,0298
+Junior M.A.F.I.A.: Player's Anthem
+Mean: 0,0919
+IDK: ONCE UPON A TIME (FREESTYLE)
+Mean: 0,0519
+Jay Prince: BLESSED NOW
+Mean: 0,0383
+Rich Brian: Kitty
+Mean: 0,0424
+Trip Lee: Lazarus
+Mean: 0,0665
+Childish Gambino: This Is America
+Mean: 0,085
+Bryson Tiller: We Both Know
+Mean: 0,1321
+Magic & Bird: R.U.T.S.
+Mean: 0,0355
+Mike Stud: Things I Like
+Mean: 0,1128
+Felly: Desert Eagle
+Mean: 0,0719
+6LACK: MTFU
+Mean: 0,1479
+K CAMP: Clouds (feat. Wiz Khalifa)
+Mean: 0,0739
+South Park Mexican: High Everyday - (Screwed)
+Mean: 0,0689
+Rich The Kid: Gargoyle (feat. Swae Lee & Offset)
+Mean: 0,0505
+Curren$y: Tapatio
+Mean: 0
+Hopsin: Twisted
+Mean: 0,1202
+Lil Wayne: Gonorrhea
+Mean: 0,039
+Aaron Cole: Right on Time (feat. Tobymac)
+Mean: 0,0558
+Pusha T: Santeria
+Mean: 0,1107
+Ardian Bujupi: CIKA CIKA (feat. Xhensila) - Remix
+Mean: 0,0999
+Mase: Welcome Back
+Mean: 0,0583
+E-40: U And Dat (feat. T. Pain & Kandi Girl)
+Mean: 0,0816
+Kodak Black: Bill and Jill
+Mean: 0,0915
+B.o.B: Strange Clouds (feat. Lil Wayne)
+Mean: 0,0444
+SZA: Love Galore (feat. Travis Scott)
+Mean: 0,0713
+MadeinTYO: Yah Dig
+Mean: 0,0531
+Amir Obe: CIGARETTES
+Mean: 0,1253
+Logic: Legacy
+Mean: 0,1114
+Meek Mill: Millidelphia (feat. Swizz Beatz)
+Mean: 0,0502
+Gucci Mane: Dance with the Devil
+Mean: 0,0835
+G-Eazy: Over Me
+Mean: 0,0831
+Justin Quiles: Me Frontió
+Mean: 0,1097
+Croosh: Numb
+Mean: 0,0627
+G-Eazy: Forbes
+Mean: 0,08
+LUCKI: 2012 Summer
+Mean: 0,0446
+Cam’ron: Oh Boy
+Mean: 0,0901
+Boosie Badazz: Betrayed (feat. Webbie)
+Mean: 0,0413
+Mick Jenkins: Gwendolynn's Apprehension
+Mean: 0,0901
+Mac Miller: I'll Be There
+Mean: 0,0919
+Cooliecut: Empty
+Mean: 0,0695
+SZA: Quicksand
+Mean: 0,0563
+Belly: Consuela
+Mean: 0,0412
+Lil Pump: Next (feat. Rich the Kid)
+Mean: 0,0717
+Daddy Yankee: Noche De Entierro (Nuestro Amor)
+Mean: 0,0345
+EARTHGANG: Off the Lot (feat. Mereba)
+Mean: 0,0357
+Chance the Rapper: I Might Need Security
+Mean: 0,0787
+Future: Real Love
+Mean: 0,0279
+BROCKHAMPTON: MILK
+Mean: 0,1094
+112: Only You-Bad Boy Remix (feat. The Notorious B.I.G. & Mase)
+Mean: 0,0797
+Noel Torres: Me Interesas
+Mean: 0,0591
+Tyler, The Creator: Peach Fuzz
+Mean: 0,0964
+YG: Who Do You Love?
+Mean: 0
+$uicideBoy$: FUCK
+Mean: 0,0859
+Logic: One Day (feat. Ryan Tedder)
+Mean: 0,109
+Duckwrth: Bernal Heights
+Mean: 0,0911
+Yung Bans: Dresser
+Mean: 0,0693
+Salt-N-Pepa: None Of Your Business
+Mean: 0,0511
+GoldLink: Summatime (feat. Wale & Radiant Children)
+Mean: 0,1045
+50 Cent: I'll Whip Ya Head Boy
+Mean: 0,1029
+Future: Feed Me Dope
+Mean: 0,054
+G-Eazy: Rewind
+Mean: 0,1054
+Future: Shorty
+Mean: 0,1459
+Phora: Move Too Fast
+Mean: 0,0671
+Dyablo: Pretty Girl - Remix
+Mean: 0,0469
+Lil Baby: Off White VLONE (Lil Baby & Gunna feat. Lil Durk & NAV)
+Mean: 0,0519
+Drake: Used To
+Mean: 0,0751
+Black Star: Re:Definition
+Mean: 0,1142
+Tee Grizzley: 10K
+Mean: 0,0886
+88GLAM: Ice On My Leash
+Mean: 0,104
+bbno$: chess
+Mean: 0,0742
+Daddy Yankee: Gasolina
+Mean: 0,0981
+Salaam Remi: Roll The Dice
+Mean: 0,1073
+Deltron 3030: 3030
+Mean: 0,0975
+Logic: Wu Tang Forever (ft. Ghostface Killah, Raekwon, RZA, Method Man, Inspectah Deck, Cappadonna, Jackpot Scotty Wotty, U-God, Masta Killa, GZA)
+Mean: 0,0786
+Chuuwee: Nothin' At All (feat. Skoolie 300)
+Mean: 0,0809
+Logic: Till The End
+Mean: 0,1135
+Mndsgn: Abeja
+Mean: 0,0136
+TK Kravitz: Mine (feat. Kevin Gates)
+Mean: 0,0623
+Rick James: Fire And Desire
+Mean: 0,0632
+DJ Jazzy Jeff & The Fresh Prince: Summertime - Single Edit
+Mean: 0,0477
+Amir Obe: CIGARETTES
+Mean: 0,1253
+Earl Sweatshirt: The Mint (feat. Navy Blue)
+Mean: 0,1069
+Cartel De Santa: Mucha Marihuana
+Mean: 0,0547
+Eminem: Spend Some Time
+Mean: 0,0809
+Lil Pump: Back (feat. Lil Yachty)
+Mean: 0,0404
+Bone Thugs-N-Harmony: Ghetto Cowboy
+Mean: 0,08
+EARTHGANG: Build
+Mean: 0,1037
+Aesop Rock: Preservation
+Mean: 0,0691
+YG: 10 TIMES
+Mean: 0,0605
+Young Dolph: Slave Owner
+Mean: 0,0634
+Berner: Brown Bag (feat. Wiz Khalifa)
+Mean: 0,0588
+
+
+Mean of the 100 songs >>> 0,0754
+
+-----------------------------------------------
+
+
+Genre: Jazz
+
+Snarky Puppy: I Asked - Live
+Mean: 0,0897
+Vic Damone: My Baby Loves to Swing
+Mean: 0,06
+BADBADNOTGOOD: Confessions
+Mean: 0
+Sonora Ponceña: Yare
+Mean: 0,0816
+Suff Daddy: Pattern Select
+Mean: 0,1323
+Blockhead: Slippery Slope
+Mean: 0,0251
+Stereo MC's: Connected
+Mean: 0,061
+Nightmares On Wax: Citizen Kane - Esta Remix
+Mean: 0,0658
+Quantic: Transatlantic
+Mean: 0,0566
+Joe Sample: Fever
+Mean: 0,1114
+Mujo: Cats Eyes
+Mean: 0,1109
+The Whispers: In the Mood
+Mean: 0,1454
+Puerto Rican Power: A Donde Iras
+Mean: 0,0953
+Paul Hardcastle: Ventura Highway
+Mean: 0,1349
+Stacey Kent: Samba Saravah
+Mean: 0,1156
+Lemon Jelly: Come
+Mean: 0,0779
+Pete Escovedo: Te Vas
+Mean: 0,108
+Alice Francis: Shoot Him Down
+Mean: 0,0884
+El Gran Combo De Puerto Rico: Arroz Con Habichuela - En Vivo
+Mean: 0,086
+El Gran Combo De Puerto Rico: Gotas de Lluvia
+Mean: 0,0566
+Billie Holiday: Foolin' Myself (with Teddy Wilson & His Orchestra)
+Mean: 0,1119
+Michael Franks: Now That The Summer's Here
+Mean: 0,0853
+Nat King Cole: Don't Get Around Much Anymore
+Mean: 0,1168
+The Sax Pack: A Little Bit Closer
+Mean: 0,0535
+Asha Puthli: Space Talk
+Mean: 0,0671
+Hiatus Kaiyote: Leap Frog
+Mean: 0,0839
+The Contortionist: Clairvoyant
+Mean: 0
+Between The Buried And Me: Extremophile Elite
+Mean: 0,0278
+Melodiesinfonie: Tuk Rueh
+Mean: 0,1208
+Sonny Rollins: All The Things You Are
+Mean: 0,0713
+Django Reinhardt: Djangology - Remastered 2002
+Mean: 0,0842
+oofoe: untitled
+Mean: 0
+Isaac Hayes: Do Your Thing
+Mean: 0
+Bob James: More Than Friends
+Mean: 0,1167
+Skinshape: Oracolo
+Mean: 0,0612
+Gabriel Garzón-Montano: Fruitflies
+Mean: 0,027
+Breakestra: How Do You Really Feel
+Mean: 0,1245
+Nat King Cole: Joy To The World
+Mean: 0,0642
+The Contortionist: Absolve
+Mean: 0,0617
+Taylor McFerrin: Awake to You
+Mean: 0,062
+Benny Goodman: Clarinet a la King - Instrumental
+Mean: 0,1142
+Esperanza Spalding: Black Gold
+Mean: 0,0979
+Nat King Cole: Fly Me To The Moon (In Other Words)
+Mean: 0,051
+Bonobo: Brace Brace
+Mean: 0,0868
+The Blackbyrds: Dreaming About You
+Mean: 0,1206
+Handbook: Melon
+Mean: 0,0583
+A Tribe Called Quest: We The People....
+Mean: 0,0468
+Roy Hargrove: September In the Rain
+Mean: 0,0672
+Kadhja Bonet: Second Wind
+Mean: 0,1416
+Four Tet: Angel Echoes
+Mean: 0,1053
+The Jazz Jousters: Starry Night
+Mean: 0,0505
+Frankie Ruiz: Imposible Amor
+Mean: 0,0393
+Bugseed: for chris gage
+Mean: 0,1105
+Isaac Hayes: A Few More Kisses To Go
+Mean: 0,0872
+Chuck Willis: Hang Up My Rock And Roll Shoes
+Mean: 0,0768
+Lollo Meier: China Boy
+Mean: 0,1205
+Brian Culbertson: Don't Go
+Mean: 0,1421
+Chris Botti: My Funny Valentine
+Mean: 0,0784
+Jo Stafford: Smoke Dreams - Remastered
+Mean: 0,0456
+Eric Dolphy: Hat And Beard
+Mean: 0,0995
+Joe Henderson: Punjab - Rudy Van Gelder 24-Bit Remastering/2003
+Mean: 0,0778
+Stanley Turrentine: Sunny
+Mean: 0,0797
+The Meters: Hey Pocky A-Way - Remastered Version
+Mean: 0,1176
+Annette Hanshaw: Daddy Won't You Please Come Home (with The New Englanders)
+Mean: 0,0717
+Blockhead: Triptych Pt. 1
+Mean: 0
+Ben Tankard: Heavenly Vibes
+Mean: 0,041
+Kenny G: Silhouette
+Mean: 0
+Nat King Cole: A Cradle In Bethlehem
+Mean: 0,0424
+Grover Washington, Jr.: "Let It Flow [For ""DR. J""]"
+Mean: 0,149
+Animals As Leaders: Mind-Spun
+Mean: 0,1269
+Birocratic: Tony's Belated Breakfast
+Mean: 0,0598
+Louis Armstrong: Cheek to Cheek
+Mean: 0,058
+Hiatus Kaiyote: Prince Minikid
+Mean: 0,0641
+Sun Ra: Door To The Cosmos
+Mean: 0,1218
+Bob James: Nautilus
+Mean: 0,059
+Delfeayo Marsalis: Such Sweet Thunder
+Mean: 0,0905
+Andy Montañez: Casi Te Envidio
+Mean: 0,0815
+Damu The Fudgemunk: Same Beat - Instrumental
+Mean: 0,0581
+Benny Sings: All We Do For Love
+Mean: 0,0598
+Ray Charles: Here We Go Again
+Mean: 0,0722
+Anomaly: KMS (Feat. Atlas)
+Mean: 0,1197
+Louis Armstrong: Blueberry Hill - Single Version
+Mean: 0,0842
+Miles Davis: Sid's Ahead
+Mean: 0,0957
+Chinese Man: The Journey - Lost Mix
+Mean: 0,1304
+Kermit Ruffins: Beautiful World [for Imani]
+Mean: 0,1142
+Fattburger: Trail Of Tears
+Mean: 0,0572
+Christian McBride: Who's Making Love
+Mean: 0,0964
+Miles Davis: Easy Living
+Mean: 0,0215
+John Coltrane: Everytime We Say Goodbye
+Mean: 0,0707
+Masayoshi Takanaka: Samba Pati
+Mean: 0,0414
+Art Pepper: Begin The Beguine - Alternate Take
+Mean: 0,0872
+Catherine Russell: Alone Together
+Mean: 0,0544
+Erroll Garner: I Want To Be Happy
+Mean: 0,1011
+Lee Ritenour: A Little Bumpin'
+Mean: 0,1027
+Moose Dawa: Yesorno
+Mean: 0,1187
+El Gran Combo De Puerto Rico: El Barbero Loco
+Mean: 0,08
+Randy Crawford: Something So Right
+Mean: 0,1173
+Flughand: Azymuth
+Mean: 0,0777
+Nils Landgren Funk Unit: Sisters of Arequipa
+Mean: 0,1508
+Fred Hersch Trio: Infant Eyes
+Mean: 0,0546
+
+
+Mean of the 100 songs >>> 0,0799
+
+-----------------------------------------------
+
+
+Genre: Rap
+
+Vince Staples: Outside!
+Mean: 0,0627
+Meek Mill: Ima Boss - feat. Rick Ross
+Mean: 0,0988
+Disturbed: Hold On to Memories
+Mean: 0,051
+Rob $tone: Chill Bill
+Mean: 0,0827
+Mac Miller: Man In The Hat
+Mean: 0
+August Alsina: Like You Love Me
+Mean: 0,1046
+Young Dolph: Eddie Cane
+Mean: 0,0392
+2Pac: Thugs Get Lonely Too
+Mean: 0,0692
+SOB X RBE: Carpoolin'
+Mean: 0,1327
+$uicideBoy$: $outh $ide $uicide
+Mean: 0,0663
+Tyga: Ice Cream Man
+Mean: 0,0475
+Eminem: W.T.P.
+Mean: 0,0624
+Curren$y: Bottom of the Bottle (feat. August Alsina & Lil Wayne)
+Mean: 0,08
+$uicideBoy$: Phantom Menace
+Mean: 0,0982
+Gucci Mane: Just Like It (feat. 21 Savage)
+Mean: 0,0636
+Young Thug: Hercules
+Mean: 0,0464
+Young Thug: Halftime
+Mean: 0,0549
+Chevelle: Face to the Floor
+Mean: 0,0326
+Mozzy: Sleep Walkin
+Mean: 0,0245
+Fetty Wap: With You
+Mean: 0,0517
+Future: Mask Off - Marshmello Remix
+Mean: 0,0451
+Lil Keke: Chunk Up the Deuce (feat. U.G.K. & Paul Wall)
+Mean: 0,0926
+Linkin Park: Bleed It Out
+Mean: 0,0967
+Selena Gomez & The Scene: Who Says
+Mean: 0,0816
+Drake: Diplomatic Immunity
+Mean: 0,1207
+Justin Timberlake: Supplies
+Mean: 0,0556
+YBN Nahmir: Porsches In The Rain
+Mean: 0,0582
+Nipsey Hussle: Keyz 2 the City 2 (feat. TeeFlii)
+Mean: 0,1124
+Jeezy: Way Too Gone
+Mean: 0,0569
+Jeezy: Seen It All
+Mean: 0,0716
+Vic Mensa: Dark Things
+Mean: 0,0626
+Speaker Knockerz: Money
+Mean: 0,0979
+Kanye West: Good Life
+Mean: 0,1002
+K CAMP: Good Weed Bad B*tch
+Mean: 0,0822
+6LACK: Never Know
+Mean: 0,1416
+Madvillain: Figaro
+Mean: 0,0825
+Kevin Rudolf: I Made It (Cash Money Heroes)
+Mean: 0,0644
+Shoreline Mafia: Power Rangers
+Mean: 0,0612
+Kanye West: Violent Crimes
+Mean: 0
+Bryson Tiller: You Got It
+Mean: 0,1435
+Jordin Sparks: No Air (feat. Chris Brown)
+Mean: 0,0911
+Wiz Khalifa: Penthouse (feat. Snoop Dogg)
+Mean: 0,055
+Beastie Boys: No Sleep Till Brooklyn
+Mean: 0,0871
+American Authors: Go Big Or Go Home
+Mean: 0,027
+Logic: Wrist
+Mean: 0,0307
+Moneybagg Yo: No Cutt (feat. Lil Baby)
+Mean: 0,0987
+J. Cole: 1985 - Intro to “The Fall Off”
+Mean: 0,0549
+Mackned: Black Jeep
+Mean: 0,0596
+A$AP Rocky: Gunz N Butter
+Mean: 0
+Bobby Shmurda: Living Life
+Mean: 0,0749
+Vic Mensa: The Fire Next Time
+Mean: 0,0786
+Mac Miller: Wake Up
+Mean: 0,0645
+Eminem: Who Knew
+Mean: 0,0669
+Jordin Sparks: Tattoo
+Mean: 0,1455
+Lil Yachty: COUNT ME IN
+Mean: 0,0866
+Shy Glizzy: Problems (feat. Quando Rondo & Lil Durk)
+Mean: 0,0547
+Ski Mask The Slump God: Catch Me Outside
+Mean: 0,0874
+Breaking Benjamin: Never Again
+Mean: 0,0197
+Travie McCoy: Golden (feat. Sia)
+Mean: 0,0459
+The Weeknd: Kiss Land
+Mean: 0,0508
+Fat Nick: P.S Fuck You Cunt (feat. Lil Peep)
+Mean: 0,0437
+Aminé: Baba
+Mean: 0,0748
+Hoodie Allen: Act My Age
+Mean: 0,0618
+NF: Green Lights
+Mean: 0,0563
+Shaggy: I Need Your Love
+Mean: 0,0749
+Lil Baby: All Of A Sudden
+Mean: 0,0332
+ScHoolboy Q: THat Part
+Mean: 0,0741
+A$AP Rocky: Hun43rd
+Mean: 0,1107
+Gunna: My Slime
+Mean: 0,0679
+Josh A: Better off Dead
+Mean: 0,0314
+Jaden Smith: George Jeff
+Mean: 0,0738
+Hoodie Allen: Champagne and Pools (feat. Blackbear & Kyle)
+Mean: 0
+Eminem: Offended
+Mean: 0,0598
+Ne-Yo: GOOD MAN
+Mean: 0,1038
+Future: Call the Coroner
+Mean: 0,0972
+Oliver Francis: Anti-Grav
+Mean: 0,0576
+Souls Of Mischief: 93 'Til Infinity
+Mean: 0
+Mac Miller: 1 Threw 8
+Mean: 0,0676
+Offset: Tats On My Face
+Mean: 0,1185
+Young Thug: Constantly Hating (feat. Birdman)
+Mean: 0,0269
+Brent Faiyaz: Target On My Chest
+Mean: 0,0836
+KYLE: All Mine (feat. MadeinTYO)
+Mean: 0,0391
+Chief Keef: Nobody (feat. Kanye West)
+Mean: 0,0817
+Ne-Yo: Miss Independent
+Mean: 0,1291
+Thousand Foot Krutch: Move
+Mean: 0,0451
+Roddy Ricch: HoodRicch
+Mean: 0,1052
+Shoreline Mafia: Foreign
+Mean: 0,0898
+Young Dolph: Baller Alert
+Mean: 0,0942
+Desiigner: Tiimmy Turner
+Mean: 0,0444
+Snoop Dogg: French Inhale - feat. Mike Posner
+Mean: 0,098
+JID: Frequency Change
+Mean: 0
+Lil Xan: Moonlight
+Mean: 0,0684
+Jhene Aiko: Bed Peace
+Mean: 0,0507
+Tyga: Hollywood Niggaz
+Mean: 0,0564
+A Boogie Wit da Hoodie: Let's Start Over
+Mean: 0,072
+Taio Cruz: Hangover
+Mean: 0,029
+6LACK: Gettin' Old
+Mean: 0
+Gucci Mane: Just Like It (feat. 21 Savage)
+Mean: 0,0636
+SOB X RBE: Calvin Cambridge
+Mean: 0,0995
+atlas: facade
+Mean: 0,0238
+
+
+Mean of the 100 songs >>> 0,0668
+
+-----------------------------------------------
+
+
+Genre: Dance
+
+Sean Paul: Bad Love
+Mean: 0,1006
+Madonna: Take a Bow
+Mean: 0,084
+ItaloBrothers: Summer Air
+Mean: 0,0257
+Gym Class Heroes: Stereo Hearts (feat. Adam Levine)
+Mean: 0,058
+Keyshia Cole: I Remember
+Mean: 0,0741
+Little Mix: No More Sad Songs
+Mean: 0,058
+LeAnn Rimes: How Do I Live
+Mean: 0,0887
+Train: Careless Whisper (feat. Kenny G)
+Mean: 0,0825
+Taylor Swift: So It Goes...
+Mean: 0,0492
+Paul Young: Every Time You Go Away - Radio Edit
+Mean: 0,0506
+MAX: Lights Down Low - Not Your Dope Remix
+Mean: 0,0423
+Mario: Too Many Options
+Mean: 0,1549
+David Guetta: Shot me Down (feat. Skylar Grey) - Radio Edit
+Mean: 0,0409
+5 Seconds of Summer: Why Won’t You Love Me
+Mean: 0,0336
+Beyoncé: No Angel
+Mean: 0,07
+High School Musical Cast: Walk Away - Original Version
+Mean: 0,0613
+Luis Fonsi: Corazón En La Maleta
+Mean: 0,09
+Charlotte Lawrence: Wait Up
+Mean: 0,0781
+Krewella: Alive
+Mean: 0,0188
+Shawn Mendes: Under Pressure
+Mean: 0,0707
+Sia: Straight for the Knife
+Mean: 0,074
+Ariana Grande: Side To Side
+Mean: 0,0882
+T.I.: About the Money
+Mean: 0,0486
+Madonna: Crazy for You - Edit Version
+Mean: 0,0445
+Flo Rida: Hola (feat. Maluma)
+Mean: 0,0468
+Juanes: Fuego
+Mean: 0,0364
+New Edition: If It Isn't Love
+Mean: 0,0785
+Axwell /\ Ingrosso: Dreamer - Matisse & Sadko Remix
+Mean: 0,0349
+DNCE: Naked
+Mean: 0,0246
+Jack & Jack: Falling
+Mean: 0,0526
+Enrique Iglesias: There Goes My Baby
+Mean: 0,0524
+Sasha Sloan: I’ll Be There
+Mean: 0,0802
+Fat Joe: Money Showers
+Mean: 0,039
+Britney Spears: Me Against the Music - LP Version / Video Mix
+Mean: 0,1268
+Janet Jackson: Got 'Til It's Gone
+Mean: 0,0921
+RuPaul: Sissy That Walk
+Mean: 0,0461
+B.o.B: Airplanes
+Mean: 0,0442
+Seeb: What Do You Love
+Mean: 0,0682
+Kehlani: Down for You (feat. BJ the Chicago Kid)
+Mean: 0,1277
+Loverboy: Lovin' Every Minute of It
+Mean: 0,0508
+Sabrina Carpenter: We'll Be The Stars
+Mean: 0,0758
+Mariah Carey: Thank God I Found You (feat. Joe & 98°)
+Mean: 0,1098
+Moon Boots: I Want Your Attention
+Mean: 0,0456
+Adam Lambert: Whataya Want from Me
+Mean: 0,1092
+Sigrid: Never Mine
+Mean: 0,1477
+Jack & Jack: Flights
+Mean: 0,056
+NERVO: It Feels - KSHMR Remix
+Mean: 0,0306
+Cheap Trick: The Flame
+Mean: 0,0595
+Eve: Gangsta Lovin'
+Mean: 0,049
+Whitney Houston: So Emotional
+Mean: 0,13
+Britney Spears: Hold It Against Me
+Mean: 0,0596
+MØ: Theme Song (I'm Far Away)
+Mean: 0,0941
+Hilary Duff: So Yesterday
+Mean: 0,1068
+Christina Aguilera: Fighter
+Mean: 0
+Pleasure P: Rock with You
+Mean: 0,0483
+SWV: Use Your Heart
+Mean: 0,1127
+The Smiths: There Is a Light That Never Goes Out - 2017 Master
+Mean: 0,0581
+Transviolet: Girls Your Age
+Mean: 0,0711
+Kid Ink: Time Of Your Life
+Mean: 0,0254
+Ariana Grande: R.E.M
+Mean: 0,164
+Calvin Harris: Burnin
+Mean: 0,0475
+Shawn Mendes: Fallin' All In You
+Mean: 0,1417
+Cheat Codes: Feels Great (feat. Fetty Wap & CVBZ) - Anki Remix
+Mean: 0,0834
+Mariah Carey: Without You
+Mean: 0,0702
+Lana Del Rey: White Mustang
+Mean: 0,0978
+Miley Cyrus: Start All Over
+Mean: 0,0183
+Ailee: 파란 봄
+Mean: 0,0806
+The Bangles: Eternal Flame
+Mean: 0,1236
+Mariah Carey: A No No
+Mean: 0,05
+Avicii: What Would I Change It To (feat. AlunaGeorge)
+Mean: 0,0639
+Céline Dion: I Drove All Night
+Mean: 0,0263
+Kacey Musgraves: Back On The Map
+Mean: 0,0539
+The Ting Tings: Estranged
+Mean: 0,123
+Ariana Grande: bad idea
+Mean: 0,0549
+Miguel: How Many Drinks?
+Mean: 0,0691
+Fat Joe: Make It Rain
+Mean: 0,0708
+SISTAR: LONELY
+Mean: 0,1426
+Jack & Jack: Meet U In The Sky
+Mean: 0,1106
+Lady Gaga: Americano
+Mean: 0,0252
+Information Society: What's on Your Mind (Pure Energy)
+Mean: 0,0354
+Gryffin: You Remind Me (feat. Stanaj) - Bart B More Remix
+Mean: 0,0353
+JP Cooper: Momma's Prayers
+Mean: 0,0966
+Blur: Ghost Ship
+Mean: 0,0662
+Foals: What Went Down
+Mean: 0,0162
+The Chainsmokers: Don't Let Me Down - Illenium Remix
+Mean: 0,0625
+YACHT: Psychic City - Classixx Remix
+Mean: 0,0909
+Jhene Aiko: Stay Ready (What A Life)
+Mean: 0
+Oliver Heldens: Fire In My Soul - Tom Staar Remix
+Mean: 0,0507
+Janet Jackson: Made For Now
+Mean: 0,0292
+After School: Because of you
+Mean: 0,0653
+Gryffin: Whole Heart
+Mean: 0,0558
+ZAYN: TiO
+Mean: 0,0632
+P!nk: Blow Me (One Last Kiss)
+Mean: 0,0226
+Ella Eyre: If I Go
+Mean: 0,0427
+Soulja Boy: Turn My Swag On
+Mean: 0,1755
+Lauv: There's No Way (feat. Julia Michaels) - Alle Farben Remix
+Mean: 0,0282
+Cults: You Know What I Mean
+Mean: 0,1065
+Kid Ink: Do Me Wrong
+Mean: 0,0732
+Christina Aguilera: Fall In Line (feat. Demi Lovato)
+Mean: 0,0506
+Duran Duran: A View to a Kill - Live
+Mean: 0,0267
+
+
+Mean of the 100 songs >>> 0,0679
+
+-----------------------------------------------
+
+
+Genre: Classical
+
+Frédéric Chopin: Chopin : 24 Preludes Op.28 : No.23 in F major
+Mean: 0,007
+Blues Saraceno: Killin' floor
+Mean: 0,1335
+Johann Sebastian Bach: Passacaglia and Fugue in C Minor, BWV 582: Passacaglia
+Mean: 0,0551
+Luca Turilli: Demonheart
+Mean: 0,0565
+Ólafur Arnalds: I Felt Guilty
+Mean: 0,0098
+Santosh Nahar: Rajasthani Folk Melody in Raga Mand
+Mean: 0
+Jacques Offenbach: Les contes d'Hoffmann, Act I: Tu me fuis? qu'ai-je fait (Live)
+Mean: 0,0539
+Wolfgang Amadeus Mozart: Cassation in G Major, K. 63: VII. Finale. Allegro assai
+Mean: 0
+Ludwig van Beethoven: Diabelli Variations, Op. 120: Variation 15. Presto scherzando
+Mean: 0,0409
+Muzio Clementi: Keyboard Sonatina In C Major, Op. 36, No. 3: II. Un Poco Adagio
+Mean: 0,0757
+Howard Shore: """For Frodo"" - feat. Ben del Maestro"
+Mean: 0,0989
+Ludwig van Beethoven: "Piano Sonata No. 29 In B Flat Major, Op. 106 -""Hammerklavier"": 4. Largo - Allegro risoluto"
+Mean: 0,0204
+Johann Sebastian Bach: Concerto in D Major After BWV 169 and BWV 49: I. (Allegro)
+Mean: 0,038
+The Tallis Scholars: Tallis: Spem in Alium - 1. Spem in Alium
+Mean: 0,0164
+Franz Joseph Haydn: "String Quartet No. 62 in C Major, Op. 76, No. 3, Hob.III:77, ""Emperor"": I. Allegro"
+Mean: 0,0254
+Robert Schumann: No. 7, Träumerei
+Mean: 0,0884
+Johann Sebastian Bach: St. John Passion, BWV 245, Pt. 2: No. 28, Er nahm alles wohl in Acht
+Mean: 0,0169
+Frédéric Chopin: 19 Nocturnes: No. 9 in B major Op. 32 No. 1
+Mean: 0,0107
+Andy Timmons: Theme from a Perfect World
+Mean: 0,0643
+Ludwig van Beethoven: "Piano Sonata No.29 In B-Flat, Op.106 -""Hammerklavier"": 3. Adagio sostenuto"
+Mean: 0,0032
+Howard Shore: The Grey Havens (feat. Sir James Galway)
+Mean: 0,0162
+Gustav Mahler: Das Lied von der Erde: I. Das Trinklied vom Jammer der Erde
+Mean: 0,0239
+George Frideric Handel: Music for the Royal Fireworks, HWV 351: La Paix
+Mean: 0,0147
+Ludwig van Beethoven: "Piano Trio No. 5 in D Major, Op. 70 No. 1 ""Ghost"": I. Allegro vivace e con brio"
+Mean: 0,0364
+Wolfgang Amadeus Mozart: Piano Sonata No. 16 in C Major, K545: II. Andante
+Mean: 0,0181
+Paul Creston: Celebration Overture, Op. 61
+Mean: 0,0361
+Sergei Rachmaninoff: Morceaux de Fantaisie, Op.3: 1. Elégie
+Mean: 0,0119
+Wolfgang Amadeus Mozart: Symphony No. 25 in G Minor, K. 183: IV. Allegro (Live)
+Mean: 0,0857
+Ludwig van Beethoven: Violin Sonata No. 7 in C Minor, Op. 30 No. 2: I. Allegro con brio
+Mean: 0,0514
+Jóhann Jóhannsson: The Theory of Everything
+Mean: 0,0462
+Kamelot: Liar Liar (Wasteland Monarchy)
+Mean: 0,0615
+Wolfgang Amadeus Mozart: Clarinet Concerto in A Major, K. 622: II. Adagio
+Mean: 0,0134
+Miloš Karadaglić: Blackbird
+Mean: 0,0507
+Johann Christian Bach: Symphony in G Minor, Op. 6, No. 6, W. C12: I. Allegro
+Mean: 0,0898
+Ludwig van Beethoven: Violin Sonata No. 8, Op. 30 No. 3: I. Allegro assai
+Mean: 0,0692
+Johann Sebastian Bach: St. John Passion, BWV 245, Pt. 2: No. 26, In meines Herzens Grunde
+Mean: 0,0316
+Helloween: I Want Out
+Mean: 0,0853
+Osvaldo Golijov: Omaramor For Solo Cello
+Mean: 0,0082
+Ludwig van Beethoven: Diabelli Variations, Op. 120: Var. 30, Andante, sempre cantabile
+Mean: 0,0122
+Jóhann Jóhannsson: Good Morning, Midnight
+Mean: 0,0049
+Andrea Bocelli: Moon River - Live From Spotify, NYC / 2015
+Mean: 0,0793
+George Frideric Handel: Rinaldo, HWV 7a, Act III (Ed. G. Sechi): Rinaldo! [Live]
+Mean: 0,0493
+Pyotr Ilyich Tchaikovsky: Symphony No. 4 in F Minor, Op. 36: IV. Finale: Allegro con fuoco
+Mean: 0,0682
+George Frideric Handel: Rinaldo, HWV 7a, Act III (Ed. G. Sechi): D'Almirena gli accenti [Live]
+Mean: 0,0594
+Ned Rorem: Piano Album I: For a Perfect Friend
+Mean: 0,0218
+Howard Shore: Mithril
+Mean: 0,0902
+Gabriel Kahane: November
+Mean: 0,0185
+Peter Schmalfuss: Arabesque I: Andantino con Moto
+Mean: 0,008
+Andrea Bocelli: "Duerme Duerme - ""Dormi Dormi"" Spanish Version"
+Mean: 0,0345
+Iced Earth: I Died For You
+Mean: 0,0704
+Wolfgang Amadeus Mozart: Piano Sonata No. 8 in A Minor, K. 310: II. Andante cantabile con espressione
+Mean: 0,0514
+Claude Debussy: Estampes, CD 108: I. Pagodes. Modérément animé
+Mean: 0,0064
+Johann Sebastian Bach: Bach, JS: English Suite No. 1 in A Major, BWV 806: II. Allemande
+Mean: 0,0225
+Wolfgang Amadeus Mozart: Piano Concerto No. 11 in F Major, K. 413: I. Allegro
+Mean: 0,0146
+Robert Schumann: Schumann: Phantasiestücke, Op. 73: I. Zart und mit Ausdruck (Live)
+Mean: 0,0156
+Stratovarius: Unbreakable - Remastered
+Mean: 0,0291
+Frederick Delius: String Quartet in E Minor, RT VIII No. 8 (Original 1916 Version) [Reassembled by D. Grimley]: II. Late Swallows: With slow waving movement
+Mean: 0,015
+Joe Hisaishi: Variations on Sampo form My Neighbor Totoro
+Mean: 0,0292
+George Frideric Handel: Sonata Op. 2 No. 3 in B-Flat Major, HWV 388: IV. Allegro
+Mean: 0,1014
+Francis Poulenc: Improvisations, FP 63: No. 8 in A Minor
+Mean: 0,0333
+Robert Schumann: Fantasiestücke Op. 12: III. Warum?
+Mean: 0,0046
+Sviatoslav Richter: Alborada Del Gracioso
+Mean: 0,0309
+Philip Glass: Orphée Suite - 6. Orphee's Return
+Mean: 0,0173
+Morten Lauridsen: Lux aeterna: O Nata Lux
+Mean: 0,005
+Frédéric Chopin: Nocturne No. 19 in E Minor, Op. 72, No. 1
+Mean: 0,0044
+Blind Guardian: Wheel Of Time
+Mean: 0,096
+Ravi Shankar: Vedic Chanting - One
+Mean: 0,0348
+Tomaso Albinoni: Oboe Concerto in D Minor, Op. 9 No. 2: I. Allegro e non presto
+Mean: 0,037
+Wolfgang Amadeus Mozart: Suite in C-dur: V. IV. Sarabande
+Mean: 0,0583
+Frédéric Chopin: "Waltzes, Op. 64: Waltz No. 6 in D-Flat Major, Op. 64, No. 1, ""Minute"""
+Mean: 0,0196
+Johann Sebastian Bach: Cello Suite No. 1 in G Major, BWV 1007: Courante
+Mean: 0,0411
+Trans-Siberian Orchestra: Mountain Labyrinth
+Mean: 0
+Wolfgang Amadeus Mozart: Requiem in D Minor, K. 626 (Süssmayr - Dutron 2016 completion): II. Sequentia - Confutatis
+Mean: 0,0112
+Aaron Copland: Hoedown
+Mean: 0,0455
+Aaron Copland: Grohg: IV. Dance of the Street-Walker
+Mean: 0,0875
+Anton Bruckner: "Bruckner: Symphony No. 4 in E-Flat Major, ""Romantic"": III. Scherzo & Trio (Nicht zu schnell)"
+Mean: 0,0258
+Wolfgang Amadeus Mozart: "Symphony No.41 In C, K.551 - ""Jupiter"": 2. Andante cantabile"
+Mean: 0,0069
+Gang Chen: The Butterfly Lovers Violin Concerto
+Mean: 0,028
+Johann Sebastian Bach: Suites for Cello, Suite No. 2 in D minor BWV 1008: Courante
+Mean: 0,0903
+Wolfgang Amadeus Mozart: Fantasia in D Minor, K. 397
+Mean: 0,0188
+Bryce Dessner: Section 1
+Mean: 0
+Gustav Mahler: Symphony No. 7 in E Minor: 1. Langsam - Allegro
+Mean: 0,0463
+Igor Stravinsky: The Firebird Suite *: Finale
+Mean: 0,031
+Jean-Yves Thibaudet: "Can't Slow Down - From ""Pride & Prejudice"" Soundtrack"
+Mean: 0
+Johann Strauss II: The Blue Danube, Op. 314
+Mean: 0,0174
+Wolfgang Amadeus Mozart: Symphony No. 25 in G Minor, K. 183: IV. Allegro
+Mean: 0,0275
+Michael Haydn: Romanze (arr. of Mozart's Horn Concerto No. 3 in E-Flat Major, K. 447: II. Romance: Larghetto)
+Mean: 0,0263
+Dmitri Shostakovich: Five Pieces For Two Violins and Piano: I. Prelude
+Mean: 0,0154
+Antonio Vivaldi: "Vivaldi: Violin Concerto in E Major, RV 269 ""La primavera"" (No. 1 from ""Il cimento dell'armonia e dell'inventione"", Op. 8): III. Allegro"
+Mean: 0,0674
+Georg Philipp Telemann: Ouverture in G Major, TWV 32:13: VI. Menuet - Trio
+Mean: 0,1088
+Ludwig van Beethoven: Violin Sonata No. 4 in A Minor, Op. 23: II. Andante scherzoso, piu allegretto
+Mean: 0,0312
+Buckethead: Waiting Hare
+Mean: 0,0916
+Camille Saint-Saëns: Saint-Saëns: Le carnaval des animaux (Carnival of the Animals): XIII. The Swan
+Mean: 0,0042
+Maurice Ravel: Ravel: Sonatine, M. 40: II. Mouvement de menuet
+Mean: 0,0111
+Johann Strauss II: Myrthenblüten, Walzer, Op. 395
+Mean: 0,0235
+Dietrich Buxtehude: Prelude in F Major, BuxWV 145
+Mean: 0,0651
+Frédéric Chopin: Waltz No. 7 in C-Sharp Minor, Op. 64, No. 2
+Mean: 0,0173
+Leonard Bernstein: West Side Story: Act I: Gee, Officer Krupke
+Mean: 0
+Wolfgang Amadeus Mozart: Sonata No. 13 in B-Flat Major, K. 333: I. Allegro
+Mean: 0,0182
+Frederick Delius: Two Aquarelles: Gaily, but not too quick
+Mean: 0,0053
+
+
+Mean of the 100 songs >>> 0,0367
+
+-----------------------------------------------
+
+
+Genre: Indie
+
+Ten Fé: Another Way
+Mean: 0,0904
+Empress Of: When I'm With Him
+Mean: 0,1326
+Sammie: Funeral
+Mean: 0,1003
+ROZES: Halfway There (GRL PWR)
+Mean: 0,1184
+King Krule: Border Line
+Mean: 0,0356
+Ravyn Lenae: Free Room (feat. Appleby)
+Mean: 0,0229
+The Avett Brothers: Ain't No Man
+Mean: 0,0235
+James Blake: Life Round Here
+Mean: 0,1193
+Vallis Alps: Oceans
+Mean: 0,0681
+Surf Curse: I'm Not Making out With You
+Mean: 0,0555
+COIN: Malibu 1992
+Mean: 0,1098
+Local Natives: Dark Days
+Mean: 0,0605
+The Wild Reeds: Everything Looks Better (In Hindsight)
+Mean: 0,1094
+BAYNK: What You Need
+Mean: 0,1142
+Sticky Fingers: Bootleg Rascal
+Mean: 0,13
+Gregory Alan Isakov: San Luis
+Mean: 0,1214
+The Glorious Sons: Come Down - Live at Longboat Hall
+Mean: 0,0423
+Meg Myers: Desire
+Mean: 0,0551
+LÉON: What You Said
+Mean: 0,0862
+Mac DeMarco: The Way You'd Love Her
+Mean: 0,0803
+Flume: Sleepless
+Mean: 0,0647
+Andrew McMahon in the Wilderness: Teenage Rockstars
+Mean: 0,0679
+Kasabian: Underdog
+Mean: 0,0604
+King Gizzard & The Lizard Wizard: Robot Stop
+Mean: 0,0448
+Mating Ritual: Game
+Mean: 0,0759
+Flume: Say It (feat. Tove Lo)
+Mean: 0,0637
+Jack Stauber: John & Nancy
+Mean: 0
+Bibio: Curls
+Mean: 0,0962
+SYML: The Bird
+Mean: 0,1028
+Quinn XCII: Light On
+Mean: 0,071
+Futurebirds: Rodeo
+Mean: 0,0248
+Hoodie Allen: Act My Age
+Mean: 0,0618
+Dagny: Backbeat
+Mean: 0,0551
+The Smiths: Asleep - 2011 Remaster
+Mean: 0,0306
+Sharon Van Etten: Malibu
+Mean: 0,0717
+Guster: Overexcited
+Mean: 0,0945
+Sol: If You Don't Call
+Mean: 0,0099
+WILD: Throw Me in the Water
+Mean: 0,0226
+Julie Bergan: Arigato
+Mean: 0,0902
+The Libertines: Can't Stand Me Now
+Mean: 0,0209
+Regina Spektor: Us
+Mean: 0,0811
+Foster The People: Don't Stop (Color on the Walls)
+Mean: 0,0375
+Washed Out: Hard To Say Goodbye
+Mean: 0,0574
+Orange & Lemons: Hanggang Kailan - Umuwi Ka Na Baby
+Mean: 0,0668
+Now, Now: MJ
+Mean: 0,0852
+Vance Joy: Red Eye
+Mean: 0,055
+Sidewalk Prophets: To Live Is Christ
+Mean: 0,0601
+Oliver Riot: Neurosis
+Mean: 0,0988
+LaLa Hsu: 失落沙洲
+Mean: 0,0548
+The Arcs: Chains of Love
+Mean: 0,0781
+The Hives: Tick Tick Boom
+Mean: 0,0428
+The Cab: One Of THOSE Nights
+Mean: 0,0332
+Chairlift: Bruises
+Mean: 0,1065
+Dirty Projectors: Up In Hudson
+Mean: 0,0732
+Portugal. The Man: Rich Friends
+Mean: 0,0335
+Bazanji: Movin'
+Mean: 0,0778
+Bleachers: Foreign Girls
+Mean: 0,0827
+Phoebe Ryan: Mine
+Mean: 0,0487
+James Gillespie: What You Do
+Mean: 0,0543
+Astrid S: Paper Thin - Live From Studio
+Mean: 0,0707
+Win and Woo: Chicago
+Mean: 0,1281
+Tijuana Panthers: Red Headed Girl
+Mean: 0,1182
+Bad Suns: Patience
+Mean: 0,0116
+Radiohead: Videotape
+Mean: 0,0844
+John Roa: Oks Lang
+Mean: 0,0523
+Colony House: 1234
+Mean: 0,1031
+A R I Z O N A: Find Someone
+Mean: 0,0493
+Kings of Leon: Pickup Truck
+Mean: 0,0809
+Henry Jamison: Real Peach - Recorded at Spotify Studios NYC
+Mean: 0,0942
+Astrid S: Such A Boy
+Mean: 0,052
+Eric Bellinger: G.O.A.T.
+Mean: 0,0593
+James Blake: I'll Come Too
+Mean: 0,1127
+Foals: Exits - George FitzGerald Remix
+Mean: 0,022
+Joy Division: She's Lost Control - 2007 Remastered Version
+Mean: 0,0551
+Moon Taxi: Who's To Say?
+Mean: 0,0437
+Louis The Child: World On Fire
+Mean: 0,1338
+Sleeping At Last: 99 Red Balloons
+Mean: 0,0744
+Japanese Breakfast: Dreams - Recorded at Spotify Studios NYC
+Mean: 0,0775
+Elohim: TV
+Mean: 0,0608
+Radiohead: Paranoid Android
+Mean: 0,0673
+Oh Wonder: Without You
+Mean: 0,083
+Phantogram: You're Mine
+Mean: 0,0313
+Chase Atlantic: Hold Your Breath
+Mean: 0,0592
+Two Door Cinema Club: New Houses
+Mean: 0,036
+Valley Hush: Letting a Flower Die
+Mean: 0,0412
+The Blaze: Territory
+Mean: 0,0726
+Hearts & Colors: Steal My Girl
+Mean: 0,1761
+Choker: Petrol Bliss
+Mean: 0,1476
+Tyler Childers: Nose On The Grindstone
+Mean: 0,0698
+The Killers: All These Things That I've Done
+Mean: 0,0329
+Radiohead: Jigsaw Falling Into Place
+Mean: 0,0941
+Sango: Middle of Things, Beautiful Wife (feat. Xavier Omär))
+Mean: 0,0684
+Lake Street Dive: You Go Down Smooth
+Mean: 0,0835
+吳青峰: "起風了 - 電視劇""加油你是最棒的""主題曲"
+Mean: 0,1053
+Vampire Weekend: I Stand Corrected
+Mean: 0,056
+Kasabian: Wasted
+Mean: 0,0468
+Jay Wile: Honest
+Mean: 0,0985
+Ella Vos: White Noise (R3hab Remix)
+Mean: 0,0433
+The National: Runaway
+Mean: 0,0569
+Elise Davis: Last Laugh
+Mean: 0,0688
+
+
+Mean of the 100 songs >>> 0,0706
+
+-----------------------------------------------
+
+
+

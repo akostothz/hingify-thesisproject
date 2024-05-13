@@ -62,7 +62,6 @@ export class MusicDetailComponent implements OnInit {
     let conv: number = 1.6667E-5;
     return <number>conv * ms;
   }
-
   
   addBehaviorWithButton(trackId: String) {
     this.addedBehaviors$ = this.musicService.addNewBehaviorWithButton(trackId);

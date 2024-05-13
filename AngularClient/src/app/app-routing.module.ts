@@ -58,7 +58,6 @@ const routes: Routes = [
       {path: 'discover/:trackId', component: DiscovermoreComponent},
       {path: 'artist/:artistName', component: ArtistComponent},
       {path: 'musics/more/:type', component: MoreComponent},
-      {path: 'testplay', component: PlaybacktestComponent}, //EZ CSAK TESZT A PLAYBACKNEK. TÖRÖLNI HA SIKERÜLT!!
       {path: 'stats', component: MainComponent},
       {path: 'stats/daily', component: DailyComponent},
       {path: 'stats/weekly', component: WeeklyComponent},
