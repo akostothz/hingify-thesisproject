@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
-//using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.Extensions.Options;
 using Moq;
 using NUnit.Framework;
 using System.Collections.Generic;
@@ -13,6 +13,7 @@ using UNN1N9_SOF_2022231_BACKEND.DTOs;
 using UNN1N9_SOF_2022231_BACKEND.Errors;
 using UNN1N9_SOF_2022231_BACKEND.Logic;
 using UNN1N9_SOF_2022231_BACKEND.Models;
+using UNN1N9_SOF_2022231_BACKEND.Services;
 using static SpotifyAPI.Web.SearchRequest;
 
 namespace HingifyTests
@@ -169,7 +170,10 @@ namespace HingifyTests
                 .Setup((ub) => ub.UserBehaviors)
                 .Returns(userBehaviourMockSet?.Object);
 
-            logic = new MusicLogic(mockContext.Object);
+            var mockOptions = new Mock<IOptions<SpotifySettings>>();
+            mockOptions.Setup(x => x.Value).Returns(new SpotifySettings());
+
+            logic = new MusicLogic(mockContext.Object, mockOptions.Object);
 
         }
 
