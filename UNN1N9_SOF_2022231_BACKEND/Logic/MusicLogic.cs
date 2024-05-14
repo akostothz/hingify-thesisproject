@@ -97,8 +97,6 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             }
             else
             {
-                // stílusok számának lekérdezése; ha 3 vagy több, akkor
-                // vegyes mixet kap, ha kevesebb, akkor azt amiből a legtöbb van
                 var dict = new Dictionary<string, int>();
 
                 foreach (var music in musics)
@@ -114,7 +112,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                 }
 
                 // ha nem kevert, akkor a leghallgatottabb stílus kiszedése
-                if (genres.Count <= 3)
+                if (genres.Count < 3)
                     style = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
 
 
