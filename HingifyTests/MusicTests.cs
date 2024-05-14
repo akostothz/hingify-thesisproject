@@ -427,7 +427,7 @@ namespace HingifyTests
             //  Mivel csak 2 zene van, így a többi '-' karakterű lesz
             // típus Daily lesz
 
-            var dailyStats = await logic.GetDailyStatistics2(1);
+            var dailyStats = await logic.GetDailyStatistics(1);
 
             StatDto expectedStatDto = new StatDto
             {
@@ -460,7 +460,7 @@ namespace HingifyTests
             //ugyan az elv, mint a napinál de ez itt 1 hetet néz:
             // az eredménynek ugyan annak kell lennie, leszámítva a típust
 
-            var weeklyStats = await logic.GetWeeklyStatistics2(1);
+            var weeklyStats = await logic.GetWeeklyStatistics(1);
 
             StatDto expectedStatDto = new StatDto
             {
@@ -493,7 +493,7 @@ namespace HingifyTests
             //ugyan az elv, mint a hetinél de ez itt 1 hónapot néz:
             // az eredménynek ugyan annak kell lennie, leszámítva a típust
 
-            var monthlyStats = await logic.GetMonthlyStatistics2(1);
+            var monthlyStats = await logic.GetMonthlyStatistics(1);
 
             StatDto expectedStatDto = new StatDto
             {
@@ -526,7 +526,7 @@ namespace HingifyTests
             //ugyan az elv, mint a havinál de ez itt 1 évet néz:
             // az eredménynek ugyan annak kell lennie, leszámítva a típust
 
-            var yearlyStats = await logic.GetYearlyStatistics2(1);
+            var yearlyStats = await logic.GetYearlyStatistics(1);
 
             StatDto expectedStatDto = new StatDto
             {

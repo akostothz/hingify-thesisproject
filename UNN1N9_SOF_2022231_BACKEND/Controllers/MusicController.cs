@@ -105,7 +105,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
 
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<MusicDto>>> GetPersonalizedMix(int id)
+        public async Task<ActionResult<IEnumerable<MusicDto>>> GetPersonalizedMixCluster(int id)
         {
             // a kérés továbbítása a Logic felé
             var musics = await _logic.GetPersonalizedMixCluster(id);
@@ -207,9 +207,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         //}
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<MusicDto>>> GetDailyStatistics2(int id)
+        public async Task<ActionResult<IEnumerable<StatDto>>> GetDailyStatistics(int id)
         {
-            var stats = await _logic.GetDailyStatistics2(id);
+            var stats = await _logic.GetDailyStatistics(id);
 
             return Ok(stats);
         }
@@ -223,9 +223,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         //}
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<MusicDto>>> GetWeeklyStatistics2(int id)
+        public async Task<ActionResult<IEnumerable<StatDto>>> GetWeeklyStatistics(int id)
         {
-            var stats = await _logic.GetWeeklyStatistics2(id);
+            var stats = await _logic.GetWeeklyStatistics(id);
 
             return Ok(stats);
         }
@@ -239,9 +239,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         //}
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<MusicDto>>> GetMonthlyStatistics2(int id)
+        public async Task<ActionResult<IEnumerable<StatDto>>> GetMonthlyStatistics(int id)
         {
-            var stats = await _logic.GetMonthlyStatistics2(id);
+            var stats = await _logic.GetMonthlyStatistics(id);
 
             return Ok(stats);
         }
@@ -255,9 +255,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Controllers
         //}
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<MusicDto>>> GetYearlyStatistics2(int id)
+        public async Task<ActionResult<IEnumerable<StatDto>>> GetYearlyStatistics(int id)
         {
-            var stats = await _logic.GetYearlyStatistics2(id);
+            var stats = await _logic.GetYearlyStatistics(id);
 
             return Ok(stats);
         }

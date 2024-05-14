@@ -79,7 +79,6 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
 
             }
 
-
             foreach (var music in _context.Musics)
             {
                 if (ContainsMusic(music.Id, behaviours))
@@ -87,7 +86,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
                     musics.Add(music);
                 }
             }
-
+            
             //itt megvannak a hallgatott zenék abban az időszakban, ahol épp vagyunk
 
             int minsLeft = GetTimeLeftFromTimeOfDay(timeOfDay);
@@ -714,7 +713,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
 
         #region statisztika
 
-        public async Task<IEnumerable<StatDto>> GetDailyStatistics2(int id)
+        public async Task<IEnumerable<StatDto>> GetDailyStatistics(int id)
         {
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             string nameOfDay = DateTime.Now.DayOfWeek.ToString();
@@ -825,8 +824,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
 
             return statstoReturn;
         }
-       
-        private async Task<IEnumerable<StatDto>> GetDailyStatistics(int id)
+
+        /*
+        private async Task<IEnumerable<StatDto>> GetDailyStatisticsOLD(int id)
         {
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             string nameOfDay = DateTime.Now.DayOfWeek.ToString();
@@ -906,9 +906,11 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             statstoReturn.Add(stat);
 
             return statstoReturn;
-        }
+        } 
+        
+         */
 
-        public async Task<IEnumerable<StatDto>> GetWeeklyStatistics2(int id)
+        public async Task<IEnumerable<StatDto>> GetWeeklyStatistics(int id)
         {
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             var statstoReturn = new List<StatDto>();
@@ -1010,7 +1012,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return statstoReturn;
         }
 
-        private async Task<IEnumerable<StatDto>> GetWeeklyStatistics(int id)
+        /*
+         
+        private async Task<IEnumerable<StatDto>> GetWeeklyStatisticsOLD(int id)
         {
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             var statstoReturn = new List<StatDto>();
@@ -1091,7 +1095,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return statstoReturn;
         }
 
-        public async Task<IEnumerable<StatDto>> GetMonthlyStatistics2(int id)
+        */
+
+        public async Task<IEnumerable<StatDto>> GetMonthlyStatistics(int id)
         {
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             var statstoReturn = new List<StatDto>();
@@ -1193,7 +1199,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
 
             return statstoReturn;
         }
-        private async Task<IEnumerable<StatDto>> GetMonthlyStatistics(int id)
+
+        /*
+        private async Task<IEnumerable<StatDto>> GetMonthlyStatisticsOLD(int id)
         {
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             var statstoReturn = new List<StatDto>();
@@ -1275,7 +1283,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return statstoReturn;
         }
 
-        public async Task<IEnumerable<StatDto>> GetYearlyStatistics2(int id)
+        */
+
+        public async Task<IEnumerable<StatDto>> GetYearlyStatistics(int id)
         {
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             var statstoReturn = new List<StatDto>();
@@ -1379,7 +1389,9 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return statstoReturn;
         }
 
-        private async Task<IEnumerable<StatDto>> GetYearlyStatistics(int id)
+        /*
+
+        private async Task<IEnumerable<StatDto>> GetYearlyStatisticsOLD(int id)
         {
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
             var statstoReturn = new List<StatDto>();
@@ -1462,6 +1474,7 @@ namespace UNN1N9_SOF_2022231_BACKEND.Logic
             return statstoReturn;
         }
 
+        */
         public async Task<IEnumerable<string>> GetLast7Days(int id)
         {
             var givenuser = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);

@@ -223,7 +223,7 @@ export class MusicsService {
   }
 
   getDailyStat(id: number) {
-    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetDailyStatistics2/' + id).pipe(
+    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetDailyStatistics/' + id).pipe(
       map(dailyStats => {
         this.dailyStats = dailyStats;
         return dailyStats;
@@ -232,7 +232,7 @@ export class MusicsService {
   }
 
   getWeeklyStat(id: number) {
-    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetWeeklyStatistics2/' + id).pipe(
+    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetWeeklyStatistics/' + id).pipe(
       map(weeklyStats => {
         this.weeklyStats = weeklyStats;
         return weeklyStats;
@@ -241,7 +241,7 @@ export class MusicsService {
   }
 
   getMonthlyStat(id: number) {
-    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetMonthlyStatistics2/' + id).pipe(
+    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetMonthlyStatistics/' + id).pipe(
       map(monthlyStats => {
         this.monthlyStats = monthlyStats;
         return monthlyStats;
@@ -250,7 +250,7 @@ export class MusicsService {
   }
 
   getYearlyStat(id: number) {
-    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetYearlyStatistics2/' + id).pipe(
+    return this.http.get<Stat[]>(this.baseUrl + 'Music/GetYearlyStatistics/' + id).pipe(
       map(yearlyStats => {
         this.yearlyStats = yearlyStats;
         return yearlyStats;
@@ -338,7 +338,7 @@ export class MusicsService {
 
   getPersonalizedMix(id: number) {
     if (this.personalizedsongs.length > 0) return of(this.personalizedsongs);
-    return this.http.get<Music[]>(this.baseUrl + 'Music/GetPersonalizedMix/' + id).pipe(
+    return this.http.get<Music[]>(this.baseUrl + 'Music/GetPersonalizedMixCluster/' + id).pipe(
       map(personalizedsongs => {
         this.personalizedsongs = personalizedsongs;
         return personalizedsongs;
